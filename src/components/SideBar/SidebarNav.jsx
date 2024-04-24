@@ -2,15 +2,15 @@ import React, { useState } from "react";
 import SidebarLinks from "./SidebarLinks";
 import SidebarDropdown from "./SidebarDropdown";
 import { FaCss3Alt, FaExternalLinkAlt, FaHome, FaWeightHanging, FaRuler, FaThermometerHalf, FaRulerCombined, FaCube } from "react-icons/fa";
+import { GrCircleInformation } from "react-icons/gr";
 import { MdGradient } from "react-icons/md";
 import { SiConvertio } from "react-icons/si";
 import { BsShadows } from "react-icons/bs";
 
-const SidebarNav = () => {
+function SidebarNav() {
     const [mainDropdowns, setMainDropdowns] = useState({
         css: false,
         convert: false,
-        maths: false,
     });
 
     // const [subDropdowns, setSubDropdowns] = useState({
@@ -38,17 +38,14 @@ const SidebarNav = () => {
         setMainDropdowns({
             css: false,
             convert: false,
-            maths: false,
         });
-        // setSubDropdowns({
-
-        // });
     };
 
     return (
         <div className="flex h-full w-full flex-col justify-between p-3">
             <div className="flex h-full w-full flex-col gap-2">
                 <SidebarLinks link={"/"} icon={<FaHome />} linkname={"Home"} onClick={closeAllDropdowns} />
+                <SidebarLinks link={"/About"} icon={<GrCircleInformation />} linkname={"About"} onClick={closeAllDropdowns} />
                 <SidebarDropdown label="Css" icon={<FaCss3Alt />} isOpen={mainDropdowns.css} onClick={() => toggleMainDropdown("css")}>
                     <SidebarLinks link={"/Css/Gradient"} icon={<MdGradient />} linkname={"Gradient gen"} />
                     <SidebarLinks link={"/Css/Box-shadow"} icon={<BsShadows />} linkname={"Box-shadow gen"} />
@@ -62,10 +59,9 @@ const SidebarNav = () => {
                 </SidebarDropdown>
             </div>
             <div>
-                <SidebarLinks link={"/Maths"} icon={<FaExternalLinkAlt />} linkname={"Contact"} onClick={closeAllDropdowns} />
+                <SidebarLinks link={"/About#contact"} icon={<FaExternalLinkAlt />} linkname={"Contact"} onClick={closeAllDropdowns} />
             </div>
         </div>
     );
-};
-
+}
 export default SidebarNav;

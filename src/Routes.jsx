@@ -1,5 +1,6 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Error from "./pages/Error/Error";
+import About from "./pages/About";
 import { Home, HomeCss, HomeConvert } from "./pages/Home";
 import { Length, Mass, Area, Volume, Temperature } from "./pages/Tools/UnitsConvert";
 import Gradient from "./pages/Tools/Css/Gradient";
@@ -12,6 +13,7 @@ function MainRouter() {
             <Routes>
                 <Route path="/" element={<App />}>
                     <Route index element={<Home />} />
+                    <Route path="About" index element={<About />} />
                     <Route path="Error" element={<Error />} />
                     <Route path="Css">
                         <Route index element={<HomeCss />} />

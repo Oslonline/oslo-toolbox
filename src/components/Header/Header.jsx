@@ -17,11 +17,11 @@ function Header() {
         "/UnitsConvert/Area": "Area units converter",
         "/UnitsConvert/Volume": "Volume units converter",
         "/UnitsConvert/Temperature": "Temperature units converter",
-        "/Contact": "Contact infos",
+        "/About": "About & Contact",
     };
 
     const getTitle = () => {
-        return titleMap[path] || "Meow";
+        return titleMap[path] || "Page not found go back to home";
     };
 
     return (
