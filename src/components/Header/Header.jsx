@@ -6,7 +6,7 @@ function Header() {
 
   const titleMap = {
     "/": "Home",
-    "/Css": "CSS Tools",
+    "/Css": "CSS tools",
     "/Css/Gradient": "CSS gradient generator",
     "/Css/Box-shadow": "CSS box-shadow generator",
     "/UnitsConvert": "Convert units",
@@ -15,6 +15,7 @@ function Header() {
     "/UnitsConvert/Area": "Area units converter",
     "/UnitsConvert/Volume": "Volume units converter",
     "/UnitsConvert/Temperature": "Temperature units converter",
+    "/Generators": "Misc generators",
     "/Generators/Password": "Password generator",
     "/Generators/Lorem": "Lorem Ipsum generator",
     "/About": "About & Contact",
