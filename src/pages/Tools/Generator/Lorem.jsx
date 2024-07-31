@@ -53,9 +53,7 @@ export default function Lorem() {
             <input type="number" min={1} max={100} value={paragraphs} onChange={(e) => setParagraphs(Number(e.target.value))} className="rounded-md border-2 border-gray-200 bg-white p-2 caret-orange-400 outline-none focus:border-orange-400 focus:outline-offset-0" />
           </div>
           <div className="flex items-center gap-4">
-            <button onClick={handleCopy}>
-              {copied ? <FaCheck fontSize={24} color="green" /> : <FaCopy fontSize={24} />}
-            </button>
+            <button onClick={handleCopy}>{copied ? <FaCheck fontSize={24} color="green" /> : <FaCopy fontSize={24} />}</button>
             <button onClick={generateLorem} className="rounded-md bg-orange-400 px-3 py-2 text-gray-50 duration-200 hover:bg-orange-600">
               Generate
             </button>

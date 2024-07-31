@@ -86,15 +86,7 @@ function Area() {
     "Electron Cross Section": 6.6524615999999e-29,
   };
 
-  return (
-    <Converter
-      title="A free Area units converter with International System of Units (SI), Imperial and US & ES metric system !!"
-      description="This toolbox provide you a completely FREE area converter including the international system of units & the imperial system of units with US, UK & ES units. For more infos about the data used for converting, scroll down and check under the converter."
-      systems={["SI", "US", "Others", "All"]}
-      units={units}
-      unitValues={unitValues}
-    />
-  );
+  return <Converter description="This toolbox provide you a completely FREE area converter including the international system of units & the imperial system of units with US, UK & ES units. For more infos about the data used for converting, scroll down and check under the converter." systems={["SI", "US", "Others", "All"]} units={units} unitValues={unitValues} />;
 }
 
 export default Area;

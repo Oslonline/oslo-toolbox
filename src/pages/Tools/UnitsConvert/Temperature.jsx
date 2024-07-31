@@ -23,9 +23,7 @@ function Temperature() {
     },
   };
 
-  return (
-    <Converter title="A free Temperature units converter with Celsius, Fahrenheit & Kelvin scales !!" description="This toolbox provides you with a completely FREE temperature converter including Celsius, Fahrenheit, and Kelvin scales. For more informations about the data used for converting, scroll down and check under the converter." systems={["All"]} units={units} unitValues={unitValues} />
-  );
+  return <Converter description="This toolbox provides you with a completely FREE temperature converter including Celsius, Fahrenheit, and Kelvin scales. For more informations about the data used for converting, scroll down and check under the converter." systems={["All"]} units={units} unitValues={unitValues} />;
 }
 
 export default Temperature;

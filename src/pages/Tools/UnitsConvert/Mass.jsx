@@ -23,15 +23,7 @@ function Mass() {
     Ounce: 28.35,
   };
 
-  return (
-    <Converter
-      title="A free Mass units converter with International System of Units (SI) & Imperial and US metric system !!"
-      description="This toolbox provide you a completely FREE mass converter including the international system of units & the imperial system of units with US & UK units. For more informations about the data used for converting, scroll down and check under the converter."
-      systems={["SI", "US", "All"]}
-      units={units}
-      unitValues={unitValues}
-    />
-  );
+  return <Converter description="This toolbox provide you a completely FREE mass converter including the international system of units & the imperial system of units with US & UK units. For more informations about the data used for converting, scroll down and check under the converter." systems={["SI", "US", "All"]} units={units} unitValues={unitValues} />;
 }
 
 export default Mass;

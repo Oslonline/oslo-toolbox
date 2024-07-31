@@ -24,15 +24,7 @@ function Lenght() {
     Inch: 0.0254,
   };
 
-  return (
-    <Converter
-      title="A free Lenght units converter with International System of Units (SI) & Imperial and US metric system !!"
-      description="This toolbox provide you a completely FREE length converter including the international system of units & the imperial system of units with US & UK units. For more informations about the data used for converting, scroll down and check under the converter."
-      systems={["SI", "US", "All"]}
-      units={units}
-      unitValues={unitValues}
-    />
-  );
+  return <Converter description="This toolbox provide you a completely FREE length converter including the international system of units & the imperial system of units with US & UK units. For more informations about the data used for converting, scroll down and check under the converter." systems={["SI", "US", "All"]} units={units} unitValues={unitValues} />;
 }
 
 export default Lenght;

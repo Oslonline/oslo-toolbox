@@ -26,15 +26,7 @@ function Volume() {
     Gill: 142.065e-6,
   };
 
-  return (
-    <Converter
-      title="A free Volume units converter with International System of Units (SI), US, UK & Dry systems !!"
-      description="This toolbox provides you a completely FREE volume converter including the International System of Units (SI), the US liquid and dry systems, and the UK system. For more information about the data used for converting, scroll down and check under the converter."
-      systems={["SI", "USLiquid", "USDry", "UK", "All"]}
-      units={units}
-      unitValues={unitValues}
-    />
-  );
+  return <Converter description="This toolbox provides you a completely FREE volume converter including the International System of Units (SI), the US liquid and dry systems, and the UK system. For more information about the data used for converting, scroll down and check under the converter." systems={["SI", "USLiquid", "USDry", "UK", "All"]} units={units} unitValues={unitValues} />;
 }
 
 export default Volume;

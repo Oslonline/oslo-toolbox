@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import MetricButtons from "./MetricsButtons";
 import { FaArrowRight } from "react-icons/fa";
 
-function Converter({ title, description, systems, units, unitValues }) {
+function Converter({ description, systems, units, unitValues }) {
   const [metricSys, setMetricSys] = useState("All");
   const [inputValue, setInputValue] = useState("");
   const [result, setResult] = useState("");
@@ -56,7 +56,6 @@ function Converter({ title, description, systems, units, unitValues }) {
   return (
     <div className="flex flex-col gap-7 p-6">
       <div className="flex flex-col gap-4">
-        <h2 className="font-semibold text-gray-800">{title}</h2>
         <p className="text-gray-500">{description}</p>
       </div>
       <div className="flex flex-col gap-5 rounded-md border-2 border-gray-200 bg-gray-50 p-6">
