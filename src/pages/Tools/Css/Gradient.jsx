@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import CircularSlider from "@fseehawer/react-circular-slider";
 import GeneratedCSS from "../../../components/CSS/GeneratedCSS";
 import patternImage from "/images/pattern.jpg";

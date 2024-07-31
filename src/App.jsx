@@ -8,7 +8,7 @@ function App() {
       <aside className="sticky top-0 h-screen">
         <Sidebar />
       </aside>
-      <main className="flex w-full flex-col ">
+      <main className="flex w-full flex-col">
         <Header />
         <Outlet />
       </main>

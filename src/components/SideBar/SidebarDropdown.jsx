@@ -1,4 +1,3 @@
-import React from "react";
 import { FaChevronDown } from "react-icons/fa";
 
 function SidebarDropdown({ label, icon, isOpen, onClick, children }) {

@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import { FaRedo, FaCopy, FaCheck } from "react-icons/fa";
 
 export default function Password() {
@@ -54,10 +54,10 @@ export default function Password() {
       <div className="flex items-center justify-between rounded-md border-2 border-gray-200 p-4">
         <p className="font-mono text-xl">{password}</p>
         <div className="flex gap-4">
-          <button onClick={handleCopy} className="">
+          <button onClick={handleCopy}>
             {copied ? <FaCheck fontSize={24} color="green" /> : <FaCopy fontSize={24} />}
           </button>
-          <button onClick={generatePassword} className="">
+          <button onClick={generatePassword}>
             <FaRedo fontSize={24} />
           </button>
         </div>

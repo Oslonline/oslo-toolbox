@@ -1,4 +1,3 @@
-import React from "react";
 import Converter from "../../../components/Converter/Converter";
 
 function Mass() {

@@ -4,6 +4,7 @@ import SidebarDropdown from "./SidebarDropdown";
 
 import { FaCss3Alt, FaExternalLinkAlt, FaHome, FaWeightHanging, FaRuler, FaThermometerHalf, FaRulerCombined, FaCube, FaUnlockAlt } from "react-icons/fa";
 import { GrCircleInformation } from "react-icons/gr";
+import { TbCircleLetterL } from "react-icons/tb";
 import { MdGradient } from "react-icons/md";
 import { SiConvertio } from "react-icons/si";
 import { BsShadows } from "react-icons/bs";
@@ -63,6 +64,7 @@ function SidebarNav() {
         </SidebarDropdown>
         <SidebarDropdown label="Generators" icon={<FaGear />} isOpen={mainDropdowns.gen} onClick={() => toggleMainDropdown("gen")}>
           <SidebarLinks link={"/Generators/Password"} icon={<FaUnlockAlt />} linkname={"Password"} />
+          <SidebarLinks link={"/Generators/Lorem"} icon={<TbCircleLetterL />} linkname={"Lorem Ipsum"} />
         </SidebarDropdown>
       </div>
       <div>

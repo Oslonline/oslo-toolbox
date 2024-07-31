@@ -1,4 +1,3 @@
-import React from "react";
 import ToolsCard from "../../components/Homepages/ToolsCard";
 
 const tools = [

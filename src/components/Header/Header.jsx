@@ -1,5 +1,3 @@
-// Header.jsx
-import React from "react";
 import { useLocation } from "react-router-dom";
 import Breadcrumbs from "./Breadcrumbs";
 
@@ -18,6 +16,7 @@ function Header() {
     "/UnitsConvert/Volume": "Volume units converter",
     "/UnitsConvert/Temperature": "Temperature units converter",
     "/Generators/Password": "Password generator",
+    "/Generators/Lorem": "Lorem Ipsum generator",
     "/About": "About & Contact",
   };
 

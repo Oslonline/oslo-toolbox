@@ -80,14 +80,14 @@ function Converter({ title, description, systems, units, unitValues }) {
           </div>
           <div className="flex gap-4">
             <div className="flex flex-col gap-3">
-              <input className="rounded-md border-2 border-gray-200 bg-white p-2 caret-orange-400 outline-none focus:border-orange-400 focus:outline-offset-0" placeholder="3.46" type="text" value={inputValue} onChange={handleInputChange} />
+              <input className="rounded-md border-2 border-gray-200 bg-white p-2 caret-orange-400 outline-none focus:border-orange-400 focus:outline-offset-0" placeholder="3.46" type="number" value={inputValue} onChange={handleInputChange} />
               <MetricButtons units={units[metricSys]} selectedUnit={unitFrom} onChange={handleUnitFromChange} />
             </div>
             <div className="pt-2">
               <FaArrowRight />
             </div>
             <div className="flex flex-col gap-3">
-              <input className="rounded-md border-2 border-gray-200 bg-white p-2 caret-orange-400 outline-none" type="text" value={result} readOnly />
+              <input className="rounded-md border-2 border-gray-200 bg-white p-2 outline-none" type="text" value={result} readOnly />
               <MetricButtons units={units[metricSys]} selectedUnit={unitTo} onChange={handleUnitToChange} />
             </div>
           </div>

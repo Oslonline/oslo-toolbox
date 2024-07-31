@@ -4,7 +4,7 @@ import About from "./pages/About";
 import { Home, HomeCss, HomeConvert, HomeGen } from "./pages/Home";
 import { Length, Mass, Area, Volume, Temperature } from "./pages/Tools/UnitsConvert";
 import { Gradient, BoxShadow } from "./pages/Tools/Css";
-import { Password } from "./pages/Tools/Generator";
+import { Lorem, Password } from "./pages/Tools/Generator";
 import App from "./App";
 
 function MainRouter() {
@@ -31,6 +31,7 @@ function MainRouter() {
           <Route path="Generators">
             <Route index element={<HomeGen />} />
             <Route path="Password" element={<Password />} />
+            <Route path="Lorem" element={<Lorem />} />
           </Route>
         </Route>
       </Routes>
