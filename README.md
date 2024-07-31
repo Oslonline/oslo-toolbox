@@ -1,6 +1,6 @@
 # About
 
-A ReactJS & TailwindCSS toolbox with CSS generators (gradient, box-shadow), unit converters (mass, length...) and more to come !
+A ReactJS & TailwindCSS toolbox with CSS generators (gradient, box-shadow), unit converters (mass, length...), misc generators (password) and more to come !
 <br>
 Not fully responsive, mainly intended for computers.
 <br>
@@ -24,7 +24,7 @@ Not fully responsive, mainly intended for computers.
 `npm run serve`
 
 # Screenshots
-<img src="https://oslo418.com/meow/screens/toolbox-1.png"/>
-<img src="https://oslo418.com/meow/screens/toolbox-2.png"/>
-
-
+![Capture d’écran 2024-07-31 à 12.02.26](https://i.imgur.com/KCs3ut1.png)
+![Capture d’écran 2024-07-31 à 12.02.34](https://i.imgur.com/XYz8pmi.png)
+![Capture d’écran 2024-07-31 à 12.03.01](https://i.imgur.com/uqP6EGW.png)
+![Capture d’écran 2024-07-31 à 12.03.13](https://i.imgur.com/OdKy280.png)
