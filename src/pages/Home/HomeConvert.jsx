@@ -5,31 +5,31 @@ const unitsConvertTools = [
     name: "Mass units converter",
     link: "/UnitsConvert/Mass",
     text: "",
-    icon: "/images/units-convert-tools/mass.png",
+    icon: "/images/units-convert-tools/mass.webp",
   },
   {
     name: "Length units converter",
     link: "/UnitsConvert/Length",
     text: "",
-    icon: "/images/units-convert-tools/length.png",
+    icon: "/images/units-convert-tools/length.webp",
   },
   {
     name: "Area units converter",
     link: "/UnitsConvert/Area",
     text: "",
-    icon: "/images/units-convert-tools/area.png",
+    icon: "/images/units-convert-tools/area.webp",
   },
   {
     name: "Volume units converter",
     link: "/UnitsConvert/Volume",
     text: "",
-    icon: "/images/units-convert-tools/volume.png",
+    icon: "/images/units-convert-tools/volume.webp",
   },
   {
     name: "Temperature units converter",
     link: "/UnitsConvert/Temperature",
     text: "",
-    icon: "/images/units-convert-tools/temperature.png",
+    icon: "/images/units-convert-tools/temperature.webp",
   },
 ];
 

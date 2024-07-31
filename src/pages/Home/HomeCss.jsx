@@ -6,13 +6,13 @@ const cssTools = [
     name: "Gradient generator",
     link: "/Css/Gradient",
     text: "",
-    icon: "/images/css-tools/gradient.png",
+    icon: "/images/css-tools/gradient.webp",
   },
   {
     name: "Box-shadow generator",
     link: "/Css/Box-shadow",
     text: "",
-    icon: "/images/css-tools/shadow.png",
+    icon: "/images/css-tools/shadow.webp",
   },
 ];
 

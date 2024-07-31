@@ -5,7 +5,13 @@ const genTools = [
     name: "Password generator",
     link: "/Generator/Password",
     text: "",
-    icon: "/images/gen-tools/password.png",
+    icon: "/images/gen-tools/password.webp",
+  },
+  {
+    name: "Lorem Ipsum generator",
+    link: "/Generator/Password",
+    text: "",
+    icon: "/images/gen-tools/lorem.webp",
   },
 ];
 
