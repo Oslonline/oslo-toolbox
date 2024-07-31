@@ -4,7 +4,7 @@ import MainRouter from "./Routes";
 import "./index.css";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
-    <React.StrictMode>
-        <MainRouter />
-    </React.StrictMode>,
+  <React.StrictMode>
+    <MainRouter />
+  </React.StrictMode>,
 );
