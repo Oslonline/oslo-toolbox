@@ -95,7 +95,7 @@ function BoxShadow() {
               <p className="text-sm text-gray-500">Color</p>
               <div className="mt-1 flex items-center gap-4">
                 <input className="h-12 w-16 appearance-none rounded-md border border-gray-300 p-2 focus:outline-none" type="color" value={boxShadow.color} onChange={handleChange} name="color" />
-                <input className="w-20 rounded-md px-2 py-2 caret-orange-400 outline-none focus:outline-orange-400" type="text" value={boxShadow.color} onChange={handleChange} name="color" />
+                <input className="w-20 rounded-md px-2 py-2 caret-orange-400 bg-gray-100 outline-none focus:outline-orange-400" type="text" value={boxShadow.color} onChange={handleChange} name="color" />
               </div>
             </div>
 

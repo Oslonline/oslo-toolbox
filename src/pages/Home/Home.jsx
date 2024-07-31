@@ -4,6 +4,7 @@ import ToolsCard from "../../components/Homepages/ToolsCard";
 const tools = [
     { name: "CSS generators", link: "/Css", text: "Gradient, Box-shadow...", icon: "/images/tools-ctg/css.png" },
     { name: "Units converters", link: "/UnitsConvert", text: "Length, Mass, Area...", icon: "/images/tools-ctg/convert.png" },
+    { name: "Misc Generators", link: "/Generators", text: "Password, Lorem...", icon: "/images/tools-ctg/gen.png" },
 ];
 
 function HomeSection({ title, content }) {

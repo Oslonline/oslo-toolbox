@@ -1,16 +1,19 @@
 import React, { useState } from "react";
 import SidebarLinks from "./SidebarLinks";
 import SidebarDropdown from "./SidebarDropdown";
-import { FaCss3Alt, FaExternalLinkAlt, FaHome, FaWeightHanging, FaRuler, FaThermometerHalf, FaRulerCombined, FaCube } from "react-icons/fa";
+
+import { FaCss3Alt, FaExternalLinkAlt, FaHome, FaWeightHanging, FaRuler, FaThermometerHalf, FaRulerCombined, FaCube, FaUnlockAlt } from "react-icons/fa";
 import { GrCircleInformation } from "react-icons/gr";
 import { MdGradient } from "react-icons/md";
 import { SiConvertio } from "react-icons/si";
 import { BsShadows } from "react-icons/bs";
+import { FaGear } from "react-icons/fa6";
 
 function SidebarNav() {
   const [mainDropdowns, setMainDropdowns] = useState({
     css: false,
     convert: false,
+    gen: false,
   });
 
   // const [subDropdowns, setSubDropdowns] = useState({
@@ -38,6 +41,7 @@ function SidebarNav() {
     setMainDropdowns({
       css: false,
       convert: false,
+      gen: false,
     });
   };
 
@@ -56,6 +60,9 @@ function SidebarNav() {
           <SidebarLinks link={"/UnitsConvert/Area"} icon={<FaRulerCombined />} linkname={"Area"} />
           <SidebarLinks link={"/UnitsConvert/Volume"} icon={<FaCube />} linkname={"Volume"} />
           <SidebarLinks link={"/UnitsConvert/Temperature"} icon={<FaThermometerHalf />} linkname={"Temperature"} />
+        </SidebarDropdown>
+        <SidebarDropdown label="Generators" icon={<FaGear />} isOpen={mainDropdowns.gen} onClick={() => toggleMainDropdown("gen")}>
+          <SidebarLinks link={"/Generators/Password"} icon={<FaUnlockAlt />} linkname={"Password"} />
         </SidebarDropdown>
       </div>
       <div>

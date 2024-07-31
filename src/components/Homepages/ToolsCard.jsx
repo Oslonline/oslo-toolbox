@@ -12,7 +12,7 @@ function ToolsCard({ name, text, link, icon }) {
           <p className="text-center text-lg font-semibold">{name}</p>
           <p className="text-center text-gray-500">{text}</p>
         </div>
-        <Link to={link} className="flex w-fit rounded-lg bg-orange-400 px-3 py-2 text-gray-50 hover:bg-orange-300 hover:text-gray-800 focus:bg-gray-800 focus:text-gray-50">
+        <Link to={link} className="flex w-fit rounded-lg bg-orange-400 px-3 py-2 text-gray-50 hover:bg-orange-600 duration-200 focus:bg-gray-800 focus:text-gray-50">
           Check this tool
         </Link>
       </div>
