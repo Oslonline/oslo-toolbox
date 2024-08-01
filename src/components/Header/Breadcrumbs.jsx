@@ -18,7 +18,7 @@ function Breadcrumbs() {
   ];
 
   return (
-    <nav className="flex items-center space-x-1">
+    <nav className="hidden items-center space-x-1 md:flex">
       {breadcrumbs.map((breadcrumb, index) => (
         <React.Fragment key={breadcrumb.segment}>
           {index === breadcrumbs.length - 1 ? (

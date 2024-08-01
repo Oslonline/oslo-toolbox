@@ -13,6 +13,12 @@ const genTools = [
     text: "",
     icon: "/images/gen-tools/lorem.webp",
   },
+  {
+    name: "QR Code generator",
+    link: "/Generator/QrCode",
+    text: "",
+    icon: "/images/gen-tools/qr-code.webp",
+  },
 ];
 
 function HomeCss() {

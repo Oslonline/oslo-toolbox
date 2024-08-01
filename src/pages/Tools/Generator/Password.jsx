@@ -51,7 +51,7 @@ export default function Password() {
       <div>
         <p className="text-gray-500">Generate your password for free up to 128 chars with the choice to add uppercase, lowercase, numbers et special characters.</p>
       </div>
-      <div className="flex items-center justify-between rounded-md border-2 border-gray-200 p-4">
+      <div className="flex items-center justify-between rounded-md border-2 gap-8 border-gray-200 p-4">
         <p className="font-mono text-xl">{password}</p>
         <div className="flex gap-4">
           <button onClick={handleCopy}>{copied ? <FaCheck fontSize={24} color="green" /> : <FaCopy fontSize={24} />}</button>
