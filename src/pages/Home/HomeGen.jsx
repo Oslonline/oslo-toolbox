@@ -3,19 +3,19 @@ import ToolsCard from "../../components/Homepages/ToolsCard";
 const genTools = [
   {
     name: "Password generator",
-    link: "/Generator/Password",
+    link: "/Generators/Password",
     text: "",
     icon: "/images/gen-tools/password.webp",
   },
   {
     name: "Lorem Ipsum generator",
-    link: "/Generator/Password",
+    link: "/Generators/Password",
     text: "",
     icon: "/images/gen-tools/lorem.webp",
   },
   {
     name: "QR Code generator",
-    link: "/Generator/QrCode",
+    link: "/Generators/QrCode",
     text: "",
     icon: "/images/gen-tools/qr-code.webp",
   },
