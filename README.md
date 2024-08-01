@@ -1,6 +1,6 @@
 # About
 
-A ReactJS & TailwindCSS toolbox with CSS generators (gradient, box-shadow), unit converters (mass, length...), misc generators (password) and more to come !
+A ReactJS & TailwindCSS toolbox with CSS generators (gradient, box-shadow), unit converters (mass, length, volume, temperature...), misc generators (password, lorem ipsum, qrcode) and more to come !
 <br>
 Not fully responsive, mainly intended for computers.
 <br>
