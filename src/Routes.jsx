@@ -6,7 +6,7 @@ import About from "./pages/About";
 import { Home, HomeCss, HomeConvert, HomeGen } from "./pages/Home";
 import { Length, Mass, Area, Volume, Temperature } from "./pages/Tools/UnitsConvert";
 import { Gradient, BoxShadow } from "./pages/Tools/Css";
-import { Lorem, Password, QrCode } from "./pages/Tools/Generator";
+import { Hash, Lorem, Password, QrCode } from "./pages/Tools/Generator";
 
 function MainRouter() {
   return (
@@ -34,6 +34,7 @@ function MainRouter() {
             <Route path="Password" element={<Password />} />
             <Route path="Lorem" element={<Lorem />} />
             <Route path="QrCode" element={<QrCode />} />
+            <Route path="Hash" element={<Hash />} />
           </Route>
         </Route>
       </Routes>

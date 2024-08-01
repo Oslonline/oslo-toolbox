@@ -19,6 +19,7 @@ function Header() {
     "/Generators/Password": "Password generator",
     "/Generators/Lorem": "Lorem Ipsum generator",
     "/Generators/QrCode": "QR Code generator",
+    "/Generators/Hash": "Hash generator",
     "/About": "About & Contact",
   };
 

@@ -19,6 +19,12 @@ const genTools = [
     text: "",
     icon: "/images/gen-tools/qr-code.webp",
   },
+  {
+    name: "Hash generator",
+    link: "/Generators/Hash",
+    text: "",
+    icon: "/images/gen-tools/hash.webp",
+  },
 ];
 
 function HomeCss() {
