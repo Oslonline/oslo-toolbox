@@ -1,9 +1,19 @@
 # About
 
-A ReactJS & TailwindCSS toolbox with CSS generators (gradient, box-shadow), unit converters (mass, length, volume, temperature...), misc generators (password, lorem ipsum, qrcode) and more to come !
+An opensource toolbox made with Reactjs & TailwindCSS !
 <br>
 Not fully responsive, mainly intended for computers.
 <br>
+
+# Tools
+
+- CSS Box-shadow generator.
+- CSS background gradient generator.
+- Units converters (Mass, Length, Volume, Temperature, Area).
+- Password generator.
+- Lorem Ipsum generator.
+- QR Code generator from text/links.
+- Hash generator from text.
 
 # Run
 
