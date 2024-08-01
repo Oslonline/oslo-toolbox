@@ -1,3 +1,4 @@
+import { Analytics } from "@vercel/analytics/react"
 import Header from "./components/Header/Header";
 import Sidebar from "./components/SideBar/SideBar";
 import { Outlet } from "react-router-dom";
@@ -11,6 +12,7 @@ function App() {
       <main className="flex w-full flex-col">
         <Header />
         <Outlet />
+        <Analytics />
       </main>
     </div>
   );
