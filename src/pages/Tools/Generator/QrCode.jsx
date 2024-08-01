@@ -11,13 +11,10 @@ export default function QrCode() {
   const handleLinkChange = (e) => {
     const inputLink = e.target.value;
     setLink(inputLink);
-    setIsValidLink(validateLink(inputLink));
   };
 
   const generateQRCode = () => {
-    if (isValidLink) {
-      setShowQRCode(true);
-    }
+    setShowQRCode(true);
   };
 
   const handleDownload = () => {
@@ -47,7 +44,7 @@ export default function QrCode() {
       </div>
       <div className="flex items-center justify-between gap-4 rounded-md border-2 border-gray-200 p-4">
         <input type="text" value={link} onChange={handleLinkChange} placeholder="Link / Text" className={`p-2rounded-md w-full rounded-md border-2 border-gray-200 bg-white p-2 caret-orange-400 outline-none focus:border-orange-400 focus:outline-offset-0`} />
-        <input type="color" value={color} onChange={(e) => setColor(e.target.value)} className="hover:cursor-pointer h-10 w-10 min-w-10 rounded-md border-2 border-gray-300" />
+        <input type="color" value={color} onChange={(e) => setColor(e.target.value)} className="h-10 w-10 min-w-10 rounded-md border-2 border-gray-300 hover:cursor-pointer" />
         <button onClick={generateQRCode} className={`rounded-md bg-orange-400 px-3 py-2 text-gray-50 duration-200 hover:bg-orange-600`}>
           Generate
         </button>
