@@ -1,11 +1,12 @@
+import App from "./App";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+
 import Error from "./pages/Error/Error";
 import About from "./pages/About";
 import { Home, HomeCss, HomeConvert, HomeGen } from "./pages/Home";
 import { Length, Mass, Area, Volume, Temperature } from "./pages/Tools/UnitsConvert";
 import { Gradient, BoxShadow } from "./pages/Tools/Css";
-import { Lorem, Password } from "./pages/Tools/Generator";
-import App from "./App";
+import { Lorem, Password, QrCode } from "./pages/Tools/Generator";
 
 function MainRouter() {
   return (
@@ -32,6 +33,7 @@ function MainRouter() {
             <Route index element={<HomeGen />} />
             <Route path="Password" element={<Password />} />
             <Route path="Lorem" element={<Lorem />} />
+            <Route path="QrCode" element={<QrCode />} />
           </Route>
         </Route>
       </Routes>

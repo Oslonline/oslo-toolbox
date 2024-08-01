@@ -11,9 +11,11 @@
   },
   "dependencies": {
     "@fseehawer/react-circular-slider": "^2.6.4",
+    "file-saver": "^2.0.5",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-icons": "^5.0.1",
+    "react-qr-code": "^2.0.15",
     "react-router-dom": "^6.22.3"
   },
   "devDependencies": {
