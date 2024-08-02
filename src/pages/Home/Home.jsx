@@ -3,7 +3,8 @@ import ToolsCard from "../../components/Homepages/ToolsCard";
 const tools = [
   { name: "CSS tools", link: "/Css", text: "Gradient, Box-shadow...", icon: "/images/tools-ctg/css.webp" },
   { name: "Units converters", link: "/UnitsConvert", text: "Length, Mass, Area, Volume...", icon: "/images/tools-ctg/convert.webp" },
-  { name: "Misc Generators", link: "/Generators", text: "Password, Lorem...", icon: "/images/tools-ctg/gen.webp" },
+  { name: "Misc generators", link: "/Generators", text: "Password, Lorem...", icon: "/images/tools-ctg/gen.webp" },
+  { name: "Security tools", link: "/Security", text: "IP Lookup...", icon: "/images/tools-ctg/sec.webp" },
 ];
 
 function HomeSection({ title, content }) {

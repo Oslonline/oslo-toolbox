@@ -21,6 +21,8 @@ function Header() {
     "/Generators/QrCode": "QR Code generator",
     "/Generators/Hash": "Hash generator",
     "/About": "About & Contact",
+    "/Security": "Security tools",
+    "/Security/IpLookup": "IP Adress Lookup",
   };
 
   const getTitle = () => {
