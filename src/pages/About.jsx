@@ -9,8 +9,8 @@ function About() {
           <p className="text-gray-800">This toolbox is fully open-source and fully client-side for now.</p>
           <p className="text-gray-800">
             The source code can be found on github at :{" "}
-            <a className="text-blue-500 underline hover:text-blue-400 focus:text-blue-600" target="_blank" href="https://github.com/Oslonline/toolbox-react">
-              Oslonline/toolbox-react
+            <a className="text-blue-500 underline hover:text-blue-400 focus:text-blue-600" target="_blank" href="https://github.com/Oslonline/oslo-toolbox">
+              Oslonline/oslo-toolbox
             </a>
           </p>
           <p className="text-gray-800">This toolbox was made with ReactJS, TailwindCSS and some libs (check the github)</p>
