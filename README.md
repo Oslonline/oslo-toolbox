@@ -14,6 +14,7 @@ Not fully responsive, mainly intended for computers.
 - Lorem Ipsum generator.
 - QR Code generator from text/links.
 - Hash generator from text.
+- IP Adress lookup.
 
 # Run
 
@@ -32,9 +33,3 @@ Not fully responsive, mainly intended for computers.
 
 **Run the optimized application locally:**
 `npm run serve`
-
-# Screenshots
-![Capture d’écran 2024-07-31 à 12.02.26](https://i.imgur.com/KCs3ut1.png)
-![Capture d’écran 2024-07-31 à 12.02.34](https://i.imgur.com/XYz8pmi.png)
-![Capture d’écran 2024-07-31 à 12.03.01](https://i.imgur.com/uqP6EGW.png)
-![Capture d’écran 2024-07-31 à 12.03.13](https://i.imgur.com/OdKy280.png)
