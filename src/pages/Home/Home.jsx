@@ -20,8 +20,8 @@ function Home() {
   return (
     <div className="flex flex-col gap-9 p-6">
       <HomeSection
-        title="Welcome to our Toolbox Hub!"
-        content="Welcome to our versatile collection of tools designed to simplify your digital endeavors. Whether you're a seasoned developer, a curious hobbyist, or someone in need of quick solutions, our toolbox has something for everyone. Explore our range of tools, from various css generators to units converters for mass, length... and embark on a journey of creativity and efficiency."
+        title="Welcome to Oslo's Toolbox !"
+        content="Welcome to our versatile collection of tools designed to simplify your digital endeavors. Whether you're a seasoned developer, a curious hobbyist, or someone in need of quick solutions, our toolbox has something for everyone. Explore our range of tools, with various css generators, QR code generator, security tools, units converters for mass, length, volume, area, temperature etc... and embark on a journey of creativity and efficiency."
       />
       <div className="flex flex-col gap-2">
         <h2 className="text-lg">Tools categories :</h2>
