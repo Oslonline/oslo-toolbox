@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { Helmet } from "react-helmet";
 import GeneratedCSS from "../../../components/CSS/GeneratedCSS";
 
 function BoxShadow() {
@@ -53,8 +54,16 @@ function BoxShadow() {
 
   return (
     <div className="flex flex-col gap-7 p-6">
+      <Helmet>
+        <title>CSS Box-Shadow Generator - Customize Your Shadows Online</title>
+        <meta name="description" content="Easily create custom CSS box-shadow effects with our free online tool. Adjust offset, blur, spread, color, and opacity to generate the perfect shadow for your project." />
+        <meta name="keywords" content="CSS box-shadow generator, free online CSS tools, custom shadow generator, CSS effects, web design tools" />
+        <link rel="canonical" href="https://oslo-toolbox.vercel.app.com/css/box-shadow-generator" />
+      </Helmet>
+
       <div>
-        <h2 className="text-gray-700">A free CSS box-shadow generator with custom color, blur, spread, offset X, Y and opacity !!</h2>
+        <h2 className="text-gray-900">Free CSS Box-Shadow Generator</h2>
+        <p className="text-gray-700">Customize your box-shadow effects with ease. Adjust the shadow’s offset, blur, spread, color, and opacity to achieve the perfect look for your elements. Copy the generated CSS code and use it directly in your projects.</p>
       </div>
       <div className="flex flex-col-reverse justify-between gap-6 lg:flex-row">
         <div className="flex flex-col gap-3 rounded-md border-2 border-gray-200 bg-white p-4 lg:w-2/4">
@@ -122,7 +131,20 @@ function BoxShadow() {
           </div>
         </div>
       </div>
+
       <GeneratedCSS result={result} copyToClipboard={copyToClipboard} copySuccess={copySuccess} />
+
+      <div>
+        <h2 className="text-3xl font-bold text-gray-900">Frequently Asked Questions</h2>
+        <div className="mt-4">
+          <h3 className="font-semibold text-gray-900">What is a box-shadow in CSS?</h3>
+          <p className="text-gray-700">A box-shadow in CSS is a shadow effect applied to an element’s box, allowing you to create depth and visual interest by adding an offset shadow.</p>
+          <h3 className="mt-4 font-semibold text-gray-900">How do I use this tool?</h3>
+          <p className="text-gray-700">Adjust the sliders and inputs to customize your shadow. The CSS code will be generated automatically, which you can copy and use in your stylesheets.</p>
+          <h3 className="mt-4 font-semibold text-gray-900">Can I control the opacity of the shadow?</h3>
+          <p className="text-gray-700">Yes, you can adjust the opacity of the shadow using the opacity slider. This allows you to create both subtle and bold shadow effects.</p>
+        </div>
+      </div>
     </div>
   );
 }

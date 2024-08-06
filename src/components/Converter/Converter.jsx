@@ -54,7 +54,7 @@ function Converter({ description, systems, units, unitValues }) {
   };
 
   return (
-    <div className="flex flex-col gap-7 p-6">
+    <div className="flex flex-col gap-7 p-6 pb-0">
       <div className="flex flex-col gap-4">
         <p className="text-gray-500">{description}</p>
       </div>

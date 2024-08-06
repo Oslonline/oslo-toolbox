@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { FaCheck, FaCopy } from "react-icons/fa";
+import { Helmet } from "react-helmet";
 
 const loremText = [
   "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed quis egestas libero, vitae pretium nisi. Curabitur quis posuere est. Phasellus porttitor, leo non lacinia posuere, magna urna commodo mi, venenatis gravida nunc ligula eu mauris. Aenean imperdiet lorem quam, et vestibulum diam consequat non. Donec lobortis ex sapien, id fermentum neque egestas at. Pellentesque at cursus turpis. Praesent et nisi auctor ante congue ultricies vitae commodo arcu. Vestibulum lacus nisl, viverra eget metus sit amet, tincidunt scelerisque mauris. Aenean vel orci id purus tempor aliquam. Duis ac dignissim nulla. Phasellus vel diam ante. Nullam nunc arcu, pulvinar sit amet molestie vitae, porttitor id justo. Sed aliquam odio a augue hendrerit pharetra. Donec dignissim purus non aliquet euismod.",
@@ -15,11 +16,24 @@ const loremText = [
   "Nullam ut fermentum nisi. Proin convallis neque arcu, sed pharetra nisi interdum ut. Quisque eu eleifend urna, id gravida purus. Vestibulum eu lacus in eros imperdiet fringilla eu in lectus. Aenean eu eleifend nisl. Donec placerat rhoncus nisl, et dapibus metus dapibus a. Nam ac arcu id quam vulputate aliquet ac eget mi. Donec aliquet libero et imperdiet varius. Suspendisse eu mollis tellus. Nam posuere leo lacus, sit amet dignissim nunc sagittis et.",
   "Aliquam facilisis convallis lobortis. Maecenas nibh arcu, scelerisque ut est ac, feugiat laoreet odio. Integer pellentesque, est ac scelerisque fringilla, sem tortor mollis metus, sed egestas nisl purus a arcu. Donec hendrerit, quam in sollicitudin tempus, nisi dolor mollis ante, sed pretium justo dui ut lacus. Morbi finibus neque vel nibh cursus tincidunt. Curabitur quis sapien ut libero rutrum gravida et in nisl. Suspendisse leo mauris, tempus sed orci eu, viverra finibus risus. Pellentesque at varius augue. In luctus ligula a neque gravida tempus. Integer sagittis scelerisque aliquet. In vestibulum lectus ac iaculis molestie. Curabitur porta justo ac magna sodales, a tincidunt purus pellentesque. Donec tempus dignissim augue a ornare.",
   "Curabitur feugiat velit augue, non dictum metus vestibulum ut. Praesent accumsan lorem id quam sollicitudin, nec tincidunt nulla sodales. Quisque quis neque eros. Praesent in pellentesque mauris. Fusce eros lorem, aliquam a consequat et, ultrices et metus. Donec lobortis erat nec mauris tempor congue. Morbi sit amet nibh tempor, condimentum metus eu, bibendum arcu. Aliquam et orci rutrum, euismod velit sed, faucibus nisi. Etiam at pharetra mi.",
-  "Mauris eu lobortis justo. Proin ipsum eros, aliquam et condimentum eget, eleifend non felis. Vivamus venenatis elit non magna posuere consequat. Pellentesque molestie diam quis rutrum iaculis. Cras mollis pellentesque leo nec rhoncus. Nulla varius faucibus magna. Phasellus rutrum sem in pharetra scelerisque. Curabitur fringilla feugiat turpis. Integer tempor ipsum vel nisi sodales aliquam. Nulla volutpat eget felis et posuere. Nullam eget accumsan nunc. Nam sodales, nunc sit amet vehicula volutpat, lectus augue vestibulum ante, sit amet luctus nisi enim at sapien.",
-  "Vestibulum scelerisque sem in mi tincidunt, id posuere odio laoreet. Phasellus suscipit sem ut nisi ullamcorper dignissim. Donec bibendum ultricies odio vel gravida. Aliquam iaculis nisl nec sapien egestas, non ultrices libero tincidunt. Quisque nec nisi elit. Etiam viverra mi vel consectetur euismod. Duis ac lacus nisi. Quisque sed quam in ante pharetra dapibus id ac mi. Aliquam maximus ipsum eros, nec auctor felis fringilla at. Mauris ac dictum ante.",
-  "Nullam posuere diam vitae risus posuere, in lacinia est ultricies. Vivamus a ex metus. Vestibulum non ante tortor. In sed elit vitae eros gravida vehicula. Sed id purus felis. Pellentesque ut nunc a turpis laoreet scelerisque. Donec sed nulla at lorem hendrerit convallis. Cras dignissim congue nisi, sit amet volutpat ex dapibus a. Sed interdum egestas erat, ac posuere odio convallis ac.",
-  "Pellentesque in dolor ut eros fringilla tempus. Duis et eros vitae ante ullamcorper malesuada. Sed sed fringilla est, id suscipit quam. Nunc scelerisque erat vel nisi tempor, a vestibulum velit ullamcorper. Nullam sit amet feugiat ex. Donec vel rutrum arcu. Ut sit amet nibh tellus. Quisque sit amet posuere neque, vitae viverra lacus.",
-  "Suspendisse ultricies, ligula non tristique scelerisque, tortor ligula tincidunt arcu, vel vestibulum tortor enim eget risus. Quisque nec felis non tortor consectetur tincidunt. Phasellus gravida nec metus non elementum. Pellentesque vel metus lacus. Aenean dignissim vel libero ut dignissim. Aliquam porttitor dolor risus, in interdum ante finibus non. Sed vel varius ligula. Nullam laoreet ornare suscipit. Donec viverra felis arcu, sit amet porttitor mi tincidunt a.",
+  "Mauris eu lobortis justo. Proin ipsum eros, aliquam et condimentum eget, eleifend non felis. Vivamus venenatis elit non magna posuere consequat. Pellentesque molestie diam quis rutrum iaculis. Cras mollis pellentesque leo nec rhoncus. Nulla varius quam quis auctor ullamcorper. In vel lacus id nisi ullamcorper pretium sit amet ac orci. Pellentesque at ultricies ligula, ac dictum sapien. Donec viverra, ligula nec tincidunt condimentum, felis elit congue quam, id cursus urna libero id nulla. Cras id congue magna.",
+  "Integer non lacus ex. Nulla consectetur odio ut malesuada cursus. Proin venenatis orci vitae velit faucibus scelerisque. Nam at lectus ante. Nullam aliquam lacinia magna sed viverra. Morbi vel interdum ligula, id fringilla mauris. Proin et congue lacus. Duis ut felis magna. Sed euismod dolor sed sapien aliquam, nec dapibus ante gravida. Nam pretium, augue ut commodo laoreet, nulla ligula dictum ante, ut sollicitudin mi dui eget mi. Morbi non feugiat felis, in pharetra felis.",
+  "Aliquam gravida lorem purus, eu tincidunt nunc pellentesque non. Phasellus nec bibendum urna. Sed tincidunt erat at est tristique, in consectetur elit tincidunt. Aliquam fringilla lacinia ante, ac dictum mauris posuere sed. Suspendisse sit amet magna a eros fermentum feugiat. Curabitur feugiat ac dolor et consectetur. Integer a sem ut tortor varius efficitur. Aenean vel bibendum dolor. Fusce aliquam malesuada lectus et lacinia. Etiam varius odio ac orci consectetur, ut aliquam tortor ultrices.",
+  "Ut ut lectus eget nulla bibendum facilisis sit amet sit amet turpis. Nulla facilisi. Duis at orci vitae est eleifend venenatis vel at turpis. Nam sed neque lacinia, faucibus quam et, euismod libero. Nullam quis velit varius, vehicula sapien at, viverra felis. Phasellus sed magna lacinia, congue purus ac, ullamcorper lectus. Nulla facilisi. Curabitur sit amet eros in est aliquam vehicula. Curabitur fringilla ante ut mauris consectetur, in scelerisque ligula gravida. Aenean ornare eros orci, ut dictum justo condimentum vel. Cras mollis orci non ex lacinia, sed facilisis est sagittis. Integer ac vestibulum ipsum, et fermentum lectus.",
+  "Aliquam lacinia lorem nec nisl luctus, in pretium quam interdum. Nulla facilisi. Mauris scelerisque neque a erat sodales cursus. Sed fermentum, ante eget malesuada iaculis, ex dui sollicitudin erat, in interdum ipsum lorem sit amet mauris. Ut fringilla ultricies ex, et tempor sapien auctor id. Pellentesque feugiat varius risus, id condimentum ex ultrices sed. Proin tempor justo eu velit euismod, a tempus nisi scelerisque. Phasellus imperdiet nisi in augue dapibus, a ullamcorper magna euismod. Sed bibendum magna vel mi ullamcorper, ac cursus erat pretium. Duis ut mi mollis, suscipit ligula sed, venenatis orci. Donec non fermentum felis.",
+  "Quisque euismod nisi ac purus euismod varius. Duis condimentum ante nisl, et tristique nulla tempor sit amet. Nam id orci eget sapien egestas egestas vel sit amet velit. Nam at neque vel erat consectetur tincidunt nec nec justo. Vestibulum dapibus est in fermentum egestas. Proin tempus purus nec eros pharetra mollis. Duis ultricies diam sit amet nisi faucibus pharetra. Nulla eget turpis augue. Nullam accumsan congue nibh, ut tincidunt ipsum eleifend a. Suspendisse ut est purus. Vivamus aliquet eu lorem nec pretium. Donec auctor lorem eu est vehicula, at facilisis lacus venenatis.",
+  "Phasellus convallis auctor nisi sed sollicitudin. Nulla facilisi. Nunc sit amet nunc ac risus interdum ullamcorper. Donec et nisi id velit cursus iaculis. In auctor ante id ipsum feugiat blandit. Morbi molestie, ex ac hendrerit tincidunt, ex urna dignissim nisi, non tincidunt odio mi eget est. In euismod nisi vel est hendrerit, vel consequat mi vulputate. Duis venenatis lorem turpis, at fermentum dui laoreet et. Fusce fringilla euismod libero, id aliquet libero condimentum vel. Mauris bibendum lectus at feugiat sollicitudin.",
+  "Nam vitae ante viverra, venenatis elit ac, interdum justo. Donec volutpat sem a ex euismod, vel ornare purus posuere. Aliquam non lectus est. Aenean bibendum augue nec mi aliquet consectetur. Nulla facilisi. Integer nec tristique lectus. Morbi accumsan, urna in interdum ultrices, eros mi volutpat eros, in lacinia sem eros vel ligula. Fusce ac ultricies ante. Donec non dolor orci. In fermentum risus felis, non cursus justo malesuada et.",
+  "Curabitur efficitur risus ut dolor posuere, eu sollicitudin urna dignissim. Phasellus sit amet lectus ut arcu pellentesque varius. Donec sed metus id orci posuere dictum non in erat. Cras bibendum lacus id dui tristique, sed pellentesque urna aliquam. Ut dapibus sapien non bibendum suscipit. Nam tincidunt purus ut nibh accumsan, vel fringilla purus bibendum. Suspendisse potenti. Vestibulum pretium bibendum turpis a feugiat. Fusce vel nisi convallis, pellentesque orci id, eleifend nisi. Nunc auctor nunc ut orci tincidunt, eget vestibulum eros ullamcorper. Aliquam erat volutpat.",
+  "Duis viverra arcu ut tortor auctor, et convallis nunc dictum. Morbi ultricies elit et felis dictum, non elementum quam rhoncus. In nec vestibulum lorem. Ut ornare eros vel pharetra pretium. Nulla dapibus lorem turpis, at rutrum turpis tincidunt ut. Sed et purus ac libero rhoncus ullamcorper. Nullam vel augue augue. Integer sit amet sapien nec metus condimentum blandit id et ligula. Donec auctor erat vel orci consectetur, ac gravida lacus congue. Etiam sit amet ipsum sit amet mauris tincidunt egestas.",
+  "Vestibulum convallis, lorem sed laoreet egestas, felis libero venenatis elit, eget volutpat erat magna et turpis. Nam vitae scelerisque ipsum. Donec sit amet nisi et libero sagittis iaculis. Aliquam ut ante a nisl fringilla ullamcorper ut sit amet elit. Nulla sit amet gravida metus, at facilisis erat. Donec ultricies nibh non enim maximus dapibus. Aenean fringilla risus id velit convallis, a tincidunt sem gravida. Ut vulputate ex felis, eget vulputate tortor vehicula nec. Nullam sollicitudin arcu vitae sagittis vulputate.",
+  "Nam in egestas lorem. Quisque venenatis libero sit amet odio maximus, ac feugiat risus rutrum. Ut non lorem ac magna rutrum varius in a orci. Proin et augue ut risus maximus consequat non a ipsum. Aenean suscipit, libero ut ullamcorper pharetra, risus ante sollicitudin nisl, id sodales tortor orci a magna. Sed vel sapien in metus venenatis venenatis ut a felis. Donec in justo nec urna fermentum tincidunt. Nullam faucibus tellus sapien, in viverra ipsum tempus ac. Vestibulum eget lorem et magna maximus scelerisque. Pellentesque sit amet lorem ut sem consectetur varius. Ut sed purus et lacus iaculis iaculis.",
+  "Sed mollis fermentum metus, at ultricies ex ullamcorper nec. Aenean nec tincidunt lorem. Curabitur id urna ut arcu aliquam malesuada. Phasellus eget arcu a ante gravida suscipit. Vivamus nec vehicula mauris. Suspendisse ac ligula vel augue maximus rhoncus. Aliquam sit amet leo eu orci tristique varius. Donec facilisis efficitur lacus, vel fringilla nunc feugiat eget. In gravida erat sed nibh suscipit, ac interdum nulla dapibus. Integer malesuada sem et libero convallis, eu blandit nisl pharetra. Morbi a libero vel ante sollicitudin feugiat non ut urna.",
+  "Nullam lobortis justo non lectus tempor, at fermentum eros vehicula. Etiam vel diam est. Aliquam sollicitudin orci ut eros tincidunt, id tempus metus maximus. Duis feugiat purus ac ante accumsan, id auctor sapien eleifend. Cras nec nibh gravida, sollicitudin velit nec, vehicula nisi. Sed eget elit sit amet mauris lacinia bibendum. Aenean lacinia quam sit amet enim consectetur, at convallis odio dictum. Vivamus eget urna a lectus luctus ultrices ut nec justo. Praesent mollis et libero ut viverra. Donec ac feugiat mauris, ut bibendum lorem. Fusce interdum felis sit amet varius vulputate.",
+  "Maecenas malesuada velit nec volutpat vulputate. Phasellus ut magna a felis lacinia dictum sit amet et ligula. Sed scelerisque nisl eget tellus laoreet, et tempor purus vestibulum. Aenean convallis orci velit, vitae hendrerit risus accumsan sit amet. Ut id lectus in magna fermentum faucibus sit amet ac magna. Proin at vehicula lorem. Donec non dictum velit, nec ultricies nisl. Sed aliquet, lorem ac vehicula commodo, nunc metus vestibulum dolor, non suscipit odio ligula eu velit. Aliquam erat volutpat. Vivamus id nunc efficitur, efficitur magna ac, tristique erat.",
+  "Pellentesque eget nisi felis. Suspendisse potenti. Vivamus laoreet sagittis arcu, non suscipit ex ullamcorper vel. Donec dapibus erat eget nibh dictum vestibulum. Cras posuere eros at sapien dignissim, in consequat metus facilisis. Donec et consequat lectus. Vestibulum sollicitudin est est, a pretium risus rutrum ut. Curabitur imperdiet ligula et turpis rhoncus, in aliquet mauris facilisis. Ut bibendum facilisis orci sit amet tristique. Proin eleifend consectetur felis, nec ultrices dolor convallis eget.",
+  "Ut suscipit erat id augue auctor, sit amet dignissim nunc feugiat. Fusce euismod nisi eros, sit amet auctor libero efficitur in. Nulla facilisi. Duis ac arcu eu arcu venenatis suscipit. Nam scelerisque mi eget tincidunt sagittis. In interdum, mauris id ultricies consectetur, elit purus suscipit libero, sed cursus libero dolor et quam. Proin ornare magna ut mi cursus, et dictum mi rhoncus. Sed convallis, nunc non ultrices scelerisque, mauris dolor sodales est, eget auctor libero tortor vel purus. Pellentesque eget laoreet velit. Curabitur a sapien feugiat, pellentesque nunc id, malesuada risus.",
+  "Praesent euismod lorem non justo scelerisque, nec ullamcorper sapien suscipit. Nam sit amet neque ut nunc volutpat fermentum. Pellentesque varius ultricies urna, et fermentum urna. Nullam condimentum risus vel metus blandit, non cursus ipsum sodales. Ut ut odio ac ex dapibus dapibus in sit amet risus. Mauris a posuere sapien. Vivamus vestibulum tristique erat vel rutrum. Aliquam non sapien ligula. Duis vestibulum dictum felis, vel cursus nunc iaculis id. Curabitur vulputate lorem in nunc vulputate, sit amet luctus metus facilisis. Fusce a odio sit amet metus gravida elementum nec non ipsum.",
 ];
 
 export default function Lorem() {
@@ -38,35 +52,55 @@ export default function Lorem() {
   const handleCopy = () => {
     navigator.clipboard.writeText(generatedText);
     setCopied(true);
-    setTimeout(() => setCopied(false), 1000); // Revenir à l'icône de copie après 2 secondes
+    setTimeout(() => setCopied(false), 1500);
   };
 
   return (
-    <div className="flex flex-col gap-4 p-6">
-      <div>
+    <>
+      <Helmet>
+        <title>Lorem Ipsum Generator</title>
+        <meta name="description" content="Generate Lorem Ipsum text for free. Choose how many paragraphs you want, click generate and it's done!" />
+        <meta name="keywords" content="Lorem Ipsum, text generator, placeholder text" />
+      </Helmet>
+      <div className="flex flex-col gap-4 p-6">
         <p className="text-gray-500">Generate Lorem Ipsum text for free. Choose how many paragraphs you want, click generate and it's done!</p>
-      </div>
-      <div className="flex items-center justify-between rounded-md border-2 border-gray-200 p-4">
-        <div className="flex w-full justify-between">
+        <div className="flex items-center justify-between rounded-md border-2 border-gray-200 p-4">
           <div className="flex items-center gap-2">
-            <p className="text-lg">Number of paragraphs :</p>
-            <input type="number" min={1} max={100} value={paragraphs} onChange={(e) => setParagraphs(Number(e.target.value))} className="rounded-md border-2 border-gray-200 bg-white p-2 caret-orange-400 outline-none focus:border-orange-400 focus:outline-offset-0" />
+            <p className="text-lg">Number of paragraphs:</p>
+            <input type="number" min={1} max={100} value={paragraphs} onChange={(e) => setParagraphs(Number(e.target.value))} className="rounded-md border-2 border-gray-200 bg-white p-2 caret-orange-400 outline-none focus:border-orange-400" />
           </div>
           <div className="flex items-center gap-4">
-            <button onClick={handleCopy}>{copied ? <FaCheck fontSize={24} color="green" /> : <FaCopy fontSize={24} />}</button>
-            <button onClick={generateLorem} className="rounded-md bg-orange-400 px-3 py-2 text-gray-50 duration-200 hover:bg-orange-600">
+            <button onClick={handleCopy} aria-label={copied ? "Text copied!" : "Copy text"}>
+              {copied ? <FaCheck fontSize={24} color="green" /> : <FaCopy fontSize={24} />}
+            </button>
+            <button onClick={generateLorem} className="rounded-md bg-orange-400 px-3 py-2 text-gray-50 duration-200 hover:bg-orange-600" aria-label="Generate Lorem Ipsum text">
               Generate
             </button>
           </div>
         </div>
+        <div className="rounded-md border-2 border-gray-200 p-4 pb-0">
+          {generatedText.split("\n\n").map((para, index) => (
+            <p key={index} className="mb-4">
+              {para}
+            </p>
+          ))}
+        </div>
+        <div>
+          <h2 className="mb-4 text-2xl font-semibold">Frequently Asked Questions</h2>
+          <div className="mb-4">
+            <h3 className="mb-2 font-semibold">What is Lorem Ipsum?</h3>
+            <p>Lorem Ipsum is a placeholder text commonly used in the graphic design, publishing, and printing industries. It helps to visualize the appearance of the final product without relying on meaningful content.</p>
+          </div>
+          <div className="mb-4">
+            <h3 className="mb-2 font-semibold">Why use Lorem Ipsum?</h3>
+            <p>Using Lorem Ipsum allows designers and developers to focus on the layout and design of a document or website without being distracted by the content. It helps to simulate the appearance of real text.</p>
+          </div>
+          <div>
+            <h3 className="mb-2 font-semibold">Can I use Lorem Ipsum for real content?</h3>
+            <p>While Lorem Ipsum is useful for placeholder text, it should be replaced with actual content before publishing or printing. It’s meant to demonstrate layout and design, not to convey real information.</p>
+          </div>
+        </div>
       </div>
-      <div className="rounded-md border-2 border-gray-200 p-4 pb-0">
-        {generatedText.split("\n\n").map((para, index) => (
-          <p key={index} className="mb-4">
-            {para}
-          </p>
-        ))}
-      </div>
-    </div>
+    </>
   );
 }
