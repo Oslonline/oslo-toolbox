@@ -1,5 +1,6 @@
 import { useLocation } from "react-router-dom";
 import Breadcrumbs from "./Breadcrumbs";
+import { FaCodeFork } from "react-icons/fa6";
 
 function Header() {
   const path = useLocation().pathname;
@@ -22,7 +23,7 @@ function Header() {
     "/Generators/Hash": "Hash generator",
     "/About": "About & Contact",
     "/Security": "Security tools",
-    "/Security/IpLookup": "IP Adress Lookup",
+    "/Security/IpLookup": "IP Address Lookup",
   };
 
   const getTitle = () => {
@@ -30,9 +31,16 @@ function Header() {
   };
 
   return (
-    <header className="sticky top-0 flex w-full justify-between border-b-2 border-gray-200 bg-gray-50 p-4">
+    <header className="sticky top-0 flex w-full items-center justify-between border-b-2 border-gray-200 bg-gray-50 p-4">
       <h1 className="text-3xl font-bold text-gray-800">{getTitle()}</h1>
-      <Breadcrumbs />
+      <div className="flex items-center">
+        <Breadcrumbs />
+        {path === "/" && (
+          <a href="https://github.com/Oslonline/oslo-toolbox" className="flex items-center gap-2 w-fit rounded-lg bg-orange-400 px-3 py-1.5 text-gray-50 duration-200 hover:bg-orange-600 focus:bg-gray-800 focus:text-gray-50">
+            <FaCodeFork /> Contribute
+          </a>
+        )}
+      </div>
     </header>
   );
 }
