@@ -1,6 +1,6 @@
-# Contributing to WebDevTools
+# Contributing to Oslo's Toolbox
 
-Thank you for considering contributing to WebDevTools! We welcome contributions from everyone. Here’s a guide to help you get started.
+Thank you for considering contributing to Oslo's Toolbox! We welcome contributions from everyone. Here’s a guide to help you get started.
 
 ## Table of Contents
 
