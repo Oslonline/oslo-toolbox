@@ -47,7 +47,7 @@ For code contributions:
 3. Make your changes.
 4. Test thoroughly.
 5. Make sure the overall styling of your component (if it's frontend) it's correct.
-6. Commit and push (`git commit -m 'Add new feature'` and `git push origin feature/your-feature-name`).
+6. Commit and push (`git commit -m 'feat: add .....'` and `git push origin feature/your-feature-name`).
 7. Open a pull request.
 
 ## Development Workflow
