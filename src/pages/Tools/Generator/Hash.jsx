@@ -76,7 +76,7 @@ export default function Hash() {
         )}
       </div>
 
-      <div>
+      <div className="text-gray-900">
         <h2 className="text-3xl font-semibold">Understanding Hashing</h2>
         <p className="mt-2 text-gray-600">
           Hashing is a process that converts your input text into a fixed-size string of characters, which is typically a hexadecimal number. It's commonly used in various security applications, such as password storage, data integrity verification, and digital signatures.

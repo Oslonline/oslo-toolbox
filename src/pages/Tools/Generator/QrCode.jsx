@@ -73,9 +73,9 @@ export default function QrCode() {
       </div>
 
       <div>
-        <h2 className="text-2xl font-semibold text-gray-900">Why Use a QR Code Generator?</h2>
+        <h2 className="text-3xl font-semibold text-gray-900">Why Use a QR Code Generator?</h2>
         <p className="mt-2 text-gray-600">QR codes are a quick and efficient way to share information. Whether you’re a business promoting a product, hosting an event, or just sharing your contact details, a QR code can make it easier for your audience to connect with you.</p>
-        <h3 className="my-4 text-2xl font-semibold text-gray-900">Frequently Asked Questions</h3>
+        <h3 className="my-4 text-3xl font-semibold text-gray-900">Frequently Asked Questions</h3>
         <div className="mt-2">
           <h4 className="font-bold text-gray-900">What is a QR Code?</h4>
           <p className="text-gray-600">A QR Code (Quick Response Code) is a type of barcode that contains information, such as a link or text, which can be easily scanned using a smartphone camera.</p>
