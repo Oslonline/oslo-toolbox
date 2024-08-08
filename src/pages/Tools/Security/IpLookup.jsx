@@ -84,15 +84,15 @@ export default function IpLookup() {
         <h2 className="text-2xl font-bold text-gray-900">Frequently Asked Questions</h2>
         <div className="mt-4">
           <h3 className="font-semibold text-gray-900">What is IP Lookup?</h3>
-          <p className="text-gray-700">IP Lookup is a tool that allows you to find information about an IP address. This includes details like the geographical location, ISP, and other relevant data associated with the IP address.</p>
+          <p className="text-gray-600">IP Lookup is a tool that allows you to find information about an IP address. This includes details like the geographical location, ISP, and other relevant data associated with the IP address.</p>
           <h3 className="mt-4 font-semibold text-gray-900">How do I use this tool?</h3>
-          <p className="text-gray-700">Simply enter the IP address you want to look up in the input field and click "Lookup". The tool will fetch and display information about the IP address.</p>
+          <p className="text-gray-600">Simply enter the IP address you want to look up in the input field and click "Lookup". The tool will fetch and display information about the IP address.</p>
           <h3 className="mt-4 font-semibold text-gray-900">What kind of information can I get from an IP lookup?</h3>
-          <p className="text-gray-700">The IP Lookup tool provides details such as the IP address, city, region, country, ISP, latitude, longitude, and ASN (Autonomous System Number).</p>
+          <p className="text-gray-600">The IP Lookup tool provides details such as the IP address, city, region, country, ISP, latitude, longitude, and ASN (Autonomous System Number).</p>
           <h3 className="mt-4 font-semibold text-gray-900">Can I use this tool for IPv6 addresses?</h3>
-          <p className="text-gray-700">Currently, this tool supports IPv4 addresses. IPv6 support may be added in future updates.</p>
+          <p className="text-gray-600">Currently, this tool supports IPv4 addresses. IPv6 support may be added in future updates.</p>
           <h3 className="mt-4 font-semibold text-gray-900">What should I do if I receive an error?</h3>
-          <p className="text-gray-700">If you encounter an error, please make sure the IP address is correctly formatted. If the problem persists, try again later or contact support for assistance.</p>
+          <p className="text-gray-600">If you encounter an error, please make sure the IP address is correctly formatted. If the problem persists, try again later or contact support for assistance.</p>
         </div>
       </div>
     </div>

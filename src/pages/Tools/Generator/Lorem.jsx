@@ -86,18 +86,18 @@ export default function Lorem() {
           ))}
         </div>
         <div>
-          <h2 className="mb-4 text-2xl font-semibold">Frequently Asked Questions</h2>
+          <h2 className="mb-4 text-2xl font-semibold text-gray-900">Frequently Asked Questions</h2>
           <div className="mb-4">
-            <h3 className="mb-2 font-semibold">What is Lorem Ipsum?</h3>
-            <p>Lorem Ipsum is a placeholder text commonly used in the graphic design, publishing, and printing industries. It helps to visualize the appearance of the final product without relying on meaningful content.</p>
+            <h3 className="mb-2 font-semibold text-gray-900">What is Lorem Ipsum?</h3>
+            <p className="text-gray-600">Lorem Ipsum is a placeholder text commonly used in the graphic design, publishing, and printing industries. It helps to visualize the appearance of the final product without relying on meaningful content.</p>
           </div>
           <div className="mb-4">
-            <h3 className="mb-2 font-semibold">Why use Lorem Ipsum?</h3>
-            <p>Using Lorem Ipsum allows designers and developers to focus on the layout and design of a document or website without being distracted by the content. It helps to simulate the appearance of real text.</p>
+            <h3 className="mb-2 font-semibold text-gray-900">Why use Lorem Ipsum?</h3>
+            <p className="text-gray-600">Using Lorem Ipsum allows designers and developers to focus on the layout and design of a document or website without being distracted by the content. It helps to simulate the appearance of real text.</p>
           </div>
           <div>
-            <h3 className="mb-2 font-semibold">Can I use Lorem Ipsum for real content?</h3>
-            <p>While Lorem Ipsum is useful for placeholder text, it should be replaced with actual content before publishing or printing. It’s meant to demonstrate layout and design, not to convey real information.</p>
+            <h3 className="mb-2 font-semibold text-gray-900">Can I use Lorem Ipsum for real content?</h3>
+            <p className="text-gray-600">While Lorem Ipsum is useful for placeholder text, it should be replaced with actual content before publishing or printing. It’s meant to demonstrate layout and design, not to convey real information.</p>
           </div>
         </div>
       </div>

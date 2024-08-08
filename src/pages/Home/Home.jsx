@@ -62,15 +62,15 @@ function Home() {
         </div>
         <div>
           <h2 className="text-3xl font-bold text-gray-900">Frequently Asked Questions</h2>
-          <div className="mt-4 text-gray-900">
+          <div className="mt-4 text-gray-800">
             <h3 className="font-semibold">What tools can I find on Oslo's Toolbox?</h3>
-            <p>Oslo's Toolbox offers a variety of free online tools including CSS generators for gradients and shadows, unit converters, password generators, QR code generators, and security tools like IP lookup.</p>
+            <p className="text-gray-600">Oslo's Toolbox offers a variety of free online tools including CSS generators for gradients and shadows, unit converters, password generators, QR code generators, and security tools like IP lookup.</p>
 
             <h4 className="mt-4 font-semibold">Are these tools free to use?</h4>
-            <p>Yes, all the tools available on Oslo's Toolbox are completely free to use with no hidden costs.</p>
+            <p className="text-gray-600">Yes, all the tools available on Oslo's Toolbox are completely free to use with no hidden costs.</p>
 
             <h5 className="mt-4 font-semibold">Do I need to sign up to use the tools?</h5>
-            <p>No, you can use all the tools on Oslo's Toolbox without any need to sign up or provide personal information.</p>
+            <p className="text-gray-600">No, you can use all the tools on Oslo's Toolbox without any need to sign up or provide personal information.</p>
           </div>
         </div>
       </div>

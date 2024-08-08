@@ -74,25 +74,25 @@ export default function Hash() {
 
       <div>
         <h2 className="text-2xl font-semibold">Understanding Hashing</h2>
-        <p className="mt-2 text-gray-500">
+        <p className="mt-2 text-gray-600">
           Hashing is a process that converts your input text into a fixed-size string of characters, which is typically a hexadecimal number. It's commonly used in various security applications, such as password storage, data integrity verification, and digital signatures.
         </p>
         <h3 className="my-4 text-2xl font-semibold">Frequently Asked Questions</h3>
         <div className="mt-2">
           <h4 className="font-bold">What is the purpose of hashing?</h4>
-          <p className="text-gray-500">Hashing is used to ensure data integrity and secure storage of sensitive information like passwords. It converts your input into a fixed-size string that cannot be easily reversed.</p>
+          <p className="text-gray-600">Hashing is used to ensure data integrity and secure storage of sensitive information like passwords. It converts your input into a fixed-size string that cannot be easily reversed.</p>
         </div>
         <div className="mt-2">
           <h4 className="font-bold">What's the difference between MD5 and SHA algorithms?</h4>
-          <p className="text-gray-500">MD5 is faster but less secure than SHA-256 and SHA-512, which offer higher security but require more processing power. SHA-1 is an older algorithm that is less commonly used due to vulnerabilities.</p>
+          <p className="text-gray-600">MD5 is faster but less secure than SHA-256 and SHA-512, which offer higher security but require more processing power. SHA-1 is an older algorithm that is less commonly used due to vulnerabilities.</p>
         </div>
         <div className="mt-2">
           <h4 className="font-bold">Can I reverse a hash to get the original text?</h4>
-          <p className="text-gray-500">No, hashing is a one-way process, meaning you cannot reverse the hash to retrieve the original text. This makes it ideal for storing passwords securely.</p>
+          <p className="text-gray-600">No, hashing is a one-way process, meaning you cannot reverse the hash to retrieve the original text. This makes it ideal for storing passwords securely.</p>
         </div>
         <div className="mt-2">
           <h4 className="font-bold">Is it safe to use the same hash function for all my data?</h4>
-          <p className="text-gray-500">While you can use the same hash function, it's crucial to use a salt (a random value added to the input) to enhance security, especially when hashing passwords.</p>
+          <p className="text-gray-600">While you can use the same hash function, it's crucial to use a salt (a random value added to the input) to enhance security, especially when hashing passwords.</p>
         </div>
       </div>
     </div>

@@ -138,11 +138,11 @@ function BoxShadow() {
         <h2 className="text-3xl font-bold text-gray-900">Frequently Asked Questions</h2>
         <div className="mt-4">
           <h3 className="font-semibold text-gray-900">What is a box-shadow in CSS?</h3>
-          <p className="text-gray-700">A box-shadow in CSS is a shadow effect applied to an element’s box, allowing you to create depth and visual interest by adding an offset shadow.</p>
+          <p className="text-gray-600">A box-shadow in CSS is a shadow effect applied to an element’s box, allowing you to create depth and visual interest by adding an offset shadow.</p>
           <h3 className="mt-4 font-semibold text-gray-900">How do I use this tool?</h3>
-          <p className="text-gray-700">Adjust the sliders and inputs to customize your shadow. The CSS code will be generated automatically, which you can copy and use in your stylesheets.</p>
+          <p className="text-gray-600">Adjust the sliders and inputs to customize your shadow. The CSS code will be generated automatically, which you can copy and use in your stylesheets.</p>
           <h3 className="mt-4 font-semibold text-gray-900">Can I control the opacity of the shadow?</h3>
-          <p className="text-gray-700">Yes, you can adjust the opacity of the shadow using the opacity slider. This allows you to create both subtle and bold shadow effects.</p>
+          <p className="text-gray-600">Yes, you can adjust the opacity of the shadow using the opacity slider. This allows you to create both subtle and bold shadow effects.</p>
         </div>
       </div>
     </div>

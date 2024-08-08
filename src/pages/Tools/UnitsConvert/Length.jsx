@@ -72,11 +72,11 @@ function Length() {
           <h2 className="text-2xl font-bold text-gray-900">FAQ</h2>
           <div className="mt-4">
             <h3 className="font-semibold text-gray-900">What if I need to convert a unit not listed here?</h3>
-            <p className="text-gray-700">If you need to convert a unit not listed in this converter, please contact us with the details. We may be able to include additional units based on user demand and availability of accurate conversion factors.</p>
+            <p className="text-gray-600">If you need to convert a unit not listed in this converter, please contact us with the details. We may be able to include additional units based on user demand and availability of accurate conversion factors.</p>
             <h3 className="mt-4 font-semibold text-gray-900">Can I convert between different systems like metric and imperial?</h3>
-            <p className="text-gray-700">Yes, this tool allows you to convert between metric units (such as meters and kilometers) and imperial units (such as feet and miles). Select the appropriate units from the dropdown menus to perform the conversion.</p>
+            <p className="text-gray-600">Yes, this tool allows you to convert between metric units (such as meters and kilometers) and imperial units (such as feet and miles). Select the appropriate units from the dropdown menus to perform the conversion.</p>
             <h3 className="mt-4 font-semibold text-gray-900">How accurate are the conversion factors?</h3>
-            <p className="text-gray-700">Our conversion factors are based on widely accepted standards. We strive to ensure that all factors are accurate, but for critical applications, please verify the results with additional sources.</p>
+            <p className="text-gray-600">Our conversion factors are based on widely accepted standards. We strive to ensure that all factors are accurate, but for critical applications, please verify the results with additional sources.</p>
           </div>
         </div>
       </div>

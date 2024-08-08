@@ -84,9 +84,9 @@ function Temperature() {
               </ul>
             </p>
             <h3 className="mt-4 font-semibold text-gray-900">Why is Kelvin used in scientific contexts?</h3>
-            <p className="text-gray-700">Kelvin is used in scientific contexts because it starts at absolute zero, the point at which there is no thermal energy. This makes it a natural choice for many scientific calculations and measurements.</p>
+            <p className="text-gray-600">Kelvin is used in scientific contexts because it starts at absolute zero, the point at which there is no thermal energy. This makes it a natural choice for many scientific calculations and measurements.</p>
             <h3 className="mt-4 font-semibold text-gray-900">What is the boiling and freezing point of water in these scales?</h3>
-            <p className="text-gray-700">In Celsius, water freezes at 0°C and boils at 100°C. In Fahrenheit, water freezes at 32°F and boils at 212°F. In Kelvin, water freezes at 273.15 K and boils at 373.15 K.</p>
+            <p className="text-gray-600">In Celsius, water freezes at 0°C and boils at 100°C. In Fahrenheit, water freezes at 32°F and boils at 212°F. In Kelvin, water freezes at 273.15 K and boils at 373.15 K.</p>
           </div>
         </div>
       </div>

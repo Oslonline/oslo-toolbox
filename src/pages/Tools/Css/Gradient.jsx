@@ -158,11 +158,11 @@ function Gradient() {
         <h2 className="text-3xl font-bold text-gray-900">Frequently Asked Questions</h2>
         <div className="mt-4">
           <h3 className="font-semibold text-gray-900">What is a CSS gradient?</h3>
-          <p className="text-gray-700">A CSS gradient is a way to display a smooth transition between two or more colors. You can use gradients for backgrounds, buttons, and more to create visually appealing designs.</p>
+          <p className="text-gray-600">A CSS gradient is a way to display a smooth transition between two or more colors. You can use gradients for backgrounds, buttons, and more to create visually appealing designs.</p>
           <h3 className="mt-4 font-semibold text-gray-900">How do I generate a CSS gradient?</h3>
-          <p className="text-gray-700">Simply choose your colors, adjust the angle or type of gradient, and the CSS code will be automatically generated. You can then copy the code and paste it into your stylesheet.</p>
+          <p className="text-gray-600">Simply choose your colors, adjust the angle or type of gradient, and the CSS code will be automatically generated. You can then copy the code and paste it into your stylesheet.</p>
           <h3 className="mt-4 font-semibold text-gray-900">What is the difference between linear and radial gradients?</h3>
-          <p className="text-gray-700">A linear gradient transitions colors along a straight line (horizontal, vertical, or diagonal), while a radial gradient transitions colors outward from a central point in a circular or elliptical shape.</p>
+          <p className="text-gray-600">A linear gradient transitions colors along a straight line (horizontal, vertical, or diagonal), while a radial gradient transitions colors outward from a central point in a circular or elliptical shape.</p>
         </div>
       </div>
     </div>
