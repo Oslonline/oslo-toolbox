@@ -14,6 +14,7 @@ Not fully responsive, mainly intended for computers.
 - Lorem Ipsum generator.
 - QR Code generator from text/links.
 - Hash generator from text.
+- Github README.md generator for Project & Profile.
 - IP Adress lookup.
 
 # Run
