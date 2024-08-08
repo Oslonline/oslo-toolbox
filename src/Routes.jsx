@@ -8,11 +8,13 @@ import { Length, Mass, Area, Volume, Temperature } from "./pages/Tools/UnitsConv
 import { Gradient, BoxShadow } from "./pages/Tools/Css";
 import { Hash, Lorem, Password, QrCode } from "./pages/Tools/Generator";
 import IpLookup from "./pages/Tools/Security/IpLookup";
+import Error404 from "./pages/Error/Error404";
 
 function MainRouter() {
   return (
     <Router>
       <Routes>
+        <Route path="*" element={<Error404 />} />
         <Route path="/" element={<App />}>
           <Route index element={<Home />} />
           <Route path="About" index element={<About />} />
