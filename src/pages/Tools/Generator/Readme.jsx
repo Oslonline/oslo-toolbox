@@ -128,7 +128,7 @@ export default function ReadmeGenerator() {
               </button>
             </div>
           ))}
-          <button onClick={addSection} className="flex items-center gap-2 justify-center rounded-md bg-orange-400 px-3 py-2 text-gray-50 duration-200 hover:bg-orange-600">
+          <button onClick={addSection} className="flex items-center justify-center gap-2 rounded-md bg-orange-400 px-3 py-2 text-gray-50 duration-200 hover:bg-orange-600">
             <MdAddCircleOutline /> Add Custom Section
           </button>
         </div>

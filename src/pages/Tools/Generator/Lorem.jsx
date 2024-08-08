@@ -62,31 +62,37 @@ export default function Lorem() {
         <meta name="description" content="Generate Lorem Ipsum text for free. Choose how many paragraphs you want, click generate and it's done!" />
         <meta name="keywords" content="Lorem Ipsum, text generator, placeholder text" />
       </Helmet>
+
       <div className="flex flex-col gap-4 p-6">
         <p className="text-gray-500">Generate Lorem Ipsum text for free. Choose how many paragraphs you want, click generate and it's done!</p>
-        <div className="flex items-center justify-between rounded-md border-2 border-gray-200 p-4">
-          <div className="flex items-center gap-2">
-            <p className="text-lg">Number of paragraphs:</p>
-            <input type="number" min={1} max={100} value={paragraphs} onChange={(e) => setParagraphs(Number(e.target.value))} className="rounded-md border-2 border-gray-200 bg-white p-2 caret-orange-400 outline-none focus:border-orange-400" />
+        <div className="flex flex-col gap-4 rounded-md border-2 border-gray-200 bg-gray-50 p-6">
+          <div className="flex items-center justify-between rounded-md border-2 border-gray-200 bg-white p-4">
+            <div className="flex items-center gap-2">
+              <p className="text-lg">Number of paragraphs:</p>
+              <input type="number" min={1} max={100} value={paragraphs} onChange={(e) => setParagraphs(Number(e.target.value))} className="rounded-md border-2 border-gray-200 bg-white p-2 py-1 caret-orange-400 outline-none focus:border-orange-400" />
+            </div>
+            <div className="flex items-center gap-4">
+              <button onClick={handleCopy} aria-label={copied ? "Text copied!" : "Copy text"}>
+                {copied ? <FaCheck fontSize={24} color="green" /> : <FaCopy fontSize={24} />}
+              </button>
+              <button onClick={generateLorem} className="rounded-md bg-orange-400 px-3 py-2 text-gray-50 duration-200 hover:bg-orange-600" aria-label="Generate Lorem Ipsum text">
+                Generate
+              </button>
+            </div>
           </div>
-          <div className="flex items-center gap-4">
-            <button onClick={handleCopy} aria-label={copied ? "Text copied!" : "Copy text"}>
-              {copied ? <FaCheck fontSize={24} color="green" /> : <FaCopy fontSize={24} />}
-            </button>
-            <button onClick={generateLorem} className="rounded-md bg-orange-400 px-3 py-2 text-gray-50 duration-200 hover:bg-orange-600" aria-label="Generate Lorem Ipsum text">
-              Generate
-            </button>
+          <div>
+            <p className="text-lg">Result :</p>
+            <div className="rounded-md border-2 border-gray-200 bg-white p-4 pb-0">
+              {generatedText.split("\n\n").map((para, index) => (
+                <p key={index} className="mb-4">
+                  {para}
+                </p>
+              ))}
+            </div>
           </div>
-        </div>
-        <div className="rounded-md border-2 border-gray-200 p-4 pb-0">
-          {generatedText.split("\n\n").map((para, index) => (
-            <p key={index} className="mb-4">
-              {para}
-            </p>
-          ))}
         </div>
         <div>
-          <h2 className="mb-4 text-2xl font-semibold text-gray-900">Frequently Asked Questions</h2>
+          <h2 className="mb-4 text-3xl font-semibold text-gray-900">Frequently Asked Questions</h2>
           <div className="mb-4">
             <h3 className="mb-2 font-semibold text-gray-900">What is Lorem Ipsum?</h3>
             <p className="text-gray-600">Lorem Ipsum is a placeholder text commonly used in the graphic design, publishing, and printing industries. It helps to visualize the appearance of the final product without relying on meaningful content.</p>

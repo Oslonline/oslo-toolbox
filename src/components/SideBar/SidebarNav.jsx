@@ -73,7 +73,7 @@ function SidebarNav() {
           <SidebarLinks link={"/Generators/Lorem"} icon={<TbCircleLetterL />} linkname={"Lorem Ipsum"} />
           <SidebarLinks link={"/Generators/QrCode"} icon={<FaQrcode />} linkname={"QR Code"} />
           <SidebarLinks link={"/Generators/Hash"} icon={<FaHashtag />} linkname={"Hash"} />
-          <SidebarLinks link={"/Generators/Hash"} icon={<CgReadme />} linkname={"Readme"} />
+          <SidebarLinks link={"/Generators/Readme"} icon={<CgReadme />} linkname={"Readme"} />
         </SidebarDropdown>
         <hr />
         <SidebarDropdown label="Security" icon={<MdSecurity />} isOpen={mainDropdowns.sec} onClick={() => toggleMainDropdown("sec")}>

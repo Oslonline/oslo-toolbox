@@ -106,7 +106,7 @@ function Area() {
 
       <div className="p-6 pt-0">
         <div>
-          <h2 className="text-2xl font-bold text-gray-900">How It Works</h2>
+          <h2 className="text-3xl font-bold text-gray-900">How It Works</h2>
           <p className="text-gray-700">
             To use the area converter, select the units you want to convert from and to, and input the value you wish to convert. The tool will instantly display the converted value in the selected units. Our converter supports a wide range of units including metric units like square meters and
             imperial units like acres. For detailed conversions, you can also check the specific values used in the tool by scrolling down.
@@ -146,7 +146,7 @@ function Area() {
         </div>
 
         <div className="mt-5">
-          <h2 className="text-2xl font-bold text-gray-900">FAQ</h2>
+          <h2 className="text-3xl font-bold text-gray-900">FAQ</h2>
           <div className="mt-4">
             <h3 className="font-semibold text-gray-900">What if I need to convert a unit not listed here?</h3>
             <p className="text-gray-600">If you need to convert a unit not listed in this converter, please contact us with the details. We may be able to add more units based on user requests and the availability of accurate conversion factors.</p>

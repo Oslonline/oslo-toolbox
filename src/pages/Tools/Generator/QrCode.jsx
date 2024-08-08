@@ -45,27 +45,32 @@ export default function QrCode() {
         <meta name="description" content="Easily generate QR codes for your links or text. Customize the color and download your QR code in PNG format. Perfect for businesses, events, and personal use." />
         <meta name="robots" content="index, follow" />
       </Helmet>
+
       <div>
         <p className="text-gray-600">Generate QR Codes from links or text for free. Enter your content, choose a color, and click 'Generate'! Download the QR Code as a PNG file to use it wherever you need.</p>
       </div>
-      <div className="flex items-center justify-between gap-4 rounded-md border-2 border-gray-200 p-4">
-        <input type="text" value={link} onChange={handleLinkChange} placeholder="Enter your link or text here" className="w-full rounded-md border-2 border-gray-200 bg-white p-2 caret-orange-400 outline-none focus:border-orange-400" />
-        <input type="color" value={color} onChange={(e) => setColor(e.target.value)} className="h-10 w-10 min-w-10 rounded-md border-2 border-gray-300 hover:cursor-pointer" aria-label="Choose QR Code color" />
-        <button onClick={generateQRCode} className="rounded-md bg-orange-400 px-3 py-2 text-gray-50 duration-200 hover:bg-orange-600">
-          Generate
-        </button>
-      </div>
-
-      {showQRCode && link && (
-        <div className="flex flex-col items-center justify-center rounded-md border-2 border-gray-200 p-4">
-          <div ref={qrRef} className="mb-4">
-            <QRCode value={link} fgColor={color} size={200} bgColor="transparent" />
+      <div className="flex flex-col gap-4 rounded-md border-2 border-gray-200 bg-gray-50 p-6">
+        <div className="flex items-center justify-between gap-4 rounded-md border-2 border-gray-200 bg-white p-4">
+          <input type="text" value={link} onChange={handleLinkChange} placeholder="Enter your link or text here" className="rounded-md border-2 border-gray-200 bg-white p-2 caret-orange-400 outline-none focus:border-orange-400" />
+          <div className="flex items-center gap-4">
+            <input type="color" value={color} onChange={(e) => setColor(e.target.value)} className="h-10 w-10 min-w-10 rounded-md border-2 border-gray-300 hover:cursor-pointer" aria-label="Choose QR Code color" />
+            <button onClick={generateQRCode} className="rounded-md bg-orange-400 px-3 py-2 text-gray-50 duration-200 hover:bg-orange-600">
+              Generate
+            </button>
           </div>
-          <button onClick={handleDownload} className="rounded-md bg-orange-400 px-3 py-2 text-gray-50 duration-200 hover:bg-orange-600">
-            Download PNG
-          </button>
         </div>
-      )}
+
+        {showQRCode && link && (
+          <div className="flex flex-col items-center justify-center rounded-md border-2 border-gray-200 bg-white p-4">
+            <div ref={qrRef} className="mb-4">
+              <QRCode value={link} fgColor={color} size={200} bgColor="transparent" />
+            </div>
+            <button onClick={handleDownload} className="rounded-md bg-orange-400 px-3 py-2 text-gray-50 duration-200 hover:bg-orange-600">
+              Download PNG
+            </button>
+          </div>
+        )}
+      </div>
 
       <div>
         <h2 className="text-2xl font-semibold text-gray-900">Why Use a QR Code Generator?</h2>

@@ -54,53 +54,56 @@ export default function Password() {
         <meta name="description" content="Generate secure passwords up to 128 characters with options to include uppercase letters, lowercase letters, numbers, and special characters. Perfect for safeguarding your online accounts." />
         <meta name="robots" content="index, follow" />
       </Helmet>
+
       <div>
         <p className="text-gray-600">Generate your password for free up to 128 characters with the option to include uppercase letters, lowercase letters, numbers, and special characters.</p>
       </div>
-      <div className="flex items-center justify-between gap-8 rounded-md border-2 border-gray-200 p-4">
-        <p className="font-mono text-xl">{password}</p>
-        <div className="flex gap-4">
-          <button onClick={handleCopy} aria-label={copied ? "Password copied!" : "Copy password"}>
-            {copied ? <FaCheck fontSize={24} color="green" /> : <FaCopy fontSize={24} />}
-          </button>
-          <button onClick={generatePassword} aria-label="Generate a new password">
-            <FaRedo fontSize={24} />
-          </button>
+      <div className="flex flex-col gap-4 rounded-md border-2 border-gray-200 bg-gray-50 p-6">
+        <div className="flex items-center justify-between gap-8 rounded-md border-2 border-gray-200 bg-white p-4">
+          <p className="font-mono text-xl">{password}</p>
+          <div className="flex gap-4">
+            <button onClick={handleCopy} aria-label={copied ? "Password copied!" : "Copy password"}>
+              {copied ? <FaCheck fontSize={24} color="green" /> : <FaCopy fontSize={24} />}
+            </button>
+            <button onClick={generatePassword} aria-label="Generate a new password">
+              <FaRedo fontSize={24} />
+            </button>
+          </div>
         </div>
-      </div>
-      <div className="rounded-md border-2 border-gray-200 p-4">
-        <p className="mb-2 text-lg font-bold">Settings</p>
-        <hr className="mb-4" />
-        <div className="mb-4">
-          <label className="mb-2 block">Length: {length}</label>
-          <input type="range" min="4" max="128" value={length} onChange={(e) => setLength(parseInt(e.target.value))} className="w-full" aria-label="Password length" />
-        </div>
-        <div className="flex flex-col gap-2">
-          <label className="flex items-center">
-            <input type="checkbox" checked={includeUppercase} onChange={() => setIncludeUppercase(!includeUppercase)} className="mr-2" />
-            Include uppercase letters
-          </label>
-          <label className="flex items-center">
-            <input type="checkbox" checked={includeLowercase} onChange={() => setIncludeLowercase(!includeLowercase)} className="mr-2" />
-            Include lowercase letters
-          </label>
-          <label className="flex items-center">
-            <input type="checkbox" checked={includeNumbers} onChange={() => setIncludeNumbers(!includeNumbers)} className="mr-2" />
-            Include numbers
-          </label>
-          <label className="flex items-center">
-            <input type="checkbox" checked={includeSymbols} onChange={() => setIncludeSymbols(!includeSymbols)} className="mr-2" />
-            Include special characters
-          </label>
+        <div className="rounded-md border-2 border-gray-200 bg-white p-4">
+          <p className="mb-2 text-lg font-bold">Settings</p>
+          <hr className="mb-4" />
+          <div className="mb-4">
+            <label className="mb-2 block">Length: {length}</label>
+            <input type="range" min="4" max="128" value={length} onChange={(e) => setLength(parseInt(e.target.value))} className="w-full" aria-label="Password length" />
+          </div>
+          <div className="flex flex-col gap-2">
+            <label className="flex items-center">
+              <input type="checkbox" checked={includeUppercase} onChange={() => setIncludeUppercase(!includeUppercase)} className="mr-2" />
+              Include uppercase letters
+            </label>
+            <label className="flex items-center">
+              <input type="checkbox" checked={includeLowercase} onChange={() => setIncludeLowercase(!includeLowercase)} className="mr-2" />
+              Include lowercase letters
+            </label>
+            <label className="flex items-center">
+              <input type="checkbox" checked={includeNumbers} onChange={() => setIncludeNumbers(!includeNumbers)} className="mr-2" />
+              Include numbers
+            </label>
+            <label className="flex items-center">
+              <input type="checkbox" checked={includeSymbols} onChange={() => setIncludeSymbols(!includeSymbols)} className="mr-2" />
+              Include special characters
+            </label>
+          </div>
         </div>
       </div>
 
       <div>
-        <h2 className="text-2xl font-semibold text-gray-900">Why Use a Secure Password Generator?</h2>
+        <h2 className="text-3xl font-semibold text-gray-900">Why Use a Secure Password Generator?</h2>
         <p className="mt-2 text-gray-500">
           Using a secure password generator ensures that your passwords are strong, unique, and difficult for hackers to guess. Whether you're creating a new account or updating an old password, this tool helps you generate passwords that meet the highest security standards.
         </p>
-        <h3 className="my-4 text-2xl font-semibold text-gray-900">Frequently Asked Questions</h3>
+        <h3 className="my-4 text-3xl font-semibold text-gray-900">Frequently Asked Questions</h3>
         <div className="mt-2">
           <h4 className="font-bold text-gray-900">How long should my password be?</h4>
           <p className="text-gray-600">It's recommended to use a password of at least 12 characters for optimal security. Longer passwords are even more secure.</p>
