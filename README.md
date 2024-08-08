@@ -33,3 +33,7 @@ Not fully responsive, mainly intended for computers.
 
 **Run the optimized application locally:**
 `npm run serve`
+
+# Contribute
+
+If you want to contribute to this project, make sure to read the [Contributing.md](COONTRIBUTING.md) file and the Code of Conduct before opening any issue or pull request.
