@@ -6,7 +6,7 @@ import About from "./pages/About";
 import { Home, HomeCss, HomeConvert, HomeGen, HomeSecurity } from "./pages/Home";
 import { Length, Mass, Area, Volume, Temperature } from "./pages/Tools/UnitsConvert";
 import { Gradient, BoxShadow } from "./pages/Tools/Css";
-import { Hash, Lorem, Password, QrCode } from "./pages/Tools/Generator";
+import { Hash, Lorem, Password, QrCode, ReadmeGenerator } from "./pages/Tools/Generator";
 import IpLookup from "./pages/Tools/Security/IpLookup";
 import Error404 from "./pages/Error/Error404";
 
@@ -38,6 +38,7 @@ function MainRouter() {
             <Route path="Lorem" element={<Lorem />} />
             <Route path="QrCode" element={<QrCode />} />
             <Route path="Hash" element={<Hash />} />
+            <Route path="Readme" element={<ReadmeGenerator />} />
           </Route>
           <Route path="Security">
             <Route index element={<HomeSecurity />} />

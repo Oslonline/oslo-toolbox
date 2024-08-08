@@ -25,6 +25,12 @@ const genTools = [
     text: "",
     icon: "/images/gen-tools/hash.webp",
   },
+  {
+    name: "Github Readme generator",
+    link: "/Generators/Readme",
+    text: "",
+    icon: "/images/gen-tools/readme.webp",
+  },
 ];
 
 function HomeCss() {

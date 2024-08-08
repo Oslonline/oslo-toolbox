@@ -9,6 +9,7 @@ import { MdGradient, MdSecurity } from "react-icons/md";
 import { SiConvertio } from "react-icons/si";
 import { BsShadows } from "react-icons/bs";
 import { FaGear } from "react-icons/fa6";
+import { CgReadme } from "react-icons/cg";
 
 function SidebarNav() {
   const [mainDropdowns, setMainDropdowns] = useState({
@@ -72,6 +73,7 @@ function SidebarNav() {
           <SidebarLinks link={"/Generators/Lorem"} icon={<TbCircleLetterL />} linkname={"Lorem Ipsum"} />
           <SidebarLinks link={"/Generators/QrCode"} icon={<FaQrcode />} linkname={"QR Code"} />
           <SidebarLinks link={"/Generators/Hash"} icon={<FaHashtag />} linkname={"Hash"} />
+          <SidebarLinks link={"/Generators/Hash"} icon={<CgReadme />} linkname={"Readme"} />
         </SidebarDropdown>
         <hr />
         <SidebarDropdown label="Security" icon={<MdSecurity />} isOpen={mainDropdowns.sec} onClick={() => toggleMainDropdown("sec")}>

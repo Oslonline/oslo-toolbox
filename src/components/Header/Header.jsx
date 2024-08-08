@@ -21,6 +21,7 @@ function Header() {
     "/Generators/Lorem": "Lorem Ipsum generator",
     "/Generators/QrCode": "QR Code generator",
     "/Generators/Hash": "Hash generator",
+    "/Generators/Readme": "Github Readme generator",
     "/About": "About & Contact",
     "/Security": "Security tools",
     "/Security/IpLookup": "IP Address Lookup",
@@ -31,7 +32,7 @@ function Header() {
   };
 
   return (
-    <header className="sticky top-0 flex w-full items-center justify-between border-b-2 border-gray-200 bg-gray-50 p-4">
+    <header className="sticky top-0 flex z-50 w-full items-center justify-between border-b-2 border-gray-200 bg-gray-50 p-4">
       <h1 className="text-3xl font-bold text-gray-800">{getTitle()}</h1>
       <div className="flex items-center">
         <Breadcrumbs />
