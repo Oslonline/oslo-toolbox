@@ -36,4 +36,4 @@ Not fully responsive, mainly intended for computers.
 
 # Contribute
 
-If you want to contribute to this project, make sure to read the [Contributing.md](COONTRIBUTING.md) file and the Code of COnduct before opening any issue or pull request.
+If you want to contribute to this project, make sure to read the [Contributing.md](COONTRIBUTING.md) file and the Code of Conduct before opening any issue or pull request.
