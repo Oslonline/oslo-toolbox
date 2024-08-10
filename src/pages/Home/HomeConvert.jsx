@@ -37,6 +37,12 @@ const unitsConvertTools = [
     text: "",
     icon: "/images/units-convert-tools/speed.webp",
   },
+  {
+    name: "Time units converter",
+    link: "/UnitsConvert/Time",
+    text: "",
+    icon: "/images/units-convert-tools/time.webp",
+  },
 ];
 
 function HomeConvert() {
