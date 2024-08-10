@@ -4,7 +4,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Error from "./pages/Error/Error";
 import About from "./pages/About";
 import { Home, HomeCss, HomeConvert, HomeGen, HomeSecurity, HomeFileConvert } from "./pages/Home";
-import { Length, Mass, Area, Volume, Temperature } from "./pages/Tools/UnitsConvert";
+import { Length, Mass, Area, Volume, Temperature, Speed } from "./pages/Tools/UnitsConvert";
 import { Gradient, BoxShadow } from "./pages/Tools/Css";
 import { Hash, Lorem, Password, QrCode, ReadmeGenerator } from "./pages/Tools/Generator";
 import { Images } from "./pages/Tools/FilesConvert";
@@ -40,6 +40,7 @@ function MainRouter() {
             <Route path="Area" element={<Area />} />
             <Route path="Volume" element={<Volume />} />
             <Route path="Temperature" element={<Temperature />} />
+            <Route path="Speed" element={<Speed />} />
           </Route>
           <Route path="Security">
             <Route index element={<HomeSecurity />} />

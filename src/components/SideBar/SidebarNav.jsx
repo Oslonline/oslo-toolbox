@@ -11,6 +11,7 @@ import { BsShadows } from "react-icons/bs";
 import { FaGear } from "react-icons/fa6";
 import { CgReadme } from "react-icons/cg";
 import { LuImage } from "react-icons/lu";
+import { IoMdSpeedometer } from "react-icons/io";
 
 function SidebarNav() {
   const [mainDropdowns, setMainDropdowns] = useState({
@@ -76,6 +77,7 @@ function SidebarNav() {
           <SidebarLinks link={"/UnitsConvert/Area"} icon={<FaRulerCombined />} linkname={"Area"} />
           <SidebarLinks link={"/UnitsConvert/Volume"} icon={<FaCube />} linkname={"Volume"} />
           <SidebarLinks link={"/UnitsConvert/Temperature"} icon={<FaThermometerHalf />} linkname={"Temperature"} />
+          <SidebarLinks link={"/UnitsConvert/Speed"} icon={<IoMdSpeedometer />} linkname={"Speed"} />
         </SidebarDropdown>
         <hr />
         <SidebarDropdown label="Security" icon={<MdSecurity />} isOpen={mainDropdowns.security} onClick={() => toggleMainDropdown("security")}>

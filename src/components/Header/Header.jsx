@@ -16,6 +16,7 @@ function Header() {
     "/UnitsConvert/Area": "Area units converter",
     "/UnitsConvert/Volume": "Volume units converter",
     "/UnitsConvert/Temperature": "Temperature units converter",
+    "/UnitsConvert/Speed": "Speed units converter",
     "/FilesConvert": "Convert files",
     "/FilesConvert/Images": "Images files converter",
     "/Generators": "Misc generators",

@@ -31,6 +31,12 @@ const unitsConvertTools = [
     text: "",
     icon: "/images/units-convert-tools/temperature.webp",
   },
+  {
+    name: "Speed units converter",
+    link: "/UnitsConvert/Speed",
+    text: "",
+    icon: "/images/units-convert-tools/speed.webp",
+  },
 ];
 
 function HomeConvert() {
