@@ -16,6 +16,8 @@ function Header() {
     "/UnitsConvert/Area": "Area units converter",
     "/UnitsConvert/Volume": "Volume units converter",
     "/UnitsConvert/Temperature": "Temperature units converter",
+    "/FilesConvert": "Convert files",
+    "/FilesConvert/Images": "Images files converter",
     "/Generators": "Misc generators",
     "/Generators/Password": "Password generator",
     "/Generators/Lorem": "Lorem Ipsum generator",
