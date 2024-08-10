@@ -9,7 +9,7 @@ const genTools = [
   },
   {
     name: "Lorem Ipsum generator",
-    link: "/Generators/Password",
+    link: "/Generators/Lorem",
     text: "",
     icon: "/images/gen-tools/lorem.webp",
   },
