@@ -1,6 +1,6 @@
 import ToolsCard from "../../components/Homepages/ToolsCard";
 
-const genTools = [
+const secTools = [
   {
     name: "Ip Adress Lookup",
     link: "/Security/IpLookup",
@@ -16,7 +16,7 @@ function HomeSecurity() {
         <h2 className="text-2xl font-semibold text-gray-800">Discover all our Security tools</h2>
       </div>
       <div className="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
-        {genTools.map((tool, index) => (
+        {secTools.map((tool, index) => (
           <ToolsCard key={index} {...tool} />
         ))}
       </div>
