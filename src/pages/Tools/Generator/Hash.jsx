@@ -41,6 +41,7 @@ export default function Hash() {
         <title>Free Hash Generator - Create MD5, SHA-1, SHA-256, and More</title>
         <meta name="description" content="Easily generate secure hashes for your text using MD5, SHA-1, SHA-256, SHA-512, and more. Ideal for developers and security enthusiasts." />
         <meta name="robots" content="index, follow" />
+        <link rel="canonical" href="https://oslo-toolbox.vercel.app.com/Generators/Hash" />
       </Helmet>
 
       <div>

@@ -30,8 +30,9 @@ function Mass() {
       <Helmet>
         <title>Mass Converter - Convert Units of Mass | Oslo Toolbox</title>
         <meta name="description" content="Free mass converter tool to convert between different units of mass including metric and imperial systems. Convert between gigatonnes, pounds, ounces, and more." />
+        <meta name="keywords" content="mass converter, unit converter, convert mass, kilograms, pounds, ounces, metric units, imperial units, weight conversion tool, tonne, gram, megatonne, gigatonne" />
         <meta name="robots" content="index, follow" />
-        <link rel="canonical" href="https://oslo-toolbox.vercel.app/mass-converter" />
+        <link rel="canonical" href="https://oslo-toolbox.vercel.app/UnitsConvert/Mass" />
       </Helmet>
 
       <Converter

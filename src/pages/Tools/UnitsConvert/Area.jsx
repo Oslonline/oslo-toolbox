@@ -92,9 +92,10 @@ function Area() {
     <div className="flex flex-col gap-7">
       <Helmet>
         <title>Area Converter - Convert Units of Area | Oslo Toolbox</title>
-        <meta name="description" content="Free area converter tool to convert between different units of area including metric, imperial, and other systems. Get accurate conversions for units like square meters, acres, hectares, and more." />
+        <meta name="description" content="Free area converter tool to convert between different units of area including metric, imperial, and other systems. Get accurate area conversions for units like square meters, acres, hectares, and more." />
+        <meta name="keywords" content="area converter, unit converter, convert area, square meters, acres, hectares, imperial units, metric units, land measurement, area conversion tool" />
         <meta name="robots" content="index, follow" />
-        <link rel="canonical" href="https://oslo-toolbox.vercel.app/area-converter" />
+        <link rel="canonical" href="https://oslo-toolbox.vercel.app/UnitsConvert/Area" />
       </Helmet>
 
       <Converter

@@ -31,14 +31,15 @@ function Volume() {
   return (
     <div className="flex flex-col gap-7">
       <Helmet>
-        <title>Volume Converter - Convert Units of Volume | Oslo Toolbox</title>
+        <title>Volume Converter - Convert Volume Units | Oslo Toolbox</title>
         <meta name="description" content="Free volume converter tool to convert between various units of volume including cubic meters, liters, teaspoons, tablespoons, and more. Accurate conversions for different systems and standards." />
+        <meta name="keywords" content="volume converter, convert volume, cubic meter, liter, teaspoon, tablespoon, gallon, cup, pint, quart, fluid ounce, dry gallon, volume units" />
         <meta name="robots" content="index, follow" />
-        <link rel="canonical" href="https://oslo-toolbox.vercel.app/volume-converter" />
+        <link rel="canonical" href="https://oslo-toolbox.vercel.app/UnitsConvert/Volume" />
       </Helmet>
 
       <Converter
-        description="This toolbox provides you with a completely FREE volume converter including the International System of Units (SI), the US liquid and dry systems, and the UK system. For more information about the data used for converting, scroll down and check under the converter."
+        description="This toolbox provides you with a completely FREE volume converter that includes the International System of Units (SI), the US liquid and dry systems, and the UK system. For more information about the data used for converting, scroll down and check under the converter."
         systems={["SI", "USLiquid", "USDry", "UK", "All"]}
         units={units}
         unitValues={unitValues}

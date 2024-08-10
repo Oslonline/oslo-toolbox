@@ -85,7 +85,9 @@ function Gradient() {
       <Helmet>
         <title>Free CSS Gradient Generator - Linear and Radial | Oslo Toolbox</title>
         <meta name="description" content="Create beautiful CSS gradients with our free generator. Customize colors, angles, opacity, and gradient types. Copy the generated CSS code easily." />
-        <link rel="canonical" href="https://oslo-toolbox.vercel.app.com/css/gradient-generator" />
+        <meta name="keywords" content="CSS gradient generator, online gradient tool, linear gradient, radial gradient, CSS design tools, web design, gradient background, CSS code generator, UI design, Oslo Toolbox" />
+        <meta name="robots" content="index, follow" />
+        <link rel="canonical" href="https://oslo-toolbox.vercel.app.com/Css/Gradient" />
       </Helmet>
 
       <div>

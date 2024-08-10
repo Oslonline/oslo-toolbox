@@ -75,6 +75,7 @@ export default function ReadmeGenerator() {
         <title>Free Github Readme Generator - Create and Customize Your README Instantly</title>
         <meta name="description" content="Easily generate a custom README.md for your GitHub repository. Add your project title, description, installation instructions, usage instructions, and more." />
         <meta name="robots" content="index, follow" />
+        <link rel="canonical" href="https://oslo-toolbox.vercel.app.com/Generators/Readme" />
       </Helmet>
 
       <div>

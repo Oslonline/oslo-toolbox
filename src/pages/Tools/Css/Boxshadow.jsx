@@ -58,7 +58,8 @@ function BoxShadow() {
         <title>CSS Box-Shadow Generator - Customize Your Shadows Online</title>
         <meta name="description" content="Easily create custom CSS box-shadow effects with our free online tool. Adjust offset, blur, spread, color, and opacity to generate the perfect shadow for your project." />
         <meta name="keywords" content="CSS box-shadow generator, free online CSS tools, custom shadow generator, CSS effects, web design tools" />
-        <link rel="canonical" href="https://oslo-toolbox.vercel.app.com/css/box-shadow-generator" />
+        <meta name="robots" content="index, follow" />
+        <link rel="canonical" href="https://oslo-toolbox.vercel.app.com/Css/BoxShadow" />
       </Helmet>
 
       <div>

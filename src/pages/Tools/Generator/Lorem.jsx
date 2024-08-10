@@ -61,6 +61,8 @@ export default function Lorem() {
         <title>Lorem Ipsum Generator</title>
         <meta name="description" content="Generate Lorem Ipsum text for free. Choose how many paragraphs you want, click generate and it's done!" />
         <meta name="keywords" content="Lorem Ipsum, text generator, placeholder text" />
+        <meta name="robots" content="index, follow" />
+        <link rel="canonical" href="https://oslo-toolbox.vercel.app.com/Generators/Lorem" />
       </Helmet>
 
       <div className="flex flex-col gap-4 p-6">

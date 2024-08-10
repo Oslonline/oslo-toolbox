@@ -28,10 +28,11 @@ function Temperature() {
   return (
     <div className="flex flex-col gap-7">
       <Helmet>
-        <title>Temperature Converter - Convert Temperature Units | Oslo Toolbox</title>
+        <title>Temperature Converter - Convert Celsius, Fahrenheit, and Kelvin | Oslo Toolbox</title>
         <meta name="description" content="Free temperature converter tool to convert between Celsius, Fahrenheit, and Kelvin. Get accurate conversions for various temperature scales." />
+        <meta name="keywords" content="temperature converter, convert temperature, Celsius, Fahrenheit, Kelvin, temperature scales, unit conversion" />
         <meta name="robots" content="index, follow" />
-        <link rel="canonical" href="https://oslo-toolbox.vercel.app/temperature-converter" />
+        <link rel="canonical" href="https://oslo-toolbox.vercel.app/UnitsConvert/Temperature" />
       </Helmet>
 
       <Converter

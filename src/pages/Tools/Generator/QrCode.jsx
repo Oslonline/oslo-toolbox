@@ -44,6 +44,7 @@ export default function QrCode() {
         <title>Free QR Code Generator - Create and Download QR Codes Instantly</title>
         <meta name="description" content="Easily generate QR codes for your links or text. Customize the color and download your QR code in PNG format. Perfect for businesses, events, and personal use." />
         <meta name="robots" content="index, follow" />
+        <link rel="canonical" href="https://oslo-toolbox.vercel.app.com/Generators/QrCode" />
       </Helmet>
 
       <div>

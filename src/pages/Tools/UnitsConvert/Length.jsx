@@ -31,8 +31,9 @@ function Length() {
       <Helmet>
         <title>Length Converter - Convert Units of Length | Oslo Toolbox</title>
         <meta name="description" content="Free length converter tool to convert between different units of length including metric and imperial systems. Convert between kilometers, meters, miles, and more with ease." />
+        <meta name="keywords" content="length converter, unit converter, convert length, kilometers, meters, miles, inches, feet, metric units, imperial units, distance measurement, length conversion tool" />
         <meta name="robots" content="index, follow" />
-        <link rel="canonical" href="https://oslo-toolbox.vercel.app/length-converter" />
+        <link rel="canonical" href="https://oslo-toolbox.vercel.app/UnitsConvert/Length" />
       </Helmet>
 
       <Converter

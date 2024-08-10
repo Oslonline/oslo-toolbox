@@ -53,6 +53,7 @@ export default function Password() {
         <title>Secure Password Generator - Create Strong Passwords for Free</title>
         <meta name="description" content="Generate secure passwords up to 128 characters with options to include uppercase letters, lowercase letters, numbers, and special characters. Perfect for safeguarding your online accounts." />
         <meta name="robots" content="index, follow" />
+        <link rel="canonical" href="https://oslo-toolbox.vercel.app.com/Generators/Password" />
       </Helmet>
 
       <div>

@@ -127,6 +127,8 @@ export default function Images() {
         <title>Images converter - Convert any image file</title>
         <meta name="description" content="Convert any image file easily into various formats with our free online converter." />
         <meta name="keywords" content="image converter, free image conversion, jpeg, png, gif" />
+        <meta name="robots" content="index, follow" />
+        <link rel="canonical" href="https://oslo-toolbox.vercel.app/FilesConvert/Images" />
       </Helmet>
 
       <div className="flex flex-col gap-4 p-6">

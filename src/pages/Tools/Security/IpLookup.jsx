@@ -35,7 +35,7 @@ export default function IpLookup() {
         <title>IP Lookup Tool - Get IP Address Information | Oslo Toolbox</title>
         <meta name="description" content="Use our IP Lookup tool to get detailed information about an IP address, including location, ISP, and more. Enter an IP address to see the results." />
         <meta name="robots" content="index, follow" />
-        <link rel="canonical" href="https://oslo-toolbox.vercel.app/ip-lookup" />
+        <link rel="canonical" href="https://oslo-toolbox.vercel.app/Security/IpLookup" />
       </Helmet>
 
       <p className="text-gray-500">Use our free IP Lookup tool to retrieve information about any IP address. Find out the geographical location, ISP, and other details related to the IP address. Just enter the IPv4 address and click "Lookup" to get started.</p>

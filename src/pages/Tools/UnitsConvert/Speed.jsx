@@ -51,8 +51,9 @@ function Speed() {
       <Helmet>
         <title>Speed Converter - Convert Units of Speed | Oslo Toolbox</title>
         <meta name="description" content="Free speed converter tool to convert between different units of speed including metric, imperial, and other systems. Get accurate conversions for units like meters per second, miles per hour, knots, and more." />
+        <meta name="keywords" content="speed converter, unit converter, convert speed, meters per second, miles per hour, knots, metric units, imperial units, speed of light, mach, km/h, mph" />
         <meta name="robots" content="index, follow" />
-        <link rel="canonical" href="https://oslo-toolbox.vercel.app/speed-converter" />
+        <link rel="canonical" href="https://oslo-toolbox.vercel.app/UnitsConvert/Speed" />
       </Helmet>
 
       <Converter
