@@ -10,7 +10,7 @@ Not fully responsive, mainly intended for computers.
 - CSS Box-shadow generator.
 - CSS background gradient generator.
 - Files converters (Images (PNG, JPG, WEBP, SVG, BMP))
-- Units converters (Mass, Length, Volume, Temperature, Area, Speed).
+- Units converters (Mass, Length, Volume, Temperature, Area, Speed, Time).
 - Password generator.
 - Lorem Ipsum generator.
 - QR Code generator from text/links.
