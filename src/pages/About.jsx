@@ -6,7 +6,7 @@ function About() {
       <div className="flex flex-col gap-2">
         <p className="font-bold text-3xl">About</p>
         <div className="ml-2">
-          <p className="text-gray-800 mb-4 mt-4">
+          <p className="text-gray-800 mb-4 mt-2">
             <span className="font-semibold">Oslo Toolbox </span> is an
             open-source collection of handy tools built with ReactJS and
             TailwindCSS, currently under development. This toolbox is designed
@@ -15,7 +15,7 @@ function About() {
             intended for desktop use and is not fully responsive, it offers a
             user-friendly interface and powerful features.
           </p>
-          <p className="font-bold mb-5 text-3xl">Features</p>
+          <p className="font-bold mb-2 text-3xl">Features</p>
 
           <p>
             <span className="font-semibold mt-2">
@@ -76,7 +76,7 @@ function About() {
             troubleshooting network issues, monitoring website traffic, or
             conducting security audits.
           </p>
-          <p className="mt-10">
+          <p className="mt-2">
             <span className="font-semibold">Overall</span>, this open-source
             toolbox is an exceptional resource for web developers, offering a
             comprehensive and user-friendly platform that simplifies a variety
