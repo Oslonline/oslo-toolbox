@@ -3,7 +3,7 @@ import ToolsCard from "../../components/Homepages/ToolsCard";
 
 const tools = [
   {
-    name: "Misc generators",
+    name: "Generators",
     link: "/Generators",
     text: "Password, Lorem, QR Code...",
     icon: "/images/tools-ctg/gen.webp",

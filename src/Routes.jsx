@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 import Error from "./pages/Error/Error";
 import About from "./pages/About";
-import { Home, HomeCss, HomeConvert, HomeGen, HomeSecurity, HomeFileConvert } from "./pages/Home";
+import { Home, HomeCss, HomeConvert, HomeGen, HomeSecurity, HomeFileConvert, HomeMisc } from "./pages/Home";
 import { Length, Mass, Area, Volume, Temperature, Speed, Time } from "./pages/Tools/UnitsConvert";
 import { Gradient, BoxShadow } from "./pages/Tools/Css";
 import { Hash, Lorem, Password, QrCode, ReadmeGenerator } from "./pages/Tools/Generator";
