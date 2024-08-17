@@ -3,7 +3,7 @@ import SidebarNav from "./SidebarNav";
 import { useState } from "react";
 
 function SideBar() {
-  const [isOpen, setIsOpen] = useState(false); // Start with the sidebar closed
+  const [isOpen, setIsOpen] = useState(false);
 
   return (
     <div className={`sticky left-0 h-full border-r-2 border-gray-200 bg-gray-50 transition-transform duration-300 ${isOpen ? "w-56" : "w-16"}  md:w-56`}>
@@ -12,7 +12,6 @@ function SideBar() {
           <img className="w-8 sm:w-10 md:w-20 lg:w-32" src="/images/toolbox.webp" alt="Logo" />
         </Link>
       </div>
-      {/* Show sidebar nav only if isOpen is true */}
 
       <nav className="flex h-5/6 flex-col overflow-hidden">
         <SidebarNav isOpen={isOpen} />
