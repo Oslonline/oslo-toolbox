@@ -13,8 +13,6 @@ dist
 dist-ssr
 *.local
 
-
-
 # Editor directories and files
 .vscode/*
 !.vscode/extensions.json
@@ -28,4 +26,4 @@ dist-ssr
 dist
 
 # Ignore .history folder
-.history/
+.history/*
