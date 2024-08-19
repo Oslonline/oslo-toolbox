@@ -53,7 +53,7 @@ function BoxShadow() {
   const result = `box-shadow: ${boxShadow.offsetX}px ${boxShadow.offsetY}px ${boxShadow.blurRadius}px ${boxShadow.spreadRadius}px ${hexToRGBA(boxShadow.color, boxShadow.opacity)};`;
 
   return (
-    <div className="flex flex-col gap-7 p-6">
+    <div className="flex flex-col gap-6 p-4 md:p-6">
       <Helmet>
         <title>CSS Box-Shadow Generator - Customize Your Shadows Online</title>
         <meta name="description" content="Easily create custom CSS box-shadow effects with our free online tool. Adjust offset, blur, spread, color, and opacity to generate the perfect shadow for your project." />

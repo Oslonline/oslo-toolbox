@@ -6,10 +6,10 @@ import About from "./pages/About";
 import { Home, HomeCss, HomeConvert, HomeGen, HomeSecurity, HomeFileConvert } from "./pages/Home";
 import { Length, Mass, Area, Volume, Temperature, Speed, Time } from "./pages/Tools/UnitsConvert";
 import { Gradient, BoxShadow } from "./pages/Tools/Css";
-import { Hash, Lorem, Password, QrCode, ReadmeGenerator } from "./pages/Tools/Generator";
+import { Lorem, Password, QrCode, ReadmeGenerator } from "./pages/Tools/Generator";
+import { Hash, IpLookup } from "./pages/Tools/Security";
 import { Images } from "./pages/Tools/FilesConvert";
 
-import IpLookup from "./pages/Tools/Security/IpLookup";
 import Error404 from "./pages/Error/Error404";
 
 function MainRouter() {

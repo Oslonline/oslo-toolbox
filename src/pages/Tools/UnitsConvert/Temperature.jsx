@@ -44,7 +44,7 @@ function Temperature() {
 
       <div className="p-6 pt-0">
         <div>
-          <h2 className="text-3xl font-bold text-gray-900">How It Works</h2>
+          <h2 className="mb-2 text-2xl font-bold text-gray-900 md:text-3xl">How It Works</h2>
           <p className="text-gray-700">
             To use the temperature converter, select the temperature scales you want to convert from and to, then input the value you wish to convert. The tool will instantly display the converted temperature in the selected scale. This converter supports Celsius, Fahrenheit, and Kelvin. For
             detailed conversions, you can also check the specific formulas used in the tool by scrolling down.
@@ -58,8 +58,8 @@ function Temperature() {
         </div>
 
         <div className="mt-5">
-          <h2 className="text-3xl font-bold text-gray-900">FAQ</h2>
-          <div className="mt-4">
+          <h2 className="text-2xl font-bold text-gray-900 md:text-3xl">FAQ</h2>
+          <div className="mt-2">
             <h3 className="font-semibold text-gray-900">How do I convert between Celsius, Fahrenheit, and Kelvin?</h3>
             <p className="text-gray-700">
               To convert between these temperature scales, you can use the provided formulas:

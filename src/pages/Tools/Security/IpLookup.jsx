@@ -30,7 +30,7 @@ export default function IpLookup() {
   };
 
   return (
-    <div className="flex flex-col gap-4 p-6">
+    <div className="flex flex-col gap-4 p-4 md:p-6">
       <Helmet>
         <title>IP Lookup Tool - Get IP Address Information | Oslo Toolbox</title>
         <meta name="description" content="Use our IP Lookup tool to get detailed information about an IP address, including location, ISP, and more. Enter an IP address to see the results." />
@@ -39,10 +39,10 @@ export default function IpLookup() {
       </Helmet>
 
       <p className="text-gray-500">Use our free IP Lookup tool to retrieve information about any IP address. Find out the geographical location, ISP, and other details related to the IP address. Just enter the IPv4 address and click "Lookup" to get started.</p>
-      <div className="flex flex-col rounded-md border-2 border-gray-200 bg-gray-50 p-6">
+      <div className="flex flex-col rounded-md md:border-2 md:border-gray-200 md:bg-gray-50 md:p-6">
         <div className="flex flex-col gap-2 rounded-md border-2 border-gray-200 bg-white p-4">
-          <div className="flex w-full gap-8">
-            <input type="text" className="flex-1 rounded-md border-2 border-gray-200 bg-white p-2 caret-orange-400 outline-none focus:border-orange-400" value={ip} onChange={(e) => setIp(e.target.value)} placeholder="Enter IPv4 address" aria-label="IP address" />
+          <div className="flex w-full flex-col gap-2 md:gap-8 md:flex-row">
+            <input type="text" className="flex rounded-md border-2 border-gray-200 bg-white p-2 caret-orange-400 outline-none focus:border-orange-400" value={ip} onChange={(e) => setIp(e.target.value)} placeholder="Enter IPv4 address" aria-label="IP address" />
             <button onClick={getInfos} className="rounded-md bg-orange-400 px-4 py-2 text-gray-50 duration-200 hover:bg-orange-600" aria-label="Lookup IP address">
               Lookup
             </button>
@@ -82,7 +82,7 @@ export default function IpLookup() {
       </div>
 
       <div>
-        <h2 className="text-3xl font-bold text-gray-900">Frequently Asked Questions</h2>
+        <h2 className="text-2xl md:text-3xl font-bold text-gray-900">Frequently Asked Questions</h2>
         <div className="mt-4">
           <h3 className="font-semibold text-gray-900">What is IP Lookup?</h3>
           <p className="text-gray-600">IP Lookup is a tool that allows you to find information about an IP address. This includes details like the geographical location, ISP, and other relevant data associated with the IP address.</p>

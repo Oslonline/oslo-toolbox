@@ -53,7 +53,7 @@ function Home() {
         <link rel="canonical" href="https://oslo-toolbox.vercel.app.com" />
       </Helmet>
 
-      <div className="flex flex-col gap-9 p-6">
+      <div className="flex flex-col gap-9 p-4 md:p-6">
         <HomeSection
           title="Welcome to Oslo's Toolbox!"
           content="Explore a versatile collection of tools designed to simplify your digital endeavors. Whether you're a seasoned developer or a curious hobbyist, Oslo's Toolbox has something for everyone. From CSS generators like Gradient and Box-Shadow, to practical tools like Unit Converters, QR Code Generators, and Security Tools, you'll find everything you need for creativity and efficiency."

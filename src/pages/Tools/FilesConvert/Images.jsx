@@ -131,10 +131,10 @@ export default function Images() {
         <link rel="canonical" href="https://oslo-toolbox.vercel.app/FilesConvert/Images" />
       </Helmet>
 
-      <div className="flex flex-col gap-4 p-6">
+      <div className="flex flex-col gap-4 p-4 md:p-6">
         <p className="text-gray-500">Convert any image for free with our images converter. Insert your file, select the desired converted format, click convert, and it's done!</p>
 
-        <div className="flex flex-col gap-4 rounded-md border-2 border-gray-200 bg-gray-50 p-6">
+        <div className="flex flex-col gap-4 rounded-md md:border-2 md:border-gray-200 md:bg-gray-50 md:p-6">
           <div className="flex items-center justify-between rounded-md border-2 border-gray-200 bg-white p-4" onDragOver={handleDragOver} onDragLeave={handleDragLeave} onDrop={handleDrop}>
             <div className="flex w-full items-center justify-center gap-2">
               {!selectedFile ? (
@@ -207,25 +207,21 @@ export default function Images() {
 
         <div>
           <div className="mb-4">
-            <h2 className="mb-4 text-3xl font-semibold text-gray-900">Why use our image converter?</h2>
+            <h2 className="mb-2 text-2xl font-semibold text-gray-900 md:text-3xl">Why use our image converter?</h2>
             <p className="mb-4 text-gray-600">Our image converter is easy to use, free, and supports a wide range of formats. Whether you need to convert your images for a specific purpose or just to save space, we have you covered.</p>
           </div>
-          <h2 className="mb-4 text-3xl font-semibold text-gray-900">Frequently Asked Questions</h2>
+          <h2 className="mb-2 text-2xl font-semibold text-gray-900 md:text-3xl">Frequently Asked Questions</h2>
           <div className="mb-4">
-            <h3 className="mb-2 font-semibold text-gray-900">What formats do you support?</h3>
+            <h3 className="font-semibold text-gray-900">What formats do you support?</h3>
             <p className="text-gray-600">We support a wide range of formats including JPEG, PNG, GIF, BMP, SVG, WEBP, and more. Simply upload your image, select the output format, and convert.</p>
           </div>
           <div className="mb-4">
-            <h3 className="mb-2 font-semibold text-gray-900">Is it really free?</h3>
+            <h3 className="font-semibold text-gray-900">Is it really free?</h3>
             <p className="text-gray-600">Yes, our image converter is completely free to use with no hidden charges.</p>
           </div>
-          <div>
-            <h3 className="mb-2 font-semibold text-gray-900">Can I convert multiple files at once?</h3>
+          <div className="mb-4">
+            <h3 className="font-semibold text-gray-900">Can I convert multiple files at once?</h3>
             <p className="text-gray-600">Currently, our converter supports converting one file at a time. We are working on adding bulk conversion in the future.</p>
-          </div>
-          <div>
-            <h3 className="mb-2 font-semibold text-gray-900">What if my file is not an image?</h3>
-            <p className="text-gray-600">If you upload a file that is not an image, you will be redirected to our document converter page where you can convert various document formats.</p>
           </div>
         </div>
       </div>

@@ -81,7 +81,7 @@ function Gradient() {
   };
 
   return (
-    <div className="flex flex-col gap-7 p-6">
+    <div className="flex flex-col gap-6 p-4 md:p-6">
       <Helmet>
         <title>Free CSS Gradient Generator - Linear and Radial | Oslo Toolbox</title>
         <meta name="description" content="Create beautiful CSS gradients with our free generator. Customize colors, angles, opacity, and gradient types. Copy the generated CSS code easily." />

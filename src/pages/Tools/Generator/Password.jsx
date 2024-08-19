@@ -48,7 +48,7 @@ export default function Password() {
   }, []);
 
   return (
-    <div className="flex flex-col gap-4 p-6">
+    <div className="flex flex-col gap-4 p-4 md:p-6">
       <Helmet>
         <title>Secure Password Generator - Create Strong Passwords for Free</title>
         <meta name="description" content="Generate secure passwords up to 128 characters with options to include uppercase letters, lowercase letters, numbers, and special characters. Perfect for safeguarding your online accounts." />
@@ -59,9 +59,9 @@ export default function Password() {
       <div>
         <p className="text-gray-600">Generate your password for free up to 128 characters with the option to include uppercase letters, lowercase letters, numbers, and special characters.</p>
       </div>
-      <div className="flex flex-col gap-4 rounded-md border-2 border-gray-200 bg-gray-50 p-6">
-        <div className="flex items-center justify-between gap-8 rounded-md border-2 border-gray-200 bg-white p-4">
-          <p className="font-mono text-xl">{password}</p>
+      <div className="flex flex-col gap-4 rounded-md md:border-2 md:border-gray-200 md:bg-gray-50 md:p-6">
+        <div className="flex items-center justify-between gap-4 rounded-md border-2 border-gray-200 bg-white p-4 md:gap-8">
+          <p className="line-clamp-1 font-mono text-xl">{password}</p>
           <div className="flex gap-4">
             <button onClick={handleCopy} aria-label={copied ? "Password copied!" : "Copy password"}>
               {copied ? <FaCheck fontSize={24} color="green" /> : <FaCopy fontSize={24} />}
@@ -100,25 +100,25 @@ export default function Password() {
       </div>
 
       <div>
-        <h2 className="text-3xl font-semibold text-gray-900">Why Use a Secure Password Generator?</h2>
+        <h2 className="text-2xl font-bold text-gray-900 md:text-3xl">Why Use a Secure Password Generator?</h2>
         <p className="mt-2 text-gray-500">
           Using a secure password generator ensures that your passwords are strong, unique, and difficult for hackers to guess. Whether you're creating a new account or updating an old password, this tool helps you generate passwords that meet the highest security standards.
         </p>
-        <h3 className="my-4 text-3xl font-semibold text-gray-900">Frequently Asked Questions</h3>
+        <h3 className="mt-4 text-2xl font-bold text-gray-900 md:text-3xl">Frequently Asked Questions</h3>
         <div className="mt-2">
-          <h4 className="font-bold text-gray-900">How long should my password be?</h4>
+          <h4 className="font-semibold text-gray-900">How long should my password be?</h4>
           <p className="text-gray-600">It's recommended to use a password of at least 12 characters for optimal security. Longer passwords are even more secure.</p>
         </div>
-        <div className="mt-2">
-          <h4 className="font-bold text-gray-900">Should I include special characters in my password?</h4>
+        <div className="mt-4">
+          <h4 className="font-semibold text-gray-900">Should I include special characters in my password?</h4>
           <p className="text-gray-600">Yes, including special characters increases the complexity of your password, making it harder to crack.</p>
         </div>
-        <div className="mt-2">
-          <h4 className="font-bold text-gray-900">How often should I change my passwords?</h4>
+        <div className="mt-4">
+          <h4 className="font-semibold text-gray-900">How often should I change my passwords?</h4>
           <p className="text-gray-600">It's good practice to change your passwords every 3 to 6 months to maintain account security.</p>
         </div>
-        <div className="mt-2">
-          <h4 className="font-bold text-gray-900">Can I use the same password for multiple accounts?</h4>
+        <div className="mt-4">
+          <h4 className="font-semibold text-gray-900">Can I use the same password for multiple accounts?</h4>
           <p className="text-gray-600">No, using the same password for multiple accounts increases the risk of a security breach. Always use unique passwords for different accounts.</p>
         </div>
       </div>

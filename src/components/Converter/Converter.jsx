@@ -54,11 +54,11 @@ function Converter({ description, systems, units, unitValues }) {
   };
 
   return (
-    <div className="flex flex-col gap-7 p-6 pb-0">
+    <div className="flex flex-col gap-7 p-4 pb-0 md:p-6 md:pb-0">
       <div className="flex flex-col gap-4">
         <p className="text-gray-500">{description}</p>
       </div>
-      <div className="flex flex-col gap-5 rounded-md border-2 border-gray-200 bg-gray-50 p-6">
+      <div className="flex flex-col gap-5 rounded-md p-0 md:border-2 md:border-gray-200 md:bg-gray-50 md:p-6">
         <div className="flex items-center gap-2">
           <div>
             <h3 className="font-semibold text-gray-500">Metric System :</h3>
@@ -77,17 +77,39 @@ function Converter({ description, systems, units, unitValues }) {
           <div>
             <h3 className="font-semibold text-gray-500">Conversion :</h3>
           </div>
-          <div className="flex gap-4">
+          <div className="flex flex-col items-center gap-4 md:flex-row md:items-start">
             <div className="flex flex-col gap-3">
               <input className="rounded-md border-2 border-gray-200 bg-white p-2 caret-orange-400 outline-none focus:border-orange-400 focus:outline-offset-0" placeholder="3.46" type="number" value={inputValue} onChange={handleInputChange} />
-              <MetricButtons units={units[metricSys]} selectedUnit={unitFrom} onChange={handleUnitFromChange} />
+              <div className="hidden md:block">
+                <MetricButtons units={units[metricSys]} selectedUnit={unitFrom} onChange={handleUnitFromChange} />
+              </div>
+              <div className="block md:hidden">
+                <select className="w-full rounded-md border-2 border-gray-200 bg-white p-2" value={unitFrom} onChange={(e) => handleUnitFromChange(e.target.value)}>
+                  {units[metricSys].map((unit) => (
+                    <option key={unit} value={unit}>
+                      {unit}
+                    </option>
+                  ))}
+                </select>
+              </div>
             </div>
-            <div className="pt-2">
+            <div className="flex w-fit rotate-90 md:mt-3 md:rotate-0">
               <FaArrowRight />
             </div>
             <div className="flex flex-col gap-3">
               <input className="rounded-md border-2 border-gray-200 bg-white p-2 outline-none" type="text" value={result} readOnly />
-              <MetricButtons units={units[metricSys]} selectedUnit={unitTo} onChange={handleUnitToChange} />
+              <div className="hidden md:block">
+                <MetricButtons units={units[metricSys]} selectedUnit={unitTo} onChange={handleUnitToChange} />
+              </div>
+              <div className="block md:hidden">
+                <select className="w-full rounded-md border-2 border-gray-200 bg-white p-2" value={unitTo} onChange={(e) => handleUnitToChange(e.target.value)}>
+                  {units[metricSys].map((unit) => (
+                    <option key={unit} value={unit}>
+                      {unit}
+                    </option>
+                  ))}
+                </select>
+              </div>
             </div>
           </div>
         </div>

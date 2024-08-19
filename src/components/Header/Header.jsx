@@ -37,7 +37,7 @@ function Header() {
 
   return (
     <header className="sticky top-0 z-50 flex w-full items-center justify-between border-b-2 border-gray-200 bg-gray-50 p-4">
-      <h1 className="text-3xl font-bold text-gray-800">{getTitle()}</h1>
+      <h1 className="text-2xl md:text-3xl font-bold text-gray-800">{getTitle()}</h1>
       <div className="flex items-center">
         <Breadcrumbs />
         {path === "/" && (

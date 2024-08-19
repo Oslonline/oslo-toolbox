@@ -45,7 +45,7 @@ function Length() {
 
       <div className="p-6 pt-0">
         <div>
-          <h2 className="text-3xl font-bold text-gray-900">How It Works</h2>
+          <h2 className="mb-2 text-2xl font-bold text-gray-900 md:text-3xl">How It Works</h2>
           <p className="text-gray-700">
             To use the length converter, select the units you want to convert from and to, and input the value you wish to convert. The tool will instantly display the converted value in the selected units. Our converter supports a wide range of units including metric units like meters and imperial
             units like miles. For detailed conversions, you can also check the specific values used in the tool by scrolling down.
@@ -70,8 +70,8 @@ function Length() {
         </div>
 
         <div className="mt-5">
-          <h2 className="text-3xl font-bold text-gray-900">FAQ</h2>
-          <div className="mt-4">
+          <h2 className="text-2xl font-bold text-gray-900 md:text-3xl">FAQ</h2>
+          <div className="mt-2">
             <h3 className="font-semibold text-gray-900">What if I need to convert a unit not listed here?</h3>
             <p className="text-gray-600">If you need to convert a unit not listed in this converter, please contact us with the details. We may be able to include additional units based on user demand and availability of accurate conversion factors.</p>
             <h3 className="mt-4 font-semibold text-gray-900">Can I convert between different systems like metric and imperial?</h3>

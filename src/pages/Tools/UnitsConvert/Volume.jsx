@@ -47,7 +47,7 @@ function Volume() {
 
       <div className="p-6 pt-0">
         <div>
-          <h2 className="text-3xl font-bold text-gray-900">How It Works</h2>
+          <h2 className="mb-2 text-2xl font-bold text-gray-900 md:text-3xl">How It Works</h2>
           <p className="text-gray-700">
             To use the volume converter, select the units you want to convert from and to, then input the value you wish to convert. The tool will instantly display the converted volume in the selected units. Our converter supports a wide range of volume units including metric units like cubic
             meters and liters, as well as various liquid and dry units used in the US and UK systems. For detailed conversions, you can also check the specific values used in the tool by scrolling down.
@@ -72,8 +72,8 @@ function Volume() {
         </div>
 
         <div className="mt-5">
-          <h2 className="text-3xl font-bold text-gray-900">FAQ</h2>
-          <div className="mt-4">
+          <h2 className="text-2xl font-bold text-gray-900 md:text-3xl">FAQ</h2>
+          <div className="mt-2">
             <h3 className="font-semibold text-gray-900">What is the difference between US liquid and dry volume units?</h3>
             <p className="text-gray-600">
               US liquid and dry volume units are used for different types of measurements. Liquid units (like fluid ounces, cups, and gallons) measure the volume of liquids, while dry units (like dry pints and dry gallons) are used for measuring dry goods. They are not interchangeable due to
