@@ -26,7 +26,6 @@ function MainRouter() {
             <Route path="Password" element={<Password />} />
             <Route path="Lorem" element={<Lorem />} />
             <Route path="QrCode" element={<QrCode />} />
-            <Route path="Hash" element={<Hash />} />
             <Route path="Readme" element={<ReadmeGenerator />} />
           </Route>
           <Route path="FilesConvert">
@@ -46,6 +45,7 @@ function MainRouter() {
           <Route path="Security">
             <Route index element={<HomeSecurity />} />
             <Route path="IpLookup" element={<IpLookup />} />
+            <Route path="Hash" element={<Hash />} />
           </Route>
           <Route path="Css">
             <Route index element={<HomeCss />} />

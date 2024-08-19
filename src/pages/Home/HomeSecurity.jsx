@@ -7,6 +7,12 @@ const secTools = [
     text: "",
     icon: "/images/sec-tools/ip.webp",
   },
+  {
+    name: "Hash generator",
+    link: "/Security/Hash",
+    text: "",
+    icon: "/images/sec-tools/hash.webp",
+  },
 ];
 
 function HomeSecurity() {

@@ -63,7 +63,6 @@ function SidebarNav({ isOpen }) {
           <SidebarLinks link={"/Generators/Password"} icon={<FaUnlockAlt />} linkname={"Password"} />
           <SidebarLinks link={"/Generators/Lorem"} icon={<TbCircleLetterL />} linkname={"Lorem Ipsum"} />
           <SidebarLinks link={"/Generators/QrCode"} icon={<FaQrcode />} linkname={"QR Code"} />
-          <SidebarLinks link={"/Generators/Hash"} icon={<FaHashtag />} linkname={"Hash"} />
           <SidebarLinks link={"/Generators/Readme"} icon={<CgReadme />} linkname={"Readme"} />
         </SidebarDropdown>
         <hr />
@@ -83,6 +82,7 @@ function SidebarNav({ isOpen }) {
         <hr />
         <SidebarDropdown label="Security" icon={<MdSecurity />} isOpen={mainDropdowns.security} onClick={() => toggleMainDropdown("security")}>
           <SidebarLinks link={"/Security/IpLookup"} icon={<TbMapPinQuestion />} linkname={"IP Lookup"} />
+          <SidebarLinks link={"/Security/Hash"} icon={<FaHashtag />} linkname={"Hash Generator"} />
         </SidebarDropdown>
         <hr />
         <SidebarDropdown label="Css" icon={<FaCss3Alt />} isOpen={mainDropdowns.css} onClick={() => toggleMainDropdown("css")}>
