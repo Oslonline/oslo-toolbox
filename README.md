@@ -30,6 +30,7 @@ Not fully responsive, mainly intended for computers.
 `npm run dev`
 
 ### Prod
+
 **Build for production:**
 `npm run build`
 
@@ -39,3 +40,22 @@ Not fully responsive, mainly intended for computers.
 # Contribute
 
 If you want to contribute to this project, make sure to read the [Contributing.md](COONTRIBUTING.md) file and the Code of Conduct before opening any issue or pull request.
+
+**1 - Open an issue**
+(wait for assignement)
+
+**2 - Fork the repo**
+
+**3 - Create a new branch**
+`git checkout -b IssueName`
+
+**3 - Commit & push your changes**
+(Try to follow [commit convention](https://www.conventionalcommits.org/en/v1.0.0/))
+
+**4 - Open your pull request !**
+
+# Contributors
+
+<a href="https://github.com/Oslonline/oslo-toolbox/graphs/contributors">
+  <img src="https://contrib.rocks/image?repo=Oslonline/oslo-toolbox" />
+</a>
