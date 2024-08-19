@@ -73,9 +73,20 @@ export default function Lorem() {
               <p className="text-lg">Number of paragraphs:</p>
               <input type="number" min={1} max={100} value={paragraphs} onChange={(e) => setParagraphs(Number(e.target.value))} className="rounded-md border-2 border-gray-200 bg-white p-2 py-1 caret-orange-400 outline-none focus:border-orange-400" />
             </div>
-            <div className="flex w-full items-center gap-4">
+            <div className="flex w-full items-center gap-2">
               <button className="hidden md:block" onClick={handleCopy} aria-label={copied ? "Text copied!" : "Copy text"}>
                 {copied ? <FaCheck fontSize={24} color="green" /> : <FaCopy fontSize={24} />}
+              </button>
+              <button onClick={handleCopy} className="flex w-full items-center justify-center gap-2 rounded-md bg-gray-300 px-3 py-2 text-gray-700 duration-200 hover:bg-gray-500 hover:text-gray-100 active:bg-gray-600 md:w-fit" aria-label="Generate Lorem Ipsum text">
+                {copied ? (
+                  <>
+                    Lorem copied <FaCheck fontSize={18} />
+                  </>
+                ) : (
+                  <>
+                    Copy <FaCopy fontSize={18} />
+                  </>
+                )}
               </button>
               <button onClick={generateLorem} className="w-full rounded-md bg-orange-400 px-3 py-2 text-gray-50 duration-200 hover:bg-orange-600 md:w-fit" aria-label="Generate Lorem Ipsum text">
                 Generate
@@ -83,12 +94,7 @@ export default function Lorem() {
             </div>
           </div>
           <div>
-            <div className="flex justify-between pb-2">
-              <p className="text-lg">Result :</p>
-              <button className="block md:hidden" onClick={handleCopy} aria-label={copied ? "Text copied!" : "Copy text"}>
-                {copied ? <FaCheck fontSize={24} color="green" /> : <FaCopy fontSize={24} />}
-              </button>
-            </div>
+            <p className="text-lg">Result :</p>
             <div className="rounded-md border-2 border-gray-200 bg-white p-4 pb-0">
               {generatedText.split("\n\n").map((para, index) => (
                 <p key={index} className="mb-4">
