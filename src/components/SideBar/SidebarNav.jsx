@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import SidebarLinks from "./SidebarLinks";
 import SidebarDropdown from "./SidebarDropdown";
 
-import { FaCss3Alt, FaExternalLinkAlt, FaHome, FaWeightHanging, FaRuler, FaThermometerHalf, FaRulerCombined, FaCube, FaUnlockAlt, FaQrcode, FaHashtag, FaBalanceScale, FaRegFileAlt } from "react-icons/fa";
+import { FaCss3Alt, FaHome, FaWeightHanging, FaRuler, FaThermometerHalf, FaRulerCombined, FaCube, FaUnlockAlt, FaQrcode, FaHashtag, FaBalanceScale, FaRegFileAlt } from "react-icons/fa";
 import { GrCircleInformation } from "react-icons/gr";
 import { TbCircleLetterL, TbMapPinQuestion } from "react-icons/tb";
 import { MdGradient, MdSecurity } from "react-icons/md";
@@ -54,7 +54,7 @@ function SidebarNav({ isOpen }) {
   };
 
   return (
-    <div className="flex h-full w-full flex-col justify-between gap-2 p-3 pr-0">
+    <div className="h-full w-full p-3 pr-0">
       <div className="flex h-fit w-full flex-col gap-2 overflow-y-auto pr-3">
         <SidebarLinks link={"/"} icon={<FaHome />} linkname={"Home"} onClick={closeAllDropdowns} isOpen={isOpen} />
         <SidebarLinks link={"/About"} icon={<GrCircleInformation />} linkname={"About"} onClick={closeAllDropdowns} isOpen={isOpen} />
@@ -89,9 +89,6 @@ function SidebarNav({ isOpen }) {
           <SidebarLinks link={"/Css/Gradient"} icon={<MdGradient />} linkname={"Gradient gen"} />
           <SidebarLinks link={"/Css/Box-shadow"} icon={<BsShadows />} linkname={"Box-shadow gen"} />
         </SidebarDropdown>
-      </div>
-      <div>
-        <SidebarLinks link={"/About#contact"} icon={<FaExternalLinkAlt />} linkname={"Contact"} onClick={closeAllDropdowns} />
       </div>
     </div>
   );
