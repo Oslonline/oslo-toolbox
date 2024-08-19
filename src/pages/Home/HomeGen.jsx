@@ -35,7 +35,7 @@ const genTools = [
 
 function HomeCss() {
   return (
-    <div className="flex flex-col gap-9 p-6">
+    <div className="flex flex-col gap-4 p-6">
       <div>
         <h2 className="text-2xl font-semibold text-gray-800">Discover all our Generators tools</h2>
       </div>
