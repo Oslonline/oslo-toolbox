@@ -61,7 +61,7 @@ export default function Password() {
       </div>
       <div className="flex flex-col gap-4 rounded-md md:border-2 md:border-gray-200 md:bg-gray-50 md:p-6">
         <div className="flex items-center justify-between gap-4 rounded-md border-2 border-gray-200 bg-white p-4 md:gap-8">
-          <p className="line-clamp-1 font-mono text-xl">{password}</p>
+          <input className="w-full rounded-md border-2 border-gray-200 bg-white p-2 font-mono caret-orange-400 outline-none focus:border-orange-400 selection:bg-orange-400 selection:text-gray-50" type="text" value={password} />
           <div className="flex gap-4">
             <button onClick={handleCopy} aria-label={copied ? "Password copied!" : "Copy password"}>
               {copied ? <FaCheck fontSize={24} color="green" /> : <FaCopy fontSize={24} />}
