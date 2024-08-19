@@ -66,7 +66,8 @@ function BoxShadow() {
         <h2 className="text-gray-900">Free CSS Box-Shadow Generator</h2>
         <p className="text-gray-700">Customize your box-shadow effects with ease. Adjust the shadow’s offset, blur, spread, color, and opacity to achieve the perfect look for your elements. Copy the generated CSS code and use it directly in your projects.</p>
       </div>
-      <div className="flex flex-col-reverse justify-between gap-6 lg:flex-row">
+
+      <div className="flex flex-col-reverse justify-between gap-4 md:gap-6 lg:flex-row">
         <div className="flex flex-col gap-3 rounded-md border-2 border-gray-200 bg-white p-4 lg:w-2/4">
           <div>
             <h3 className="font-semibold text-gray-600">Settings :</h3>
@@ -118,13 +119,14 @@ function BoxShadow() {
             </div>
           </div>
         </div>
-        <div className="flex h-96 flex-col rounded-md border-2 border-gray-200 bg-white p-4 lg:h-full lg:w-2/4">
+
+        <div className="flex h-56 md:h-96 flex-col rounded-md border-2 border-gray-200 bg-white p-4 lg:h-full lg:w-2/4">
           <div>
             <h4 className="font-semibold text-gray-600">Preview :</h4>
           </div>
           <div className="flex h-full items-center justify-center rounded-md">
             <div
-              className="h-48 w-2/3 rounded-md bg-gray-100 p-5 lg:w-6/12"
+              className="h-24 md:h-48 w-3/5 md:w-2/3 rounded-md bg-gray-100 p-5 lg:w-6/12"
               style={{
                 boxShadow: `${boxShadow.offsetX}px ${boxShadow.offsetY}px ${boxShadow.blurRadius}px ${boxShadow.spreadRadius}px ${hexToRGBA(boxShadow.color, boxShadow.opacity)}`,
               }}
@@ -136,13 +138,13 @@ function BoxShadow() {
       <GeneratedCSS result={result} copyToClipboard={copyToClipboard} copySuccess={copySuccess} />
 
       <div>
-        <h2 className="text-3xl font-bold text-gray-900">Frequently Asked Questions</h2>
-        <div className="mt-4">
+        <h2 className="text-2xl font-bold text-gray-900 md:text-3xl">Frequently Asked Questions</h2>
+        <div className="mt-2">
           <h3 className="font-semibold text-gray-900">What is a box-shadow in CSS?</h3>
           <p className="text-gray-600">A box-shadow in CSS is a shadow effect applied to an element’s box, allowing you to create depth and visual interest by adding an offset shadow.</p>
-          <h3 className="mt-4 font-semibold text-gray-900">How do I use this tool?</h3>
+          <h3 className="mt-2 font-semibold text-gray-900">How do I use this tool?</h3>
           <p className="text-gray-600">Adjust the sliders and inputs to customize your shadow. The CSS code will be generated automatically, which you can copy and use in your stylesheets.</p>
-          <h3 className="mt-4 font-semibold text-gray-900">Can I control the opacity of the shadow?</h3>
+          <h3 className="mt-2 font-semibold text-gray-900">Can I control the opacity of the shadow?</h3>
           <p className="text-gray-600">Yes, you can adjust the opacity of the shadow using the opacity slider. This allows you to create both subtle and bold shadow effects.</p>
         </div>
       </div>

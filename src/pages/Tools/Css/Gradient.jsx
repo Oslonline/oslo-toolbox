@@ -5,16 +5,17 @@ import patternImage from "/images/pattern.webp";
 import { Helmet } from "react-helmet";
 
 function Gradient() {
-  const [colorA, setColorA] = useState("#dbd90b");
+  const [colorA, setColorA] = useState("#fb923c");
   const [colorB, setColorB] = useState("#22c1c3");
   const [opacity, setOpacity] = useState(1);
-  const [angle, setAngle] = useState(0);
+  const [angle, setAngle] = useState(110);
   const [gradientType, setGradientType] = useState("linear");
   const [result, setResult] = useState("");
   const [copySuccess, setCopySuccess] = useState(false);
 
   useEffect(() => {
     generateGradient();
+    console.log(angle);
   }, [colorA, colorB, opacity, angle, gradientType]);
 
   useEffect(() => {
@@ -94,9 +95,9 @@ function Gradient() {
         <h2 className="text-gray-700">A free CSS gradient generator with custom colors, angle, and you can even choose the gradient type!</h2>
       </div>
 
-      <div className="flex flex-col-reverse justify-between gap-6 lg:flex-row">
+      <div className="flex flex-col-reverse justify-between gap-4 md:gap-6 lg:flex-row">
         <div className="flex flex-col gap-6 rounded-md border-2 border-gray-200 bg-white p-4 lg:w-2/4">
-          <div className="flex w-full gap-10">
+          <div className="flex w-full md:gap-10">
             <div className="flex flex-col gap-4">
               <h3 className="font-semibold text-gray-500">Color</h3>
               <div className="flex flex-col gap-3">
@@ -110,8 +111,7 @@ function Gradient() {
                 </div>
               </div>
             </div>
-
-            <div className={`flex flex-col gap-4 ${gradientType === "radial" ? "hidden" : "block"}`}>
+            <div className={`hidden flex-col gap-4 md:flex ${gradientType === "radial" ? "hidden" : "block"}`}>
               <h4 className="font-semibold text-gray-500">Angle</h4>
               <CircularSlider trackColor="#eeeeee" progressSize={10} knobColor="#fb923c" knobSize={32} hideLabelValue={true} valueFontSize="1rem" label="" min="0" max="360" width="70" value={angle} onChange={handleAngleChange} />
             </div>
@@ -124,20 +124,22 @@ function Gradient() {
               <option value="radial">Radial</option>
             </select>
           </div>
-          <div className="flex items-center gap-2">
+          <div className="flex flex-col gap-2 md:flex-row">
             <h6 className="font-semibold text-gray-500">Opacity:</h6>
-            <label className="text-gray-500" htmlFor="gradientOpacityInput">
-              0
-            </label>
-            <input id="gradientOpacityInput" type="range" name="opacity" value={opacity} min="0" max="1" step="0.05" onChange={handleOpacityChange} />
-            <label className="text-gray-500" htmlFor="gradientOpacityInput">
-              1
-            </label>
+            <div className="flex items-center gap-2">
+              <label className="text-gray-500" htmlFor="gradientOpacityInput">
+                0
+              </label>
+              <input id="gradientOpacityInput" className="accent-orange-400" type="range" name="opacity" value={opacity} min="0" max="1" step="0.05" onChange={handleOpacityChange} />
+              <label className="text-gray-500" htmlFor="gradientOpacityInput">
+                1
+              </label>
+            </div>
           </div>
         </div>
 
         <div
-          className="h-64 rounded-md border-2 border-gray-200 bg-white lg:h-full lg:w-2/4"
+          className="h-64 w-full rounded-md border-2 border-gray-200 bg-white lg:h-full lg:w-2/4"
           style={{
             backgroundImage: `url(${patternImage})`,
             backgroundPosition: `center`,
@@ -157,13 +159,13 @@ function Gradient() {
       {result && <GeneratedCSS result={result} copySuccess={copySuccess} copyToClipboard={copyToClipboard} />}
 
       <div>
-        <h2 className="text-3xl font-bold text-gray-900">Frequently Asked Questions</h2>
-        <div className="mt-4">
+        <h2 className="text-2xl font-bold text-gray-900 md:text-3xl">Frequently Asked Questions</h2>
+        <div className="mt-2">
           <h3 className="font-semibold text-gray-900">What is a CSS gradient?</h3>
           <p className="text-gray-600">A CSS gradient is a way to display a smooth transition between two or more colors. You can use gradients for backgrounds, buttons, and more to create visually appealing designs.</p>
-          <h3 className="mt-4 font-semibold text-gray-900">How do I generate a CSS gradient?</h3>
+          <h3 className="mt-2 font-semibold text-gray-900">How do I generate a CSS gradient?</h3>
           <p className="text-gray-600">Simply choose your colors, adjust the angle or type of gradient, and the CSS code will be automatically generated. You can then copy the code and paste it into your stylesheet.</p>
-          <h3 className="mt-4 font-semibold text-gray-900">What is the difference between linear and radial gradients?</h3>
+          <h3 className="mt-2 font-semibold text-gray-900">What is the difference between linear and radial gradients?</h3>
           <p className="text-gray-600">A linear gradient transitions colors along a straight line (horizontal, vertical, or diagonal), while a radial gradient transitions colors outward from a central point in a circular or elliptical shape.</p>
         </div>
       </div>
