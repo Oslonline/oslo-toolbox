@@ -53,8 +53,8 @@ function SidebarNav({ isOpen }) {
   };
 
   return (
-    <div className="flex h-full w-full flex-col justify-between p-3">
-      <div className="flex h-full w-full flex-col gap-2">
+    <div className="flex h-full w-full flex-col justify-between gap-2 p-3">
+      <div className="flex w-full flex-col gap-2 h-full">
         <SidebarLinks link={"/"} icon={<FaHome />} linkname={"Home"} onClick={closeAllDropdowns} isOpen={isOpen} />
         <SidebarLinks link={"/About"} icon={<GrCircleInformation />} linkname={"About"} onClick={closeAllDropdowns} isOpen={isOpen} />
         <hr />
