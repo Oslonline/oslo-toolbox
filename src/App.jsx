@@ -7,7 +7,7 @@ import { Outlet } from "react-router-dom";
 function App() {
   return (
     <div className="flex">
-      <aside className="sticky top-0 h-screen">
+      <aside className="sticky left-0 top-0 h-screen max-h-screen">
         <Sidebar />
       </aside>
       <main className="flex w-full flex-col">

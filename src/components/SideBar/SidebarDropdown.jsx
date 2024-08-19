@@ -6,10 +6,12 @@ function SidebarDropdown({ label, icon, isOpen, onClick, children }) {
       <button className="flex justify-between rounded-md px-3 py-2 text-start hover:bg-gray-200" onClick={onClick}>
         <div className="flex items-center gap-2">
           <div>{icon}</div>
-          <p>{label}</p>
+          {/* Always show the label */}
+          <p className={`hidden md:block`}>{label}</p> {/* Hide label on mobile */}
         </div>
         <div className="flex items-center">
-          <FaChevronDown className={isOpen ? "rotate-180 duration-100" : "duration-100"} />
+          {/* Show dropdown icon only on larger screens */}
+          <FaChevronDown className={`md:block ${isOpen ? "rotate-180" : "hidden"}`} />
         </div>
       </button>
       <div className={`flex flex-col gap-2 pl-2 ${isOpen ? "block" : "hidden"}`}>{children}</div>
