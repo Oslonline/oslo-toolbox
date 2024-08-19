@@ -41,7 +41,7 @@ export default function IpLookup() {
       <p className="text-gray-500">Use our free IP Lookup tool to retrieve information about any IP address. Find out the geographical location, ISP, and other details related to the IP address. Just enter the IPv4 address and click "Lookup" to get started.</p>
       <div className="flex flex-col rounded-md md:border-2 md:border-gray-200 md:bg-gray-50 md:p-6">
         <div className="flex flex-col gap-2 rounded-md border-2 border-gray-200 bg-white p-4">
-          <div className="flex w-full flex-col gap-2 md:gap-8 md:flex-row">
+          <div className="flex w-full flex-col gap-2 md:gap-8 md:flex-row md:justify-between">
             <input type="text" className="flex rounded-md border-2 border-gray-200 bg-white p-2 caret-orange-400 outline-none focus:border-orange-400" value={ip} onChange={(e) => setIp(e.target.value)} placeholder="Enter IPv4 address" aria-label="IP address" />
             <button onClick={getInfos} className="rounded-md bg-orange-400 px-4 py-2 text-gray-50 duration-200 hover:bg-orange-600" aria-label="Lookup IP address">
               Lookup

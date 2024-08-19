@@ -207,10 +207,10 @@ export default function Images() {
 
         <div>
           <div className="mb-4">
-            <h2 className="mb-2 text-2xl font-semibold text-gray-900 md:text-3xl">Why use our image converter?</h2>
+            <h2 className="mb-2 text-2xl font-bold text-gray-900 md:text-3xl">Why use our image converter?</h2>
             <p className="mb-4 text-gray-600">Our image converter is easy to use, free, and supports a wide range of formats. Whether you need to convert your images for a specific purpose or just to save space, we have you covered.</p>
           </div>
-          <h2 className="mb-2 text-2xl font-semibold text-gray-900 md:text-3xl">Frequently Asked Questions</h2>
+          <h2 className="mb-2 text-2xl font-bold text-gray-900 md:text-3xl">Frequently Asked Questions</h2>
           <div className="mb-4">
             <h3 className="font-semibold text-gray-900">What formats do you support?</h3>
             <p className="text-gray-600">We support a wide range of formats including JPEG, PNG, GIF, BMP, SVG, WEBP, and more. Simply upload your image, select the output format, and convert.</p>

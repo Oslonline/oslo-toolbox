@@ -81,19 +81,19 @@ export default function QrCode() {
         <p className="mt-2 text-gray-600">QR codes are a quick and efficient way to share information. Whether you’re a business promoting a product, hosting an event, or just sharing your contact details, a QR code can make it easier for your audience to connect with you.</p>
         <h3 className="mt-4 text-2xl font-semibold text-gray-900 md:text-3xl">Frequently Asked Questions</h3>
         <div className="mt-2">
-          <h4 className="font-bold text-gray-900">What is a QR Code?</h4>
+          <h4 className="font-semibold text-gray-900">What is a QR Code?</h4>
           <p className="text-gray-600">A QR Code (Quick Response Code) is a type of barcode that contains information, such as a link or text, which can be easily scanned using a smartphone camera.</p>
         </div>
         <div className="mt-4">
-          <h4 className="font-bold text-gray-900">How can I use a QR Code?</h4>
+          <h4 className="font-semibold text-gray-900">How can I use a QR Code?</h4>
           <p className="text-gray-600">You can use QR Codes for various purposes like sharing URLs, contact details, Wi-Fi passwords, or event information. Simply generate the QR Code, download it, and add it to your promotional materials.</p>
         </div>
         <div className="mt-4">
-          <h4 className="font-bold text-gray-900">Is it free to generate and download QR Codes?</h4>
+          <h4 className="font-semibold text-gray-900">Is it free to generate and download QR Codes?</h4>
           <p className="text-gray-600">Yes, you can generate and download QR Codes for free using this tool. There are no hidden fees.</p>
         </div>
         <div className="mt-4">
-          <h4 className="font-bold text-gray-900">Can I change the color of my QR Code?</h4>
+          <h4 className="font-semibold text-gray-900">Can I change the color of my QR Code?</h4>
           <p className="text-gray-600">Absolutely! You can customize the color of your QR Code to match your branding or personal preference before downloading it.</p>
         </div>
       </div>

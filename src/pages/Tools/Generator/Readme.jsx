@@ -88,7 +88,7 @@ export default function ReadmeGenerator() {
             <p className="text-xs text-gray-500 md:text-sm md:uppercase">Project readme</p>
             <input type="checkbox" className="hidden" checked={template === "profile"} onChange={switchTemplate} />
             <div className="relative inline-block w-10 select-none align-middle transition duration-200 ease-in md:w-14">
-              <div className="toggle-bg block h-6 w-10 rounded-full border-2 border-gray-200 bg-gray-300 shadow-inner md:h-8 md:w-14"></div>
+              <div className={`toggle-bg block h-6 w-10 rounded-full border-2 border-gray-200 bg-gray-300 shadow-inner md:h-8 md:w-14 ${template === "profile" ? "border-orange-400 duration-200" : "duration-200"}`}></div>
               <div className={`dot absolute left-1 top-1 h-4 w-4 rounded-full border-2 border-gray-200 bg-gray-50 shadow transition md:h-6 md:w-6 ${template === "profile" ? "translate-x-full transform bg-orange-400" : ""}`}></div>
             </div>
             <p className="text-xs text-gray-500 md:text-sm md:uppercase">Profile readme</p>
@@ -110,9 +110,15 @@ export default function ReadmeGenerator() {
           {sections.slice(1).map((section, index) => (
             <div key={section.id} className="flex gap-2">
               <div className="flex w-full flex-col gap-2">
-                <div className="flex gap-2 w-full">
-                  <input type="text" placeholder="Section Title" value={section.title} onChange={(e) => updateSection(section.id, e.target.value, section.content)} className="rounded-md border-2 w-full border-gray-200 bg-white p-2 text-gray-900 caret-orange-400 outline-none focus:border-orange-400" />
-                  <button onClick={() => removeSection(section.id)} className="rounded-md border-2 border-gray-200 px-2 text-gray-300 duration-200 hover:border-gray-400 hover:bg-gray-400 hover:text-gray-50 md:block">
+                <div className="flex w-full gap-2 md:gap-0">
+                  <input
+                    type="text"
+                    placeholder="Section Title"
+                    value={section.title}
+                    onChange={(e) => updateSection(section.id, e.target.value, section.content)}
+                    className="w-full rounded-md border-2 border-gray-200 bg-white p-2 text-gray-900 caret-orange-400 outline-none focus:border-orange-400"
+                  />
+                  <button onClick={() => removeSection(section.id)} className="rounded-md md:hidden border-2 border-gray-200 px-2 text-gray-300 duration-200 hover:border-gray-400 hover:bg-gray-400 hover:text-gray-50">
                     <CiCircleRemove fontSize={23} />
                   </button>
                 </div>
@@ -124,7 +130,7 @@ export default function ReadmeGenerator() {
                   rows="2"
                 ></textarea>
               </div>
-              <button onClick={() => removeSection(section.id)} className="hidden rounded-md border-2 border-gray-200 px-2 text-gray-400 duration-200 hover:border-gray-400 hover:bg-gray-400 hover:text-gray-50 md:block">
+              <button onClick={() => removeSection(section.id)} className="hidden rounded-md border-2 border-gray-200 px-2 text-gray-300 duration-200 hover:border-gray-400 hover:bg-gray-400 hover:text-gray-50 md:block">
                 <CiCircleRemove fontSize={38} />
               </button>
             </div>
@@ -141,19 +147,19 @@ export default function ReadmeGenerator() {
 
         <h3 className="mt-4 text-2xl font-semibold md:text-3xl">Frequently Asked Questions</h3>
         <div className="mt-2">
-          <h4 className="font-bold">What is a GitHub README?</h4>
+          <h4 className="font-semibold">What is a GitHub README?</h4>
           <p className="text-gray-500">A GitHub README is a markdown file that introduces and explains a project. It usually includes information about the project's purpose, how to set it up, how to use it, and any other relevant details.</p>
         </div>
         <div className="mt-2">
-          <h4 className="font-bold">Why is a README important?</h4>
+          <h4 className="font-semibold">Why is a README important?</h4>
           <p className="text-gray-500">A README is often the first interaction a user has with your project. It provides critical information about your project and can help attract contributors or users.</p>
         </div>
         <div className="mt-2">
-          <h4 className="font-bold">Can I add custom sections?</h4>
+          <h4 className="font-semibold">Can I add custom sections?</h4>
           <p className="text-gray-500">Yes! You can add as many custom sections as you need. Each section can be tailored to include information specific to your project.</p>
         </div>
         <div className="mt-2">
-          <h4 className="font-bold">How do I generate the README?</h4>
+          <h4 className="font-semibold">How do I generate the README?</h4>
           <p className="text-gray-500">Simply fill in the required fields, add any optional sections, and your README will be generated. You can then copy it to your clipboard or download it directly.</p>
         </div>
       </div>

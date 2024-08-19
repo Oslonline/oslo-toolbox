@@ -113,7 +113,7 @@ function Gradient() {
             </div>
             <div className={`hidden flex-col gap-4 md:flex ${gradientType === "radial" ? "hidden" : "block"}`}>
               <h4 className="font-semibold text-gray-500">Angle</h4>
-              <CircularSlider trackColor="#eeeeee" progressSize={10} knobColor="#fb923c" knobSize={32} hideLabelValue={true} valueFontSize="1rem" label="" min="0" max="360" width="70" value={angle} onChange={handleAngleChange} />
+              <CircularSlider trackColor="#eeeeee" hideKnobRing={true} progressSize={10} knobColor="#fb923c" knobSize={32} hideLabelValue={true} valueFontSize="1rem" label="" min="0" max="360" width="70" value={angle} onChange={handleAngleChange}/>
             </div>
           </div>
 
