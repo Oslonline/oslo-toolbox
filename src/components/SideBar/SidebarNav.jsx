@@ -13,7 +13,7 @@ import { CgReadme } from "react-icons/cg";
 import { LuImage } from "react-icons/lu";
 import { IoSpeedometer, IoTimerSharp } from "react-icons/io5";
 
-function SidebarNav() {
+function SidebarNav({ isOpen }) {
   const [mainDropdowns, setMainDropdowns] = useState({
     generators: false,
     file_convert: false,

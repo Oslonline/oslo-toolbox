@@ -1,7 +1,10 @@
 import { Link } from "react-router-dom";
 import SidebarNav from "./SidebarNav";
+import { useState } from "react";
 
 function SideBar() {
+  const [isOpen, setIsOpen] = useState(false);
+
   return (
     <div className={`sticky left-0 h-full border-r-2 border-gray-200 bg-gray-50 transition-transform duration-300 ${isOpen ? "w-56" : "w-16"} md:w-56`}>
       <div className="hidden items-center justify-center border-b-2 border-gray-200 p-4 md:flex md:h-1/6">
