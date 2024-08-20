@@ -16,7 +16,7 @@ export default function Images() {
   useEffect(() => {
     if (selectedFile) {
       const fileExtension = selectedFile.name.split(".").pop().toLowerCase();
-      const formats = ["jpg", "png", "gif", "bmp", "svg", "webp"];
+      const formats = ["jpg", "png", "bmp", "svg", "webp"];
       const suggestedFormat = formats.find((format) => format !== fileExtension);
       setOutputFormat(suggestedFormat);
     }
@@ -67,26 +67,35 @@ export default function Images() {
       reader.onload = (event) => {
         const img = new Image();
         img.onload = () => {
-          const canvas = document.createElement("canvas");
-          const ctx = canvas.getContext("2d");
-          canvas.width = img.width;
-          canvas.height = img.height;
-          ctx.drawImage(img, 0, 0);
+          if (format === "svg") {
+            const svgData = `
+              <svg xmlns="http://www.w3.org/2000/svg" width="${img.width}" height="${img.height}">
+                <image href="${event.target.result}" width="${img.width}" height="${img.height}" />
+              </svg>`;
+            const svgBlob = new Blob([svgData], { type: "image/svg+xml" });
+            resolve(svgBlob);
+          } else {
+            const canvas = document.createElement("canvas");
+            const ctx = canvas.getContext("2d");
+            canvas.width = img.width;
+            canvas.height = img.height;
+            ctx.drawImage(img, 0, 0);
 
-          const outputMimeType = format === "jpg" ? "image/jpeg" : `image/${format}`;
-          const quality = format === "png" ? undefined : 0.7;
+            const outputMimeType = format === "jpg" ? "image/jpeg" : `image/${format}`;
+            const quality = format === "png" ? undefined : 0.7;
 
-          canvas.toBlob(
-            (blob) => {
-              if (blob) {
-                resolve(blob);
-              } else {
-                reject(new Error("Conversion failed"));
-              }
-            },
-            outputMimeType,
-            quality,
-          );
+            canvas.toBlob(
+              (blob) => {
+                if (blob) {
+                  resolve(blob);
+                } else {
+                  reject(new Error("Conversion failed"));
+                }
+              },
+              outputMimeType,
+              quality,
+            );
+          }
         };
         img.src = event.target.result;
       };
@@ -126,7 +135,7 @@ export default function Images() {
       <Helmet>
         <title>Images converter - Convert any image file</title>
         <meta name="description" content="Convert any image file easily into various formats with our free online converter." />
-        <meta name="keywords" content="image converter, free image conversion, jpeg, png, gif" />
+        <meta name="keywords" content="image converter, free image conversion, jpg, png, webp, bmp, svg" />
         <meta name="robots" content="index, follow" />
         <link rel="canonical" href="https://oslo-toolbox.vercel.app/FilesConvert/Images" />
       </Helmet>
@@ -142,7 +151,7 @@ export default function Images() {
                   <div onClick={triggerFileInput} className="flex w-full cursor-pointer flex-col items-center justify-center rounded-md bg-orange-400 p-4 text-center text-white duration-200 hover:bg-orange-600">
                     <IoCloudUploadOutline className="text-9xl" />
                     <p className="text-lg">Drag here or click to import your image</p>
-                    <p className="mt-2 text-center text-xs">SVG, PNG, JPG, WEBP, BMP or GIF (MAX. 20MB).</p>
+                    <p className="mt-2 text-center text-xs">SVG, PNG, JPG, WEBP, or BMP (MAX. 20MB).</p>
                   </div>
                   <input id="file-input" type="file" accept="image/*" onChange={handleFileChange} className="hidden" />
                 </div>
@@ -168,7 +177,7 @@ export default function Images() {
                       <FaArrowRight className="text-2xl text-gray-900 md:text-4xl" />
                       <div>
                         <select id="output-format" value={outputFormat} onChange={(e) => setOutputFormat(e.target.value)} className="rounded-md border-2 border-gray-200 bg-white p-2 focus:border-orange-400">
-                          {["jpg", "png", "gif", "bmp", "svg", "webp"]
+                          {["jpg", "png", "bmp", "svg", "webp"]
                             .filter((format) => format !== selectedFile.name.split(".").pop().toLowerCase())
                             .map((format) => (
                               <option key={format} value={format}>
@@ -213,7 +222,7 @@ export default function Images() {
           <h2 className="mb-2 text-2xl font-bold text-gray-900 md:text-3xl">Frequently Asked Questions</h2>
           <div className="mb-4">
             <h3 className="font-semibold text-gray-900">What formats do you support?</h3>
-            <p className="text-gray-600">We support a wide range of formats including JPEG, PNG, GIF, BMP, SVG, WEBP, and more. Simply upload your image, select the output format, and convert.</p>
+            <p className="text-gray-600">We support a wide range of formats including JPEG, PNG, BMP, SVG, WEBP, and more. Simply upload your image, select the output format, and convert.</p>
           </div>
           <div className="mb-4">
             <h3 className="font-semibold text-gray-900">Is it really free?</h3>
