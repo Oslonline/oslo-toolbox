@@ -1,8 +1,8 @@
-# About
+<h1 style="text-align: center">Oslo's Toolbox</h1>
 
-An opensource toolbox made with Reactjs & TailwindCSS !
+![oslo-toolbox](https://i.imgur.com/pzuWsWK.png)
 
-# Tools
+<h2>Tools</h2>
 
 - CSS Box-shadow generator.
 - CSS background gradient generator.
@@ -15,7 +15,7 @@ An opensource toolbox made with Reactjs & TailwindCSS !
 - Github README.md generator for Project & Profile.
 - IP Adress lookup.
 
-# Run
+<h2>Run</h2>
 
 **Clone the repository:**
 `git clone git@github.com:Oslonline/toolbox-react.git`
@@ -26,7 +26,7 @@ An opensource toolbox made with Reactjs & TailwindCSS !
 **Start the development server:**
 `npm run dev`
 
-### Prod
+#### Prod
 
 **Build for production:**
 `npm run build`
@@ -34,7 +34,7 @@ An opensource toolbox made with Reactjs & TailwindCSS !
 **Run the optimized application locally:**
 `npm run serve`
 
-# Contribute
+<h2>Contribute</h2>
 
 If you want to contribute to this project, make sure to read the [Contributing.md](COONTRIBUTING.md) file and the Code of Conduct before opening any issue or pull request.
 
@@ -51,7 +51,7 @@ If you want to contribute to this project, make sure to read the [Contributing.m
 
 **4 - Open your pull request !**
 
-# Contributors
+<h2>Contributors</h2>
 
 <a href="https://github.com/Oslonline/oslo-toolbox/graphs/contributors">
   <img src="https://contrib.rocks/image?repo=Oslonline/oslo-toolbox" />
