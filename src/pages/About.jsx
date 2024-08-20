@@ -8,7 +8,7 @@ function About() {
           <p className="text-3xl font-bold">About</p>
           <p className="mb-4 mt-2">
             <span className="font-semibold">Oslo Toolbox </span> is an open-source collection of handy tools built with ReactJS and TailwindCSS, currently under development. This toolbox is designed to streamline various tasks for developers and designers, providing essential utilities in one
-            convenient package. While it is primarily intended for desktop use and is not fully responsive, it offers a user-friendly interface and powerful features.
+            convenient package. It offers a user-friendly interface and powerful features.
           </p>
         </div>
         <div>
