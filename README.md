@@ -1,9 +1,6 @@
 # About
 
 An opensource toolbox made with Reactjs & TailwindCSS !
-<br>
-Not fully responsive, mainly intended for computers.
-<br>
 
 # Tools
 
