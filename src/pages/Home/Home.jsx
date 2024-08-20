@@ -23,7 +23,7 @@ const tools = [
   {
     name: "Security tools",
     link: "/Security",
-    text: "IP Lookup...",
+    text: "IP Lookup, Hash generator...",
     icon: "/images/tools-ctg/sec.webp",
   },
   {
