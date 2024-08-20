@@ -4,7 +4,7 @@ const filesTools = [
   {
     name: "Images converter",
     link: "/FilesConvert/Images",
-    text: "",
+    text: "Convert between PNG, JPG, WEBP, GIF, BMP & SVG.",
     icon: "/images/files-convert-tools/images.webp",
   },
 ];
