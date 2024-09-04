@@ -1,8 +1,7 @@
 import React, { useState, useEffect } from "react";
-import { useNavigate } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import SidebarLinks from "./SidebarLinks";
 import SidebarDropdown from "./SidebarDropdown";
-
 import { FaCss3Alt, FaHome, FaWeightHanging, FaRuler, FaThermometerHalf, FaRulerCombined, FaCube, FaUnlockAlt, FaQrcode, FaHashtag, FaBalanceScale } from "react-icons/fa";
 import { GrCircleInformation } from "react-icons/gr";
 import { TbCircleLetterL, TbMapPinQuestion } from "react-icons/tb";
@@ -16,6 +15,8 @@ import { IoSpeedometer, IoTimerSharp } from "react-icons/io5";
 
 function SidebarNav({ isOpen }) {
   const navigate = useNavigate();
+  const location = useLocation();
+
   const [mainDropdowns, setMainDropdowns] = useState({
     generators: false,
     file_convert: false,
@@ -51,9 +52,7 @@ function SidebarNav({ isOpen }) {
     });
   };
 
-  const handleRedirect = (path) => {
-    navigate(path);
-  };
+  const isActiveLink = (link) => location.pathname === link;
 
   return (
     <div className="h-full w-full p-3 pr-0">
@@ -64,9 +63,9 @@ function SidebarNav({ isOpen }) {
 
         {/* Generators Dropdown */}
         {isMobile ? (
-          <div onClick={() => handleRedirect("/Generators")} className="flex h-12 cursor-pointer items-center justify-center">
+          <Link to={"/Generators"} className={`flex items-center gap-2 rounded-md px-3 py-2 text-gray-950 hover:bg-gray-200 ${isActiveLink("/Generators") ? "bg-gray-800 text-white underline" : ""}`}>
             <FaGear />
-          </div>
+          </Link>
         ) : (
           <SidebarDropdown label="Generators" icon={<FaGear />} isOpen={mainDropdowns.generators} onClick={() => toggleMainDropdown("generators")}>
             <>
@@ -81,9 +80,9 @@ function SidebarNav({ isOpen }) {
 
         {/* Files Converter Dropdown */}
         {isMobile ? (
-          <div onClick={() => handleRedirect("/FilesConvert")} className="flex h-12 cursor-pointer items-center justify-center">
+          <Link to={"/FilesConvert"} className={`flex items-center gap-2 rounded-md px-3 py-2 text-gray-950 hover:bg-gray-200 ${isActiveLink("/FilesConvert") ? "bg-gray-800 text-white underline hover:bg-gray-800" : ""}`}>
             <SiConvertio />
-          </div>
+          </Link>
         ) : (
           <SidebarDropdown label="Files Converter" icon={<SiConvertio />} isOpen={mainDropdowns.file_convert} onClick={() => toggleMainDropdown("file_convert")}>
             <SidebarLinks link={"/FilesConvert/Images"} icon={<LuImage />} linkname={"Images"} />
@@ -93,9 +92,9 @@ function SidebarNav({ isOpen }) {
 
         {/* Units Converter Dropdown */}
         {isMobile ? (
-          <div onClick={() => handleRedirect("/UnitsConvert")} className="flex h-12 cursor-pointer items-center justify-center">
+          <Link to={"/UnitsConvert"} className={`flex items-center gap-2 rounded-md px-3 py-2 text-gray-950 hover:bg-gray-200 ${isActiveLink("/UnitsConvert") ? "bg-gray-800 text-white underline hover:bg-gray-800" : ""}`}>
             <FaBalanceScale />
-          </div>
+          </Link>
         ) : (
           <SidebarDropdown label="Units Converter" icon={<FaBalanceScale />} isOpen={mainDropdowns.convert} onClick={() => toggleMainDropdown("convert")}>
             <>
@@ -113,9 +112,9 @@ function SidebarNav({ isOpen }) {
 
         {/* Security Dropdown */}
         {isMobile ? (
-          <div onClick={() => handleRedirect("/Security")} className="flex h-12 cursor-pointer items-center justify-center">
+          <Link to={"/Security"} className={`flex items-center gap-2 rounded-md px-3 py-2 text-gray-950 hover:bg-gray-200 ${isActiveLink("/Security") ? "bg-gray-800 text-white underline hover:bg-gray-800" : ""}`}>
             <MdSecurity />
-          </div>
+          </Link>
         ) : (
           <SidebarDropdown label="Security" icon={<MdSecurity />} isOpen={mainDropdowns.security} onClick={() => toggleMainDropdown("security")}>
             <>
@@ -128,9 +127,9 @@ function SidebarNav({ isOpen }) {
 
         {/* CSS Dropdown */}
         {isMobile ? (
-          <div onClick={() => handleRedirect("/Css")} className="flex h-12 cursor-pointer items-center justify-center">
+          <Link to={"/Css"} className={`flex items-center gap-2 rounded-md px-3 py-2 text-gray-950 hover:bg-gray-200 ${isActiveLink("/Css") ? "bg-gray-800 text-white underline hover:bg-gray-800" : ""}`}>
             <FaCss3Alt />
-          </div>
+          </Link>
         ) : (
           <SidebarDropdown label="Css" icon={<FaCss3Alt />} isOpen={mainDropdowns.css} onClick={() => toggleMainDropdown("css")}>
             <>
