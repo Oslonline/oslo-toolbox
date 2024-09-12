@@ -6,8 +6,8 @@ function SideBar() {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <div className={`sticky left-0 h-full border-r-2 border-gray-200 bg-gray-50 transition-transform duration-300 ${isOpen ? "w-56" : "w-16"} md:w-56`}>
-      <div className="hidden items-center justify-center border-b-2 border-gray-200 p-4 md:flex md:h-1/6">
+    <div className={`sticky left-0 h-full border-r-2 border-gray-200 dark:border-gray-700 bg-gray-50 transition-transform duration-300 dark:bg-gray-900 ${isOpen ? "w-56" : "w-16"} md:w-56`}>
+      <div className="hidden items-center justify-center border-b-2 dark:border-gray-700 border-gray-200 p-4 md:flex md:h-1/6">
         <Link to={"/"} className="h-full md:p-4">
           <img className="lg:w-26 w-8 sm:w-14 md:w-20" src="/images/toolbox.webp" alt="Logo" />
         </Link>

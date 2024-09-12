@@ -47,13 +47,13 @@ function Volume() {
 
       <div className="p-6 pt-0">
         <div>
-          <h2 className="mb-2 text-2xl font-bold text-gray-900 md:text-3xl">How It Works</h2>
-          <p className="text-gray-700">
+          <h2 className="mb-2 text-2xl font-bold text-gray-900 md:text-3xl dark:text-gray-100">How It Works</h2>
+          <p className="text-gray-700 dark:text-gray-400">
             To use the volume converter, select the units you want to convert from and to, then input the value you wish to convert. The tool will instantly display the converted volume in the selected units. Our converter supports a wide range of volume units including metric units like cubic
             meters and liters, as well as various liquid and dry units used in the US and UK systems. For detailed conversions, you can also check the specific values used in the tool by scrolling down.
           </p>
-          <h3 className="mt-4 font-semibold text-gray-900">Common Units of Volume</h3>
-          <p className="text-gray-700">
+          <h3 className="mt-4 font-semibold text-gray-900 dark:text-gray-100">Common Units of Volume</h3>
+          <p className="text-gray-700 dark:text-gray-400">
             - <strong>Cubic Meter (m³):</strong> The standard unit of volume in the International System of Units (SI). Used for large volumes.
             <br />- <strong>Cubic Centimeter (cm³):</strong> A metric unit of volume equal to one millionth of a cubic meter, commonly used for smaller volumes.
             <br />- <strong>Cubic Millimeter (mm³):</strong> A metric unit of volume used for very small volumes.
@@ -72,19 +72,21 @@ function Volume() {
         </div>
 
         <div className="mt-5">
-          <h2 className="text-2xl font-bold text-gray-900 md:text-3xl">FAQ</h2>
+          <h2 className="text-2xl font-bold text-gray-900 md:text-3xl dark:text-gray-100">FAQ</h2>
           <div className="mt-2">
-            <h3 className="font-semibold text-gray-900">What is the difference between US liquid and dry volume units?</h3>
-            <p className="text-gray-600">
+            <h3 className="font-semibold text-gray-900 dark:text-gray-100">What is the difference between US liquid and dry volume units?</h3>
+            <p className="text-gray-600 dark:text-gray-400">
               US liquid and dry volume units are used for different types of measurements. Liquid units (like fluid ounces, cups, and gallons) measure the volume of liquids, while dry units (like dry pints and dry gallons) are used for measuring dry goods. They are not interchangeable due to
               differences in density and measurement standards.
             </p>
-            <h3 className="mt-4 font-semibold text-gray-900">Why are there different volume units in the US and UK systems?</h3>
-            <p className="text-gray-600">
+            <h3 className="mt-4 font-semibold text-gray-900 dark:text-gray-100">Why are there different volume units in the US and UK systems?</h3>
+            <p className="text-gray-600 dark:text-gray-400">
               The US and UK systems have different volume units due to historical differences in measurement standards. For example, the US gallon is slightly different from the UK gallon. The UK system also includes units like the gill, which is not commonly used in the US.
             </p>
-            <h3 className="mt-4 font-semibold text-gray-900">How can I convert between metric and US/UK volume units?</h3>
-            <p className="text-gray-600">To convert between metric and US/UK volume units, use the provided conversion factors. For instance, 1 cubic meter is approximately 264.172 gallons (US) or 219.969 gallons (UK). You can use our converter tool to perform these conversions accurately.</p>
+            <h3 className="mt-4 font-semibold text-gray-900 dark:text-gray-100">How can I convert between metric and US/UK volume units?</h3>
+            <p className="text-gray-600 dark:text-gray-400">
+              To convert between metric and US/UK volume units, use the provided conversion factors. For instance, 1 cubic meter is approximately 264.172 gallons (US) or 219.969 gallons (UK). You can use our converter tool to perform these conversions accurately.
+            </p>
           </div>
         </div>
       </div>

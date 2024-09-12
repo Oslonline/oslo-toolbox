@@ -45,31 +45,38 @@ export default function Hash() {
       </Helmet>
 
       <div>
-        <p className="text-gray-500">Generate secure hashes for your text using algorithms like MD5, SHA-1, SHA-256, and SHA-512. Simply input your text, choose the hash type, and click Generate !</p>
+        <p className="text-gray-600 dark:text-gray-400">Generate secure hashes for your text using algorithms like MD5, SHA-1, SHA-256, and SHA-512. Simply input your text, choose the hash type, and click Generate !</p>
       </div>
-      <div className="flex flex-col gap-4 rounded-md md:border-2 md:border-gray-200 md:bg-gray-50 md:p-6">
-        <div className="flex flex-col items-center justify-between gap-2 rounded-md border-2 border-gray-200 bg-white p-4 md:flex-row md:gap-4">
+      <div className="flex flex-col gap-4 rounded-md md:border-2 md:border-gray-200 md:bg-gray-50 md:p-6 dark:md:border-gray-800 dark:md:bg-gray-900">
+        <div className="flex flex-col items-center justify-between gap-2 rounded-md border-2 border-gray-200 bg-white p-4 md:flex-row md:gap-4 dark:border-gray-800 dark:bg-gray-950">
           <div className="flex items-center gap-4">
-            <input type="text" placeholder="Enter text here" value={text} onChange={(e) => setText(e.target.value)} className="w-full rounded-md border-2 border-gray-200 bg-white p-2 caret-orange-400 outline-none focus:border-orange-400" aria-label="Input text for hashing" />
+            <input
+              type="text"
+              placeholder="Enter text here"
+              value={text}
+              onChange={(e) => setText(e.target.value)}
+              className="w-full rounded-md border-2 border-gray-200 bg-white p-2 caret-orange-400 outline-none focus:border-orange-400 dark:border-gray-800 dark:bg-gray-950"
+              aria-label="Input text for hashing"
+            />
             <p className="font-semibold">TO</p>
-            <select value={hashType} onChange={(e) => setHashType(e.target.value)} className="rounded-md border-2 border-gray-200 bg-white p-2 focus:border-orange-400" aria-label="Select hash algorithm">
+            <select value={hashType} onChange={(e) => setHashType(e.target.value)} className="rounded-md border-2 border-gray-200 bg-white p-2 focus:border-orange-400 dark:border-gray-800 dark:bg-gray-950" aria-label="Select hash algorithm">
               <option value="MD5">MD5</option>
               <option value="SHA-1">SHA-1</option>
               <option value="SHA-256">SHA-256</option>
               <option value="SHA-512">SHA-512</option>
             </select>
           </div>
-          <button onClick={handleGenerateHash} className="w-full rounded-md bg-orange-400 px-3 py-2 text-gray-50 duration-200 hover:bg-orange-600 md:w-fit" aria-label="Generate hash">
+          <button onClick={handleGenerateHash} className="w-full rounded-md bg-orange-400 px-3 py-2 text-gray-50 duration-200 hover:bg-orange-600 dark:hover:text-gray-200 md:w-fit dark:bg-orange-600 dark:hover:bg-orange-400" aria-label="Generate hash">
             Generate
           </button>
         </div>
 
         {hash && (
-          <div className="flex flex-col rounded-md border-2 border-gray-200 bg-white p-4">
+          <div className="flex flex-col rounded-md border-2 border-gray-200 bg-white p-4 dark:border-gray-800 dark:bg-gray-950">
             <p className="text-lg">Result :</p>
             <span className="flex justify-between gap-4">
-              <p className="w-full break-words rounded-md border-2 border-gray-200 p-2">{hash}</p>
-              <button onClick={handleCopy} aria-label={copySuccess ? "Hash copied!" : "Copy hash"}>
+              <p className="w-full break-words rounded-md border-2 border-gray-200 p-2 dark:border-gray-800">{hash}</p>
+              <button className="dark:text-gray-300" onClick={handleCopy} aria-label={copySuccess ? "Hash copied!" : "Copy hash"}>
                 {copySuccess ? <FaCheck fontSize={24} color="green" /> : <FaCopy fontSize={24} />}
               </button>
             </span>
@@ -77,27 +84,27 @@ export default function Hash() {
         )}
       </div>
 
-      <div className="text-gray-900">
+      <div className="text-gray-900 dark:text-gray-100">
         <h2 className="text-2xl font-bold md:text-3xl">Understanding Hashing</h2>
-        <p className="mt-2 text-gray-600">
+        <p className="mt-2 text-gray-600 dark:text-gray-400">
           Hashing is a process that converts your input text into a fixed-size string of characters, which is typically a hexadecimal number. It's commonly used in various security applications, such as password storage, data integrity verification, and digital signatures.
         </p>
         <h3 className="mt-4 text-2xl font-bold md:text-3xl">Frequently Asked Questions</h3>
         <div className="mt-2">
           <h4 className="font-semibold">What is the purpose of hashing?</h4>
-          <p className="text-gray-600">Hashing is used to ensure data integrity and secure storage of sensitive information like passwords. It converts your input into a fixed-size string that cannot be easily reversed.</p>
+          <p className="text-gray-600 dark:text-gray-400">Hashing is used to ensure data integrity and secure storage of sensitive information like passwords. It converts your input into a fixed-size string that cannot be easily reversed.</p>
         </div>
         <div className="mt-2">
           <h4 className="font-semibold">What's the difference between MD5 and SHA algorithms?</h4>
-          <p className="text-gray-600">MD5 is faster but less secure than SHA-256 and SHA-512, which offer higher security but require more processing power. SHA-1 is an older algorithm that is less commonly used due to vulnerabilities.</p>
+          <p className="text-gray-600 dark:text-gray-400">MD5 is faster but less secure than SHA-256 and SHA-512, which offer higher security but require more processing power. SHA-1 is an older algorithm that is less commonly used due to vulnerabilities.</p>
         </div>
         <div className="mt-2">
           <h4 className="font-semibold">Can I reverse a hash to get the original text?</h4>
-          <p className="text-gray-600">No, hashing is a one-way process, meaning you cannot reverse the hash to retrieve the original text. This makes it ideal for storing passwords securely.</p>
+          <p className="text-gray-600 dark:text-gray-400">No, hashing is a one-way process, meaning you cannot reverse the hash to retrieve the original text. This makes it ideal for storing passwords securely.</p>
         </div>
         <div className="mt-2">
           <h4 className="font-semibold">Is it safe to use the same hash function for all my data?</h4>
-          <p className="text-gray-600">While you can use the same hash function, it's crucial to use a salt (a random value added to the input) to enhance security, especially when hashing passwords.</p>
+          <p className="text-gray-600 dark:text-gray-400">While you can use the same hash function, it's crucial to use a salt (a random value added to the input) to enhance security, especially when hashing passwords.</p>
         </div>
       </div>
     </div>

@@ -141,14 +141,14 @@ export default function Images() {
       </Helmet>
 
       <div className="flex flex-col gap-4 p-4 md:p-6">
-        <p className="text-gray-500">Convert any image for free with our images converter. Insert your file, select the desired converted format, click convert, and it's done!</p>
+        <p className="text-gray-600 dark:text-gray-400">Convert any image for free with our images converter. Insert your file, select the desired converted format, click convert, and it's done!</p>
 
-        <div className="flex flex-col gap-4 rounded-md md:border-2 md:border-gray-200 md:bg-gray-50 md:p-6">
-          <div className="flex items-center justify-between rounded-md border-2 border-gray-200 bg-white p-4" onDragOver={handleDragOver} onDragLeave={handleDragLeave} onDrop={handleDrop}>
+        <div className="flex flex-col gap-4 rounded-md md:border-2 md:border-gray-200 md:bg-gray-50 md:p-6 dark:md:border-gray-800 dark:md:bg-gray-900">
+          <div className="flex items-center justify-between rounded-md border-2 border-gray-200 bg-white p-4 dark:border-gray-800 dark:bg-gray-950" onDragOver={handleDragOver} onDragLeave={handleDragLeave} onDrop={handleDrop}>
             <div className="flex w-full items-center justify-center gap-2">
               {!selectedFile ? (
                 <div className="w-full">
-                  <div onClick={triggerFileInput} className="flex w-full cursor-pointer flex-col items-center justify-center rounded-md bg-orange-400 p-4 text-center text-white duration-200 hover:bg-orange-600">
+                  <div onClick={triggerFileInput} className="flex w-full cursor-pointer flex-col items-center justify-center rounded-md bg-orange-400 p-4 text-center text-white duration-200 hover:bg-orange-600 dark:bg-orange-600 dark:hover:bg-orange-400">
                     <IoCloudUploadOutline className="text-9xl" />
                     <p className="text-lg">Drag here or click to import your image</p>
                     <p className="mt-2 text-center text-xs">SVG, PNG, JPG, WEBP, or BMP (MAX. 20MB).</p>
@@ -158,7 +158,7 @@ export default function Images() {
               ) : (
                 <div className="flex w-full flex-col items-center gap-6 lg:gap-2">
                   <div className="w-full items-start">
-                    <button onClick={handleSelectAnotherFile} className="flex items-center gap-2 rounded-md border-2 border-gray-200 px-2 py-1 duration-200 hover:bg-gray-200">
+                    <button onClick={handleSelectAnotherFile} className="flex items-center gap-2 rounded-md border-2 dark:text-gray-300 border-gray-200 px-2 py-1 duration-200 hover:bg-gray-200 dark:border-gray-800 dark:hover:bg-gray-800">
                       <VscDebugRestart />
                       Select another file
                     </button>
@@ -166,17 +166,17 @@ export default function Images() {
                   <div className="flex w-fit flex-col gap-2">
                     <div className="flex items-center justify-between gap-6">
                       <div>
-                        <p className="flex items-center gap-1 text-gray-900 md:text-lg">
-                          File selected: <span className="text-base text-gray-600">{selectedFile.name}</span>
+                        <p className="flex items-center gap-1 text-gray-900 md:text-lg dark:text-gray-100">
+                          File selected: <span className="text-base text-gray-600 dark:text-gray-400">{selectedFile.name}</span>
                         </p>
-                        <p className="flex items-center gap-1 text-gray-900 md:text-lg">
+                        <p className="flex items-center gap-1 text-gray-900 md:text-lg dark:text-gray-100">
                           Size:
-                          <span className="text-base text-gray-600">{selectedFile.size < 1024 * 1024 ? `${(selectedFile.size / 1024).toFixed(2)} KB` : `${(selectedFile.size / (1024 * 1024)).toFixed(2)} MB`}</span>
+                          <span className="text-base text-gray-600 dark:text-gray-400">{selectedFile.size < 1024 * 1024 ? `${(selectedFile.size / 1024).toFixed(2)} KB` : `${(selectedFile.size / (1024 * 1024)).toFixed(2)} MB`}</span>
                         </p>
                       </div>
-                      <FaArrowRight className="text-2xl text-gray-900 md:text-4xl" />
+                      <FaArrowRight className="text-2xl text-gray-900 md:text-4xl dark:text-gray-100" />
                       <div>
-                        <select id="output-format" value={outputFormat} onChange={(e) => setOutputFormat(e.target.value)} className="rounded-md border-2 border-gray-200 bg-white p-2 focus:border-orange-400">
+                        <select id="output-format" value={outputFormat} onChange={(e) => setOutputFormat(e.target.value)} className="rounded-md border-2 border-gray-200 bg-white p-2 focus:border-orange-400 dark:border-gray-800 dark:bg-gray-950 dark:focus:border-orange-600">
                           {["jpg", "png", "bmp", "svg", "webp"]
                             .filter((format) => format !== selectedFile.name.split(".").pop().toLowerCase())
                             .map((format) => (
@@ -187,7 +187,7 @@ export default function Images() {
                         </select>
                       </div>
                     </div>
-                    <button onClick={handleConvert} className="rounded-md bg-orange-400 px-3 py-2 text-gray-50 duration-200 hover:bg-orange-600" disabled={isConverting}>
+                    <button onClick={handleConvert} className="dark:hover-text-gray-200 rounded-md bg-orange-400 px-3 py-2 text-gray-50 duration-200 hover:bg-orange-600 dark:bg-orange-600 dark:hover:bg-orange-400" disabled={isConverting}>
                       {isConverting ? (
                         <div className="flex w-full items-center justify-center gap-2">
                           <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24">
@@ -216,21 +216,21 @@ export default function Images() {
 
         <div>
           <div className="mb-4">
-            <h2 className="mb-2 text-2xl font-bold text-gray-900 md:text-3xl">Why use our image converter?</h2>
-            <p className="mb-4 text-gray-600">Our image converter is easy to use, free, and supports a wide range of formats. Whether you need to convert your images for a specific purpose or just to save space, we have you covered.</p>
+            <h2 className="mb-2 text-2xl font-bold text-gray-900 md:text-3xl dark:text-gray-100">Why use our image converter?</h2>
+            <p className="mb-4 text-gray-600 dark:text-gray-400">Our image converter is easy to use, free, and supports a wide range of formats. Whether you need to convert your images for a specific purpose or just to save space, we have you covered.</p>
           </div>
-          <h2 className="mb-2 text-2xl font-bold text-gray-900 md:text-3xl">Frequently Asked Questions</h2>
+          <h2 className="mb-2 text-2xl font-bold text-gray-900 md:text-3xl dark:text-gray-100">Frequently Asked Questions</h2>
           <div className="mb-4">
-            <h3 className="font-semibold text-gray-900">What formats do you support?</h3>
-            <p className="text-gray-600">We support a wide range of formats including JPEG, PNG, BMP, SVG, WEBP, and more. Simply upload your image, select the output format, and convert.</p>
-          </div>
-          <div className="mb-4">
-            <h3 className="font-semibold text-gray-900">Is it really free?</h3>
-            <p className="text-gray-600">Yes, our image converter is completely free to use with no hidden charges.</p>
+            <h3 className="font-semibold text-gray-900 dark:text-gray-100">What formats do you support?</h3>
+            <p className="text-gray-600 dark:text-gray-400">We support a wide range of formats including JPEG, PNG, BMP, SVG, WEBP, and more. Simply upload your image, select the output format, and convert.</p>
           </div>
           <div className="mb-4">
-            <h3 className="font-semibold text-gray-900">Can I convert multiple files at once?</h3>
-            <p className="text-gray-600">Currently, our converter supports converting one file at a time. We are working on adding bulk conversion in the future.</p>
+            <h3 className="font-semibold text-gray-900 dark:text-gray-100">Is it really free?</h3>
+            <p className="text-gray-600 dark:text-gray-400">Yes, our image converter is completely free to use with no hidden charges.</p>
+          </div>
+          <div className="mb-4">
+            <h3 className="font-semibold text-gray-900 dark:text-gray-100">Can I convert multiple files at once?</h3>
+            <p className="text-gray-600 dark:text-gray-400">Currently, our converter supports converting one file at a time. We are working on adding bulk conversion in the future.</p>
           </div>
         </div>
       </div>

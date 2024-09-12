@@ -44,13 +44,13 @@ function Mass() {
 
       <div className="p-6 pt-0">
         <div>
-          <h2 className="mb-2 text-2xl font-bold text-gray-900 md:text-3xl">How It Works</h2>
-          <p className="text-gray-700">
+          <h2 className="mb-2 text-2xl font-bold text-gray-900 md:text-3xl dark:text-gray-100">How It Works</h2>
+          <p className="text-gray-700 dark:text-gray-400">
             To use the mass converter, select the units you want to convert from and to, and input the value you wish to convert. The tool will instantly display the converted value in the selected units. This converter supports a wide range of mass units including metric units like kilograms and
             imperial units like pounds. For detailed conversions, you can also check the specific values used in the tool by scrolling down.
           </p>
-          <h3 className="mt-4 font-semibold text-gray-900">Common Units of Mass</h3>
-          <p className="text-gray-700">
+          <h3 className="mt-4 font-semibold text-gray-900 dark:text-gray-100">Common Units of Mass</h3>
+          <p className="text-gray-700 dark:text-gray-400">
             - <strong>Gigatonne:</strong> A metric unit of mass equal to 1,000,000,000,000,000,000 grams (1e15 grams). Used for very large masses.
             <br />- <strong>Megatonne:</strong> A metric unit of mass equal to 1,000,000,000,000 grams (1e12 grams). Commonly used for large-scale measurements.
             <br />- <strong>Tonne (Metric ton):</strong> A metric unit of mass equal to 1,000,000,000 grams (1e9 grams). Equivalent to 1,000 kilograms.
@@ -68,14 +68,14 @@ function Mass() {
         </div>
 
         <div className="mt-5">
-          <h2 className="text-2xl font-bold text-gray-900 md:text-3xl">FAQ</h2>
+          <h2 className="text-2xl font-bold text-gray-900 md:text-3xl dark:text-gray-100">FAQ</h2>
           <div className="mt-2">
-            <h3 className="font-semibold text-gray-900">What if I need to convert a unit not listed here?</h3>
-            <p className="text-gray-600">If you need to convert a unit not listed in this converter, please contact us with the details. We may be able to add more units based on user requests and the availability of accurate conversion factors.</p>
-            <h3 className="mt-4 font-semibold text-gray-900">How do I convert between different systems of measurement?</h3>
-            <p className="text-gray-600">This tool allows you to convert between metric units (such as kilograms and grams) and imperial units (such as pounds and ounces). Simply select the units you want to convert from and to, then input the value to get the conversion.</p>
-            <h3 className="mt-4 font-semibold text-gray-900">Are the conversion factors accurate?</h3>
-            <p className="text-gray-600">Our conversion factors are based on standard references and are accurate to the best of our knowledge. However, for critical applications, we recommend verifying the results with additional sources or standards.</p>
+            <h3 className="font-semibold text-gray-900 dark:text-gray-100">What if I need to convert a unit not listed here?</h3>
+            <p className="text-gray-600 dark:text-gray-400">If you need to convert a unit not listed in this converter, please contact us with the details. We may be able to add more units based on user requests and the availability of accurate conversion factors.</p>
+            <h3 className="mt-4 font-semibold text-gray-900 dark:text-gray-100">How do I convert between different systems of measurement?</h3>
+            <p className="text-gray-600 dark:text-gray-400">This tool allows you to convert between metric units (such as kilograms and grams) and imperial units (such as pounds and ounces). Simply select the units you want to convert from and to, then input the value to get the conversion.</p>
+            <h3 className="mt-4 font-semibold text-gray-900 dark:text-gray-100">Are the conversion factors accurate?</h3>
+            <p className="text-gray-600 dark:text-gray-400">Our conversion factors are based on standard references and are accurate to the best of our knowledge. However, for critical applications, we recommend verifying the results with additional sources or standards.</p>
           </div>
         </div>
       </div>

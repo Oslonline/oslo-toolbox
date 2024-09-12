@@ -56,15 +56,15 @@ function Converter({ description, systems, units, unitValues }) {
   return (
     <div className="flex flex-col gap-7 p-4 pb-0 md:p-6 md:pb-0">
       <div className="flex flex-col gap-4">
-        <p className="text-gray-500">{description}</p>
+        <p className="text-gray-500 dark:text-gray-400">{description}</p>
       </div>
-      <div className="flex flex-col gap-5 rounded-md p-0 md:border-2 md:border-gray-200 md:bg-gray-50 md:p-6">
+      <div className="flex flex-col gap-5 rounded-md p-0 md:border-2 md:border-gray-200 md:bg-gray-50 md:p-6 dark:md:border-gray-800 dark:md:bg-gray-900">
         <div className="flex items-center gap-2">
           <div>
-            <h3 className="font-semibold text-gray-500">Metric System :</h3>
+            <h3 className="font-semibold text-gray-500 dark:text-gray-400">Metric System :</h3>
           </div>
           <div>
-            <select className="rounded-md px-3 py-2 hover:cursor-pointer" value={metricSys} onChange={(e) => handleMetricSysChange(e.target.value)}>
+            <select className="rounded-md px-3 py-2 hover:cursor-pointer dark:bg-gray-800" value={metricSys} onChange={(e) => handleMetricSysChange(e.target.value)}>
               {systems.map((sys) => (
                 <option key={sys} value={sys}>
                   {sys}
@@ -73,13 +73,19 @@ function Converter({ description, systems, units, unitValues }) {
             </select>
           </div>
         </div>
-        <div className="flex flex-col items-center gap-2 rounded-md border-2 border-gray-200 bg-white p-4">
+        <div className="flex flex-col items-center gap-2 rounded-md border-2 border-gray-200 bg-white p-4 dark:border-gray-800 dark:bg-gray-950">
           <div>
-            <h3 className="font-semibold text-gray-500">Conversion :</h3>
+            <h3 className="font-semibold text-gray-500 dark:text-gray-400">Conversion :</h3>
           </div>
           <div className="flex flex-col items-center gap-4 md:flex-row md:items-start">
             <div className="flex flex-col gap-3">
-              <input className="rounded-md border-2 border-gray-200 bg-white p-2 caret-orange-400 outline-none focus:border-orange-400 focus:outline-offset-0" placeholder="3.46" type="number" value={inputValue} onChange={handleInputChange} />
+              <input
+                className="rounded-md border-2 border-gray-200 bg-white p-2 caret-orange-400 outline-none focus:border-orange-400 focus:outline-offset-0 dark:border-gray-800 dark:bg-gray-950 dark:text-gray-50 dark:caret-orange-600 dark:focus:border-orange-600"
+                placeholder="3.46"
+                type="number"
+                value={inputValue}
+                onChange={handleInputChange}
+              />
               <div className="hidden md:block">
                 <MetricButtons units={units[metricSys]} selectedUnit={unitFrom} onChange={handleUnitFromChange} />
               </div>
@@ -93,11 +99,11 @@ function Converter({ description, systems, units, unitValues }) {
                 </select>
               </div>
             </div>
-            <div className="flex w-fit rotate-90 md:mt-3 md:rotate-0">
+            <div className="flex w-fit rotate-90 md:mt-3 md:rotate-0 dark:text-gray-400">
               <FaArrowRight />
             </div>
             <div className="flex flex-col gap-3">
-              <input className="rounded-md border-2 border-gray-200 bg-white p-2 outline-none" type="text" value={result} readOnly />
+              <input className="rounded-md border-2 border-gray-200 bg-white p-2 outline-none dark:border-gray-800 dark:bg-gray-950 dark:text-gray-50" type="text" value={result} readOnly />
               <div className="hidden md:block">
                 <MetricButtons units={units[metricSys]} selectedUnit={unitTo} onChange={handleUnitToChange} />
               </div>

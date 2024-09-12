@@ -18,13 +18,13 @@ function Breadcrumbs() {
   ];
 
   return (
-    <nav className="hidden items-center space-x-1 md:flex">
+    <nav className="mb-0.5 hidden items-center space-x-1 rounded border border-gray-200 px-1 py-0.5 text-sm text-gray-400 dark:text-gray-600 md:flex dark:border-gray-800 ">
       {breadcrumbs.map((breadcrumb, index) => (
         <React.Fragment key={breadcrumb.segment}>
           {index === breadcrumbs.length - 1 ? (
-            <span className="text-gray-500">{breadcrumb.segment}</span>
+            <span>{breadcrumb.segment}</span>
           ) : (
-            <Link to={breadcrumb.url} className="text-blue-500 hover:underline">
+            <Link to={breadcrumb.url} className="hover:underline">
               {breadcrumb.segment}
             </Link>
           )}

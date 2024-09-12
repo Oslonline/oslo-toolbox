@@ -107,13 +107,13 @@ function Area() {
 
       <div className="p-6 pt-0">
         <div>
-          <h2 className="text-2xl font-bold text-gray-900 md:text-3xl mb-2">How It Works</h2>
-          <p className="text-gray-700">
+          <h2 className="mb-2 text-2xl font-bold text-gray-900 md:text-3xl dark:text-gray-100">How It Works</h2>
+          <p className="text-gray-700 dark:text-gray-400">
             To use the area converter, select the units you want to convert from and to, and input the value you wish to convert. The tool will instantly display the converted value in the selected units. Our converter supports a wide range of units including metric units like square meters and
             imperial units like acres. For detailed conversions, you can also check the specific values used in the tool by scrolling down.
           </p>
-          <h3 className="mt-4 font-semibold text-gray-900">Common Units of Area</h3>
-          <p className="text-gray-700">
+          <h3 className="mt-4 font-semibold text-gray-900 dark:text-gray-100">Common Units of Area</h3>
+          <p className="text-gray-700 dark:text-gray-400">
             - <strong>Square Meter (m²):</strong> The standard unit of area in the International System of Units (SI). Used globally for most area measurements.
             <br />- <strong>Acre (ac):</strong> A unit of area commonly used in the United States and the UK, particularly for measuring large plots of land.
             <br />- <strong>Hectare (ha):</strong> A metric unit of area equal to 10,000 square meters, commonly used in agriculture and forestry.
@@ -147,14 +147,14 @@ function Area() {
         </div>
 
         <div className="mt-5">
-          <h2 className="text-2xl font-bold text-gray-900 md:text-3xl">FAQ</h2>
+          <h2 className="text-2xl font-bold text-gray-900 md:text-3xl dark:text-gray-100">FAQ</h2>
           <div className="mt-2">
-            <h3 className="font-semibold text-gray-900">What if I need to convert a unit not listed here?</h3>
-            <p className="text-gray-600">If you need to convert a unit not listed in this converter, please contact us with the details. We may be able to add more units based on user requests and the availability of accurate conversion factors.</p>
-            <h3 className="mt-4 font-semibold text-gray-900">Are there units with specific regional usage?</h3>
-            <p className="text-gray-600">Yes, some units such as the "Acre (US Survey)" or "Varas Castellanas Cuad" are specific to certain regions or historical contexts. If you have any questions about these units, feel free to ask!</p>
-            <h3 className="mt-4 font-semibold text-gray-900">How can I ensure the conversion results are correct?</h3>
-            <p className="text-gray-600">We use accurate conversion factors based on standard references. However, for specific applications, we recommend cross-referencing the results with other reliable sources or standards.</p>
+            <h3 className="font-semibold text-gray-900 dark:text-gray-100">What if I need to convert a unit not listed here?</h3>
+            <p className="text-gray-600 dark:text-gray-400">If you need to convert a unit not listed in this converter, please contact us with the details. We may be able to add more units based on user requests and the availability of accurate conversion factors.</p>
+            <h3 className="mt-4 font-semibold text-gray-900 dark:text-gray-100">Are there units with specific regional usage?</h3>
+            <p className="text-gray-600 dark:text-gray-400">Yes, some units such as the "Acre (US Survey)" or "Varas Castellanas Cuad" are specific to certain regions or historical contexts. If you have any questions about these units, feel free to ask!</p>
+            <h3 className="mt-4 font-semibold text-gray-900 dark:text-gray-100">How can I ensure the conversion results are correct?</h3>
+            <p className="text-gray-600 dark:text-gray-400">We use accurate conversion factors based on standard references. However, for specific applications, we recommend cross-referencing the results with other reliable sources or standards.</p>
           </div>
         </div>
       </div>

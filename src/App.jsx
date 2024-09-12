@@ -6,8 +6,8 @@ import { Outlet } from "react-router-dom";
 
 function App() {
   return (
-    <div className="flex">
-      <aside className="sticky left-0 top-0 h-screen max-h-screen">
+    <div className="flex bg-white dark:bg-gray-950 dark:text-gray-50">
+      <aside className="sticky left-0 top-0 h-screen max-h-screenF">
         <Sidebar />
       </aside>
       <main className="flex w-full flex-col">

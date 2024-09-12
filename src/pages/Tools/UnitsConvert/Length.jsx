@@ -45,13 +45,13 @@ function Length() {
 
       <div className="p-6 pt-0">
         <div>
-          <h2 className="mb-2 text-2xl font-bold text-gray-900 md:text-3xl">How It Works</h2>
-          <p className="text-gray-700">
+          <h2 className="mb-2 text-2xl font-bold text-gray-900 md:text-3xl dark:text-gray-100">How It Works</h2>
+          <p className="text-gray-700  dark:text-gray-400">
             To use the length converter, select the units you want to convert from and to, and input the value you wish to convert. The tool will instantly display the converted value in the selected units. Our converter supports a wide range of units including metric units like meters and imperial
             units like miles. For detailed conversions, you can also check the specific values used in the tool by scrolling down.
           </p>
-          <h3 className="mt-4 font-semibold text-gray-900">Common Units of Length</h3>
-          <p className="text-gray-700">
+          <h3 className="mt-4 font-semibold text-gray-900 dark:text-gray-100">Common Units of Length</h3>
+          <p className="text-gray-700  dark:text-gray-400">
             - <strong>Kilometre (km):</strong> The metric unit of length equal to 1,000 meters. Commonly used for measuring larger distances.
             <br />- <strong>Metre (m):</strong> The base unit of length in the International System of Units (SI). Used globally for most length measurements.
             <br />- <strong>Centimetre (cm):</strong> A metric unit of length equal to 0.01 meters. Used for smaller measurements.
@@ -70,14 +70,14 @@ function Length() {
         </div>
 
         <div className="mt-5">
-          <h2 className="text-2xl font-bold text-gray-900 md:text-3xl">FAQ</h2>
+          <h2 className="text-2xl font-bold text-gray-900 md:text-3xl dark:text-gray-100">FAQ</h2>
           <div className="mt-2">
-            <h3 className="font-semibold text-gray-900">What if I need to convert a unit not listed here?</h3>
-            <p className="text-gray-600">If you need to convert a unit not listed in this converter, please contact us with the details. We may be able to include additional units based on user demand and availability of accurate conversion factors.</p>
-            <h3 className="mt-4 font-semibold text-gray-900">Can I convert between different systems like metric and imperial?</h3>
-            <p className="text-gray-600">Yes, this tool allows you to convert between metric units (such as meters and kilometers) and imperial units (such as feet and miles). Select the appropriate units from the dropdown menus to perform the conversion.</p>
-            <h3 className="mt-4 font-semibold text-gray-900">How accurate are the conversion factors?</h3>
-            <p className="text-gray-600">Our conversion factors are based on widely accepted standards. We strive to ensure that all factors are accurate, but for critical applications, please verify the results with additional sources.</p>
+            <h3 className="font-semibold text-gray-900 dark:text-gray-100">What if I need to convert a unit not listed here?</h3>
+            <p className="text-gray-600 dark:text-gray-400">If you need to convert a unit not listed in this converter, please contact us with the details. We may be able to include additional units based on user demand and availability of accurate conversion factors.</p>
+            <h3 className="mt-4 font-semibold text-gray-900 dark:text-gray-100">Can I convert between different systems like metric and imperial?</h3>
+            <p className="text-gray-600 dark:text-gray-400">Yes, this tool allows you to convert between metric units (such as meters and kilometers) and imperial units (such as feet and miles). Select the appropriate units from the dropdown menus to perform the conversion.</p>
+            <h3 className="mt-4 font-semibold text-gray-900 dark:text-gray-100">How accurate are the conversion factors?</h3>
+            <p className="text-gray-600 dark:text-gray-400">Our conversion factors are based on widely accepted standards. We strive to ensure that all factors are accurate, but for critical applications, please verify the results with additional sources.</p>
           </div>
         </div>
       </div>

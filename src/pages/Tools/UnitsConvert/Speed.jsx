@@ -65,13 +65,13 @@ function Speed() {
 
       <div className="p-6 pt-0">
         <div>
-          <h2 className="text-2xl font-bold text-gray-900 md:text-3xl">How It Works</h2>
-          <p className="text-gray-700">
+          <h2 className="text-2xl font-bold text-gray-900 md:text-3xl dark:text-gray-100">How It Works</h2>
+          <p className="text-gray-700 dark:text-gray-400">
             To use the speed converter, select the units you want to convert from and to, and input the value you wish to convert. The tool will instantly display the converted value in the selected units. Our converter supports a wide range of units including metric units like meters per second and
             imperial units like miles per hour. For detailed conversions, you can also check the specific values used in the tool by scrolling down.
           </p>
-          <h3 className="mt-4 font-semibold text-gray-900">Common Units of Speed</h3>
-          <p className="text-gray-700">
+          <h3 className="mt-4 font-semibold text-gray-900 dark:text-gray-100">Common Units of Speed</h3>
+          <p className="text-gray-700 dark:text-gray-400">
             - <strong>Metre per Second (m/s):</strong> The standard unit of speed in the International System of Units (SI). Used globally for most speed measurements.
             <br />- <strong>Mile per Hour (mph):</strong> A unit of speed commonly used in the United States and the UK, particularly for measuring vehicle speeds.
             <br />- <strong>Kilometre per Hour (km/h):</strong> A metric unit of speed commonly used worldwide, especially on road signs.
@@ -91,14 +91,14 @@ function Speed() {
         </div>
 
         <div className="mt-5">
-          <h2 className="text-2xl font-bold text-gray-900 md:text-3xl">FAQ</h2>
+          <h2 className="text-2xl font-bold text-gray-900 md:text-3xl dark:text-gray-100">FAQ</h2>
           <div className="mt-2">
-            <h3 className="font-semibold text-gray-900">What if I need to convert a unit not listed here?</h3>
-            <p className="text-gray-600">If you need to convert a unit not listed in this converter, please contact us with the details. We may be able to add more units based on user requests and the availability of accurate conversion factors.</p>
-            <h3 className="mt-4 font-semibold text-gray-900">Are there units with specific regional usage?</h3>
-            <p className="text-gray-600">Yes, some units such as the "Knot (UK)" or "Yard per Second (yd/s)" are specific to certain regions or historical contexts. If you have any questions about these units, feel free to ask !</p>
-            <h3 className="mt-4 font-semibold text-gray-900">How can I ensure the conversion results are correct?</h3>
-            <p className="text-gray-600">We use accurate conversion factors based on standard references. However, for specific applications, we recommend cross-referencing the results with other reliable sources or standards.</p>
+            <h3 className="font-semibold text-gray-900 dark:text-gray-100">What if I need to convert a unit not listed here?</h3>
+            <p className="text-gray-600 dark:text-gray-400">If you need to convert a unit not listed in this converter, please contact us with the details. We may be able to add more units based on user requests and the availability of accurate conversion factors.</p>
+            <h3 className="mt-4 font-semibold text-gray-900 dark:text-gray-100">Are there units with specific regional usage?</h3>
+            <p className="text-gray-600 dark:text-gray-400">Yes, some units such as the "Knot (UK)" or "Yard per Second (yd/s)" are specific to certain regions or historical contexts. If you have any questions about these units, feel free to ask !</p>
+            <h3 className="mt-4 font-semibold text-gray-900 dark:text-gray-100">How can I ensure the conversion results are correct?</h3>
+            <p className="text-gray-600 dark:text-gray-400">We use accurate conversion factors based on standard references. However, for specific applications, we recommend cross-referencing the results with other reliable sources or standards.</p>
           </div>
         </div>
       </div>

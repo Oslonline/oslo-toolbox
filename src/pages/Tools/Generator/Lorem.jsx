@@ -66,14 +66,21 @@ export default function Lorem() {
       </Helmet>
 
       <div className="flex flex-col gap-4 p-4 md:p-6">
-        <p className="text-gray-500">Generate Lorem Ipsum text for free. Choose how many paragraphs you want, click generate and it's done!</p>
-        <div className="flex flex-col gap-4 rounded-md md:border-2 md:border-gray-200 md:bg-gray-50 md:p-6">
-          <div className="flex flex-col justify-between gap-2 rounded-md border-2 border-gray-200 bg-white p-4 md:flex-row md:items-center">
+        <p className="text-gray-600 dark:text-gray-400">Generate Lorem Ipsum text for free. Choose how many paragraphs you want, click generate and it's done!</p>
+        <div className="flex flex-col gap-4 rounded-md md:border-2 md:border-gray-200 md:bg-gray-50 md:p-6 dark:md:border-gray-800 dark:md:bg-gray-900">
+          <div className="flex flex-col justify-between gap-2 rounded-md border-2 border-gray-200 bg-white p-4 md:flex-row md:items-center dark:border-gray-800 dark:bg-gray-950">
             <div className="flex items-center gap-2">
               <p className="text-lg">Number of paragraphs:</p>
-              <input type="number" min={1} max={100} value={paragraphs} onChange={(e) => setParagraphs(Number(e.target.value))} className="rounded-md border-2 border-gray-200 bg-white p-2 py-1 caret-orange-400 outline-none focus:border-orange-400" />
+              <input
+                type="number"
+                min={1}
+                max={100}
+                value={paragraphs}
+                onChange={(e) => setParagraphs(Number(e.target.value))}
+                className="rounded-md border-2 border-gray-200 bg-white p-2 py-1 caret-orange-400 outline-none focus:border-orange-400 dark:border-gray-800 dark:bg-gray-950 dark:caret-orange-600 dark:focus:border-orange-600"
+              />
             </div>
-            <div className="flex w-full md:w-fit items-center gap-2">
+            <div className="flex w-full items-center gap-2 md:w-fit">
               <button onClick={handleCopy} className="flex w-full items-center justify-center gap-2 rounded-md bg-gray-300 px-3 py-2 text-gray-700 duration-200 hover:bg-gray-500 hover:text-gray-100 active:bg-gray-600 md:w-fit" aria-label="Generate Lorem Ipsum text">
                 {copied ? (
                   <>
@@ -85,14 +92,14 @@ export default function Lorem() {
                   </>
                 )}
               </button>
-              <button onClick={generateLorem} className="w-full rounded-md bg-orange-400 px-3 py-2 text-gray-50 duration-200 hover:bg-orange-600 md:w-fit" aria-label="Generate Lorem Ipsum text">
+              <button onClick={generateLorem} className="w-full rounded-md dark:bg-orange-600 dark:hover:bg-orange-400 dark:hover:text-gray-200 bg-orange-400 px-3 py-2 text-gray-50 duration-200 hover:bg-orange-600 md:w-fit" aria-label="Generate Lorem Ipsum text">
                 Generate
               </button>
             </div>
           </div>
           <div>
             <p className="text-lg">Result :</p>
-            <div className="rounded-md border-2 border-gray-200 bg-white p-4 pb-0">
+            <div className="rounded-md border-2 border-gray-200 bg-white p-4 pb-0 dark:border-gray-800 dark:bg-gray-950">
               {generatedText.split("\n\n").map((para, index) => (
                 <p key={index} className="mb-4">
                   {para}
@@ -102,18 +109,18 @@ export default function Lorem() {
           </div>
         </div>
         <div>
-          <h2 className="mb-4 text-2xl font-bold text-gray-900 md:text-3xl">Frequently Asked Questions</h2>
+          <h2 className="mb-4 text-2xl font-bold text-gray-900 md:text-3xl dark:text-gray-100">Frequently Asked Questions</h2>
           <div className="mb-4">
-            <h3 className="font-semibold text-gray-900">What is Lorem Ipsum?</h3>
-            <p className="text-gray-600">Lorem Ipsum is a placeholder text commonly used in the graphic design, publishing, and printing industries. It helps to visualize the appearance of the final product without relying on meaningful content.</p>
+            <h3 className="text-gray-90 font-semibold dark:text-gray-100">What is Lorem Ipsum?</h3>
+            <p className="text-gray-600 dark:text-gray-400">Lorem Ipsum is a placeholder text commonly used in the graphic design, publishing, and printing industries. It helps to visualize the appearance of the final product without relying on meaningful content.</p>
           </div>
           <div className="mb-4">
-            <h3 className="font-semibold text-gray-900">Why use Lorem Ipsum?</h3>
-            <p className="text-gray-600">Using Lorem Ipsum allows designers and developers to focus on the layout and design of a document or website without being distracted by the content. It helps to simulate the appearance of real text.</p>
+            <h3 className="font-semibold text-gray-900 dark:text-gray-100">Why use Lorem Ipsum?</h3>
+            <p className="text-gray-600 dark:text-gray-400">Using Lorem Ipsum allows designers and developers to focus on the layout and design of a document or website without being distracted by the content. It helps to simulate the appearance of real text.</p>
           </div>
           <div className="mb-4">
-            <h3 className="font-semibold text-gray-900">Can I use Lorem Ipsum for real content?</h3>
-            <p className="text-gray-600">While Lorem Ipsum is useful for placeholder text, it should be replaced with actual content before publishing or printing. It’s meant to demonstrate layout and design, not to convey real information.</p>
+            <h3 className="font-semibold text-gray-900 dark:text-gray-100">Can I use Lorem Ipsum for real content?</h3>
+            <p className="text-gray-600 dark:text-gray-400">While Lorem Ipsum is useful for placeholder text, it should be replaced with actual content before publishing or printing. It’s meant to demonstrate layout and design, not to convey real information.</p>
           </div>
         </div>
       </div>

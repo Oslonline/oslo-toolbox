@@ -44,13 +44,13 @@ function Time() {
 
       <div className="p-6 pt-0">
         <div>
-          <h2 className="mb-2 text-2xl font-bold text-gray-900 md:text-3xl">How It Works</h2>
-          <p className="text-gray-700">
+          <h2 className="mb-2 text-2xl font-bold text-gray-900 md:text-3xl dark:text-gray-100">How It Works</h2>
+          <p className="text-gray-700 dark:text-gray-400">
             To use the time converter, select the units you want to convert from and to, and input the value you wish to convert. The tool will instantly display the converted value in the selected units. Our converter supports a wide range of units including standard units like seconds and minutes,
             as well as specialized units like milliseconds and jiffies. For detailed conversions, you can also check the specific values used in the tool by scrolling down.
           </p>
-          <h3 className="mt-4 font-semibold text-gray-900">Common Units of Time</h3>
-          <p className="text-gray-700">
+          <h3 className="mt-4 font-semibold text-gray-900 dark:text-gray-100">Common Units of Time</h3>
+          <p className="text-gray-700 dark:text-gray-400">
             - <strong>Millisecond (ms):</strong> A unit of time equal to 0.001 seconds.
             <br />- <strong>Microsecond (µs):</strong> A unit of time equal to 0.000001 seconds.
             <br />- <strong>Nanosecond (ns):</strong> A unit of time equal to 0.000000001 seconds.
@@ -69,14 +69,14 @@ function Time() {
         </div>
 
         <div className="mt-5">
-          <h2 className="text-2xl font-bold text-gray-900 md:text-3xl">FAQ</h2>
+          <h2 className="text-2xl font-bold text-gray-900 md:text-3xl dark:text-gray-100">FAQ</h2>
           <div className="mt-2">
-            <h3 className="font-semibold text-gray-900">What if I need to convert a unit not listed here?</h3>
-            <p className="text-gray-600">If you need to convert a unit not listed in this converter, please contact us with the details. We may be able to add more units based on user requests and the availability of accurate conversion factors.</p>
-            <h3 className="mt-4 font-semibold text-gray-900">Are there units with specific regional usage?</h3>
-            <p className="text-gray-600">Yes, some units like "Shake" or "Jiffy" are used in specific contexts. If you have any questions about these units, feel free to ask!</p>
-            <h3 className="mt-4 font-semibold text-gray-900">How can I ensure the conversion results are correct?</h3>
-            <p className="text-gray-600">We use accurate conversion factors based on standard references. However, for specific applications, we recommend cross-referencing the results with other reliable sources or standards.</p>
+            <h3 className="font-semibold text-gray-900 dark:text-gray-100">What if I need to convert a unit not listed here?</h3>
+            <p className="text-gray-600 dark:text-gray-400">If you need to convert a unit not listed in this converter, please contact us with the details. We may be able to add more units based on user requests and the availability of accurate conversion factors.</p>
+            <h3 className="mt-4 font-semibold text-gray-900 dark:text-gray-100">Are there units with specific regional usage?</h3>
+            <p className="text-gray-600 dark:text-gray-400">Yes, some units like "Shake" or "Jiffy" are used in specific contexts. If you have any questions about these units, feel free to ask!</p>
+            <h3 className="mt-4 font-semibold text-gray-900 dark:text-gray-100">How can I ensure the conversion results are correct?</h3>
+            <p className="text-gray-600 dark:text-gray-400">We use accurate conversion factors based on standard references. However, for specific applications, we recommend cross-referencing the results with other reliable sources or standards.</p>
           </div>
         </div>
       </div>

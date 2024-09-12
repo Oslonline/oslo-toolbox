@@ -14,7 +14,6 @@ import { LuImage } from "react-icons/lu";
 import { IoSpeedometer, IoTimerSharp } from "react-icons/io5";
 
 function SidebarNav({ isOpen }) {
-  const navigate = useNavigate();
   const location = useLocation();
 
   const [mainDropdowns, setMainDropdowns] = useState({
@@ -57,13 +56,13 @@ function SidebarNav({ isOpen }) {
   return (
     <div className="h-full w-full p-3 pr-0">
       <div className="flex h-fit w-full flex-col gap-2 overflow-y-auto pr-3">
-        <SidebarLinks link={"/"} icon={<FaHome />} linkname={"Home"} onClick={() => handleRedirect("/")} isOpen={isOpen} />
+        <SidebarLinks link={"/"} icon={<FaHome />} linkname={"Home"} onClick={closeAllDropdowns} isOpen={isOpen} />
         <SidebarLinks link={"/About"} icon={<GrCircleInformation />} linkname={"About"} onClick={closeAllDropdowns} isOpen={isOpen} />
         <hr />
 
         {/* Generators Dropdown */}
         {isMobile ? (
-          <Link to={"/Generators"} className={`flex items-center gap-2 rounded-md px-3 py-2 text-gray-950 hover:bg-gray-200 ${isActiveLink("/Generators") ? "bg-gray-800 text-white underline" : ""}`}>
+          <Link to={"/Generators"} className={`flex items-center gap-2 rounded-md px-3 py-2 text-gray-950 dark:text-gray-200 ${isActiveLink("/Generators") ? "bg-gray-800 text-white underline dark:bg-gray-200 dark:text-gray-950 dark:hover:bg-gray-200" : ""}`}>
             <FaGear />
           </Link>
         ) : (
@@ -80,7 +79,7 @@ function SidebarNav({ isOpen }) {
 
         {/* Files Converter Dropdown */}
         {isMobile ? (
-          <Link to={"/FilesConvert"} className={`flex items-center gap-2 rounded-md px-3 py-2 text-gray-950 hover:bg-gray-200 ${isActiveLink("/FilesConvert") ? "bg-gray-800 text-white underline hover:bg-gray-800" : ""}`}>
+          <Link to={"/FilesConvert"} className={`flex items-center gap-2 rounded-md px-3 py-2 text-gray-950 dark:text-gray-200 ${isActiveLink("/FilesConvert") ? "bg-gray-800 text-white underline hover:bg-gray-800 dark:bg-gray-200 dark:text-gray-950 dark:hover:bg-gray-200" : ""}`}>
             <SiConvertio />
           </Link>
         ) : (
@@ -92,7 +91,7 @@ function SidebarNav({ isOpen }) {
 
         {/* Units Converter Dropdown */}
         {isMobile ? (
-          <Link to={"/UnitsConvert"} className={`flex items-center gap-2 rounded-md px-3 py-2 text-gray-950 hover:bg-gray-200 ${isActiveLink("/UnitsConvert") ? "bg-gray-800 text-white underline hover:bg-gray-800" : ""}`}>
+          <Link to={"/UnitsConvert"} className={`flex items-center gap-2 rounded-md px-3 py-2 text-gray-950 dark:text-gray-200 ${isActiveLink("/UnitsConvert") ? "bg-gray-800 text-white underline hover:bg-gray-800 dark:bg-gray-200 dark:text-gray-950 dark:hover:bg-gray-200" : ""}`}>
             <FaBalanceScale />
           </Link>
         ) : (
@@ -112,7 +111,7 @@ function SidebarNav({ isOpen }) {
 
         {/* Security Dropdown */}
         {isMobile ? (
-          <Link to={"/Security"} className={`flex items-center gap-2 rounded-md px-3 py-2 text-gray-950 hover:bg-gray-200 ${isActiveLink("/Security") ? "bg-gray-800 text-white underline hover:bg-gray-800" : ""}`}>
+          <Link to={"/Security"} className={`flex items-center gap-2 rounded-md px-3 py-2 text-gray-950 dark:text-gray-200 ${isActiveLink("/Security") ? "bg-gray-800 text-white underline hover:bg-gray-800 dark:bg-gray-200 dark:text-gray-950 dark:hover:bg-gray-200" : ""}`}>
             <MdSecurity />
           </Link>
         ) : (
@@ -127,7 +126,7 @@ function SidebarNav({ isOpen }) {
 
         {/* CSS Dropdown */}
         {isMobile ? (
-          <Link to={"/Css"} className={`flex items-center gap-2 rounded-md px-3 py-2 text-gray-950 hover:bg-gray-200 ${isActiveLink("/Css") ? "bg-gray-800 text-white underline hover:bg-gray-800" : ""}`}>
+          <Link to={"/Css"} className={`flex items-center gap-2 rounded-md px-3 py-2 text-gray-950 dark:text-gray-200 ${isActiveLink("/Css") ? "bg-gray-800 text-white underline hover:bg-gray-800 dark:bg-gray-200 dark:text-gray-950 dark:hover:bg-gray-200" : ""}`}>
             <FaCss3Alt />
           </Link>
         ) : (
