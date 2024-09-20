@@ -56,9 +56,9 @@ function SidebarNav({ isOpen }) {
   return (
     <div className="h-full w-full p-3 pr-0">
       <div className="flex h-fit w-full flex-col gap-2 overflow-y-auto pr-3">
-        <SidebarLinks link={"/"} icon={<FaHome />} linkname={"Home"} onClick={closeAllDropdowns} isOpen={isOpen} />
-        <SidebarLinks link={"/About"} icon={<GrCircleInformation />} linkname={"About"} onClick={closeAllDropdowns} isOpen={isOpen} />
-        <hr />
+        <SidebarLinks link={"/"} icon={<FaHome />} linkname={"Home"} onClick={closeAllDropdowns} />
+        <SidebarLinks link={"/About"} icon={<GrCircleInformation />} linkname={"About"} onClick={closeAllDropdowns} />
+        <hr className="dark:border-gray-800" />
 
         {/* Generators Dropdown */}
         {isMobile ? (
@@ -75,7 +75,7 @@ function SidebarNav({ isOpen }) {
             </>
           </SidebarDropdown>
         )}
-        <hr />
+        <hr className="dark:border-gray-800" />
 
         {/* Files Converter Dropdown */}
         {isMobile ? (
@@ -87,7 +87,7 @@ function SidebarNav({ isOpen }) {
             <SidebarLinks link={"/FilesConvert/Images"} icon={<LuImage />} linkname={"Images"} />
           </SidebarDropdown>
         )}
-        <hr />
+        <hr className="border-gray-800" />
 
         {/* Units Converter Dropdown */}
         {isMobile ? (
@@ -107,7 +107,7 @@ function SidebarNav({ isOpen }) {
             </>
           </SidebarDropdown>
         )}
-        <hr />
+        <hr className="border-gray-800" />
 
         {/* Security Dropdown */}
         {isMobile ? (
@@ -122,7 +122,7 @@ function SidebarNav({ isOpen }) {
             </>
           </SidebarDropdown>
         )}
-        <hr />
+        <hr className="border-gray-800" />
 
         {/* CSS Dropdown */}
         {isMobile ? (
