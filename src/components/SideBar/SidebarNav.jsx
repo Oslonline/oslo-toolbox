@@ -87,7 +87,7 @@ function SidebarNav({ isOpen }) {
             <SidebarLinks link={"/FilesConvert/Images"} icon={<LuImage />} linkname={"Images"} />
           </SidebarDropdown>
         )}
-        <hr className="border-gray-800" />
+        <hr className="dark:border-gray-800" />
 
         {/* Units Converter Dropdown */}
         {isMobile ? (
@@ -107,7 +107,7 @@ function SidebarNav({ isOpen }) {
             </>
           </SidebarDropdown>
         )}
-        <hr className="border-gray-800" />
+        <hr className="dark:border-gray-800" />
 
         {/* Security Dropdown */}
         {isMobile ? (
@@ -122,7 +122,7 @@ function SidebarNav({ isOpen }) {
             </>
           </SidebarDropdown>
         )}
-        <hr className="border-gray-800" />
+        <hr className="dark:border-gray-800" />
 
         {/* CSS Dropdown */}
         {isMobile ? (
