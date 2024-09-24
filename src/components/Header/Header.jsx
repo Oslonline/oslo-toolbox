@@ -9,7 +9,7 @@ function Header() {
   const path = useLocation().pathname;
   const [isDarkMode, setIsDarkMode] = useState(() => {
     const savedDarkMode = localStorage.getItem("darkMode");
-    return savedDarkMode ? JSON.parse(savedDarkMode) : true;
+    return savedDarkMode ? JSON.parse(savedDarkMode) : false;
   });
 
   useEffect(() => {
@@ -53,7 +53,7 @@ function Header() {
   };
 
   return (
-    <header className="sticky top-0 z-50 flex w-full items-center justify-between border-b-2  border-gray-200 bg-gray-50 p-4 dark:border-gray-700 dark:bg-gray-900">
+    <header className="sticky top-0 z-50 flex w-full items-center justify-between border-b-2 border-gray-200 bg-gray-50 p-4 dark:border-gray-700 dark:bg-gray-900">
       <div className="flex items-end gap-2">
         <h1 className="text-2xl font-bold text-gray-800 md:text-3xl dark:text-gray-50">{getTitle()}</h1>
         <Breadcrumbs />
