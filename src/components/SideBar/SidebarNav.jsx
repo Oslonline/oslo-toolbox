@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from "react";
-import { Link, useLocation, useNavigate } from "react-router-dom";
+import { useState, useEffect } from "react";
+import { Link, useLocation } from "react-router-dom";
 import SidebarLinks from "./SidebarLinks";
 import SidebarDropdown from "./SidebarDropdown";
 import { FaCss3Alt, FaHome, FaWeightHanging, FaRuler, FaThermometerHalf, FaRulerCombined, FaCube, FaUnlockAlt, FaQrcode, FaHashtag, FaBalanceScale } from "react-icons/fa";
@@ -13,7 +13,7 @@ import { CgReadme } from "react-icons/cg";
 import { LuImage } from "react-icons/lu";
 import { IoSpeedometer, IoTimerSharp } from "react-icons/io5";
 
-function SidebarNav({ isOpen }) {
+function SidebarNav() {
   const location = useLocation();
 
   const [mainDropdowns, setMainDropdowns] = useState({
