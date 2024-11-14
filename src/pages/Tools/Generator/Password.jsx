@@ -4,7 +4,7 @@ import { Helmet } from "react-helmet";
 
 export default function Password() {
   const [password, setPassword] = useState("");
-  const [length, setLength] = useState(14);
+  const [length, setLength] = useState(16);
   const [includeUppercase, setIncludeUppercase] = useState(true);
   const [includeLowercase, setIncludeLowercase] = useState(true);
   const [includeNumbers, setIncludeNumbers] = useState(true);
@@ -81,7 +81,7 @@ export default function Password() {
           <hr className="mb-4" />
           <div className="mb-4">
             <label className="mb-2 block">Length: {length}</label>
-            <input type="range" min="4" max="128" value={length} onChange={(e) => setLength(parseInt(e.target.value))} className="w-full accent-orange-400 dark:accent-orange-600" aria-label="Password length" />
+            <input type="range" min="12" max="128" value={length} onChange={(e) => setLength(parseInt(e.target.value))} className="w-full accent-orange-400 dark:accent-orange-600" aria-label="Password length" />
           </div>
           <div className="flex flex-col gap-2 accent-orange-400 dark:accent-orange-600">
             <label className="flex items-center">
