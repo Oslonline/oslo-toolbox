@@ -51,8 +51,13 @@ export default function Lorem() {
 
   const handleParagraphChange = (e) => {
     const newParagraphs = Number(e.target.value);
-    setParagraphs(newParagraphs);
-    generateLorem(newParagraphs);
+    if (!newParagraphs || newParagraphs < 1) {
+      setParagraphs(1);
+      generateLorem(1);
+    } else {
+      setParagraphs(newParagraphs);
+      generateLorem(newParagraphs);
+    }
   };
 
   const handleCopy = () => {
