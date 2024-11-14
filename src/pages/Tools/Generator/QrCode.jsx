@@ -11,31 +11,26 @@ export default function QrCode() {
 
   useEffect(() => {
     const updateColorScheme = () => {
-      const isDarkMode = document.documentElement.classList.contains("dark");
-      setColor(isDarkMode ? "#FFFFFF" : "#000000");
+      setColor(document.documentElement.classList.contains("dark") ? "#FFFFFF" : "#000000");
     };
 
+    // Initial check
     updateColorScheme();
 
+    // Observe class changes for dark mode
     const observer = new MutationObserver(updateColorScheme);
     observer.observe(document.documentElement, {
       attributes: true,
       attributeFilter: ["class"],
     });
 
-    return () => {
-      observer.disconnect();
-    };
+    // Cleanup on unmount
+    return () => observer.disconnect();
   }, []);
 
-  const handleLinkChange = (e) => {
-    const inputLink = e.target.value;
-    setLink(inputLink);
-  };
+  const handleLinkChange = (e) => setLink(e.target.value);
 
-  const generateQRCode = () => {
-    setShowQRCode(true);
-  };
+  const generateQRCode = () => setShowQRCode(true);
 
   const handleDownload = () => {
     const svg = qrRef.current.querySelector("svg");
@@ -47,11 +42,8 @@ export default function QrCode() {
     img.onload = () => {
       canvas.width = img.width;
       canvas.height = img.height;
-      ctx.clearRect(0, 0, canvas.width, canvas.height);
       ctx.drawImage(img, 0, 0);
-      canvas.toBlob((blob) => {
-        saveAs(blob, "qrcode.png");
-      });
+      canvas.toBlob((blob) => saveAs(blob, "qrcode.png"));
     };
 
     img.src = "data:image/svg+xml;base64," + btoa(svgData);
