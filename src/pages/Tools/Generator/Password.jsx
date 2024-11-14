@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { FaRedo, FaCopy, FaCheck } from "react-icons/fa";
 import { Helmet } from "react-helmet";
+import FAQSection from "../../../components/commons/Faq";
 
 export default function Password() {
   const [password, setPassword] = useState("");
@@ -46,6 +47,25 @@ export default function Password() {
   useEffect(() => {
     generatePassword();
   }, []);
+
+  const faqData = [
+    {
+      question: "How long should my password be ?",
+      answer: "It's recommended to use a password of at least 12 characters for optimal security. Longer passwords are even more secure.",
+    },
+    {
+      question: "Should I include special characters in my password ?",
+      answer: "Yes, including special characters increases the complexity of your password, making it harder to crack.",
+    },
+    {
+      question: "How often should I change my passwords ?",
+      answer: "No, using the same password for multiple accounts increases the risk of a security breach. Always use unique passwords for different accounts.",
+    },
+    {
+      question: "Can I use the same password for multiple accounts ?",
+      answer: "No, using the same password for multiple accounts increases the risk of a security breach. Always use unique passwords for different accounts.",
+    },
+  ];
 
   return (
     <div className="flex flex-col gap-4 p-4 md:p-6">
@@ -103,30 +123,7 @@ export default function Password() {
           </div>
         </div>
       </div>
-
-      <div>
-        <h2 className="text-2xl font-bold text-gray-900 md:text-3xl dark:text-gray-100">Why Use a Secure Password Generator?</h2>
-        <p className="mt-2 text-gray-600 dark:text-gray-400">
-          Using a secure password generator ensures that your passwords are strong, unique, and difficult for hackers to guess. Whether you're creating a new account or updating an old password, this tool helps you generate passwords that meet the highest security standards.
-        </p>
-        <h3 className="mt-4 text-2xl font-bold text-gray-900 md:text-3xl dark:text-gray-100">Frequently Asked Questions</h3>
-        <div className="mt-2">
-          <h4 className="font-semibold text-gray-900 dark:text-gray-100">How long should my password be?</h4>
-          <p className="text-gray-600 dark:text-gray-400">It's recommended to use a password of at least 12 characters for optimal security. Longer passwords are even more secure.</p>
-        </div>
-        <div className="mt-4">
-          <h4 className="font-semibold text-gray-900 dark:text-gray-100">Should I include special characters in my password?</h4>
-          <p className="text-gray-600 dark:text-gray-400">Yes, including special characters increases the complexity of your password, making it harder to crack.</p>
-        </div>
-        <div className="mt-4">
-          <h4 className="font-semibold text-gray-900 dark:text-gray-100">How often should I change my passwords?</h4>
-          <p className="text-gray-600 dark:text-gray-400">It's good practice to change your passwords every 3 to 6 months to maintain account security.</p>
-        </div>
-        <div className="mt-4">
-          <h4 className="font-semibold text-gray-900 dark:text-gray-100">Can I use the same password for multiple accounts?</h4>
-          <p className="text-gray-600 dark:text-gray-400">No, using the same password for multiple accounts increases the risk of a security breach. Always use unique passwords for different accounts.</p>
-        </div>
-      </div>
+      <FAQSection faqs={faqData} />
     </div>
   );
 }

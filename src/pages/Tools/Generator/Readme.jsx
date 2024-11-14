@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import { Helmet } from "react-helmet";
 import { CiCircleRemove } from "react-icons/ci";
-import { FaCheck, FaCopy } from "react-icons/fa";
 import { MdAddCircleOutline } from "react-icons/md";
+import FAQSection from "../../../components/commons/Faq";
 
 export default function ReadmeGenerator() {
   const [copied, setCopied] = useState(false);
@@ -68,6 +68,25 @@ export default function ReadmeGenerator() {
       ]);
     }
   };
+
+  const faqData = [
+    {
+      question: "What is a GitHub README ?",
+      answer: "A GitHub README is a markdown file that introduces and explains a project. It usually includes information about the project's purpose, how to set it up, how to use it, and any other relevant details.",
+    },
+    {
+      question: "Why is a README important ?",
+      answer: "A README is often the first interaction a user has with your project. It provides critical information about your project and can help attract contributors or users.",
+    },
+    {
+      question: "Can I add custom sections ?",
+      answer: "Yes! You can add as many custom sections as you need. Each section can be tailored to include information specific to your project.",
+    },
+    {
+      question: "How do I generate the README ?",
+      answer: "Simply fill in the required fields, add any optional sections, and your README will be generated. You can then copy it to your clipboard or download it directly.",
+    },
+  ];
 
   return (
     <div className="flex flex-col gap-4 p-4 md:p-6">
@@ -140,31 +159,7 @@ export default function ReadmeGenerator() {
           </button>
         </div>
       </div>
-
-      <div className="text-gray-900 dark:text-gray-100">
-        <h2 className="text-2xl font-semibold md:text-3xl">Why Use a GitHub README Generator?</h2>
-        <p className="mt-2 text-gray-600 dark:text-gray-400">
-          Creating a good README file is essential for your project. It helps others understand your project, how to install it, and how to use it. A well-structured README can make your project stand out and encourage others to contribute or use your work.
-        </p>
-
-        <h3 className="mt-4 text-2xl font-semibold md:text-3xl">Frequently Asked Questions</h3>
-        <div className="mt-2">
-          <h4 className="font-semibold">What is a GitHub README?</h4>
-          <p className="text-gray-600 dark:text-gray-400">A GitHub README is a markdown file that introduces and explains a project. It usually includes information about the project's purpose, how to set it up, how to use it, and any other relevant details.</p>
-        </div>
-        <div className="mt-2">
-          <h4 className="font-semibold">Why is a README important?</h4>
-          <p className="text-gray-600 dark:text-gray-400">A README is often the first interaction a user has with your project. It provides critical information about your project and can help attract contributors or users.</p>
-        </div>
-        <div className="mt-2">
-          <h4 className="font-semibold">Can I add custom sections?</h4>
-          <p className="text-gray-600 dark:text-gray-400">Yes! You can add as many custom sections as you need. Each section can be tailored to include information specific to your project.</p>
-        </div>
-        <div className="mt-2">
-          <h4 className="font-semibold">How do I generate the README?</h4>
-          <p className="text-gray-600 dark:text-gray-400">Simply fill in the required fields, add any optional sections, and your README will be generated. You can then copy it to your clipboard or download it directly.</p>
-        </div>
-      </div>
+      <FAQSection faqs={faqData} />
     </div>
   );
 }
