@@ -1,5 +1,3 @@
-import React from "react";
-
 function About() {
   return (
     <div className="flex flex-col gap-9 p-4 text-gray-900 md:p-6 dark:text-gray-100">
