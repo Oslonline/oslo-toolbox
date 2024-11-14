@@ -1,5 +1,6 @@
 import React from "react";
 import Converter from "../../../components/converters/Converter";
+import FAQSection from "../../../components/commons/Faq";
 import { Helmet } from "react-helmet";
 
 function Mass() {
@@ -24,6 +25,21 @@ function Mass() {
     Pound: 453.59,
     Ounce: 28.35,
   };
+
+  const faqData = [
+    {
+      question: "What if I need to convert a unit not listed here?",
+      answer: "If you need to convert a unit not listed in this converter, please contact us with the details. We may be able to add more units based on user requests and the availability of accurate conversion factors.",
+    },
+    {
+      question: "How do I convert between different systems of measurement?",
+      answer: "This tool allows you to convert between metric units (such as kilograms and grams) and imperial units (such as pounds and ounces). Simply select the units you want to convert from and to, then input the value to get the conversion.",
+    },
+    {
+      question: "Are the conversion factors accurate?",
+      answer: "Our conversion factors are based on standard references and are accurate to the best of our knowledge. However, for critical applications, we recommend verifying the results with additional sources or standards.",
+    },
+  ];
 
   return (
     <div className="flex flex-col gap-7">
@@ -66,18 +82,7 @@ function Mass() {
             <br />- <strong>Ounce (oz):</strong> An imperial unit of mass equal to 28.35 grams. Used for smaller mass measurements.
           </p>
         </div>
-
-        <div className="mt-5">
-          <h2 className="text-2xl font-bold text-gray-900 md:text-3xl dark:text-gray-100">FAQ</h2>
-          <div className="mt-2">
-            <h3 className="font-semibold text-gray-900 dark:text-gray-100">What if I need to convert a unit not listed here?</h3>
-            <p className="text-gray-600 dark:text-gray-400">If you need to convert a unit not listed in this converter, please contact us with the details. We may be able to add more units based on user requests and the availability of accurate conversion factors.</p>
-            <h3 className="mt-4 font-semibold text-gray-900 dark:text-gray-100">How do I convert between different systems of measurement?</h3>
-            <p className="text-gray-600 dark:text-gray-400">This tool allows you to convert between metric units (such as kilograms and grams) and imperial units (such as pounds and ounces). Simply select the units you want to convert from and to, then input the value to get the conversion.</p>
-            <h3 className="mt-4 font-semibold text-gray-900 dark:text-gray-100">Are the conversion factors accurate?</h3>
-            <p className="text-gray-600 dark:text-gray-400">Our conversion factors are based on standard references and are accurate to the best of our knowledge. However, for critical applications, we recommend verifying the results with additional sources or standards.</p>
-          </div>
-        </div>
+        <FAQSection faqs={faqData} />
       </div>
     </div>
   );

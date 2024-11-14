@@ -1,5 +1,6 @@
 import React from "react";
 import Converter from "../../../components/converters/Converter";
+import FAQSection from "../../../components/commons/Faq";
 import { Helmet } from "react-helmet";
 
 function Area() {
@@ -88,6 +89,21 @@ function Area() {
     "Electron Cross Section": 6.6524615999999e-29,
   };
 
+  const faqData = [
+    {
+      question: "What if I need to convert a unit not listed here?",
+      answer: "If you need to convert a unit not listed in this converter, please contact us with the details. We may be able to add more units based on user requests and the availability of accurate conversion factors.",
+    },
+    {
+      question: "Are there units with specific regional usage?",
+      answer: "Yes, some units such as the 'Acre (US Survey)' or 'Varas Castellanas Cuad' are specific to certain regions or historical contexts. If you have any questions about these units, feel free to ask!",
+    },
+    {
+      question: "How can I ensure the conversion results are correct?",
+      answer: "We use accurate conversion factors based on standard references. However, for specific applications, we recommend cross-referencing the results with other reliable sources or standards.",
+    },
+  ];
+
   return (
     <div className="flex flex-col gap-7">
       <Helmet>
@@ -145,18 +161,7 @@ function Area() {
             <br />
           </p>
         </div>
-
-        <div className="mt-5">
-          <h2 className="text-2xl font-bold text-gray-900 md:text-3xl dark:text-gray-100">FAQ</h2>
-          <div className="mt-2">
-            <h3 className="font-semibold text-gray-900 dark:text-gray-100">What if I need to convert a unit not listed here?</h3>
-            <p className="text-gray-600 dark:text-gray-400">If you need to convert a unit not listed in this converter, please contact us with the details. We may be able to add more units based on user requests and the availability of accurate conversion factors.</p>
-            <h3 className="mt-4 font-semibold text-gray-900 dark:text-gray-100">Are there units with specific regional usage?</h3>
-            <p className="text-gray-600 dark:text-gray-400">Yes, some units such as the "Acre (US Survey)" or "Varas Castellanas Cuad" are specific to certain regions or historical contexts. If you have any questions about these units, feel free to ask!</p>
-            <h3 className="mt-4 font-semibold text-gray-900 dark:text-gray-100">How can I ensure the conversion results are correct?</h3>
-            <p className="text-gray-600 dark:text-gray-400">We use accurate conversion factors based on standard references. However, for specific applications, we recommend cross-referencing the results with other reliable sources or standards.</p>
-          </div>
-        </div>
+        <FAQSection faqs={faqData} />
       </div>
     </div>
   );

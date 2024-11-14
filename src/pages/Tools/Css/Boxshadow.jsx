@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Helmet } from "react-helmet";
 import GeneratedCSS from "../../../components/CSS/GeneratedCSS";
+import FAQSection from "../../../components/commons/Faq";
 
 function BoxShadow() {
   const [boxShadow, setBoxShadow] = useState({
@@ -51,6 +52,21 @@ function BoxShadow() {
   };
 
   const result = `box-shadow: ${boxShadow.offsetX}px ${boxShadow.offsetY}px ${boxShadow.blurRadius}px ${boxShadow.spreadRadius}px ${hexToRGBA(boxShadow.color, boxShadow.opacity)};`;
+
+  const faqData = [
+    {
+      question: "What is a box-shadow in CSS ?",
+      answer: "A box-shadow in CSS is a shadow effect applied to an element’s box, allowing you to create depth and visual interest by adding an offset shadow.",
+    },
+    {
+      question: "How do I use this tool?",
+      answer: "Adjust the sliders and inputs to customize your shadow. The CSS code will be generated automatically, which you can copy and use in your stylesheets.",
+    },
+    {
+      question: "Can I control the opacity of the shadow?",
+      answer: "Yes, you can adjust the opacity of the shadow using the opacity slider. This allows you to create both subtle and bold shadow effects.",
+    },
+  ];
 
   return (
     <div className="flex flex-col gap-6 p-4 md:p-6">
@@ -137,17 +153,7 @@ function BoxShadow() {
 
       <GeneratedCSS result={result} copyToClipboard={copyToClipboard} copySuccess={copySuccess} />
 
-      <div>
-        <h2 className="text-2xl font-bold text-gray-900 md:text-3xl dark:text-gray-100">Frequently Asked Questions</h2>
-        <div className="mt-2">
-          <h3 className="font-semibold text-gray-900 dark:text-gray-100">What is a box-shadow in CSS?</h3>
-          <p className="text-gray-600 dark:text-gray-400">A box-shadow in CSS is a shadow effect applied to an element’s box, allowing you to create depth and visual interest by adding an offset shadow.</p>
-          <h3 className="mt-2 font-semibold text-gray-900 dark:text-gray-100">How do I use this tool?</h3>
-          <p className="text-gray-600 dark:text-gray-400">Adjust the sliders and inputs to customize your shadow. The CSS code will be generated automatically, which you can copy and use in your stylesheets.</p>
-          <h3 className="mt-2 font-semibold text-gray-900 dark:text-gray-100">Can I control the opacity of the shadow?</h3>
-          <p className="text-gray-600 dark:text-gray-400">Yes, you can adjust the opacity of the shadow using the opacity slider. This allows you to create both subtle and bold shadow effects.</p>
-        </div>
-      </div>
+      <FAQSection faqs={faqData} />
     </div>
   );
 }

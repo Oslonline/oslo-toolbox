@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import axios from "axios";
 import { Helmet } from "react-helmet";
+import FAQSection from "../../../components/commons/Faq";
 
 export default function IpLookup() {
   const [ip, setIp] = useState("");
@@ -41,6 +42,29 @@ export default function IpLookup() {
       setError("Could not fetch IP information. Please try again later.");
     }
   };
+
+  const faqData = [
+    {
+      question: "What is IP Lookup?",
+      answer: "IP Lookup is a tool that allows you to find information about an IP address. This includes details like the geographical location, ISP, and other relevant data associated with the IP address.",
+    },
+    {
+      question: "How do I use this tool?",
+      answer: "Simply enter the IP address you want to look up in the input field and click 'Lookup'. The tool will fetch and display information about the IP address.",
+    },
+    {
+      question: "What kind of information can I get from an IP lookup?",
+      answer: "The IP Lookup tool provides details such as the IP address, city, region, country, ISP, latitude, longitude, and ASN (Autonomous System Number).",
+    },
+    {
+      question: "Can I use this tool for IPv6 addresses?",
+      answer: "Currently, this tool supports IPv4 addresses. IPv6 support may be added in future updates.",
+    },
+    {
+      question: "What should I do if I receive an error?",
+      answer: "If you encounter an error, please make sure the IP address is correctly formatted. If the problem persists, try again later or contact support for assistance.",
+    },
+  ];
 
   return (
     <div className="flex flex-col gap-4 p-4 md:p-6">
@@ -109,22 +133,7 @@ export default function IpLookup() {
           </div>
         )}
       </div>
-
-      <div>
-        <h2 className="text-2xl font-bold text-gray-900 md:text-3xl dark:text-gray-100">Frequently Asked Questions</h2>
-        <div className="mt-4">
-          <h3 className="font-semibold text-gray-900 dark:text-gray-100">What is IP Lookup?</h3>
-          <p className="text-gray-600 dark:text-gray-400">IP Lookup is a tool that allows you to find information about an IP address. This includes details like the geographical location, ISP, and other relevant data associated with the IP address.</p>
-          <h3 className="mt-4 font-semibold text-gray-900 dark:text-gray-100">How do I use this tool?</h3>
-          <p className="text-gray-600 dark:text-gray-400">Simply enter the IP address you want to look up in the input field and click "Lookup". The tool will fetch and display information about the IP address.</p>
-          <h3 className="mt-4 font-semibold text-gray-900 dark:text-gray-100">What kind of information can I get from an IP lookup?</h3>
-          <p className="text-gray-600 dark:text-gray-400">The IP Lookup tool provides details such as the IP address, city, region, country, ISP, latitude, longitude, and ASN (Autonomous System Number).</p>
-          <h3 className="mt-4 font-semibold text-gray-900 dark:text-gray-100">Can I use this tool for IPv6 addresses?</h3>
-          <p className="text-gray-600 dark:text-gray-400">Currently, this tool supports IPv4 addresses. IPv6 support may be added in future updates.</p>
-          <h3 className="mt-4 font-semibold text-gray-900 dark:text-gray-100">What should I do if I receive an error?</h3>
-          <p className="text-gray-600 dark:text-gray-400">If you encounter an error, please make sure the IP address is correctly formatted. If the problem persists, try again later or contact support for assistance.</p>
-        </div>
-      </div>
+      <FAQSection faqs={faqData} />
     </div>
   );
 }

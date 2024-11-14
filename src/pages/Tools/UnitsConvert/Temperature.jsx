@@ -1,5 +1,6 @@
 import React from "react";
 import Converter from "../../../components/converters/Converter";
+import FAQSection from "../../../components/commons/Faq";
 import { Helmet } from "react-helmet";
 
 function Temperature() {
@@ -24,6 +25,22 @@ function Temperature() {
       Kelvin: (value) => parseFloat(value),
     },
   };
+
+  const faqData = [
+    {
+      question: "How do I convert between Celsius, Fahrenheit, and Kelvin?",
+      answer:
+        "To convert between these temperature scales, you can use the provided formulas:\n\n- Celsius to Fahrenheit: (°C * 9/5) + 32\n- Celsius to Kelvin: °C + 273.15\n- Fahrenheit to Celsius: (°F - 32) * 5/9\n- Fahrenheit to Kelvin: ((°F - 32) * 5/9) + 273.15\n- Kelvin to Celsius: K - 273.15\n- Kelvin to Fahrenheit: ((K - 273.15) * 9/5) + 32",
+    },
+    {
+      question: "Why is Kelvin used in scientific contexts?",
+      answer: "Kelvin is used in scientific contexts because it starts at absolute zero, the point at which there is no thermal energy. This makes it a natural choice for many scientific calculations and measurements.",
+    },
+    {
+      question: "What is the boiling and freezing point of water in these scales?",
+      answer: "In Celsius, water freezes at 0°C and boils at 100°C. In Fahrenheit, water freezes at 32°F and boils at 212°F. In Kelvin, water freezes at 273.15 K and boils at 373.15 K.",
+    },
+  ];
 
   return (
     <div className="flex flex-col gap-7">
@@ -56,40 +73,7 @@ function Temperature() {
             <br />- <strong>Kelvin (K):</strong> A temperature scale used in scientific contexts where 0 K is absolute zero, the point at which all molecular motion ceases.
           </p>
         </div>
-
-        <div className="mt-5">
-          <h2 className="text-2xl font-bold text-gray-900 md:text-3xl dark:text-gray-100">FAQ</h2>
-          <div className="mt-2">
-            <h3 className="font-semibold text-gray-900 dark:text-gray-100">How do I convert between Celsius, Fahrenheit, and Kelvin?</h3>
-            <p className="text-gray-700 dark:text-gray-400">
-              To convert between these temperature scales, you can use the provided formulas:
-              <ul className="ml-5 list-disc">
-                <li>
-                  <strong>Celsius to Fahrenheit:</strong> (°C * 9/5) + 32
-                </li>
-                <li>
-                  <strong>Celsius to Kelvin:</strong> °C + 273.15
-                </li>
-                <li>
-                  <strong>Fahrenheit to Celsius:</strong> (°F - 32) * 5/9
-                </li>
-                <li>
-                  <strong>Fahrenheit to Kelvin:</strong> ((°F - 32) * 5/9) + 273.15
-                </li>
-                <li>
-                  <strong>Kelvin to Celsius:</strong> K - 273.15
-                </li>
-                <li>
-                  <strong>Kelvin to Fahrenheit:</strong> ((K - 273.15) * 9/5) + 32
-                </li>
-              </ul>
-            </p>
-            <h3 className="mt-4 font-semibold text-gray-900 dark:text-gray-100">Why is Kelvin used in scientific contexts?</h3>
-            <p className="text-gray-600 dark:text-gray-400">Kelvin is used in scientific contexts because it starts at absolute zero, the point at which there is no thermal energy. This makes it a natural choice for many scientific calculations and measurements.</p>
-            <h3 className="mt-4 font-semibold text-gray-900 dark:text-gray-100">What is the boiling and freezing point of water in these scales?</h3>
-            <p className="text-gray-600 dark:text-gray-400">In Celsius, water freezes at 0°C and boils at 100°C. In Fahrenheit, water freezes at 32°F and boils at 212°F. In Kelvin, water freezes at 273.15 K and boils at 373.15 K.</p>
-          </div>
-        </div>
+        <FAQSection faqs={faqData} />
       </div>
     </div>
   );

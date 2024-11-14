@@ -2,6 +2,8 @@ import { useState } from "react";
 import CryptoJS from "crypto-js";
 import { FaCheck, FaCopy } from "react-icons/fa";
 import { Helmet } from "react-helmet";
+import FAQSection from "../../../components/commons/Faq";
+
 export default function Hash() {
   const [text, setText] = useState("");
   const [hashType, setHashType] = useState("MD5");
@@ -35,6 +37,25 @@ export default function Hash() {
     setHash(generatedHash);
   };
 
+  const faqData = [
+    {
+      question: "What is the purpose of hashing?",
+      answer: "Hashing is used to ensure data integrity and secure storage of sensitive information like passwords. It converts your input into a fixed-size string that cannot be easily reversed.",
+    },
+    {
+      question: "What's the difference between MD5 and SHA algorithms?",
+      answer: "MD5 is faster but less secure than SHA-256 and SHA-512, which offer higher security but require more processing power. SHA-1 is an older algorithm that is less commonly used due to vulnerabilities.",
+    },
+    {
+      question: "Can I reverse a hash to get the original text?",
+      answer: "No, hashing is a one-way process, meaning you cannot reverse the hash to retrieve the original text. This makes it ideal for storing passwords securely.",
+    },
+    {
+      question: "Is it safe to use the same hash function for all my data?",
+      answer: "While you can use the same hash function, it's crucial to use a salt (a random value added to the input) to enhance security, especially when hashing passwords.",
+    },
+  ];
+
   return (
     <div className="flex flex-col gap-4 p-4 md:p-6">
       <Helmet>
@@ -66,7 +87,7 @@ export default function Hash() {
               <option value="SHA-512">SHA-512</option>
             </select>
           </div>
-          <button onClick={handleGenerateHash} className="w-full rounded-md bg-orange-400 px-3 py-2 text-gray-50 duration-200 hover:bg-orange-600 dark:hover:text-gray-200 md:w-fit dark:bg-orange-600 dark:hover:bg-orange-400" aria-label="Generate hash">
+          <button onClick={handleGenerateHash} className="w-full rounded-md bg-orange-400 px-3 py-2 text-gray-50 duration-200 hover:bg-orange-600 md:w-fit dark:bg-orange-600 dark:hover:bg-orange-400 dark:hover:text-gray-200" aria-label="Generate hash">
             Generate
           </button>
         </div>
@@ -85,27 +106,13 @@ export default function Hash() {
       </div>
 
       <div className="text-gray-900 dark:text-gray-100">
-        <h2 className="text-2xl font-bold md:text-3xl">Understanding Hashing</h2>
-        <p className="mt-2 text-gray-600 dark:text-gray-400">
-          Hashing is a process that converts your input text into a fixed-size string of characters, which is typically a hexadecimal number. It's commonly used in various security applications, such as password storage, data integrity verification, and digital signatures.
-        </p>
-        <h3 className="mt-4 text-2xl font-bold md:text-3xl">Frequently Asked Questions</h3>
-        <div className="mt-2">
-          <h4 className="font-semibold">What is the purpose of hashing?</h4>
-          <p className="text-gray-600 dark:text-gray-400">Hashing is used to ensure data integrity and secure storage of sensitive information like passwords. It converts your input into a fixed-size string that cannot be easily reversed.</p>
+        <div className="mb-4">
+          <h2 className="text-2xl font-bold md:text-3xl">Understanding Hashing</h2>
+          <p className="mt-2 text-gray-600 dark:text-gray-400">
+            Hashing is a process that converts your input text into a fixed-size string of characters, which is typically a hexadecimal number. It's commonly used in various security applications, such as password storage, data integrity verification, and digital signatures.
+          </p>
         </div>
-        <div className="mt-2">
-          <h4 className="font-semibold">What's the difference between MD5 and SHA algorithms?</h4>
-          <p className="text-gray-600 dark:text-gray-400">MD5 is faster but less secure than SHA-256 and SHA-512, which offer higher security but require more processing power. SHA-1 is an older algorithm that is less commonly used due to vulnerabilities.</p>
-        </div>
-        <div className="mt-2">
-          <h4 className="font-semibold">Can I reverse a hash to get the original text?</h4>
-          <p className="text-gray-600 dark:text-gray-400">No, hashing is a one-way process, meaning you cannot reverse the hash to retrieve the original text. This makes it ideal for storing passwords securely.</p>
-        </div>
-        <div className="mt-2">
-          <h4 className="font-semibold">Is it safe to use the same hash function for all my data?</h4>
-          <p className="text-gray-600 dark:text-gray-400">While you can use the same hash function, it's crucial to use a salt (a random value added to the input) to enhance security, especially when hashing passwords.</p>
-        </div>
+        <FAQSection faqs={faqData} />
       </div>
     </div>
   );

@@ -1,5 +1,6 @@
 import React from "react";
 import Converter from "../../../components/converters/Converter";
+import FAQSection from "../../../components/commons/Faq";
 import { Helmet } from "react-helmet";
 
 function Length() {
@@ -25,6 +26,21 @@ function Length() {
     Foot: 0.3048,
     Inch: 0.0254,
   };
+
+  const faqData = [
+    {
+      question: "What if I need to convert a unit not listed here?",
+      answer: "If you need to convert a unit not listed in this converter, please contact us with the details. We may be able to include additional units based on user demand and availability of accurate conversion factors.",
+    },
+    {
+      question: "Can I convert between different systems like metric and imperial?",
+      answer: "Yes, this tool allows you to convert between metric units (such as meters and kilometers) and imperial units (such as feet and miles). Select the appropriate units from the dropdown menus to perform the conversion.",
+    },
+    {
+      question: "How accurate are the conversion factors?",
+      answer: "Our conversion factors are based on widely accepted standards. We strive to ensure that all factors are accurate, but for critical applications, please verify the results with additional sources.",
+    },
+  ];
 
   return (
     <div className="flex flex-col gap-7">
@@ -68,18 +84,7 @@ function Length() {
             <br />- <strong>Inch:</strong> A unit of length used in the United States and the UK, equal to 0.0254 meters.
           </p>
         </div>
-
-        <div className="mt-5">
-          <h2 className="text-2xl font-bold text-gray-900 md:text-3xl dark:text-gray-100">FAQ</h2>
-          <div className="mt-2">
-            <h3 className="font-semibold text-gray-900 dark:text-gray-100">What if I need to convert a unit not listed here?</h3>
-            <p className="text-gray-600 dark:text-gray-400">If you need to convert a unit not listed in this converter, please contact us with the details. We may be able to include additional units based on user demand and availability of accurate conversion factors.</p>
-            <h3 className="mt-4 font-semibold text-gray-900 dark:text-gray-100">Can I convert between different systems like metric and imperial?</h3>
-            <p className="text-gray-600 dark:text-gray-400">Yes, this tool allows you to convert between metric units (such as meters and kilometers) and imperial units (such as feet and miles). Select the appropriate units from the dropdown menus to perform the conversion.</p>
-            <h3 className="mt-4 font-semibold text-gray-900 dark:text-gray-100">How accurate are the conversion factors?</h3>
-            <p className="text-gray-600 dark:text-gray-400">Our conversion factors are based on widely accepted standards. We strive to ensure that all factors are accurate, but for critical applications, please verify the results with additional sources.</p>
-          </div>
-        </div>
+        <FAQSection faqs={faqData} />
       </div>
     </div>
   );

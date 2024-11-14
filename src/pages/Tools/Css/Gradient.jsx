@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import CircularSlider from "@fseehawer/react-circular-slider";
 import GeneratedCSS from "../../../components/CSS/GeneratedCSS";
+import FAQSection from "../../../components/commons/Faq";
 import patternImage from "/images/pattern.webp";
 import { Helmet } from "react-helmet";
 
@@ -81,6 +82,21 @@ function Gradient() {
       });
   };
 
+  const faqData = [
+    {
+      question: "What is a CSS gradient ?",
+      answer: "A CSS gradient is a way to display a smooth transition between two or more colors. You can use gradients for backgrounds, buttons, and more to create visually appealing designs.",
+    },
+    {
+      question: "How do I generate a CSS gradient ?",
+      answer: "Simply choose your colors, adjust the angle or type of gradient, and the CSS code will be automatically generated. You can then copy the code and paste it into your stylesheet.",
+    },
+    {
+      question: "What is the difference between linear and radial gradients?",
+      answer: "A linear gradient transitions colors along a straight line (horizontal, vertical, or diagonal), while a radial gradient transitions colors outward from a central point in a circular or elliptical shape.",
+    },
+  ];
+
   return (
     <div className="flex flex-col gap-6 p-4 md:p-6">
       <Helmet>
@@ -158,17 +174,7 @@ function Gradient() {
 
       {result && <GeneratedCSS result={result} copySuccess={copySuccess} copyToClipboard={copyToClipboard} />}
 
-      <div>
-        <h2 className="text-2xl font-bold text-gray-900 md:text-3xl dark:text-gray-100">Frequently Asked Questions</h2>
-        <div className="mt-2">
-          <h3 className="font-semibold text-gray-900 dark:text-gray-100">What is a CSS gradient?</h3>
-          <p className="text-gray-600 dark:text-gray-400">A CSS gradient is a way to display a smooth transition between two or more colors. You can use gradients for backgrounds, buttons, and more to create visually appealing designs.</p>
-          <h3 className="mt-2 font-semibold text-gray-900 dark:text-gray-100">How do I generate a CSS gradient?</h3>
-          <p className="text-gray-600 dark:text-gray-400">Simply choose your colors, adjust the angle or type of gradient, and the CSS code will be automatically generated. You can then copy the code and paste it into your stylesheet.</p>
-          <h3 className="mt-2 font-semibold text-gray-900 dark:text-gray-100">What is the difference between linear and radial gradients?</h3>
-          <p className="text-gray-600 dark:text-gray-400">A linear gradient transitions colors along a straight line (horizontal, vertical, or diagonal), while a radial gradient transitions colors outward from a central point in a circular or elliptical shape.</p>
-        </div>
-      </div>
+      <FAQSection faqs={faqData} />
     </div>
   );
 }
