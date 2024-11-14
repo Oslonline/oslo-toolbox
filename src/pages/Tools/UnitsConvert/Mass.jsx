@@ -1,5 +1,5 @@
 import React from "react";
-import Converter from "../../../components/Converter/Converter";
+import Converter from "../../../components/converters/Converter";
 import { Helmet } from "react-helmet";
 
 function Mass() {
