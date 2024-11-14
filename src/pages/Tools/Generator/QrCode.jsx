@@ -5,15 +5,27 @@ import { Helmet } from "react-helmet";
 
 export default function QrCode() {
   const [link, setLink] = useState("");
-  const [color, setColor] = useState("#000000");
+  const [color, setColor] = useState("");
   const [showQRCode, setShowQRCode] = useState(false);
   const qrRef = useRef();
 
   useEffect(() => {
-    const darkMode = window.matchMedia("(prefers-color-scheme: dark)").matches;
-    if (darkMode) {
-      setColor("#FFFFFF");
-    }
+    const updateColorScheme = () => {
+      const isDarkMode = document.documentElement.classList.contains("dark");
+      setColor(isDarkMode ? "#FFFFFF" : "#000000");
+    };
+
+    updateColorScheme();
+
+    const observer = new MutationObserver(updateColorScheme);
+    observer.observe(document.documentElement, {
+      attributes: true,
+      attributeFilter: ["class"],
+    });
+
+    return () => {
+      observer.disconnect();
+    };
   }, []);
 
   const handleLinkChange = (e) => {
