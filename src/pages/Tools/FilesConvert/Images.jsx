@@ -6,6 +6,7 @@ import { IoCloudUploadOutline } from "react-icons/io5";
 import { VscDebugRestart } from "react-icons/vsc";
 import { FaArrowRight } from "react-icons/fa";
 import { MdOutlineRocketLaunch } from "react-icons/md";
+import FAQSection from "../../../components/commons/Faq";
 
 export default function Images() {
   const [selectedFile, setSelectedFile] = useState(null);
@@ -104,31 +105,20 @@ export default function Images() {
     });
   };
 
-  const handleDragOver = (e) => {
-    e.preventDefault();
-  };
-
-  const handleDragLeave = (e) => {
-    e.preventDefault();
-  };
-
-  const handleDrop = (e) => {
-    e.preventDefault();
-    e.stopPropagation();
-
-    if (selectedFile) return;
-    const file = e.dataTransfer.files[0];
-    if (file && file.type.startsWith("image/")) {
-      setSelectedFile(file);
-    } else {
-      alert("Please drop a valid image file.");
-      setSelectedFile(null);
-    }
-  };
-
-  const handleSelectAnotherFile = () => {
-    setSelectedFile(null);
-  };
+  const faqData = [
+    {
+      question: "What formats do you support?",
+      answer: "We support a wide range of formats including JPEG, PNG, BMP, SVG, WEBP, and more. Simply upload your image, select the output format, and convert.",
+    },
+    {
+      question: "Is it really free?",
+      answer: "Yes, our image converter is completely free to use with no hidden charges.",
+    },
+    {
+      question: "Can I convert multiple files at once?",
+      answer: "Currently, our converter supports converting one file at a time. We are working on adding bulk conversion in the future.",
+    },
+  ];
 
   return (
     <>
@@ -144,7 +134,7 @@ export default function Images() {
         <p className="text-gray-600 dark:text-gray-400">Convert any image for free with our images converter. Insert your file, select the desired converted format, click convert, and it's done!</p>
 
         <div className="flex flex-col gap-4 rounded-md md:border-2 md:border-gray-200 md:bg-gray-50 md:p-6 dark:md:border-gray-800 dark:md:bg-gray-900">
-          <div className="flex items-center justify-between rounded-md border-2 border-gray-200 bg-white p-4 dark:border-gray-800 dark:bg-gray-950" onDragOver={handleDragOver} onDragLeave={handleDragLeave} onDrop={handleDrop}>
+          <div className="flex items-center justify-between rounded-md border-2 border-gray-200 bg-white p-4 dark:border-gray-800 dark:bg-gray-950">
             <div className="flex w-full items-center justify-center gap-2">
               {!selectedFile ? (
                 <div className="w-full">
@@ -158,7 +148,7 @@ export default function Images() {
               ) : (
                 <div className="flex w-full flex-col items-center gap-6 lg:gap-2">
                   <div className="w-full items-start">
-                    <button onClick={handleSelectAnotherFile} className="flex items-center gap-2 rounded-md border-2 dark:text-gray-300 border-gray-200 px-2 py-1 duration-200 hover:bg-gray-200 dark:border-gray-800 dark:hover:bg-gray-800">
+                    <button onClick={() => setSelectedFile(null)} className="flex items-center gap-2 rounded-md border-2 border-gray-200 px-2 py-1 duration-200 hover:bg-gray-200 dark:border-gray-800 dark:text-gray-300 dark:hover:bg-gray-800">
                       <VscDebugRestart />
                       Select another file
                     </button>
@@ -176,63 +166,29 @@ export default function Images() {
                       </div>
                       <FaArrowRight className="text-2xl text-gray-900 md:text-4xl dark:text-gray-100" />
                       <div>
-                        <select id="output-format" value={outputFormat} onChange={(e) => setOutputFormat(e.target.value)} className="rounded-md border-2 border-gray-200 bg-white p-2 focus:border-orange-400 dark:border-gray-800 dark:bg-gray-950 dark:focus:border-orange-600">
-                          {["jpg", "png", "bmp", "svg", "webp"]
-                            .filter((format) => format !== selectedFile.name.split(".").pop().toLowerCase())
-                            .map((format) => (
-                              <option key={format} value={format}>
-                                {format.toUpperCase()}
-                              </option>
-                            ))}
+                        <p className="text-base text-gray-600 dark:text-gray-400">Output format</p>
+                        <select onChange={(e) => setOutputFormat(e.target.value)} value={outputFormat} className="border-2 bg-white p-2 text-gray-800 dark:border-gray-800 dark:bg-gray-950 dark:text-gray-300">
+                          <option value="png">PNG</option>
+                          <option value="jpg">JPG</option>
+                          <option value="bmp">BMP</option>
+                          <option value="webp">WEBP</option>
+                          <option value="svg">SVG</option>
                         </select>
                       </div>
                     </div>
-                    <button onClick={handleConvert} className="dark:hover-text-gray-200 rounded-md bg-orange-400 px-3 py-2 text-gray-50 duration-200 hover:bg-orange-600 dark:bg-orange-600 dark:hover:bg-orange-400" disabled={isConverting}>
-                      {isConverting ? (
-                        <div className="flex w-full items-center justify-center gap-2">
-                          <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24">
-                            <path fill="currentColor" d="M12,4a8,8,0,0,1,7.89,6.7A1.53,1.53,0,0,0,21.38,12h0a1.5,1.5,0,0,0,1.48-1.75,11,11,0,0,0-21.72,0A1.5,1.5,0,0,0,2.62,12h0a1.53,1.53,0,0,0,1.49-1.3A8,8,0,0,1,12,4Z">
-                              <animateTransform attributeName="transform" dur="0.75s" repeatCount="indefinite" type="rotate" values="0 12 12;360 12 12" />
-                            </path>
-                          </svg>
-                          <p>Converting</p>
-                        </div>
-                      ) : (
-                        <div className="flex w-full items-center justify-center gap-2">
-                          <MdOutlineRocketLaunch className="text-xl" />
-                          <p>
-                            Convert to <span className="uppercase">{outputFormat}</span>
-                          </p>
-                        </div>
-                      )}
-                    </button>
+                    <div className="flex items-center gap-2">
+                      <button onClick={handleConvert} disabled={isConverting} className="flex items-center gap-2 rounded-md bg-orange-400 p-3 text-white hover:bg-orange-600 dark:bg-orange-600 dark:hover:bg-orange-400">
+                        <MdOutlineRocketLaunch />
+                        {isConverting ? "Converting..." : "Convert now"}
+                      </button>
+                    </div>
                   </div>
                 </div>
               )}
             </div>
           </div>
-          {errorMessage && <p className="text-red-500">{errorMessage}</p>}
         </div>
-
-        <div>
-          <div className="mb-4">
-            <h2 className="mb-2 text-2xl font-bold text-gray-900 md:text-3xl dark:text-gray-100">Why use our image converter?</h2>
-            <p className="mb-4 text-gray-600 dark:text-gray-400">Our image converter is easy to use, free, and supports a wide range of formats. Whether you need to convert your images for a specific purpose or just to save space, we have you covered.</p>
-          </div>
-          <h2 className="mb-2 text-2xl font-bold text-gray-900 md:text-3xl dark:text-gray-100">Frequently Asked Questions</h2>
-          <div className="mb-4">
-            <h3 className="font-semibold text-gray-900 dark:text-gray-100">What formats do you support?</h3>
-            <p className="text-gray-600 dark:text-gray-400">We support a wide range of formats including JPEG, PNG, BMP, SVG, WEBP, and more. Simply upload your image, select the output format, and convert.</p>
-          </div>
-          <div className="mb-4">
-            <h3 className="font-semibold text-gray-900 dark:text-gray-100">Is it really free?</h3>
-            <p className="text-gray-600 dark:text-gray-400">Yes, our image converter is completely free to use with no hidden charges.</p>
-          </div>
-          <div className="mb-4">
-            <h3 className="font-semibold text-gray-900 dark:text-gray-100">Can I convert multiple files at once?</h3>
-            <p className="text-gray-600 dark:text-gray-400">Currently, our converter supports converting one file at a time. We are working on adding bulk conversion in the future.</p>
-          </div>
-        </div>
+        <FAQSection faqs={faqData} />
       </div>
     </>
   );
