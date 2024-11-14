@@ -41,12 +41,18 @@ export default function Lorem() {
   const [generatedText, setGeneratedText] = useState(loremText[0]);
   const [copied, setCopied] = useState(false);
 
-  const generateLorem = () => {
+  const generateLorem = (numParagraphs) => {
     let result = [];
-    for (let i = 0; i < paragraphs; i++) {
+    for (let i = 0; i < numParagraphs; i++) {
       result.push(loremText[i % loremText.length]);
     }
     setGeneratedText(result.join("\n\n"));
+  };
+
+  const handleParagraphChange = (e) => {
+    const newParagraphs = Number(e.target.value);
+    setParagraphs(newParagraphs);
+    generateLorem(newParagraphs);
   };
 
   const handleCopy = () => {
@@ -66,7 +72,7 @@ export default function Lorem() {
       </Helmet>
 
       <div className="flex flex-col gap-4 p-4 md:p-6">
-        <p className="text-gray-600 dark:text-gray-400">Generate Lorem Ipsum text for free. Choose how many paragraphs you want, click generate and it's done!</p>
+        <p className="text-gray-600 dark:text-gray-400">Generate Lorem Ipsum text for free. Choose how many paragraphs you want, and it's generated automatically!</p>
         <div className="flex flex-col gap-4 rounded-md md:border-2 md:border-gray-200 md:bg-gray-50 md:p-6 dark:md:border-gray-800 dark:md:bg-gray-900">
           <div className="flex flex-col justify-between gap-2 rounded-md border-2 border-gray-200 bg-white p-4 md:flex-row md:items-center dark:border-gray-800 dark:bg-gray-950">
             <div className="flex items-center gap-2">
@@ -76,26 +82,21 @@ export default function Lorem() {
                 min={1}
                 max={100}
                 value={paragraphs}
-                onChange={(e) => setParagraphs(Number(e.target.value))}
+                onChange={handleParagraphChange}
                 className="rounded-md border-2 border-gray-200 bg-white p-2 py-1 caret-orange-400 outline-none focus:border-orange-400 dark:border-gray-800 dark:bg-gray-950 dark:caret-orange-600 dark:focus:border-orange-600"
               />
             </div>
-            <div className="flex w-full items-center gap-2 md:w-fit">
-              <button onClick={handleCopy} className="flex w-full items-center justify-center gap-2 rounded-md bg-gray-300 px-3 py-2 text-gray-700 duration-200 hover:bg-gray-500 hover:text-gray-100 active:bg-gray-600 md:w-fit" aria-label="Generate Lorem Ipsum text">
-                {copied ? (
-                  <>
-                    Lorem copied <FaCheck fontSize={18} />
-                  </>
-                ) : (
-                  <>
-                    Copy <FaCopy fontSize={18} />
-                  </>
-                )}
-              </button>
-              <button onClick={generateLorem} className="w-full rounded-md dark:bg-orange-600 dark:hover:bg-orange-400 dark:hover:text-gray-200 bg-orange-400 px-3 py-2 text-gray-50 duration-200 hover:bg-orange-600 md:w-fit" aria-label="Generate Lorem Ipsum text">
-                Generate
-              </button>
-            </div>
+            <button onClick={handleCopy} className="flex w-full items-center justify-center gap-2 rounded-md bg-gray-300 px-3 py-2 text-gray-700 duration-200 hover:bg-gray-500 hover:text-gray-100 active:bg-gray-600 md:w-fit" aria-label="Copy Lorem Ipsum text">
+              {copied ? (
+                <>
+                  Lorem copied <FaCheck fontSize={18} />
+                </>
+              ) : (
+                <>
+                  Copy <FaCopy fontSize={18} />
+                </>
+              )}
+            </button>
           </div>
           <div>
             <p className="text-lg">Result :</p>
