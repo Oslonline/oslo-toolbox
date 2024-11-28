@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import { Helmet } from "react-helmet";
 import imageCompression from "browser-image-compression";
 import { saveAs } from "file-saver";
