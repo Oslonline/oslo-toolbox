@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 
 function ToolsCard({ name, text, link, icon }) {
   return (
-    <div className="flex flex-col items-center gap-2 rounded-lg border-2 border-gray-200 p-3 dark:border-gray-800">
+    <div className="flex flex-col items-center gap-2 rounded-lg border-2 border-gray-200 bg-gray-50 p-3 dark:bg-gray-900 dark:border-gray-700">
       <div>
         <img className="size-24 rounded-md md:size-32" src={icon} alt="Tool icon" />
       </div>
