@@ -6,7 +6,6 @@
 
 - CSS Box-shadow generator.
 - CSS background gradient generator.
-- Files converters (Images (PNG, JPG, WEBP, SVG, BMP))
 - Units converters (Mass, Length, Volume, Temperature, Area, Speed, Time).
 - Password generator.
 - Lorem Ipsum generator.
@@ -14,6 +13,8 @@
 - Hash generator from text.
 - Github README.md generator for Project & Profile.
 - IP Adress lookup.
+- Image converter (PNG, JPG, WEBP, BMP & SVG).
+- Image Dithering effect (Bitmap effect).
 
 <h2>Run</h2>
 
