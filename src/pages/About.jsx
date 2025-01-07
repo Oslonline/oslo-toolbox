@@ -19,9 +19,6 @@ function About() {
               <span className="font-semibold">CSS Background Gradient Generator:</span> Easily generate vibrant and dynamic gradients to enhance web designs with depth and visual appeal.
             </li>
             <li className="mt-1">
-              <span className="font-semibold">File Converters:</span> Convert various image formats, including PNG, JPG, WEBP, SVG, and BMP, ensuring compatibility across different platforms and applications.
-            </li>
-            <li className="mt-1">
               <span className="font-semibold">Unit Converters: </span> Cover a wide range of measurements such as mass, length, volume, temperature, area, speed, and time. This feature is invaluable for professionals in various fields.
             </li>
             <li className="mt-1">
@@ -44,6 +41,12 @@ function About() {
               <span className="font-semibold">IP Address Lookup:</span> Quickly retrieve information about a specific IP address, including its geographic location and associated details. This can be valuable for troubleshooting network issues, monitoring website traffic, or conducting security
               audits.
             </li>
+            <li className="mt-1">
+              <span className="font-semibold">Image Converter:</span> Convert various image formats, including PNG, JPG, WEBP, SVG, and BMP, ensuring compatibility across different platforms and applications.
+            </li>
+            <li className="mt-1">
+              <span className="font-semibold">Dithering / Bitmap Effect:</span> Apply a dithering effect (bitmap effect) to an image, creating a visually appealing and visually impaired-friendly image using the Floyd-Steinberg algorithm.
+            </li>
           </ul>
         </div>
         <div className="mt-6">
@@ -62,7 +65,7 @@ function About() {
         <div className="mt-4 flex flex-col gap-2">
           <p className="text-3xl font-bold">Contact</p>
           <p className="">
-            For any inquiries or assistance, please feel free to reach out to me on Twitter authentication{" "}
+            For any inquiries or assistance, please feel free to reach out to me on Twitter{" "}
             <a href="https://twitter.com/Oslo418" className="text-blue-500 underline hover:text-blue-400 focus:text-blue-600">
               @Oslo418
             </a>{" "}
