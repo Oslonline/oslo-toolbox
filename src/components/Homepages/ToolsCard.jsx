@@ -9,7 +9,7 @@ function ToolsCard({ name, text, link, icon }) {
       <div className="flex flex-col items-center gap-2">
         <div className="container">
           <p className="text-center text-lg font-semibold">{name}</p>
-          <p className="text-center text-gray-500 dark:text-gray-400">{text}</p>
+          <p className="text-center line-clamp-1 text-gray-500 dark:text-gray-400">{text}</p>
         </div>
         <Link to={link} className="flex w-fit rounded-lg bg-orange-400 px-3 py-2 text-gray-50 duration-200 hover:bg-orange-600 focus:bg-gray-800 focus:text-gray-50 dark:bg-orange-600 dark:hover:bg-orange-400 dark:hover:text-gray-200">
           Check this tool
