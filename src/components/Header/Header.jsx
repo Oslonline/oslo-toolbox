@@ -35,8 +35,6 @@ function Header() {
     "/UnitsConvert/Temperature": "Temperature units converter",
     "/UnitsConvert/Speed": "Speed units converter",
     "/UnitsConvert/Time": "Time units converter",
-    "/FilesConvert": "Convert files",
-    "/FilesConvert/Images": "Images files converter",
     "/Generators": "Misc generators",
     "/Generators/Password": "Password generator",
     "/Generators/Lorem": "Lorem Ipsum generator",
@@ -45,6 +43,9 @@ function Header() {
     "/Security": "Security tools",
     "/Security/IpLookup": "IP Address Lookup",
     "/Security/Hash": "Hash generator",
+    "/Images": "Images editing tools", 
+    "/Images/Images-converter": "Images files converter",
+    "/Images/Dither": "Dither/Bitmap effect",
     "/About": "About & Contact",
   };
 

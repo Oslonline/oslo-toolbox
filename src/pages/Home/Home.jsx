@@ -5,14 +5,8 @@ const tools = [
   {
     name: "Generators",
     link: "/Generators",
-    text: "Password, Lorem, QR Code...",
+    text: "Password, Lorem, QR Code, Github Readme...",
     icon: "/images/tools-ctg/gen.webp",
-  },
-  {
-    name: "Files converters",
-    link: "/FilesConvert",
-    text: "Images (PNG, JPG, WEBP...)",
-    icon: "/images/tools-ctg/files.webp",
   },
   {
     name: "Units converters",
@@ -31,6 +25,12 @@ const tools = [
     link: "/Css",
     text: "Gradient, Box-shadow...",
     icon: "/images/tools-ctg/css.webp",
+  },
+  {
+    name: "Image editing & altering tools",
+    link: "/Images",
+    text: "Images converter, Dithering...",
+    icon: "/images/tools-ctg/images.webp",
   },
 ];
 
@@ -70,7 +70,7 @@ function Home() {
           <h2 className="text-3xl font-bold text-gray-900 dark:text-gray-100">Frequently Asked Questions</h2>
           <div className="mt-4 text-gray-800 dark:text-gray-200">
             <h3 className="font-semibold">What tools can I find on Oslo's Toolbox?</h3>
-            <p className="text-gray-600 dark:text-gray-400">Oslo's Toolbox offers a variety of free online tools including CSS generators for gradients and shadows, unit converters, password generators, QR code generators, and security tools like IP lookup.</p>
+            <p className="text-gray-600 dark:text-gray-400">Oslo's Toolbox offers a variety of free online tools including CSS generators for gradients and shadows, unit converters, password generators, QR code generators, security tools like IP lookup and images editing tools like image converter & dithering effect.</p>
 
             <h4 className="mt-4 font-semibold">Are these tools free to use?</h4>
             <p className="text-gray-600 dark:text-gray-400">Yes, all the tools available on Oslo's Toolbox are completely free to use with no hidden costs.</p>

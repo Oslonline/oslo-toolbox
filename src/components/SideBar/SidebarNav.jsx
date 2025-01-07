@@ -5,10 +5,10 @@ import SidebarDropdown from "./SidebarDropdown";
 import { FaCss3Alt, FaHome, FaWeightHanging, FaRuler, FaThermometerHalf, FaRulerCombined, FaCube, FaUnlockAlt, FaQrcode, FaHashtag, FaBalanceScale } from "react-icons/fa";
 import { GrCircleInformation } from "react-icons/gr";
 import { TbCircleLetterL, TbMapPinQuestion } from "react-icons/tb";
-import { MdGradient, MdSecurity } from "react-icons/md";
+import { MdGradient, MdSecurity, MdGrain } from "react-icons/md";
 import { SiConvertio } from "react-icons/si";
 import { BsShadows } from "react-icons/bs";
-import { FaGear } from "react-icons/fa6";
+import { FaGear, FaImage, FaTextSlash } from "react-icons/fa6";
 import { CgReadme } from "react-icons/cg";
 import { LuImage } from "react-icons/lu";
 import { IoSpeedometer, IoTimerSharp } from "react-icons/io5";
@@ -18,10 +18,10 @@ function SidebarNav() {
 
   const [mainDropdowns, setMainDropdowns] = useState({
     generators: false,
-    file_convert: false,
     convert: false,
     security: false,
     css: false,
+    images: false,
   });
 
   const [isMobile, setIsMobile] = useState(window.innerWidth < 768);
@@ -44,17 +44,17 @@ function SidebarNav() {
   const closeAllDropdowns = () => {
     setMainDropdowns({
       generators: false,
-      file_convert: false,
       convert: false,
       security: false,
       css: false,
+      images: false,
     });
   };
 
   const isActiveLink = (link) => location.pathname === link;
 
   return (
-    <div className="h-full w-full p-3 pr-0">
+    <div className="h-full w-full overflow-y-auto p-3 pr-0">
       <div className="flex h-fit w-full flex-col gap-2 overflow-y-auto pr-3">
         <SidebarLinks link={"/"} icon={<FaHome />} linkname={"Home"} onClick={closeAllDropdowns} />
         <SidebarLinks link={"/About"} icon={<GrCircleInformation />} linkname={"About"} onClick={closeAllDropdowns} />
@@ -73,18 +73,6 @@ function SidebarNav() {
               <SidebarLinks link={"/Generators/QrCode"} icon={<FaQrcode />} linkname={"QR Code"} />
               <SidebarLinks link={"/Generators/Readme"} icon={<CgReadme />} linkname={"Readme"} />
             </>
-          </SidebarDropdown>
-        )}
-        <hr className="dark:border-gray-800" />
-
-        {/* Files Converter Dropdown */}
-        {isMobile ? (
-          <Link to={"/FilesConvert"} className={`flex items-center gap-2 rounded-md px-3 py-2 text-gray-950 dark:text-gray-200 ${isActiveLink("/FilesConvert") ? "bg-gray-800 text-white underline hover:bg-gray-800 dark:bg-gray-200 dark:text-gray-950 dark:hover:bg-gray-200" : ""}`}>
-            <SiConvertio />
-          </Link>
-        ) : (
-          <SidebarDropdown label="Files Converter" icon={<SiConvertio />} isOpen={mainDropdowns.file_convert} onClick={() => toggleMainDropdown("file_convert")}>
-            <SidebarLinks link={"/FilesConvert/Images"} icon={<LuImage />} linkname={"Images"} />
           </SidebarDropdown>
         )}
         <hr className="dark:border-gray-800" />
@@ -134,6 +122,21 @@ function SidebarNav() {
             <>
               <SidebarLinks link={"/Css/Gradient"} icon={<MdGradient />} linkname={"Gradient gen"} />
               <SidebarLinks link={"/Css/Box-shadow"} icon={<BsShadows />} linkname={"Box-shadow gen"} />
+            </>
+          </SidebarDropdown>
+        )}
+        <hr className="dark:border-gray-800" />
+
+        {/* Images Dropdown */}
+        {isMobile ? (
+          <Link to={"/Images"} className={`flex items-center gap-2 rounded-md px-3 py-2 text-gray-950 dark:text-gray-200 ${isActiveLink("/Images") ? "bg-gray-800 text-white underline hover:bg-gray-800 dark:bg-gray-200 dark:text-gray-950 dark:hover:bg-gray-200" : ""}`}>
+            <FaImage />
+          </Link>
+        ) : (
+          <SidebarDropdown label="Images" icon={<FaImage />} isOpen={mainDropdowns.images} onClick={() => toggleMainDropdown("images")}>
+            <>
+              <SidebarLinks link={"/Images/Images-converter"} icon={<SiConvertio />} linkname={"Images converter"} />
+              <SidebarLinks link={"/Images/Dither"} icon={<MdGrain />} linkname={"Image Dithering"} />
             </>
           </SidebarDropdown>
         )}

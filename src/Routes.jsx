@@ -3,12 +3,12 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 import Error from "./pages/Error/Error";
 import About from "./pages/About";
-import { Home, HomeCss, HomeConvert, HomeGen, HomeSecurity, HomeFileConvert } from "./pages/Home";
+import { Home, HomeCss, HomeConvert, HomeGen, HomeSecurity, HomeImages } from "./pages/Home";
 import { Length, Mass, Area, Volume, Temperature, Speed, Time } from "./pages/Tools/UnitsConvert";
 import { Gradient, BoxShadow } from "./pages/Tools/Css";
 import { Lorem, Password, QrCode, ReadmeGenerator } from "./pages/Tools/Generator";
 import { Hash, IpLookup } from "./pages/Tools/Security";
-import { Images } from "./pages/Tools/FilesConvert";
+import { ImagesConverter, Dither } from "./pages/Tools/Images";
 
 import Error404 from "./pages/Error/Error404";
 
@@ -27,10 +27,6 @@ function MainRouter() {
             <Route path="Lorem" element={<Lorem />} />
             <Route path="QrCode" element={<QrCode />} />
             <Route path="Readme" element={<ReadmeGenerator />} />
-          </Route>
-          <Route path="FilesConvert">
-            <Route index element={<HomeFileConvert />} />
-            <Route path="Images" element={<Images />} />
           </Route>
           <Route path="UnitsConvert">
             <Route index element={<HomeConvert />} />
@@ -51,6 +47,11 @@ function MainRouter() {
             <Route index element={<HomeCss />} />
             <Route path="Gradient" element={<Gradient />} />
             <Route path="Box-shadow" element={<BoxShadow />} />
+          </Route>
+          <Route path="Images">
+            <Route index element={<HomeImages />} />
+            <Route path="Images-converter" element={<ImagesConverter />} />
+            <Route path="Dither" element={<Dither />} />
           </Route>
         </Route>
       </Routes>
