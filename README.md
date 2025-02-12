@@ -37,7 +37,7 @@
 
 <h2>Contribute</h2>
 
-If you want to contribute to this project, make sure to read the [Contributing.md](COONTRIBUTING.md) file and the Code of Conduct before opening any issue or pull request.
+If you want to contribute to this project, make sure to read the [Contributing.md](CONTRIBUTING.md) file and the Code of Conduct before opening any issue or pull request.
 
 **1 - Open an issue**
 (wait for assignement)
