@@ -97,16 +97,16 @@ export default function Dither() {
 
   const faqData = [
     {
-      question: "",
-      answer: "",
-    },
-    {
       question: "What is the Floyd Steinberg algorithm?",
       answer: "The Floyd Steinberg algorithm is a dithering algorithm used in digital image processing to reduce the quantization error in image quantization.",
     },
     {
       question: "What is quantization?",
       answer: "Quantization is the process of reducing the number of levels of representation of a signal or image by mapping the signal or image onto a smaller number of levels.",
+    },
+    {
+      question: "What is the difference between quantization and dithering?",
+      answer: "Dithering is a type of quantization, while quantization is the process of reducing the number of levels of representation of a signal or image by mapping the signal or image onto a smaller number of levels.",
     },
   ];
 
