@@ -43,7 +43,7 @@ function Header() {
     "/Security": "Security tools",
     "/Security/IpLookup": "IP Address Lookup",
     "/Security/Hash": "Hash generator",
-    "/Images": "Images editing tools", 
+    "/Images": "Images editing tools",
     "/Images/Images-converter": "Images files converter",
     "/Images/Dither": "Dither/Bitmap effect",
     "/About": "About & Contact",
@@ -65,7 +65,9 @@ function Header() {
             <FaCodeFork /> Contribute
           </a>
         )}
-        <button onClick={() => setIsDarkMode(!isDarkMode)}>{isDarkMode ? <AiOutlineMoon fontSize={25} /> : <FiSun fontSize={25} />}</button>
+        <button onClick={() => setIsDarkMode(!isDarkMode)} className={`transition-transform duration-500 ease-in-out ${isDarkMode ? "rotate-0" : "rotate-180"}`}>
+          {isDarkMode ? <AiOutlineMoon fontSize={25} /> : <FiSun fontSize={25} />}
+        </button>
       </div>
     </header>
   );
