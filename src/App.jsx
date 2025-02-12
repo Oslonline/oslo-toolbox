@@ -1,7 +1,7 @@
 import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from "@vercel/speed-insights/react";
 import Header from "./components/Header/Header";
-import Sidebar from "./components/sidebar/SideBar";
+import Sidebar from "./components/SideBar/SideBar";
 import { Outlet } from "react-router-dom";
 
 function App() {
