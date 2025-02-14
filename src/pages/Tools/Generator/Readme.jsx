@@ -108,7 +108,7 @@ export default function ReadmeGenerator() {
             <input type="checkbox" className="hidden" checked={template === "profile"} onChange={switchTemplate} />
             <div className="relative inline-block w-10 select-none align-middle transition duration-200 ease-in md:w-14">
               <div className={`toggle-bg block h-6 w-10 rounded-full border-2 border-gray-200 bg-gray-300 shadow-inner md:h-8 md:w-14 dark:border-gray-800 dark:bg-gray-800 ${template === "profile" ? "border-orange-400 duration-200 dark:border-orange-600" : "duration-200"}`}></div>
-              <div className={`dot absolute left-1 top-1 h-4 w-4 rounded-full border-2 border-gray-200 bg-gray-50 shadow transition md:h-6 md:w-6 dark:border-gray-400 dark:bg-gray-900 ${template === "profile" ? "translate-x-full transform bg-orange-400 dark:bg-orange-600" : ""}`}></div>
+              <div className={`dot absolute left-1 top-1 h-4 w-4 rounded-full border-2 border-gray-200 bg-gray-50 shadow-sm transition md:h-6 md:w-6 dark:border-gray-400 dark:bg-gray-900 ${template === "profile" ? "translate-x-full transform bg-orange-400 dark:bg-orange-600" : ""}`}></div>
             </div>
             <p className="text-xs text-gray-600 md:text-sm md:uppercase">Profile readme</p>
           </label>
@@ -123,7 +123,7 @@ export default function ReadmeGenerator() {
             placeholder={template === "project" ? "Project Title" : "Profile Name"}
             value={sections[0].title}
             onChange={(e) => updateSection(sections[0].id, e.target.value, sections[0].content)}
-            className="rounded-md border-2 border-gray-200 bg-white p-2 text-gray-900 caret-orange-400 outline-none focus:border-orange-400 dark:border-gray-800 dark:bg-gray-950 dark:text-gray-100 dark:caret-orange-600 dark:focus:border-orange-600"
+            className="rounded-md border-2 border-gray-200 bg-white p-2 text-gray-900 caret-orange-400 outline-hidden focus:border-orange-400 dark:border-gray-800 dark:bg-gray-950 dark:text-gray-100 dark:caret-orange-600 dark:focus:border-orange-600"
           />
 
           {sections.slice(1).map((section, index) => (
@@ -135,7 +135,7 @@ export default function ReadmeGenerator() {
                     placeholder="Section Title"
                     value={section.title}
                     onChange={(e) => updateSection(section.id, e.target.value, section.content)}
-                    className="w-full rounded-md border-2 border-gray-200 bg-white p-2 text-gray-900 caret-orange-400 outline-none focus:border-orange-400 dark:border-gray-800 dark:bg-gray-950 dark:text-gray-100 dark:caret-orange-600 dark:focus:border-orange-600"
+                    className="w-full rounded-md border-2 border-gray-200 bg-white p-2 text-gray-900 caret-orange-400 outline-hidden focus:border-orange-400 dark:border-gray-800 dark:bg-gray-950 dark:text-gray-100 dark:caret-orange-600 dark:focus:border-orange-600"
                   />
                   <button onClick={() => removeSection(section.id)} className="rounded-md border-2 border-gray-200 px-2 text-gray-300 duration-200 hover:border-gray-400 hover:bg-gray-400 hover:text-gray-50 md:hidden">
                     <CiCircleRemove fontSize={23} />
@@ -145,7 +145,7 @@ export default function ReadmeGenerator() {
                   placeholder="Section Content"
                   value={section.content}
                   onChange={(e) => updateSection(section.id, section.title, e.target.value)}
-                  className="min-h-16 rounded-md border-2 border-gray-200 bg-white p-2 text-gray-900 caret-orange-400 outline-none focus:border-orange-400 dark:border-gray-800 dark:bg-gray-950 dark:text-gray-100 dark:caret-orange-600 dark:focus:border-orange-600"
+                  className="min-h-16 rounded-md border-2 border-gray-200 bg-white p-2 text-gray-900 caret-orange-400 outline-hidden focus:border-orange-400 dark:border-gray-800 dark:bg-gray-950 dark:text-gray-100 dark:caret-orange-600 dark:focus:border-orange-600"
                   rows="2"
                 ></textarea>
               </div>

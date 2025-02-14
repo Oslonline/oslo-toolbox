@@ -80,7 +80,7 @@ function Converter({ description, systems, units, unitValues }) {
           <div className="flex flex-col items-center gap-4 md:flex-row md:items-start">
             <div className="flex flex-col gap-3">
               <input
-                className="rounded-md border-2 border-gray-200 bg-white p-2 caret-orange-400 outline-none focus:border-orange-400 focus:outline-offset-0 dark:border-gray-800 dark:bg-gray-950 dark:text-gray-50 dark:caret-orange-600 dark:focus:border-orange-600"
+                className="rounded-md border-2 border-gray-200 bg-white p-2 caret-orange-400 outline-hidden focus:border-orange-400 focus:outline-offset-0 dark:border-gray-800 dark:bg-gray-950 dark:text-gray-50 dark:caret-orange-600 dark:focus:border-orange-600"
                 placeholder="3.46"
                 type="number"
                 value={inputValue}
@@ -103,7 +103,7 @@ function Converter({ description, systems, units, unitValues }) {
               <FaArrowRight />
             </div>
             <div className="flex flex-col gap-3">
-              <input className="rounded-md border-2 border-gray-200 bg-white p-2 outline-none dark:border-gray-800 dark:bg-gray-950 dark:text-gray-50" type="text" value={result} readOnly />
+              <input className="rounded-md border-2 border-gray-200 bg-white p-2 outline-hidden dark:border-gray-800 dark:bg-gray-950 dark:text-gray-50" type="text" value={result} readOnly />
               <div className="hidden md:block">
                 <MetricButtons units={units[metricSys]} selectedUnit={unitTo} onChange={handleUnitToChange} />
               </div>

@@ -118,12 +118,12 @@ function Gradient() {
               <h3 className="font-semibold text-gray-600 dark:text-gray-400">Color</h3>
               <div className="flex flex-col gap-3">
                 <div className="flex items-center gap-2">
-                  <input className="h-12 w-16 appearance-none rounded-md border border-gray-300 p-2 focus:outline-none dark:border-gray-700 dark:bg-gray-700 dark:hover:bg-gray-500" type="color" value={colorA} onChange={handleColorAChange} />
-                  <input className="w-24 rounded-md border-2 border-gray-200 px-2 py-2 caret-orange-400 outline-none focus:border-orange-400 dark:border-gray-800 dark:bg-gray-950 dark:caret-orange-600 dark:focus:border-orange-600" type="text" value={colorA} onChange={handleColorAChange} />
+                  <input className="h-12 w-16 appearance-none rounded-md border border-gray-300 p-2 focus:outline-hidden dark:border-gray-700 dark:bg-gray-700 dark:hover:bg-gray-500" type="color" value={colorA} onChange={handleColorAChange} />
+                  <input className="w-24 rounded-md border-2 border-gray-200 px-2 py-2 caret-orange-400 outline-hidden focus:border-orange-400 dark:border-gray-800 dark:bg-gray-950 dark:caret-orange-600 dark:focus:border-orange-600" type="text" value={colorA} onChange={handleColorAChange} />
                 </div>
                 <div className="flex items-center gap-2">
-                  <input className="h-12 w-16 appearance-none rounded-md border border-gray-300 p-2 focus:outline-none dark:border-gray-700 dark:bg-gray-700 dark:hover:bg-gray-500" type="color" value={colorB} onChange={handleColorBChange} />
-                  <input className="w-24 rounded-md border-2 border-gray-200 px-2 py-2 caret-orange-400 outline-none focus:border-orange-400 dark:border-gray-800 dark:bg-gray-950 dark:caret-orange-600 dark:focus:border-orange-600" type="text" value={colorB} onChange={handleColorBChange} />
+                  <input className="h-12 w-16 appearance-none rounded-md border border-gray-300 p-2 focus:outline-hidden dark:border-gray-700 dark:bg-gray-700 dark:hover:bg-gray-500" type="color" value={colorB} onChange={handleColorBChange} />
+                  <input className="w-24 rounded-md border-2 border-gray-200 px-2 py-2 caret-orange-400 outline-hidden focus:border-orange-400 dark:border-gray-800 dark:bg-gray-950 dark:caret-orange-600 dark:focus:border-orange-600" type="text" value={colorB} onChange={handleColorBChange} />
                 </div>
               </div>
             </div>
@@ -164,7 +164,7 @@ function Gradient() {
           }}
         >
           <div
-            className="h-full w-full rounded"
+            className="h-full w-full rounded-sm"
             style={{
               background: gradientType === "linear" ? `linear-gradient(${angle}deg, rgba(${hexToRGBA(colorA, opacity)}) 0%, rgba(${hexToRGBA(colorB, opacity)}) 100%)` : `radial-gradient(circle, rgba(${hexToRGBA(colorA, opacity)}) 0%, rgba(${hexToRGBA(colorB, opacity)}) 100%)`,
             }}

@@ -56,7 +56,7 @@ function BoxShadow() {
   const faqData = [
     {
       question: "What is a box-shadow in CSS ?",
-      answer: "A box-shadow in CSS is a shadow effect applied to an element’s box, allowing you to create depth and visual interest by adding an offset shadow.",
+      answer: "A box-shadow in CSS is a shadow-sm effect applied to an element’s box, allowing you to create depth and visual interest by adding an offset shadow.",
     },
     {
       question: "How do I use this tool?",
@@ -64,7 +64,7 @@ function BoxShadow() {
     },
     {
       question: "Can I control the opacity of the shadow?",
-      answer: "Yes, you can adjust the opacity of the shadow using the opacity slider. This allows you to create both subtle and bold shadow effects.",
+      answer: "Yes, you can adjust the opacity of the shadow-sm using the opacity slider. This allows you to create both subtle and bold shadow-sm effects.",
     },
   ];
 
@@ -72,8 +72,8 @@ function BoxShadow() {
     <div className="flex flex-col gap-6 p-4 md:p-6">
       <Helmet>
         <title>CSS Box-Shadow Generator - Customize Your Shadows Online</title>
-        <meta name="description" content="Easily create custom CSS box-shadow effects with our free online tool. Adjust offset, blur, spread, color, and opacity to generate the perfect shadow for your project." />
-        <meta name="keywords" content="CSS box-shadow generator, free online CSS tools, custom shadow generator, CSS effects, web design tools" />
+        <meta name="description" content="Easily create custom CSS box-shadow effects with our free online tool. Adjust offset, blur-sm, spread, color, and opacity to generate the perfect shadow-sm for your project." />
+        <meta name="keywords" content="CSS box-shadow generator, free online CSS tools, custom shadow-sm generator, CSS effects, web design tools" />
         <meta name="robots" content="index, follow" />
         <link rel="canonical" href="https://oslo-toolbox.vercel.app.com/Css/BoxShadow" />
       </Helmet>
@@ -121,8 +121,8 @@ function BoxShadow() {
             <div>
               <p className="text-sm text-gray-600 dark:text-gray-400">Color</p>
               <div className="mt-1 flex items-center gap-4">
-                <input className="h-12 w-16 appearance-none rounded-md border border-gray-300 p-2 focus:outline-none dark:border-gray-700 dark:bg-gray-700 dark:hover:bg-gray-500" type="color" value={boxShadow.color} onChange={handleChange} name="color" />
-                <input className="w-20 rounded-md bg-gray-100 px-2 py-2 caret-orange-400 outline-none focus:outline-orange-400 dark:bg-gray-950 dark:caret-orange-600 dark:focus:outline-orange-600" type="text" value={boxShadow.color} onChange={handleChange} name="color" />
+                <input className="h-12 w-16 appearance-none rounded-md border border-gray-300 p-2 focus:outline-hidden dark:border-gray-700 dark:bg-gray-700 dark:hover:bg-gray-500" type="color" value={boxShadow.color} onChange={handleChange} name="color" />
+                <input className="w-20 rounded-md bg-gray-100 px-2 py-2 caret-orange-400 outline-hidden focus:outline-orange-400 dark:bg-gray-950 dark:caret-orange-600 dark:focus:outline-orange-600" type="text" value={boxShadow.color} onChange={handleChange} name="color" />
               </div>
             </div>
 

@@ -18,7 +18,7 @@ function Breadcrumbs() {
   ];
 
   return (
-    <nav className="mb-0.5 hidden items-center space-x-1 rounded border border-gray-200 px-1 py-0.5 text-sm text-gray-400 md:flex dark:border-gray-800 dark:text-gray-600 ">
+    <nav className="mb-0.5 hidden items-center space-x-1 rounded-sm border border-gray-200 px-1 py-0.5 text-sm text-gray-400 md:flex dark:border-gray-800 dark:text-gray-600 ">
       {breadcrumbs.map((breadcrumb, index) => (
         <React.Fragment key={breadcrumb.segment}>
           {index === breadcrumbs.length - 1 ? (

@@ -81,7 +81,7 @@ export default function IpLookup() {
           <div className="flex w-full flex-col gap-2 md:flex-row md:justify-between md:gap-4">
             <input
               type="text"
-              className="flex rounded-md border-2 border-gray-200 bg-white px-2 py-1.5 caret-orange-400 outline-none focus:border-orange-400 md:w-full dark:border-gray-800 dark:bg-gray-950 dark:text-gray-50 dark:caret-orange-600 dark:focus:border-orange-600"
+              className="flex rounded-md border-2 border-gray-200 bg-white px-2 py-1.5 caret-orange-400 outline-hidden focus:border-orange-400 md:w-full dark:border-gray-800 dark:bg-gray-950 dark:text-gray-50 dark:caret-orange-600 dark:focus:border-orange-600"
               value={ip}
               onChange={(e) => setIp(e.target.value)}
               placeholder="Enter IPv4 or IPv6 address"

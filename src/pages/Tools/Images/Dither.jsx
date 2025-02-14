@@ -144,7 +144,7 @@ export default function Dither() {
                   </div>
                 </div>
                 <div className="flex gap-2">
-                  <button className={`p-x-2 flex items-center gap-1 rounded bg-blue-800 px-4 py-2 font-mono text-gray-50 duration-100 hover:bg-blue-600 dark:bg-blue-900 dark:hover:bg-blue-800`} onClick={handleReset}>
+                  <button className={`p-x-2 flex items-center gap-1 rounded-sm bg-blue-800 px-4 py-2 font-mono text-gray-50 duration-100 hover:bg-blue-600 dark:bg-blue-900 dark:hover:bg-blue-800`} onClick={handleReset}>
                     <MdRefresh /> Choose a different image
                   </button>
                   <button

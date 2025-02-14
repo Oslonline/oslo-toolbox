@@ -82,7 +82,7 @@ export default function Password() {
       <div className="flex flex-col gap-4 rounded-md md:border-2 md:border-gray-200 md:bg-gray-50 md:p-6 dark:md:border-gray-800 dark:md:bg-gray-900">
         <div className="flex items-center justify-between gap-4 rounded-md border-2 border-gray-200 bg-white p-4 md:gap-8 dark:border-gray-800 dark:bg-gray-950">
           <input
-            className="w-full rounded-md border-2 border-gray-200 bg-white p-2 font-mono caret-orange-400 outline-none selection:bg-orange-400 selection:text-gray-50 focus:border-orange-400 dark:border-gray-800 dark:bg-gray-950 dark:caret-orange-600 dark:focus:border-orange-600"
+            className="w-full rounded-md border-2 border-gray-200 bg-white p-2 font-mono caret-orange-400 outline-hidden selection:bg-orange-400 selection:text-gray-50 focus:border-orange-400 dark:border-gray-800 dark:bg-gray-950 dark:caret-orange-600 dark:focus:border-orange-600"
             type="text"
             readOnly
             value={password}

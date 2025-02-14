@@ -81,7 +81,7 @@ export default function QrCode() {
       <div className="flex flex-col gap-4 rounded-md md:border-2 md:border-gray-200 md:bg-gray-50 md:p-6 dark:md:border-gray-800 dark:md:bg-gray-900">
         <div className="flex flex-col items-center justify-between gap-4 rounded-md border-2 border-gray-200 bg-white p-4 md:flex-row dark:border-gray-800 dark:bg-gray-950">
           <div className="flex w-full items-center gap-2">
-            <input type="text" value={link} onChange={handleLinkChange} placeholder="Enter your link or text here" className="w-full rounded-md border-2 border-gray-200 bg-white p-2 caret-orange-400 outline-none focus:border-orange-400 dark:border-gray-800 dark:bg-gray-950" />
+            <input type="text" value={link} onChange={handleLinkChange} placeholder="Enter your link or text here" className="w-full rounded-md border-2 border-gray-200 bg-white p-2 caret-orange-400 outline-hidden focus:border-orange-400 dark:border-gray-800 dark:bg-gray-950" />
             <input type="color" value={color} onChange={(e) => setColor(e.target.value)} className="h-10 w-10 min-w-10 rounded-md border-2 border-gray-300 hover:cursor-pointer md:hidden dark:border-gray-800" aria-label="Choose QR Code color" />
           </div>
           <div className="flex w-full items-center gap-4 md:w-fit">

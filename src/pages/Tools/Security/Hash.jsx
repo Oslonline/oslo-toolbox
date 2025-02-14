@@ -76,7 +76,7 @@ export default function Hash() {
               placeholder="Enter text here"
               value={text}
               onChange={(e) => setText(e.target.value)}
-              className="w-full rounded-md border-2 border-gray-200 bg-white p-2 caret-orange-400 outline-none focus:border-orange-400 dark:border-gray-800 dark:bg-gray-950"
+              className="w-full rounded-md border-2 border-gray-200 bg-white p-2 caret-orange-400 outline-hidden focus:border-orange-400 dark:border-gray-800 dark:bg-gray-950"
               aria-label="Input text for hashing"
             />
             <p className="font-semibold">TO</p>
