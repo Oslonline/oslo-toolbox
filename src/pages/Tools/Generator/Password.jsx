@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { FaRedo, FaCopy, FaCheck } from "react-icons/fa";
 import { Helmet } from "react-helmet";
-import FAQSection from "../../../components/commons/Faq";
+import FAQSection from "../../../components/Faq";
 
 export default function Password() {
   const [password, setPassword] = useState("");
@@ -48,27 +48,8 @@ export default function Password() {
     generatePassword();
   }, []);
 
-  const faqData = [
-    {
-      question: "How long should my password be ?",
-      answer: "It's recommended to use a password of at least 12 characters for optimal security. Longer passwords are even more secure.",
-    },
-    {
-      question: "Should I include special characters in my password ?",
-      answer: "Yes, including special characters increases the complexity of your password, making it harder to crack.",
-    },
-    {
-      question: "How often should I change my passwords ?",
-      answer: "No, using the same password for multiple accounts increases the risk of a security breach. Always use unique passwords for different accounts.",
-    },
-    {
-      question: "Can I use the same password for multiple accounts ?",
-      answer: "No, using the same password for multiple accounts increases the risk of a security breach. Always use unique passwords for different accounts.",
-    },
-  ];
-
   return (
-    <div className="flex flex-col gap-4 p-4 md:p-6">
+    <>
       <Helmet>
         <title>Secure Password Generator - Create Strong Passwords for Free</title>
         <meta name="description" content="Generate secure passwords up to 128 characters with options to include uppercase letters, lowercase letters, numbers, and special characters. Perfect for safeguarding your online accounts." />
@@ -76,10 +57,7 @@ export default function Password() {
         <link rel="canonical" href="https://oslo-toolbox.vercel.app.com/Generators/Password" />
       </Helmet>
 
-      <div>
-        <p className="text-gray-600">Generate your password for free up to 128 characters with the option to include uppercase letters, lowercase letters, numbers, and special characters.</p>
-      </div>
-      <div className="flex flex-col gap-4 rounded-md md:border-2 md:border-gray-200 md:bg-gray-50 md:p-6 dark:md:border-gray-800 dark:md:bg-gray-900">
+      <div className="flex min-w-2/3 flex-col gap-4 rounded-md md:border-2 md:border-gray-200 md:bg-gray-50 md:p-6 dark:md:border-gray-800 dark:md:bg-gray-900">
         <div className="flex items-center justify-between gap-4 rounded-md border-2 border-gray-200 bg-white p-4 md:gap-8 dark:border-gray-800 dark:bg-gray-950">
           <input
             className="w-full rounded-md border-2 border-gray-200 bg-white p-2 font-mono caret-orange-400 outline-hidden selection:bg-orange-400 selection:text-gray-50 focus:border-orange-400 dark:border-gray-800 dark:bg-gray-950 dark:caret-orange-600 dark:focus:border-orange-600"
@@ -123,7 +101,8 @@ export default function Password() {
           </div>
         </div>
       </div>
-      <FAQSection faqs={faqData} />
-    </div>
+
+      <FAQSection />
+    </>
   );
 }

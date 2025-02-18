@@ -2,7 +2,8 @@ import { useState } from "react";
 import CryptoJS from "crypto-js";
 import { FaCheck, FaCopy } from "react-icons/fa";
 import { Helmet } from "react-helmet";
-import FAQSection from "../../../components/commons/Faq";
+import FAQSection from "../../../components/Faq";
+import ButtonMainCta from "../../../components/ui/ButtonMainCta";
 
 export default function Hash() {
   const [text, setText] = useState("");
@@ -37,27 +38,8 @@ export default function Hash() {
     setHash(generatedHash);
   };
 
-  const faqData = [
-    {
-      question: "What is the purpose of hashing?",
-      answer: "Hashing is used to ensure data integrity and secure storage of sensitive information like passwords. It converts your input into a fixed-size string that cannot be easily reversed.",
-    },
-    {
-      question: "What's the difference between MD5 and SHA algorithms?",
-      answer: "MD5 is faster but less secure than SHA-256 and SHA-512, which offer higher security but require more processing power. SHA-1 is an older algorithm that is less commonly used due to vulnerabilities.",
-    },
-    {
-      question: "Can I reverse a hash to get the original text?",
-      answer: "No, hashing is a one-way process, meaning you cannot reverse the hash to retrieve the original text. This makes it ideal for storing passwords securely.",
-    },
-    {
-      question: "Is it safe to use the same hash function for all my data?",
-      answer: "While you can use the same hash function, it's crucial to use a salt (a random value added to the input) to enhance security, especially when hashing passwords.",
-    },
-  ];
-
   return (
-    <div className="flex flex-col gap-4 p-4 md:p-6">
+    <>
       <Helmet>
         <title>Free Hash Generator - Create MD5, SHA-1, SHA-256, and More</title>
         <meta name="description" content="Easily generate secure hashes for your text using MD5, SHA-1, SHA-256, SHA-512, and more. Ideal for developers and security enthusiasts." />
@@ -65,42 +47,40 @@ export default function Hash() {
         <link rel="canonical" href="https://oslo-toolbox.vercel.app.com/Generators/Hash" />
       </Helmet>
 
-      <div>
-        <p className="text-gray-600 dark:text-gray-400">Generate secure hashes for your text using algorithms like MD5, SHA-1, SHA-256, and SHA-512. Simply input your text, choose the hash type, and click Generate !</p>
-      </div>
-      <div className="flex flex-col gap-4 rounded-md md:border-2 md:border-gray-200 md:bg-gray-50 md:p-6 dark:md:border-gray-800 dark:md:bg-gray-900">
-        <div className="flex flex-col items-center justify-between gap-2 rounded-md border-2 border-gray-200 bg-white p-4 md:flex-row md:gap-4 dark:border-gray-800 dark:bg-gray-950">
+      <div className="bg-text-dark border-border-light dark:border-border-dark dark:bg-text-base flex w-full flex-col gap-4 rounded-lg border-2 p-4 md:p-6">
+        <div className="border-border-light dark:border-border-dark dark:bg-dark bg-light flex flex-col items-center gap-2 rounded-md border-2 p-4 md:flex-row md:justify-between">
           <div className="flex items-center gap-4">
-            <input
-              type="text"
-              placeholder="Enter text here"
-              value={text}
-              onChange={(e) => setText(e.target.value)}
-              className="w-full rounded-md border-2 border-gray-200 bg-white p-2 caret-orange-400 outline-hidden focus:border-orange-400 dark:border-gray-800 dark:bg-gray-950"
-              aria-label="Input text for hashing"
-            />
+            <input type="text" placeholder="Enter text here" value={text} onChange={(e) => setText(e.target.value)} className="dark:border-border-dark focus:border-accent dark:bg-dark bg-light border-border-light w-full rounded-md border-2 p-2 outline-hidden" aria-label="Input text for hashing" />
             <p className="font-semibold">TO</p>
-            <select value={hashType} onChange={(e) => setHashType(e.target.value)} className="rounded-md border-2 border-gray-200 bg-white p-2 focus:border-orange-400 dark:border-gray-800 dark:bg-gray-950" aria-label="Select hash algorithm">
+            <select value={hashType} onChange={(e) => setHashType(e.target.value)} className="dark:border-border-dark dark:bg-dark bg-light border-border-light w-fit rounded-md border-2 p-2 hover:cursor-pointer" aria-label="Select hash algorithm">
               <option value="MD5">MD5</option>
               <option value="SHA-1">SHA-1</option>
               <option value="SHA-256">SHA-256</option>
               <option value="SHA-512">SHA-512</option>
             </select>
           </div>
-          <button onClick={handleGenerateHash} className="w-full rounded-md bg-orange-400 px-3 py-2 text-gray-50 duration-200 hover:bg-orange-600 md:w-fit dark:bg-orange-600 dark:hover:bg-orange-400 dark:hover:text-gray-200" aria-label="Generate hash">
+          <ButtonMainCta onClick={handleGenerateHash} aria-label="Generate hash">
             Generate
-          </button>
+          </ButtonMainCta>
         </div>
 
         {hash && (
-          <div className="flex flex-col rounded-md border-2 border-gray-200 bg-white p-4 dark:border-gray-800 dark:bg-gray-950">
-            <p className="text-lg">Result :</p>
-            <span className="flex justify-between gap-4">
-              <p className="w-full break-words rounded-md border-2 border-gray-200 p-2 dark:border-gray-800">{hash}</p>
-              <button className="dark:text-gray-300" onClick={handleCopy} aria-label={copySuccess ? "Hash copied!" : "Copy hash"}>
-                {copySuccess ? <FaCheck fontSize={24} color="green" /> : <FaCopy fontSize={24} />}
-              </button>
+          <div className="border-border-light dark:border-border-dark dark:bg-dark bg-light flex flex-col gap-4 rounded-md border-2 p-4">
+            <span className="flex flex-col gap-2">
+              <p>Result :</p>
+              <p className="dark:border-border-dark dark:bg-dark bg-light border-border-light w-full rounded-md border-2 p-2 text-wrap break-all">{hash}</p>
             </span>
+            <ButtonMainCta onClick={handleCopy} className="flex w-fit items-center gap-2 text-sm" aria-label="Copy Lorem Ipsum text">
+              {copySuccess ? (
+                <>
+                  Copied <FaCheck />
+                </>
+              ) : (
+                <>
+                  Copy all <FaCopy />
+                </>
+              )}
+            </ButtonMainCta>
           </div>
         )}
       </div>
@@ -112,8 +92,8 @@ export default function Hash() {
             Hashing is a process that converts your input text into a fixed-size string of characters, which is typically a hexadecimal number. It's commonly used in various security applications, such as password storage, data integrity verification, and digital signatures.
           </p>
         </div>
-        <FAQSection faqs={faqData} />
+        <FAQSection />
       </div>
-    </div>
+    </>
   );
 }

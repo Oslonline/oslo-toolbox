@@ -1,75 +1,96 @@
+import React, { useState } from "react";
+import { Link } from "react-router-dom";
+import { FaChevronDown } from "react-icons/fa";
+import tools from "../data/toolsData";
+
 function About() {
+  const [expandedCategory, setExpandedCategory] = useState(null);
+
+  const toggleCategory = (categoryName) => {
+    setExpandedCategory(expandedCategory === categoryName ? null : categoryName);
+  };
+
   return (
-    <div className="flex flex-col gap-9 p-4 text-gray-900 md:p-6 dark:text-gray-100">
-      <div className="flex flex-col gap-2">
+    <div className="flex flex-col md:p-6 lg:w-11/12 xl:w-10/12">
+      <div className="flex flex-col gap-6 lg:gap-8 xl:gap-12">
+        {/* About */}
         <div>
-          <p className="text-3xl font-bold">About</p>
-          <p className="mb-4 mt-2">
-            <span className="font-semibold">Oslo Toolbox </span> is an open-source collection of handy tools built with ReactJS and TailwindCSS, currently under development. This toolbox is designed to streamline various tasks for developers and designers, providing essential utilities in one
-            convenient package. It offers a user-friendly interface and powerful features.
+          <h1 className="mb-2 font-serif text-3xl font-bold">About Oslo's Toolbox</h1>
+          <p className="text-text-border-dark dark:text-text-border-light">
+            <strong>Oslo's Toolbox</strong> is an <strong>open-source</strong> collection of handy tools and utilities available for free online. This project is maintained by{" "}
+            <Link className="text-accent underline" to={"https://github.com/Oslonline"}>
+              Oslo418
+            </Link>{" "}
+            and welcomes{" "}
+            <Link className="text-accent underline" to={"https://github.com/Oslonline/oslo-toolbox"}>
+              contributions
+            </Link>{" "}
+            from the community. Our goal is to provide a comprehensive suite of tools that assist developers, designers, and anyone looking to streamline their workflow.
           </p>
         </div>
+        {/* Features */}
         <div>
-          <p className="mb-2 text-3xl font-bold">Features</p>
-          <ul className="ml-4 list-disc">
-            <li>
-              <span className="mt-2 font-semibold">CSS Box-shadow Generator:</span> Create visually striking and customizable box shadows with ease.
-            </li>
-            <li className="mt-1">
-              <span className="font-semibold">CSS Background Gradient Generator:</span> Easily generate vibrant and dynamic gradients to enhance web designs with depth and visual appeal.
-            </li>
-            <li className="mt-1">
-              <span className="font-semibold">Unit Converters: </span> Cover a wide range of measurements such as mass, length, volume, temperature, area, speed, and time. This feature is invaluable for professionals in various fields.
-            </li>
-            <li className="mt-1">
-              <span className="font-semibold">Password Generator:</span> Generate strong, randomized passwords tailored to user preferences for enhanced security and personalization.
-            </li>
-            <li className="mt-1">
-              <span className="font-semibold">Lorem Ipsum Generator:</span> Simplify the process of adding placeholder text to designs, facilitating faster prototyping and content creation.
-            </li>
-            <li className="mt-1">
-              <span className="font-semibold">QR Code Generator:</span> Transform text or links into scannable QR codes, enabling efficient sharing of information.
-            </li>
-            <li className="mt-1">
-              <span className="font-semibold">Hash Generator:</span> Securely generate unique identifiers from text, useful for data management and authentication purposes.
-            </li>
-            <li className="mt-1">
-              <span className="font-semibold">GitHub README.md Generator: </span>
-              Automatically create a professional-looking README file, complete with sections for project description, installation instructions, usage examples, and contributor guidelines. This saves time and ensures consistency across multiple projects.
-            </li>
-            <li className="mt-1">
-              <span className="font-semibold">IP Address Lookup:</span> Quickly retrieve information about a specific IP address, including its geographic location and associated details. This can be valuable for troubleshooting network issues, monitoring website traffic, or conducting security
-              audits.
-            </li>
-            <li className="mt-1">
-              <span className="font-semibold">Image Converter:</span> Convert various image formats, including PNG, JPG, WEBP, SVG, and BMP, ensuring compatibility across different platforms and applications.
-            </li>
-            <li className="mt-1">
-              <span className="font-semibold">Dithering / Bitmap Effect:</span> Apply a dithering effect (bitmap effect) to an image, creating a visually appealing and visually impaired-friendly image using the Floyd-Steinberg algorithm.
-            </li>
-          </ul>
+          <h2 className="mb-2 font-serif text-3xl font-bold">Features list</h2>
+          <div className="flex flex-col gap-4">
+            {tools.map((category) => (
+              <div key={category.name} className="dark:border-border-dark border-border-light rounded border">
+                <button className="dark:border-border-dark hover:bg-border-light dark:hover:bg-border-dark border-border-light flex w-full items-center justify-between p-2 text-left font-semibold duration-150 hover:cursor-pointer" onClick={() => toggleCategory(category.name)}>
+                  {category.name}
+                  <FaChevronDown className={`transform transition-transform duration-200 ${expandedCategory === category.name ? "rotate-180" : ""}`} />
+                </button>
+                {expandedCategory === category.name && (
+                  <div className="dark:border-border-dark border-border-light flex flex-col gap-2 border-t p-2">
+                    {category.tools.map((tool) => (
+                      <Link className="dark:hover:bg-border-dark hover:bg-border-light rounded p-1" to={tool.link}>
+                        <span className="flex items-center gap-2 font-mono">
+                          {React.createElement(tool.icon)}
+                          {tool.name}
+                        </span>
+                        <p className="text-text-border-dark dark:text-text-border-light text-sm">{tool.description}</p>
+                      </Link>
+                    ))}
+                  </div>
+                )}
+              </div>
+            ))}
+          </div>
         </div>
-        <div className="mt-6">
-          <p className="mt-2">
-            <span className="font-semibold ">Overall</span>, this open-source toolbox is an exceptional resource for web developers, offering a comprehensive and user-friendly platform that simplifies a variety of web development tasks. With its intuitive interface and responsive design, it ensures
-            optimal usability on larger screens, making it accessible for users at all skill levels. By streamlining workflows and integrating essential tools, it empowers developers to focus on creating high-quality web experiences, ultimately enhancing productivity and efficiency. This toolbox is
-            truly a valuable asset for anyone looking to elevate their web development projects.
-          </p>
-          <p className="mt-2">
-            The source code can be found on github at :{" "}
-            <a className="text-blue-500 underline hover:text-blue-400 focus:text-blue-600" target="_blank" href="https://github.com/Oslonline/oslo-toolbox">
-              Oslonline/oslo-toolbox
-            </a>
+        {/* Changelogs */}
+        <div className="flex flex-col gap-2">
+          <h3 className="font-serif text-3xl font-bold">Changelogs</h3>
+          <div className="flex flex-col gap-4">
+            <div className="text-text-border-dark dark:text-text-border-light">
+              <p>Since the release of version 2 of our UI, we have introduced changelogs directly on the website to keep you updated with the latest changes and updates.</p>
+              <p>
+                You can go to{" "}
+                <Link className="text-accent underline" to="/changelogs">
+                  the changelog page
+                </Link>{" "}
+                to see all changelogs since the introduction of it.
+              </p>
+              <p>Note that changelogs do not cover all the changes made along the building process of this project but give you an idea of the major and minor changes that really impact the user experience or the tools directly.</p>
+            </div>
+          </div>
+        </div>
+        {/* Bugs & suggestions */}
+        <div className="flex flex-col gap-2">
+          <h4 className="font-serif text-3xl font-bold">Bugs & Suggestions</h4>
+          <p className="text-text-border-dark dark:text-text-border-light">
+            If you find any bugs, security breach, want to make a copyright claim or have any suggestions for new tools or improvements, please feel free to write me an email at{" "}
+            <Link className="text-accent underline" to={"mailto:oslo418@proton.me"}>
+              oslo418@proton.me
+            </Link>
           </p>
         </div>
-        <div className="mt-4 flex flex-col gap-2">
-          <p className="text-3xl font-bold">Contact</p>
-          <p className="">
-            For any inquiries or assistance, please feel free to reach out to me on Twitter{" "}
-            <a href="https://twitter.com/Oslo418" className="text-blue-500 underline hover:text-blue-400 focus:text-blue-600">
+        {/* Contact */}
+        <div className="flex flex-col gap-2">
+          <h6 className="font-serif text-3xl font-bold">Contact</h6>
+          <p className="text-text-border-dark dark:text-text-border-light">
+            For any inquiries or assistance, please feel free to reach out to me on Twitter for a quick response{" "}
+            <a href="https://twitter.com/Oslo418" className="text-accent underline">
               @Oslo418
-            </a>{" "}
-            I look forward to connecting with you !
+            </a>
+            . I look forward to connecting with you!
           </p>
         </div>
       </div>

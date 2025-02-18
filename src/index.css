@@ -10,17 +10,45 @@
   If we ever want to remove these styles, we need to add an explicit border
   color utility to any element that depends on these defaults.
 */
-@layer base {
-  *,
-  ::after,
-  ::before,
-  ::backdrop,
-  ::file-selector-button {
-    border-color: var(--color-gray-200, currentColor);
-  }
+@theme {
+  --color-dark: #0c0a09;
+  /* stone-950 */
+  --color-border-dark: #292524;
+  /* stone-800 */
+  --color-border-light: #e7e5e4;
+  /* stone-200 */
+  --color-light: #fafaf9;
+  /* stone-50 */
+  --color-text-border-light: #9c9895;
+  /* stone-400 */
+  --color-text-border-dark: #78716c;
+  /* stone-500 */
+  --color-text-base: #1c1917;
+  /* stone-900 */
+  --color-text-dark: #f5f5f4;
+  /* stone-100 */
+  --color-accent: #14b8a6;
+  /* teal-600 */
+  --color-button-hover: #0d9488;
+  /* teal-700 */
+  --color-button-dark-hover: #2dd4bf;
+  /* teal-500 */
 }
 
 body,
 html {
-    font-family: 'Inter', sans-serif;
+  font-family: 'Inter', sans-serif;
+}
+
+.no-scroll {
+  overflow: hidden;
+}
+
+.bg-radial-gradient {
+  background: radial-gradient(circle, var(--tw-gradient-stops));
+  --tw-gradient-from: #14b8a6;
+  /* Replace with your start color */
+  --tw-gradient-to: transparent;
+  /* Replace with your end color */
+  --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
 }

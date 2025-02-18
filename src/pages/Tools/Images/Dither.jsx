@@ -1,8 +1,11 @@
-import { useRef, useState } from "react";
+import { useRef, useState, useEffect } from "react";
 import { Helmet } from "react-helmet";
-import ImageUploader from "../../../components/commons/ImageUploader";
-import { MdOutlineFileDownload, MdRefresh } from "react-icons/md";
-import FAQSection from "../../../components/commons/Faq";
+import { GoDownload } from "react-icons/go";
+import { VscDebugRestart } from "react-icons/vsc";
+import ImageUploader from "../../../components/toolspage/ImageUploader";
+import FAQSection from "../../../components/Faq";
+import ButtonNeutralCta from "../../../components/ui/ButtonNeutralCta";
+import ButtonMainCta from "../../../components/ui/ButtonMainCta";
 
 export default function Dither() {
   const [selectedFile, setSelectedFile] = useState(null);
@@ -10,6 +13,12 @@ export default function Dither() {
   const [previewResolution, setPreviewResolution] = useState(350);
   const [hasAppliedDithering, setHasAppliedDithering] = useState(false);
   const canvasRef = useRef(null);
+
+  useEffect(() => {
+    if (selectedFile) {
+      applyDitheringEffect();
+    }
+  }, [selectedFile]);
 
   const applyDitheringEffect = () => {
     const canvas = canvasRef.current;
@@ -61,9 +70,8 @@ export default function Dither() {
     }
   };
 
-  const handleFileSelect = (file) => {
-    setSelectedFile(file);
-    setTimeout(applyDitheringEffect, 0);
+  const handleFileSelect = (files) => {
+    setSelectedFile(files[0]);
   };
 
   const downloadImage = () => {
@@ -95,79 +103,59 @@ export default function Dither() {
     setPreviewResolution(350);
   };
 
-  const faqData = [
-    {
-      question: "What is the Floyd Steinberg algorithm?",
-      answer: "The Floyd Steinberg algorithm is a dithering algorithm used in digital image processing to reduce the quantization error in image quantization.",
-    },
-    {
-      question: "What is quantization?",
-      answer: "Quantization is the process of reducing the number of levels of representation of a signal or image by mapping the signal or image onto a smaller number of levels.",
-    },
-    {
-      question: "What is the difference between quantization and dithering?",
-      answer: "Dithering is a type of quantization, while quantization is the process of reducing the number of levels of representation of a signal or image by mapping the signal or image onto a smaller number of levels.",
-    },
-  ];
-
   return (
-    <div className="flex flex-col gap-4 p-4 md:p-6">
+    <>
       <Helmet>
         <title>Dither Image | Oslo Toolbox</title>
         <meta name="description" content="Add a dither/bitmap effect to your image easily for free using the Floyd Steinberg algorithm. Insert your file, select the desired final effect resolution, click download and get your dithered image." />
+        <meta name="keywords" content="dithering effect, free dither effect,  jpg, png, webp, bmp, svg" />
         <meta name="robots" content="index, follow" />
         <link rel="canonical" href="https://oslo-toolbox.vercel.app/Images/Dither" />
       </Helmet>
 
-      <p className="text-gray-600 dark:text-gray-400">Add a dither/bitmap effect to your image easily for free using the Floyd Steinberg algorithm. Insert your file, select the desired final effect resolution, click download and get your dithered image.</p>
-
-      <div className="flex flex-col gap-4 rounded-md md:border-2 md:border-gray-200 md:bg-gray-50 md:p-6 dark:md:border-gray-800 dark:md:bg-gray-900">
-        <div className="flex items-center justify-between rounded-md border-2 border-gray-200 bg-white p-4 dark:border-gray-800 dark:bg-gray-950">
-          {selectedFile ? (
-            <div className="flex w-full flex-col gap-4 xl:flex-row">
-              <div className="flex w-full flex-col gap-4">
-                <div>
-                  <img src={URL.createObjectURL(selectedFile)} alt="Preview" className="h-auto w-52" />
-                </div>
-                <div className="flex flex-col gap-2">
+      <div className="bg-text-dark border-border-light dark:border-border-dark dark:bg-text-base flex w-full flex-col rounded-lg border-2 p-4 md:p-6">
+        {selectedFile ? (
+          <div className="flex w-full flex-col gap-4 lg:flex-row">
+            <div className="flex h-auto w-full flex-col gap-4">
+              <div className="flex items-end gap-2 md:gap-4">
+                <span className="border-border-light dark:border-border-dark flex max-w-2/5 justify-center rounded-md border p-2 md:max-w-1/3 lg:justify-start">
+                  <img src={URL.createObjectURL(selectedFile)} alt="Preview" className="h-auto" />
+                </span>
+                <div className="flex w-full flex-col gap-1">
                   <div className="flex flex-col">
                     <label htmlFor="threshold-input" className="text-sm italic">
                       Threshold
                     </label>
-                    <input className="accent-orange-400" id="threshold-input" onChange={handleThresholdChange} value={threshold} type="range" min={20} max={180} />
+                    <input className="accent-accent" id="threshold-input" onChange={handleThresholdChange} value={threshold} type="range" min={20} max={180} />
                   </div>
                   <div className="flex flex-col">
                     <label htmlFor="preview-resolution" className="text-sm italic">
                       Resolution
                     </label>
-                    <input className="accent-orange-400" id="preview-resolution" onChange={handleResolutionChange} value={previewResolution} type="range" min={50} max={1000} />
+                    <input className="accent-accent" id="preview-resolution" onChange={handleResolutionChange} value={previewResolution} type="range" min={50} max={1000} />
                   </div>
                 </div>
-                <div className="flex gap-2">
-                  <button className={`p-x-2 flex items-center gap-1 rounded-sm bg-blue-800 px-4 py-2 font-mono text-gray-50 duration-100 hover:bg-blue-600 dark:bg-blue-900 dark:hover:bg-blue-800`} onClick={handleReset}>
-                    <MdRefresh /> Choose a different image
-                  </button>
-                  <button
-                    className={`p-x-2 flex w-full items-center gap-1 rounded-md bg-orange-400 px-3 py-2 text-gray-50 duration-200 md:w-fit dark:bg-orange-600 dark:hover:text-gray-200 ${!hasAppliedDithering ? "cursor-not-allowed opacity-70" : "hover:bg-orange-600 dark:hover:bg-orange-400"}`}
-                    onClick={downloadImage}
-                    disabled={!hasAppliedDithering}
-                  >
-                    <MdOutlineFileDownload /> Save as PNG
-                  </button>
-                </div>
-                <p className="text-sm italic text-gray-500 dark:text-gray-400">Note: The preview of the final result may vary from the downloaded image depending on your monitor resolution.</p>
               </div>
-              <span className="h-full min-h-full border-gray-200 dark:border-gray-800"></span>
-              <div className="box-border flex max-h-screen w-full items-center justify-center">
-                <canvas ref={canvasRef} className="canvas max-h-full min-h-full w-full object-contain md:max-w-full" />
+              <div className="flex flex-col gap-2 md:gap-4">
+                <ButtonNeutralCta className="flex items-center justify-center gap-2" onClick={handleReset}>
+                  <VscDebugRestart /> Select a different image
+                </ButtonNeutralCta>
+                <ButtonMainCta className="flex items-center justify-center gap-2" onClick={downloadImage} disabled={!hasAppliedDithering}>
+                  <GoDownload className="md:stroke-1" /> Save result as PNG
+                </ButtonMainCta>
               </div>
+              <p className="dark:text-text-border-dark text-text-border-light text-sm italic">Note: The preview of the final result may vary from the downloaded image depending on your monitor resolution.</p>
             </div>
-          ) : (
-            <ImageUploader onFileSelect={handleFileSelect} />
-          )}
-        </div>
+            <div className="box-border flex max-h-full w-full items-center justify-center">
+              <canvas ref={canvasRef} className="canvas max-h-full min-h-full w-full object-contain md:max-w-full" />
+            </div>
+          </div>
+        ) : (
+          <ImageUploader onFileSelect={handleFileSelect} multiple={false} />
+        )}
       </div>
-      <FAQSection faqs={faqData} />
-    </div>
+
+      <FAQSection />
+    </>
   );
 }

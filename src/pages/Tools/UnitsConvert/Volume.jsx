@@ -1,15 +1,14 @@
-import React from "react";
-import Converter from "../../../components/converters/Converter";
-import FAQSection from "../../../components/commons/Faq";
 import { Helmet } from "react-helmet";
+import Converter from "../../../components/toolspage/Converter";
+import FAQSection from "../../../components/Faq";
 
 function Volume() {
   const units = {
+    All: ["Cubic meter", "Cubic centimeter", "Cubic millimeter", "Teaspoon", "Tablespoon", "Fluid ounce", "Cup", "Pint", "Quart", "Gallon", "Dry pint", "Dry quart", "Dry gallon", "Gill"],
     SI: ["Cubic meter", "Cubic centimeter", "Cubic millimeter"],
     USLiquid: ["Teaspoon", "Tablespoon", "Fluid ounce", "Cup", "Pint", "Quart", "Gallon"],
     USDry: ["Dry pint", "Dry quart", "Dry gallon"],
     UK: ["Fluid ounce", "Gill", "Pint", "Quart", "Gallon"],
-    All: ["Cubic meter", "Cubic centimeter", "Cubic millimeter", "Teaspoon", "Tablespoon", "Fluid ounce", "Cup", "Pint", "Quart", "Gallon", "Dry pint", "Dry quart", "Dry gallon", "Gill"],
   };
 
   const unitValues = {
@@ -29,22 +28,6 @@ function Volume() {
     Gill: 142.065e-6,
   };
 
-  const faqData = [
-    {
-      question: "What is the difference between US liquid and dry volume units?",
-      answer:
-        "US liquid and dry volume units are used for different types of measurements. Liquid units (like fluid ounces, cups, and gallons) measure the volume of liquids, while dry units (like dry pints and dry gallons) are used for measuring dry goods. They are not interchangeable due to differences in density and measurement standards.",
-    },
-    {
-      question: "Why are there different volume units in the US and UK systems?",
-      answer: "The US and UK systems have different volume units due to historical differences in measurement standards. For example, the US gallon is slightly different from the UK gallon. The UK system also includes units like the gill, which is not commonly used in the US.",
-    },
-    {
-      question: "How can I convert between metric and US/UK volume units?",
-      answer: "To convert between metric and US/UK volume units, use the provided conversion factors. For instance, 1 cubic meter is approximately 264.172 gallons (US) or 219.969 gallons (UK). You can use our converter tool to perform these conversions accurately.",
-    },
-  ];
-
   return (
     <div className="flex flex-col gap-7">
       <Helmet>
@@ -62,33 +45,31 @@ function Volume() {
         unitValues={unitValues}
       />
 
-      <div className="p-6 pt-0">
-        <div>
-          <h2 className="mb-2 text-2xl font-bold text-gray-900 md:text-3xl dark:text-gray-100">How It Works</h2>
-          <p className="text-gray-700 dark:text-gray-400">
-            To use the volume converter, select the units you want to convert from and to, then input the value you wish to convert. The tool will instantly display the converted volume in the selected units. Our converter supports a wide range of volume units including metric units like cubic
-            meters and liters, as well as various liquid and dry units used in the US and UK systems. For detailed conversions, you can also check the specific values used in the tool by scrolling down.
-          </p>
-          <h3 className="mt-4 font-semibold text-gray-900 dark:text-gray-100">Common Units of Volume</h3>
-          <p className="text-gray-700 dark:text-gray-400">
-            - <strong>Cubic Meter (m³):</strong> The standard unit of volume in the International System of Units (SI). Used for large volumes.
-            <br />- <strong>Cubic Centimeter (cm³):</strong> A metric unit of volume equal to one millionth of a cubic meter, commonly used for smaller volumes.
-            <br />- <strong>Cubic Millimeter (mm³):</strong> A metric unit of volume used for very small volumes.
-            <br />- <strong>Teaspoon (tsp):</strong> A small unit of volume used primarily in cooking and medicine.
-            <br />- <strong>Tablespoon (tbsp):</strong> A larger unit of volume commonly used in cooking, equivalent to three teaspoons.
-            <br />- <strong>Fluid Ounce (fl oz):</strong> A unit of volume used in the US and UK for liquid measurements.
-            <br />- <strong>Cup:</strong> A common unit of volume used in cooking, typically used to measure larger liquid volumes.
-            <br />- <strong>Pint (pt):</strong> A unit of volume used in the US and UK, equal to 16 fluid ounces in the US and 20 fluid ounces in the UK.
-            <br />- <strong>Quart (qt):</strong> A unit of volume equal to four pints.
-            <br />- <strong>Gallon (gal):</strong> A large unit of volume used for liquid measurements, equal to four quarts in the US and approximately 4.546 liters in the UK.
-            <br />- <strong>Dry Pint:</strong> A unit of volume used for dry measurements in the US, different from the liquid pint.
-            <br />- <strong>Dry Quart:</strong> A unit of volume equal to four dry pints.
-            <br />- <strong>Dry Gallon:</strong> A unit of volume used for dry measurements, equal to four dry quarts.
-            <br />- <strong>Gill:</strong> A unit of volume used in the UK, equal to half a pint.
-          </p>
-        </div>
-        <FAQSection faqs={faqData} />
+      <div>
+        <h2 className="mb-2 text-2xl font-bold text-gray-900 md:text-3xl dark:text-gray-100">How It Works</h2>
+        <p className="text-gray-700 dark:text-gray-400">
+          To use the volume converter, select the units you want to convert from and to, then input the value you wish to convert. The tool will instantly display the converted volume in the selected units. Our converter supports a wide range of volume units including metric units like cubic meters
+          and liters, as well as various liquid and dry units used in the US and UK systems. For detailed conversions, you can also check the specific values used in the tool by scrolling down.
+        </p>
+        <h3 className="mt-4 font-semibold text-gray-900 dark:text-gray-100">Common Units of Volume</h3>
+        <p className="text-gray-700 dark:text-gray-400">
+          - <strong>Cubic Meter (m³):</strong> The standard unit of volume in the International System of Units (SI). Used for large volumes.
+          <br />- <strong>Cubic Centimeter (cm³):</strong> A metric unit of volume equal to one millionth of a cubic meter, commonly used for smaller volumes.
+          <br />- <strong>Cubic Millimeter (mm³):</strong> A metric unit of volume used for very small volumes.
+          <br />- <strong>Teaspoon (tsp):</strong> A small unit of volume used primarily in cooking and medicine.
+          <br />- <strong>Tablespoon (tbsp):</strong> A larger unit of volume commonly used in cooking, equivalent to three teaspoons.
+          <br />- <strong>Fluid Ounce (fl oz):</strong> A unit of volume used in the US and UK for liquid measurements.
+          <br />- <strong>Cup:</strong> A common unit of volume used in cooking, typically used to measure larger liquid volumes.
+          <br />- <strong>Pint (pt):</strong> A unit of volume used in the US and UK, equal to 16 fluid ounces in the US and 20 fluid ounces in the UK.
+          <br />- <strong>Quart (qt):</strong> A unit of volume equal to four pints.
+          <br />- <strong>Gallon (gal):</strong> A large unit of volume used for liquid measurements, equal to four quarts in the US and approximately 4.546 liters in the UK.
+          <br />- <strong>Dry Pint:</strong> A unit of volume used for dry measurements in the US, different from the liquid pint.
+          <br />- <strong>Dry Quart:</strong> A unit of volume equal to four dry pints.
+          <br />- <strong>Dry Gallon:</strong> A unit of volume used for dry measurements, equal to four dry quarts.
+          <br />- <strong>Gill:</strong> A unit of volume used in the UK, equal to half a pint.
+        </p>
       </div>
+      <FAQSection />
     </div>
   );
 }

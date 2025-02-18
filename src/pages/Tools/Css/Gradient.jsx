@@ -1,22 +1,25 @@
-import { useState, useEffect } from "react";
-import CircularSlider from "@fseehawer/react-circular-slider";
-import GeneratedCSS from "../../../components/CSS/GeneratedCSS";
-import FAQSection from "../../../components/commons/Faq";
-import patternImage from "/images/pattern.webp";
+import { useState, useEffect, useRef } from "react";
 import { Helmet } from "react-helmet";
+import patternImage from "/images/pattern.webp";
+import { ChromePicker } from "react-color";
+import GeneratedCSS from "../../../components/toolspage/GeneratedCSS";
+import FAQSection from "../../../components/Faq";
 
 function Gradient() {
-  const [colorA, setColorA] = useState("#fb923c");
-  const [colorB, setColorB] = useState("#22c1c3");
+  const [colorA, setColorA] = useState("#14b8a6");
+  const [colorB, setColorB] = useState("#7f2cf4");
+  const [showColorPickerA, setShowColorPickerA] = useState(false);
+  const [showColorPickerB, setShowColorPickerB] = useState(false);
   const [opacity, setOpacity] = useState(1);
-  const [angle, setAngle] = useState(110);
+  const [angle, setAngle] = useState(0);
   const [gradientType, setGradientType] = useState("linear");
   const [result, setResult] = useState("");
   const [copySuccess, setCopySuccess] = useState(false);
+  const colorPickerARef = useRef();
+  const colorPickerBRef = useRef();
 
   useEffect(() => {
     generateGradient();
-    console.log(angle);
   }, [colorA, colorB, opacity, angle, gradientType]);
 
   useEffect(() => {
@@ -27,6 +30,22 @@ function Gradient() {
       return () => clearTimeout(timer);
     }
   }, [copySuccess]);
+
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (colorPickerARef.current && !colorPickerARef.current.contains(event.target)) {
+        setShowColorPickerA(false);
+      }
+      if (colorPickerBRef.current && !colorPickerBRef.current.contains(event.target)) {
+        setShowColorPickerB(false);
+      }
+    };
+
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, []);
 
   const generateGradient = () => {
     const gradientColorA = hexToRGBA(colorA, opacity);
@@ -51,20 +70,20 @@ function Gradient() {
     return `${r}, ${g}, ${b}, ${opacity}`;
   };
 
-  const handleColorAChange = (e) => {
-    setColorA(e.target.value);
+  const handleColorAChange = (color) => {
+    setColorA(color.hex);
   };
 
-  const handleColorBChange = (e) => {
-    setColorB(e.target.value);
+  const handleColorBChange = (color) => {
+    setColorB(color.hex);
   };
 
   const handleOpacityChange = (e) => {
     setOpacity(e.target.value);
   };
 
-  const handleAngleChange = (angle) => {
-    setAngle(angle);
+  const handleAngleChange = (e) => {
+    setAngle(e.target.value);
   };
 
   const handleGradientTypeChange = (e) => {
@@ -82,23 +101,8 @@ function Gradient() {
       });
   };
 
-  const faqData = [
-    {
-      question: "What is a CSS gradient ?",
-      answer: "A CSS gradient is a way to display a smooth transition between two or more colors. You can use gradients for backgrounds, buttons, and more to create visually appealing designs.",
-    },
-    {
-      question: "How do I generate a CSS gradient ?",
-      answer: "Simply choose your colors, adjust the angle or type of gradient, and the CSS code will be automatically generated. You can then copy the code and paste it into your stylesheet.",
-    },
-    {
-      question: "What is the difference between linear and radial gradients?",
-      answer: "A linear gradient transitions colors along a straight line (horizontal, vertical, or diagonal), while a radial gradient transitions colors outward from a central point in a circular or elliptical shape.",
-    },
-  ];
-
   return (
-    <div className="flex flex-col gap-6 p-4 md:p-6">
+    <>
       <Helmet>
         <title>Free CSS Gradient Generator - Linear and Radial | Oslo Toolbox</title>
         <meta name="description" content="Create beautiful CSS gradients with our free generator. Customize colors, angles, opacity, and gradient types. Copy the generated CSS code easily." />
@@ -107,55 +111,68 @@ function Gradient() {
         <link rel="canonical" href="https://oslo-toolbox.vercel.app.com/Css/Gradient" />
       </Helmet>
 
-      <div>
-        <h2 className="text-gray-600 dark:text-gray-400">A free CSS gradient generator with custom colors, angle, and you can even choose the gradient type!</h2>
-      </div>
-
-      <div className="flex flex-col-reverse justify-between gap-4 md:gap-6 lg:flex-row">
-        <div className="flex flex-col gap-6 rounded-md border-2 border-gray-200 bg-white p-4 lg:w-2/4 dark:border-gray-800 dark:bg-gray-900">
+      <div className="bg-text-dark border-border-light dark:border-border-dark dark:bg-text-base flex w-full flex-col gap-4 rounded-lg border-2 p-4 md:flex-row md:p-6">
+        <div className="border-border-light dark:border-border-dark dark:bg-dark bg-light flex flex-col gap-3 rounded-md border-2 p-4 md:w-1/2">
           <div className="flex w-full md:gap-10">
-            <div className="flex flex-col gap-4">
-              <h3 className="font-semibold text-gray-600 dark:text-gray-400">Color</h3>
-              <div className="flex flex-col gap-3">
-                <div className="flex items-center gap-2">
-                  <input className="h-12 w-16 appearance-none rounded-md border border-gray-300 p-2 focus:outline-hidden dark:border-gray-700 dark:bg-gray-700 dark:hover:bg-gray-500" type="color" value={colorA} onChange={handleColorAChange} />
-                  <input className="w-24 rounded-md border-2 border-gray-200 px-2 py-2 caret-orange-400 outline-hidden focus:border-orange-400 dark:border-gray-800 dark:bg-gray-950 dark:caret-orange-600 dark:focus:border-orange-600" type="text" value={colorA} onChange={handleColorAChange} />
-                </div>
-                <div className="flex items-center gap-2">
-                  <input className="h-12 w-16 appearance-none rounded-md border border-gray-300 p-2 focus:outline-hidden dark:border-gray-700 dark:bg-gray-700 dark:hover:bg-gray-500" type="color" value={colorB} onChange={handleColorBChange} />
-                  <input className="w-24 rounded-md border-2 border-gray-200 px-2 py-2 caret-orange-400 outline-hidden focus:border-orange-400 dark:border-gray-800 dark:bg-gray-950 dark:caret-orange-600 dark:focus:border-orange-600" type="text" value={colorB} onChange={handleColorBChange} />
-                </div>
+            <div className="flex flex-col gap-3">
+              <div className="relative flex items-center gap-2">
+                <p className="text-sm">From:</p>
+                <button onClick={() => setShowColorPickerA(!showColorPickerA)} className="border-border-light dark:hover:bg-text-border-dark hover:bg-text-border-light dark:border-border-dark flex w-fit items-center gap-1 rounded-md border p-1 px-2 text-sm duration-150 hover:cursor-pointer">
+                  <span className="inline-block h-4 w-4 rounded-full border" style={{ backgroundColor: colorA }}></span>
+                  {colorA}
+                </button>
+                {showColorPickerA && (
+                  <div ref={colorPickerARef} className="absolute top-10 z-10">
+                    <ChromePicker color={colorA} onChange={handleColorAChange} />
+                  </div>
+                )}
+              </div>
+              <div className="relative flex items-center gap-2">
+                <p className="text-sm">To:</p>
+                <button onClick={() => setShowColorPickerB(!showColorPickerB)} className="border-border-light dark:hover:bg-text-border-dark hover:bg-text-border-light dark:border-border-dark flex w-fit items-center gap-1 rounded-md border p-1 px-2 text-sm duration-150 hover:cursor-pointer">
+                  <span className="inline-block h-4 w-4 rounded-full border" style={{ backgroundColor: colorB }}></span>
+                  {colorB}
+                </button>
+                {showColorPickerB && (
+                  <div ref={colorPickerBRef} className="absolute top-10 z-10">
+                    <ChromePicker color={colorB} onChange={handleColorBChange} />
+                  </div>
+                )}
               </div>
             </div>
-            <div className={`hidden flex-col gap-4 md:flex ${gradientType === "radial" ? "hidden" : "block"}`}>
-              <h4 className="font-semibold text-gray-600 dark:text-gray-400">Angle</h4>
-              <CircularSlider trackColor="#eeeeee" hideKnobRing={true} progressSize={10} knobColor="#fb923c" knobSize={32} hideLabelValue={true} valueFontSize="1rem" label="" min="0" max="360" width="70" value={angle} onChange={handleAngleChange} />
+          </div>
+
+          {gradientType === "linear" && (
+            <div className="flex flex-col gap-2 md:flex-row">
+              <h6 className="font-semibold text-gray-600 dark:text-gray-400">Angle:</h6>
+              <div className="flex items-center gap-2">
+                <label htmlFor="gradientAngleInput">0</label>
+                <input id="gradientAngleInput" className="accent-accent" type="range" name="angle" value={angle} min="0" max="360" step="1" onChange={handleAngleChange} />
+                <label htmlFor="gradientAngleInput">360</label>
+              </div>
+            </div>
+          )}
+
+          <div className="flex flex-col gap-2 md:flex-row">
+            <h6 className="font-semibold text-gray-600 dark:text-gray-400">Opacity:</h6>
+            <div className="flex items-center gap-2">
+              <label htmlFor="gradientOpacityInput">0</label>
+              <input id="gradientOpacityInput" className="accent-accent" type="range" name="opacity" value={opacity} min="0" max="1" step="0.05" onChange={handleOpacityChange} />
+              <label htmlFor="gradientOpacityInput">1</label>
             </div>
           </div>
 
           <div className="flex items-center gap-2">
             <h5 className="font-semibold text-gray-600 dark:text-gray-400">Gradient type:</h5>
-            <select className="rounded-md px-3 py-2 hover:cursor-pointer dark:bg-gray-800" value={gradientType} onChange={handleGradientTypeChange}>
+            <select className="dark:border-border-dark dark:bg-dark bg-light border-border-light w-fit rounded-md border-2 p-2 hover:cursor-pointer" value={gradientType} onChange={handleGradientTypeChange}>
               <option value="linear">Linear</option>
               <option value="radial">Radial</option>
             </select>
           </div>
-          <div className="flex flex-col gap-2 md:flex-row">
-            <h6 className="font-semibold text-gray-600 dark:text-gray-400">Opacity:</h6>
-            <div className="flex items-center gap-2">
-              <label className="text-gray-600 dark:text-gray-400" htmlFor="gradientOpacityInput">
-                0
-              </label>
-              <input id="gradientOpacityInput" className="accent-orange-400 dark:accent-orange-600" type="range" name="opacity" value={opacity} min="0" max="1" step="0.05" onChange={handleOpacityChange} />
-              <label className="text-gray-600 dark:text-gray-400" htmlFor="gradientOpacityInput">
-                1
-              </label>
-            </div>
-          </div>
         </div>
 
         <div
-          className="dark:bg-gray-95 h-64 w-full rounded-md border-2 border-gray-200 bg-white lg:h-full lg:w-2/4 dark:border-gray-800"
+          className="dark:border-border-dark border-border-light min-h-52 w-full rounded-md border-2 lg:w-2/4"
           style={{
             backgroundImage: `url(${patternImage})`,
             backgroundPosition: `center`,
@@ -174,8 +191,8 @@ function Gradient() {
 
       {result && <GeneratedCSS result={result} copySuccess={copySuccess} copyToClipboard={copyToClipboard} />}
 
-      <FAQSection faqs={faqData} />
-    </div>
+      <FAQSection />
+    </>
   );
 }
 

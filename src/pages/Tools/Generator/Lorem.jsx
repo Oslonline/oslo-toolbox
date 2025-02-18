@@ -1,7 +1,8 @@
 import { useState } from "react";
 import { FaCheck, FaCopy } from "react-icons/fa";
 import { Helmet } from "react-helmet";
-import FAQSection from "../../../components/commons/Faq";
+import FAQSection from "../../../components/Faq";
+import ButtonMainCta from "../../../components/ui/ButtonMainCta";
 
 const loremText = [
   "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed quis egestas libero, vitae pretium nisi. Curabitur quis posuere est. Phasellus porttitor, leo non lacinia posuere, magna urna commodo mi, venenatis gravida nunc ligula eu mauris. Aenean imperdiet lorem quam, et vestibulum diam consequat non. Donec lobortis ex sapien, id fermentum neque egestas at. Pellentesque at cursus turpis. Praesent et nisi auctor ante congue ultricies vitae commodo arcu. Vestibulum lacus nisl, viverra eget metus sit amet, tincidunt scelerisque mauris. Aenean vel orci id purus tempor aliquam. Duis ac dignissim nulla. Phasellus vel diam ante. Nullam nunc arcu, pulvinar sit amet molestie vitae, porttitor id justo. Sed aliquam odio a augue hendrerit pharetra. Donec dignissim purus non aliquet euismod.",
@@ -67,21 +68,6 @@ export default function Lorem() {
     setTimeout(() => setCopied(false), 1500);
   };
 
-  const faqData = [
-    {
-      question: "What is Lorem Ipsum?",
-      answer: "Lorem Ipsum is a placeholder text commonly used in the graphic design, publishing, and printing industries. It helps to visualize the appearance of the final product without relying on meaningful content.",
-    },
-    {
-      question: "Why use Lorem Ipsum?",
-      answer: "Using Lorem Ipsum allows designers and developers to focus on the layout and design of a document or website without being distracted by the content. It helps to simulate the appearance of real text.",
-    },
-    {
-      question: "Can I use Lorem Ipsum for real content?",
-      answer: "While Lorem Ipsum is useful for placeholder text, it should be replaced with actual content before publishing or printing. It’s meant to demonstrate layout and design, not to convey real information.",
-    },
-  ];
-
   return (
     <>
       <Helmet>
@@ -92,46 +78,44 @@ export default function Lorem() {
         <link rel="canonical" href="https://oslo-toolbox.vercel.app.com/Generators/Lorem" />
       </Helmet>
 
-      <div className="flex flex-col gap-4 p-4 md:p-6">
-        <p className="text-gray-600 dark:text-gray-400">Generate Lorem Ipsum text for free. Choose how many paragraphs you want, and it's generated automatically!</p>
-        <div className="flex flex-col gap-4 rounded-md md:border-2 md:border-gray-200 md:bg-gray-50 md:p-6 dark:md:border-gray-800 dark:md:bg-gray-900">
-          <div className="flex flex-col justify-between gap-2 rounded-md border-2 border-gray-200 bg-white p-4 md:flex-row md:items-center dark:border-gray-800 dark:bg-gray-950">
-            <div className="flex items-center gap-2">
-              <p className="text-lg">Number of paragraphs:</p>
-              <input
-                type="number"
-                min={1}
-                max={100}
-                value={paragraphs}
-                onChange={handleParagraphChange}
-                className="rounded-md border-2 border-gray-200 bg-white p-2 py-1 caret-orange-400 outline-hidden focus:border-orange-400 dark:border-gray-800 dark:bg-gray-950 dark:caret-orange-600 dark:focus:border-orange-600"
-              />
-            </div>
-            <button onClick={handleCopy} className="flex w-full items-center justify-center gap-2 rounded-md bg-gray-300 px-3 py-2 text-gray-700 duration-200 hover:bg-gray-500 hover:text-gray-100 active:bg-gray-600 md:w-fit" aria-label="Copy Lorem Ipsum text">
-              {copied ? (
-                <>
-                  Lorem copied <FaCheck fontSize={18} />
-                </>
-              ) : (
-                <>
-                  Copy <FaCopy fontSize={18} />
-                </>
-              )}
-            </button>
+      <div className="bg-text-dark border-border-light dark:border-border-dark dark:bg-text-base flex w-full flex-col gap-4 rounded-lg border-2 p-4 md:p-6">
+        <div className="border-border-light dark:border-border-dark dark:bg-dark bg-light flex flex-col items-center gap-2 rounded-md border-2 p-4 md:flex-row md:justify-between">
+          <div className="flex w-full flex-col items-start gap-2 md:w-fit">
+            <p>Number of paragraphs: {paragraphs}</p>
+            <input
+              type="range"
+              min={1}
+              max={50}
+              value={paragraphs}
+              onChange={handleParagraphChange}
+              className="accent-accent w-full rounded-md border-2 border-gray-200 bg-white p-2 py-1 caret-orange-400 outline-hidden focus:border-orange-400 dark:border-gray-800 dark:bg-gray-950 dark:caret-orange-600 dark:focus:border-orange-600"
+            />
           </div>
-          <div>
-            <p className="text-lg">Result :</p>
-            <div className="rounded-md border-2 border-gray-200 bg-white p-4 pb-0 dark:border-gray-800 dark:bg-gray-950">
-              {generatedText.split("\n\n").map((para, index) => (
-                <p key={index} className="mb-4">
-                  {para}
-                </p>
-              ))}
-            </div>
+          <ButtonMainCta onClick={handleCopy} className="flex w-fit items-center gap-2" aria-label="Copy Lorem Ipsum text">
+            {copied ? (
+              <>
+                Copied <FaCheck fontSize={18} />
+              </>
+            ) : (
+              <>
+                Copy all <FaCopy fontSize={18} />
+              </>
+            )}
+          </ButtonMainCta>
+        </div>
+        <div>
+          <p className="text-lg">Result :</p>
+          <div className="border-border-light text-border-dark dark:text-border-light dark:border-border-dark dark:bg-dark bg-light rounded-md border-2 p-4 pb-0">
+            {generatedText.split("\n\n").map((para, index) => (
+              <p key={index} className="mb-4">
+                {para}
+              </p>
+            ))}
           </div>
         </div>
-        <FAQSection faqs={faqData} />
       </div>
+
+      <FAQSection />
     </>
   );
 }

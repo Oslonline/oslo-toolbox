@@ -1,21 +1,31 @@
-import React, { useState, useRef, useEffect } from "react";
+import { useState, useRef, useEffect } from "react";
 import QRCode from "react-qr-code";
 import { saveAs } from "file-saver";
 import { Helmet } from "react-helmet";
-import FAQSection from "../../../components/commons/Faq";
+import { ChromePicker } from "react-color";
+import FAQSection from "../../../components/Faq";
+import ButtonMainCta from "../../../components/ui/ButtonMainCta";
+import ToolsPageLayout from "../../../layouts/ToolsPageLayout";
 
 export default function QrCode() {
-  const [link, setLink] = useState("");
-  const [color, setColor] = useState("");
+  const [link, setLink] = useState("https://oslo-toolbox.vercel.app");
+  const [color, setColor] = useState(document.documentElement.classList.contains("dark") ? "#14b8a6" : "#0f766e");
+  const [bgColor, setBgColor] = useState("transparent");
+  const [previousBgColor, setPreviousBgColor] = useState(document.documentElement.classList.contains("dark") ? "#ffffff" : "#000000");
+  const [transparentBg, setTransparentBg] = useState(true);
+  const [errorCorrectionLevel, setErrorCorrectionLevel] = useState("M");
   const [showQRCode, setShowQRCode] = useState(false);
+  const [showColorPicker, setShowColorPicker] = useState(false);
+  const [showBgColorPicker, setShowBgColorPicker] = useState(false);
   const qrRef = useRef();
+  const colorPickerRef = useRef();
+  const bgColorPickerRef = useRef();
 
   useEffect(() => {
+    setShowQRCode(true);
     const updateColorScheme = () => {
-      setColor(document.documentElement.classList.contains("dark") ? "#FFFFFF" : "#000000");
+      setColor(document.documentElement.classList.contains("dark") ? "#14b8a6" : "#0f766e");
     };
-
-    updateColorScheme();
 
     const observer = new MutationObserver(updateColorScheme);
     observer.observe(document.documentElement, {
@@ -26,9 +36,26 @@ export default function QrCode() {
     return () => observer.disconnect();
   }, []);
 
-  const handleLinkChange = (e) => setLink(e.target.value);
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (colorPickerRef.current && !colorPickerRef.current.contains(event.target)) {
+        setShowColorPicker(false);
+      }
+      if (bgColorPickerRef.current && !bgColorPickerRef.current.contains(event.target)) {
+        setShowBgColorPicker(false);
+      }
+    };
 
-  const generateQRCode = () => setShowQRCode(true);
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, []);
+
+  const handleLinkChange = (e) => {
+    setLink(e.target.value);
+    setShowQRCode(true);
+  };
 
   const handleDownload = () => {
     const svg = qrRef.current.querySelector("svg");
@@ -47,27 +74,31 @@ export default function QrCode() {
     img.src = "data:image/svg+xml;base64," + btoa(svgData);
   };
 
-  const faqData = [
-    {
-      question: "What is a QR Code ?",
-      answer: "A QR Code (Quick Response Code) is a type of barcode that contains information, such as a link or text, which can be easily scanned using a smartphone camera.",
-    },
-    {
-      question: "How can I use a QR Code ?",
-      answer: "You can use QR Codes for various purposes like sharing URLs, contact details, Wi-Fi passwords, or event information. Simply generate the QR Code, download it, and add it to your promotional materials.",
-    },
-    {
-      question: "Is it free to generate and download QR Codes ?",
-      answer: "Yes, you can generate and download QR Codes for free using this tool. There are no hidden fees.",
-    },
-    {
-      question: "Can I change the color of my QR Code ?",
-      answer: "Absolutely! You can customize the color of your QR Code to match your branding or personal preference before downloading it.",
-    },
-  ];
+  const handleBgColorChange = (color) => {
+    setBgColor(color.hex);
+    setPreviousBgColor(color.hex);
+    setTransparentBg(false);
+  };
+
+  const handleTransparentBgChange = (e) => {
+    setTransparentBg(e.target.checked);
+    if (e.target.checked) {
+      setBgColor("transparent");
+    } else {
+      setBgColor(previousBgColor);
+    }
+  };
+
+  const handleBgColorPickerClick = () => {
+    if (transparentBg) {
+      setTransparentBg(false);
+      setBgColor(previousBgColor);
+    }
+    setShowBgColorPicker(!showBgColorPicker);
+  };
 
   return (
-    <div className="flex flex-col gap-4 p-4 md:p-6">
+    <>
       <Helmet>
         <title>Free QR Code Generator - Create and Download QR Codes Instantly</title>
         <meta name="description" content="Easily generate QR codes for your links or text. Customize the color and download your QR code in PNG format. Perfect for businesses, events, and personal use." />
@@ -75,35 +106,61 @@ export default function QrCode() {
         <link rel="canonical" href="https://oslo-toolbox.vercel.app.com/Generators/QrCode" />
       </Helmet>
 
-      <div>
-        <p className="text-gray-600 dark:text-gray-400">Generate QR Codes from links or text for free. Enter your content, choose a color, and click 'Generate'! Download the QR Code as a PNG file to use it wherever you need.</p>
-      </div>
-      <div className="flex flex-col gap-4 rounded-md md:border-2 md:border-gray-200 md:bg-gray-50 md:p-6 dark:md:border-gray-800 dark:md:bg-gray-900">
-        <div className="flex flex-col items-center justify-between gap-4 rounded-md border-2 border-gray-200 bg-white p-4 md:flex-row dark:border-gray-800 dark:bg-gray-950">
-          <div className="flex w-full items-center gap-2">
-            <input type="text" value={link} onChange={handleLinkChange} placeholder="Enter your link or text here" className="w-full rounded-md border-2 border-gray-200 bg-white p-2 caret-orange-400 outline-hidden focus:border-orange-400 dark:border-gray-800 dark:bg-gray-950" />
-            <input type="color" value={color} onChange={(e) => setColor(e.target.value)} className="h-10 w-10 min-w-10 rounded-md border-2 border-gray-300 hover:cursor-pointer md:hidden dark:border-gray-800" aria-label="Choose QR Code color" />
-          </div>
-          <div className="flex w-full items-center gap-4 md:w-fit">
-            <input type="color" value={color} onChange={(e) => setColor(e.target.value)} className="hidden h-10 w-10 min-w-10 rounded-md border-2 border-gray-300 hover:cursor-pointer md:block dark:border-gray-800" aria-label="Choose QR Code color" />
-            <button onClick={generateQRCode} className="w-full rounded-md bg-orange-400 px-3 py-2 text-gray-50 duration-200 hover:bg-orange-600 md:w-fit dark:bg-orange-600 dark:hover:bg-orange-400 dark:hover:text-gray-200">
-              Generate
-            </button>
+      <div className="bg-text-dark border-border-light dark:border-border-dark dark:bg-text-base flex w-full flex-col gap-4 rounded-lg border-2 p-4 md:p-6">
+        <input type="text" value={link} onChange={handleLinkChange} placeholder="Enter your link or text here" className="dark:border-border-dark focus:border-accent dark:bg-dark bg-light border-border-light w-full rounded-md border-2 p-2 outline-hidden" />
+        <div className="flex gap-4 flex-col md:flex-row">
+          {showQRCode && link && (
+            <div ref={qrRef} className="border-border-light dark:border-border-dark w-fit rounded border-2 p-2">
+              <QRCode value={link} fgColor={color} size={240} bgColor={bgColor} level={errorCorrectionLevel} />
+            </div>
+          )}
+          <div className="my-auto flex h-full flex-col justify-between gap-2">
+            <div className="flex flex-col gap-2 text-sm">
+              <label className="relative flex w-fit flex-col">
+                QR Code Color:
+                <button onClick={() => setShowColorPicker(!showColorPicker)} className="border-border-light dark:hover:bg-text-border-dark hover:bg-text-border-light dark:border-border-dark flex w-fit items-center gap-1 rounded-md border p-1 px-2 text-sm duration-150 hover:cursor-pointer">
+                  <span className="inline-block h-4 w-4 rounded-full border" style={{ backgroundColor: color }}></span>
+                  {color}
+                </button>
+                {showColorPicker && (
+                  <div ref={colorPickerRef} className="absolute top-14 z-10">
+                    <ChromePicker color={color} onChange={(color) => setColor(color.hex)} />
+                  </div>
+                )}
+              </label>
+              <label className="relative flex w-fit flex-col">
+                Background Color:
+                <button onClick={handleBgColorPickerClick} className="border-border-light dark:hover:bg-text-border-dark hover:bg-text-border-light dark:border-border-dark flex w-fit items-center gap-1 rounded-md border p-1 px-2 text-sm duration-150 hover:cursor-pointer">
+                  <span className="inline-block h-4 w-4 rounded-full border" style={{ backgroundColor: bgColor }}></span>
+                  {bgColor}
+                </button>
+                {showBgColorPicker && (
+                  <div ref={bgColorPickerRef} className="absolute top-14 z-10">
+                    <ChromePicker color={bgColor} onChange={handleBgColorChange} />
+                  </div>
+                )}
+              </label>
+            </div>
+            <div className="flex flex-col gap-2">
+              <span className="flex items-center gap-2 text-sm">
+                Transparent Background
+                <input type="checkbox" checked={transparentBg} onChange={handleTransparentBgChange} />
+              </span>
+              <label className="flex items-center gap-2 text-sm">
+                Error Correction Level:
+                <select value={errorCorrectionLevel} onChange={(e) => setErrorCorrectionLevel(e.target.value)} className="border-border-light dark:bg-text-base bg-text-dark dark:border-border-dark rounded border px-2 py-1 hover:cursor-pointer">
+                  <option value="L">L - Low</option>
+                  <option value="M">M - Medium</option>
+                  <option value="Q">Q - Quartile</option>
+                  <option value="H">H - High</option>
+                </select>
+              </label>
+            </div>
+            <ButtonMainCta onClick={handleDownload}>Download PNG</ButtonMainCta>
           </div>
         </div>
-
-        {showQRCode && link && (
-          <div className="flex flex-col items-center justify-center rounded-md border-2 border-gray-200 bg-white p-4 dark:border-gray-800 dark:bg-gray-950">
-            <div ref={qrRef} className="mb-4">
-              <QRCode value={link} fgColor={color} size={200} bgColor="transparent" />
-            </div>
-            <button onClick={handleDownload} className="rounded-md bg-orange-400 px-3 py-2 text-gray-50 duration-200 hover:bg-orange-600 dark:bg-orange-600 dark:hover:bg-orange-400 dark:hover:text-gray-200">
-              Download PNG
-            </button>
-          </div>
-        )}
       </div>
-      <FAQSection faqs={faqData} />
-    </div>
+      <FAQSection />
+    </>
   );
 }
