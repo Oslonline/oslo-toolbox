@@ -389,6 +389,27 @@ const faqData = [
       },
     ],
   },
+  {
+    path: "/Images/Noise",
+    faqs: [
+      {
+        question: "What is the Noise tool?",
+        answer: "The Noise tool allows you to add a noise effect to your images. You can adjust the amount and strength of the noise to achieve the desired effect.",
+      },
+      {
+        question: "How do I use the Noise tool?",
+        answer: "To use the Noise tool, upload your image, adjust the noise amount and strength using the sliders, and preview the changes. Once satisfied, you can download the edited image.",
+      },
+      {
+        question: "What formats are supported?",
+        answer: "The Noise tool supports various image formats including JPG, PNG, WEBP, BMP, and SVG.",
+      },
+      {
+        question: "Can I adjust the resolution of the preview?",
+        answer: "Yes, you can adjust the resolution of the preview using the resolution slider. This allows you to see how the noise effect will look at different resolutions.",
+      },
+    ],
+  },
 ];
 
 export default faqData;

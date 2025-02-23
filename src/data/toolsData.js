@@ -1,4 +1,5 @@
-import { FaKey, FaParagraph, FaQrcode, FaGithub, FaRuler, FaWeight, FaSquare, FaCube, FaThermometerHalf, FaTachometerAlt, FaClock, FaShieldAlt, FaFingerprint, FaPaintBrush, FaImage } from "react-icons/fa";
+import { FaKey, FaParagraph, FaQrcode, FaGithub, FaRuler, FaWeight, FaSquare, FaCube, FaThermometerHalf, FaTachometerAlt, FaClock, FaShieldAlt, FaFingerprint, FaPaintBrush, FaImage, FaRandom } from "react-icons/fa";
+import { CgEditNoise } from "react-icons/cg";
 
 const tools = [
   {
@@ -41,7 +42,7 @@ const tools = [
           description: "Create QR codes from links or text. Our free QR code generator allows you to easily create QR codes for your website, business, or personal use.",
         },
         maintenance: false,
-        new: true,
+        new: false,
       },
       {
         name: "Readme Generator",
@@ -147,6 +148,18 @@ const tools = [
         hero: {
           title: "Image Dithering",
           description: "Add a dither/bitmap effect to your image easily for free using the Floyd Steinberg algorithm. Insert your file, select the desired final effect resolution, click download and get your dithered image.",
+        },
+        maintenance: false,
+        new: true,
+      },
+      {
+        name: "Noise effect",
+        description: "Apply noise effect to images",
+        icon: CgEditNoise,
+        link: "/Images/Noise",
+        hero: {
+          title: "Noise Effect",
+          description: "Add a noise effect to your image easily for free. Insert your file, select the desired noise amount & strength, click download and get your image.",
         },
         maintenance: false,
         new: true,

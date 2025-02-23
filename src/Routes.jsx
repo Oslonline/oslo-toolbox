@@ -9,7 +9,7 @@ import { Length, Mass, Area, Volume, Temperature, Speed, Time } from "./pages/To
 import { Gradient, BoxShadow } from "./pages/Tools/Css";
 import { Lorem, Password, QrCode /* ReadmeGenerator */ } from "./pages/Tools/Generator";
 import { Hash, IpLookup } from "./pages/Tools/Security";
-import { ImagesConverter, Dither } from "./pages/Tools/Images";
+import { ImagesConverter, Dither, Noise } from "./pages/Tools/Images";
 
 import Error404 from "./pages/Error/Error404";
 import ToolsPageLayout from "./layouts/ToolsPageLayout";
@@ -43,6 +43,7 @@ const routesConfig = [
   { path: "Box-shadow", element: BoxShadow },
   { path: "Images-converter", element: ImagesConverter },
   { path: "Dither", element: Dither },
+  { path: "Noise", element: Noise },
 ];
 
 function MainRouter() {
