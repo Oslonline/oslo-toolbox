@@ -1,5 +1,22 @@
 const changelog = [
   {
+    version: "1.1.1",
+    date: "2025-02-23",
+    title: "Add noise effect tool",
+    majorChanges: [
+      {
+        title: "Add a noise effect tool",
+        description: "New noise effect tool for image, amount, strenght and resolution settings.",
+      },
+    ],
+    minorChanges: [
+      {
+        title: "",
+        description: "",
+      },
+    ],
+  },
+  {
     version: "1.0.9",
     date: "2025-02-14",
     title: "Last changes before changelogs",
