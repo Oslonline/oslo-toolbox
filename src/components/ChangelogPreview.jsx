@@ -24,16 +24,19 @@ const ChangelogPreview = () => {
               </ul>
             </>
           )}
-          {latestEntry.minorChanges.length > 0 && (
+          {latestEntry.minorChanges.filter((change) => change.description.trim() !== "").length > 0 && (
             <>
               <p className="text-border-dark dark:text-border-light font-semibold">Minor Changes</p>
               <ul className="list-inside list-disc text-sm text-stone-600 dark:text-stone-400">
-                {latestEntry.minorChanges.slice(0, 2).map((change, changeIndex) => (
-                  <li className="truncate" key={changeIndex}>
-                    <strong>{change.title}</strong>: {change.description}
-                  </li>
-                ))}
-                {latestEntry.minorChanges.length > 2 && <li>and more...</li>}
+                {latestEntry.minorChanges
+                  .filter((change) => change.description.trim() !== "")
+                  .slice(0, 2)
+                  .map((change, changeIndex) => (
+                    <li className="truncate" key={changeIndex}>
+                      <strong>{change.title}</strong>: {change.description}
+                    </li>
+                  ))}
+                {latestEntry.minorChanges.filter((change) => change.description.trim() !== "").length > 2 && <li>and more...</li>}
               </ul>
             </>
           )}
