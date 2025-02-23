@@ -30,10 +30,10 @@ function Home() {
         <link rel="canonical" href="https://oslo-toolbox.vercel.app.com" />
       </Helmet>
 
-      <div className="flex flex-col gap-9 p-2 md:p-4 lg:p-6">
+      <div className="flex flex-col gap-9 md:p-4 lg:p-6">
         <div className="flex flex-col items-center gap-8">
-          <div className="flex py-12 lg:w-10/12 xl:py-16">
-            <div className="flex w-1/2 flex-col gap-2">
+          <div className="flex flex-col py-12 md:flex-row lg:w-10/12 xl:py-16">
+            <div className="flex w-full flex-col gap-2 md:w-1/2">
               <h1 className="font-serif text-4xl font-bold">Oslo's Toolbox</h1>
               <h2 className="text-border-dark dark:text-border-light">Explore a comprehensive suite of free online tools designed for everyone, including CSS generators, unit converters, security utilities, image editing tools, and more to streamline your workflow.</h2>
               <div className="mt-2 flex gap-4">
