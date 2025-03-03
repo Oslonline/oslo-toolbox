@@ -2,6 +2,8 @@ import { useState, useEffect } from "react";
 import { FaRedo, FaCopy, FaCheck } from "react-icons/fa";
 import { Helmet } from "react-helmet";
 import FAQSection from "../../../components/Faq";
+import ButtonMainCta from "../../../components/ui/ButtonMainCta";
+import ButtonNeutralCta from "../../../components/ui/ButtonNeutralCta";
 
 export default function Password() {
   const [password, setPassword] = useState("");
@@ -57,31 +59,26 @@ export default function Password() {
         <link rel="canonical" href="https://oslo-toolbox.vercel.app.com/Generators/Password" />
       </Helmet>
 
-      <div className="flex min-w-2/3 flex-col gap-4 rounded-md md:border-2 md:border-gray-200 md:bg-gray-50 md:p-6 dark:md:border-gray-800 dark:md:bg-gray-900">
-        <div className="flex items-center justify-between gap-4 rounded-md border-2 border-gray-200 bg-white p-4 md:gap-8 dark:border-gray-800 dark:bg-gray-950">
-          <input
-            className="w-full rounded-md border-2 border-gray-200 bg-white p-2 font-mono caret-orange-400 outline-hidden selection:bg-orange-400 selection:text-gray-50 focus:border-orange-400 dark:border-gray-800 dark:bg-gray-950 dark:caret-orange-600 dark:focus:border-orange-600"
-            type="text"
-            readOnly
-            value={password}
-          />
+      <div className="bg-text-dark border-border-light dark:border-border-dark dark:bg-text-base flex w-full flex-col gap-4 rounded-lg border-2 p-4 md:p-6">
+        <div className="flex gap-4">
+          <input className="border-border-light dark:border-border-dark dark:bg-dark bg-light focus:border-accent caret-accent selection:bg-accent w-full rounded-md border-2 p-2 font-mono outline-hidden" type="text" readOnly value={password} />
           <div className="flex gap-4 dark:text-gray-300">
-            <button onClick={handleCopy} aria-label={copied ? "Password copied!" : "Copy password"}>
-              {copied ? <FaCheck fontSize={24} color="green" /> : <FaCopy fontSize={24} />}
+            <button className="dark:border-border-dark dark:bg-dark bg-light border-border-light rounded-md border-2 px-2 hover:cursor-pointer lg:px-4" onClick={handleCopy} aria-label={copied ? "Password copied!" : "Copy password"}>
+              {copied ? "Copied!" : "Copy"}
             </button>
-            <button onClick={generatePassword} aria-label="Generate a new password">
-              <FaRedo fontSize={24} />
-            </button>
+            <ButtonMainCta onClick={generatePassword} aria-label="Generate a new password">
+              Generate
+            </ButtonMainCta>
           </div>
         </div>
-        <div className="rounded-md border-2 border-gray-200 bg-white p-4 dark:border-gray-800 dark:bg-gray-950">
+        <div className="border-border-light dark:border-border-dark dark:bg-dark bg-light rounded-md border-2 p-4">
           <p className="mb-2 text-lg font-bold">Settings</p>
           <hr className="mb-4" />
           <div className="mb-4">
             <label className="mb-2 block">Length: {length}</label>
-            <input type="range" min="12" max="128" value={length} onChange={(e) => setLength(parseInt(e.target.value))} className="w-full accent-orange-400 dark:accent-orange-600" aria-label="Password length" />
+            <input type="range" min="12" max="256" value={length} onChange={(e) => setLength(parseInt(e.target.value))} className="accent-accent w-full" aria-label="Password length" />
           </div>
-          <div className="flex flex-col gap-2 accent-orange-400 dark:accent-orange-600">
+          <div className="accent-accent flex flex-col gap-2">
             <label className="flex items-center">
               <input type="checkbox" checked={includeUppercase} onChange={() => setIncludeUppercase(!includeUppercase)} className="mr-2" />
               Include uppercase letters
