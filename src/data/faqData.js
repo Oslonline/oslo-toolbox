@@ -34,7 +34,7 @@ const faqData = [
       },
       {
         question: "Can I use Lorem Ipsum for real content?",
-        answer: "While Lorem Ipsum is useful for placeholder text, it should be replaced with actual content before publishing or printing. It’s meant to demonstrate layout and design, not to convey real information.",
+        answer: "While Lorem Ipsum is useful for placeholder text, it should be replaced with actual content before publishing or printing. It's meant to demonstrate layout and design, not to convey real information.",
       },
       {
         question: "Is Lorem Ipsum text unique?",
@@ -117,12 +117,13 @@ const faqData = [
       },
     ],
   },
+  // CSS TOOLS
   {
     path: "/Css/Box-shadow",
     faqs: [
       {
         question: "What is a box-shadow in CSS?",
-        answer: "A box-shadow in CSS is a shadow effect applied to an element’s box, allowing you to create depth and visual interest by adding an offset shadow. It can be customized with various properties such as color, blur radius, and spread radius.",
+        answer: "A box-shadow in CSS is a shadow effect applied to an element's box, allowing you to create depth and visual interest by adding an offset shadow. It can be customized with various properties such as color, blur radius, and spread radius.",
       },
       {
         question: "How do I use this tool?",
@@ -159,6 +160,7 @@ const faqData = [
       },
     ],
   },
+  // SECURITY TOOLS
   {
     path: "/Security/Hash",
     faqs: [
@@ -209,6 +211,40 @@ const faqData = [
       },
     ],
   },
+  {
+    path: "/Security/Uuid",
+    faqs: [
+      {
+        question: "What is a UUID?",
+        answer: "A UUID (Universally Unique Identifier) is a 128-bit number used to uniquely identify information in computer systems. It is designed to be unique across both space and time, making it ideal for use in distributed systems.",
+      },
+      {
+        question: "What are the different versions of UUID?",
+        answer: "There are several versions of UUIDs, with the most common being UUID v1 (time-based) and UUID v4 (random). UUID v1 uses the current timestamp and the MAC address of the generating machine, while UUID v4 is generated randomly.",
+      },
+      {
+        question: "How do I generate a UUID?",
+        answer: "To generate a UUID, simply select the desired version (v1 or v4) and click the 'Generate' button. The generated UUID will be displayed, and you can copy it to your clipboard.",
+      },
+      {
+        question: "Can I use UUIDs for database keys?",
+        answer: "Yes, UUIDs are commonly used as primary keys in databases due to their uniqueness. They help avoid collisions when merging records from different sources.",
+      },
+      {
+        question: "Are UUIDs guaranteed to be unique?",
+        answer: "While UUIDs are designed to be unique, there is a very small chance of collision, especially with UUID v4, which is randomly generated. However, the probability of generating the same UUID is extremely low.",
+      },
+      {
+        question: "What is the difference between UUID v1 and v4?",
+        answer: "UUID v1 is time-based and includes the timestamp and the MAC address of the generating machine, making it unique across time and space. UUID v4 is randomly generated, providing a simpler way to create unique identifiers without relying on time or hardware.",
+      },
+      {
+        question: "Can I use UUIDs in URLs?",
+        answer: "Yes, UUIDs can be safely used in URLs as they are URL-friendly. However, ensure that they are properly encoded if necessary.",
+      },
+    ],
+  },
+  // UNITS CONVERTERS
   {
     path: "/UnitsConvert/Length",
     faqs: [

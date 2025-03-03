@@ -61,7 +61,7 @@ const tools = [
   {
     name: "Security tools",
     link: "/Security",
-    text: "IP Lookup, Hash generator...",
+    text: "IP Lookup, Hash generator, UUID generator...",
     icon: "/images/tools-ctg/sec.webp",
     tools: [
       {
@@ -87,6 +87,18 @@ const tools = [
         },
         maintenance: false,
         new: false,
+      },
+      {
+        name: "UUID Generator",
+        description: "Generate uuid (v1, v4)",
+        icon: FaFingerprint,
+        link: "/Security/Uuid",
+        hero: {
+          title: "UUID Generator",
+          description: "Quickly generate unique identifiers (UUIDs) for use in applications, ensuring distinct values for database keys, session IDs, and more.",
+        },
+        maintenance: false,
+        new: true,
       },
     ],
   },
