@@ -158,7 +158,7 @@ const tools = [
           description: "Add a dither/bitmap effect to your image easily for free using the Floyd Steinberg algorithm. Insert your file, select the desired final effect resolution, click download and get your dithered image.",
         },
         maintenance: false,
-        new: true,
+        new: false,
       },
       {
         name: "Noise effect",
