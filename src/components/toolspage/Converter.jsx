@@ -85,7 +85,7 @@ function Converter({ systems, units, unitValues }) {
             </div>
           </div>
           <div className="flex flex-col gap-3">
-            <input className="dark:border-border-dark border-border-light rounded-md border p-2 outline-hidden" type="text" placeholder="Output" value={result} readOnly />
+            <input className="dark:border-border-dark border-border-light rounded-md border p-2 outline-hidden hover:cursor-default" type="text" placeholder="Output" value={result} readOnly />
             <div className="block">
               <select className="border-border-light dark:border-border-dark dark:bg-text-base bg-text-dark dark:hover:bg-border-dark hover:bg-border-light rounded-lg border px-2 py-1.5 hover:cursor-pointer hover:duration-150" value={unitTo} onChange={(e) => handleUnitToChange(e.target.value)}>
                 {units[metricSys].map((unit) => (
