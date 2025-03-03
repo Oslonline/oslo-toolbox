@@ -3,7 +3,7 @@ import { Helmet } from "react-helmet";
 import { Link } from "react-router-dom";
 import tools from "../data/toolsData";
 import FAQSection from "../components/Faq";
-import ChangelogPreview from "../components/ChangelogPreview";
+import ChangelogPreview from "../components/homepage/ChangelogPreview";
 import LastToolAdded from "../components/homepage/LastToolAdded";
 import ButtonMainCta from "../components/ui/ButtonMainCta";
 import ButtonNeutralCta from "../components/ui/ButtonNeutralCta";

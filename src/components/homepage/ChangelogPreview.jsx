@@ -1,4 +1,4 @@
-import changelog from "../data/changelog";
+import changelog from "../../data/changelog";
 import { Link } from "react-router-dom";
 
 const ChangelogPreview = () => {
