@@ -15,6 +15,7 @@
 - IP Adress lookup.
 - Image converter (PNG, JPG, WEBP, BMP & SVG).
 - Image Dithering effect (Bitmap effect).
+- Image Noise effect.
 
 <h2>Run</h2>
 
