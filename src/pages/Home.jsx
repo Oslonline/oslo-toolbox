@@ -93,13 +93,14 @@ function Home() {
                         <Link
                           to={subTool.link}
                           key={subIndex}
-                          className="dark:bg-text-base dark:border-text-base border-text-dark hover:border-accent from-accent/0 hover:from-accent/10 bg-text-dark flex max-w-md flex-col justify-center gap-1 rounded-lg border bg-gradient-to-bl to-transparent p-4 hover:cursor-pointer hover:transition hover:duration-200 lg:gap-2 xl:p-5"
+                          className="dark:bg-text-base dark:border-text-base border-text-dark hover:border-accent from-accent/0 hover:from-accent/10 bg-text-dark relative flex max-w-md flex-col justify-center gap-1 rounded-lg border bg-gradient-to-bl to-transparent p-4 hover:cursor-pointer hover:transition hover:duration-200 lg:gap-2 xl:p-5"
                         >
                           <div className="flex items-end gap-2">
                             <span className="text-accent border-accent/40 from-accent/30 rounded border-2 bg-linear-to-t to-transparent p-2 text-lg lg:text-2xl">{React.createElement(subTool.icon)}</span>
                             <p className="font-mono text-lg font-semibold lg:text-xl xl:text-2xl">{subTool.name}</p>
                           </div>
                           <p className="line-clamp-2 text-sm text-stone-600 dark:text-stone-400">{subTool.description}</p>
+                          {subTool.new === true && <span className="bg-accent absolute top-0 -right-1 rotate-12 rounded px-1 text-xs xl:text-sm">new !</span>}
                         </Link>
                       ),
                     )}
