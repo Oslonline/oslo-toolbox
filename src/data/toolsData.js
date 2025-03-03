@@ -6,7 +6,6 @@ const tools = [
     name: "Misc Tools",
     link: "/Generators",
     text: "Password, Lorem, QR Code, Github Readme...",
-    icon: "/images/tools-ctg/gen.webp",
     tools: [
       {
         name: "Password generator",
@@ -62,7 +61,6 @@ const tools = [
     name: "Security tools",
     link: "/Security",
     text: "IP Lookup, Hash generator, UUID generator...",
-    icon: "/images/tools-ctg/sec.webp",
     tools: [
       {
         name: "Ip Lookup",
@@ -106,7 +104,6 @@ const tools = [
     name: "CSS tools",
     link: "/Css",
     text: "Gradient, Box-shadow...",
-    icon: "/images/tools-ctg/css.webp",
     tools: [
       {
         name: "Gradient generator",
@@ -138,7 +135,6 @@ const tools = [
     name: "Image editing & altering tools",
     link: "/Images",
     text: "Images converter, Dithering...",
-    icon: "/images/tools-ctg/images.webp",
     tools: [
       {
         name: "Image Converter",
@@ -182,7 +178,6 @@ const tools = [
     name: "Units converters",
     link: "/UnitsConvert",
     text: "Length, Mass, Area, Volume...",
-    icon: "/images/tools-ctg/units.webp",
     tools: [
       {
         name: "Length",
