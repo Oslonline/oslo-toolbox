@@ -5,7 +5,7 @@ export default function Footer() {
     <footer className="flex w-full flex-col items-center gap-2 px-2 pb-2">
       <hr className="bg-radial-gradient my-4 h-0.5 w-2/3 rounded-full border-none md:w-1/2" />
       <div className="mt-4 flex w-full justify-around">
-        <div className="dark:text-text-border-light text-text-border-dark flex gap-2">
+        <div className="dark:text-text-border-light text-text-border-dark flex flex-wrap justify-center gap-2">
           <Link className="hover:text-accent underline duration-75" to={"/about"}>
             About
           </Link>
