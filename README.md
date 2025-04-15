@@ -2,6 +2,8 @@
 
 ![oslo-toolbox](https://i.imgur.com/pzuWsWK.png)
 
+<p style="text-align: center">This toolbox is currently a frontend-only project, without a database, backend, or authentication. We're planning to transition to Next.js in the future. Contributions are welcome !</p>
+
 <h2>Tools</h2>
 
 - CSS Box-shadow generator.
