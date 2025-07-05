@@ -6,6 +6,7 @@ import ImageUploader from "../../../components/toolspage/ImageUploader";
 import FAQSection from "../../../components/Faq";
 import ButtonNeutralCta from "../../../components/ui/ButtonNeutralCta";
 import ButtonMainCta from "../../../components/ui/ButtonMainCta";
+import SliderInput from "../../../components/ui/SliderInput";
 
 export default function Noise() {
   const [selectedFile, setSelectedFile] = useState(null);
@@ -117,24 +118,9 @@ export default function Noise() {
                   <img src={URL.createObjectURL(selectedFile)} alt="Preview" className="h-auto" />
                 </span>
                 <div className="flex w-full flex-col gap-1">
-                  <div className="flex flex-col">
-                    <label htmlFor="noise-amount-input" className="text-sm italic">
-                      Noise Amount
-                    </label>
-                    <input className="accent-accent" id="noise-amount-input" onChange={handleNoiseAmountChange} value={noiseAmount} type="range" min={0} max={100} />
-                  </div>
-                  <div className="flex flex-col">
-                    <label htmlFor="noise-strength-input" className="text-sm italic">
-                      Noise Strength
-                    </label>
-                    <input className="accent-accent" id="noise-strength-input" onChange={handleNoiseStrengthChange} value={noiseStrength} type="range" min={0} max={100} />
-                  </div>
-                  <div className="flex flex-col">
-                    <label htmlFor="preview-resolution" className="text-sm italic">
-                      Resolution
-                    </label>
-                    <input className="accent-accent" id="preview-resolution" onChange={handleResolutionChange} value={previewResolution} type="range" min={50} max={1000} />
-                  </div>
+                  <SliderInput id="noise-amount-input" label="Noise Amount" min={0} max={100} value={noiseAmount} onChange={handleNoiseAmountChange} />
+                  <SliderInput id="noise-strength-input" label="Noise Strength" min={0} max={100} value={noiseStrength} onChange={handleNoiseStrengthChange} />
+                  <SliderInput id="preview-resolution" label="Resolution" min={50} max={1000} value={previewResolution} onChange={handleResolutionChange} valueSuffix=" px" />
                 </div>
               </div>
               <div className="flex flex-col gap-2 md:gap-4">

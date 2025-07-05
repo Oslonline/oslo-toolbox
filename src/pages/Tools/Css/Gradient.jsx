@@ -4,6 +4,7 @@ import patternImage from "/images/pattern.webp";
 import { ChromePicker } from "react-color";
 import GeneratedCSS from "../../../components/toolspage/GeneratedCSS";
 import FAQSection from "../../../components/Faq";
+import SliderInput from "../../../components/ui/SliderInput";
 
 function Gradient() {
   const [colorA, setColorA] = useState("#14b8a6");
@@ -143,24 +144,25 @@ function Gradient() {
           </div>
 
           {gradientType === "linear" && (
-            <div className="flex flex-col gap-2 md:flex-row">
-              <h6 className="font-semibold text-gray-600 dark:text-gray-400">Angle:</h6>
-              <div className="flex items-center gap-2">
-                <label htmlFor="gradientAngleInput">0</label>
-                <input id="gradientAngleInput" className="accent-accent" type="range" name="angle" value={angle} min="0" max="360" step="1" onChange={handleAngleChange} />
-                <label htmlFor="gradientAngleInput">360</label>
-              </div>
-            </div>
+            <SliderInput
+              id="gradientAngleInput"
+              label="Angle"
+              min={0}
+              max={360}
+              value={Number(angle)}
+              onChange={handleAngleChange}
+              valueSuffix="°"
+            />
           )}
-
-          <div className="flex flex-col gap-2 md:flex-row">
-            <h6 className="font-semibold text-gray-600 dark:text-gray-400">Opacity:</h6>
-            <div className="flex items-center gap-2">
-              <label htmlFor="gradientOpacityInput">0</label>
-              <input id="gradientOpacityInput" className="accent-accent" type="range" name="opacity" value={opacity} min="0" max="1" step="0.05" onChange={handleOpacityChange} />
-              <label htmlFor="gradientOpacityInput">1</label>
-            </div>
-          </div>
+          <SliderInput
+            id="gradientOpacityInput"
+            label="Opacity"
+            min={0}
+            max={1}
+            step={0.05}
+            value={Number(opacity)}
+            onChange={handleOpacityChange}
+          />
 
           <div className="flex items-center gap-2">
             <h5 className="font-semibold text-gray-600 dark:text-gray-400">Gradient type:</h5>

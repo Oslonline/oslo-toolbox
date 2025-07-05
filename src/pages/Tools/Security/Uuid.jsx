@@ -3,6 +3,7 @@ import { Helmet } from "react-helmet";
 import { v1 as uuidv1, v4 as uuidv4 } from "uuid";
 import FAQSection from "../../../components/Faq";
 import ButtonMainCta from "../../../components/ui/ButtonMainCta";
+import DropdownInput from "../../../components/ui/DropdownInput";
 
 export default function Uuid() {
   const [uuid, setUuid] = useState("");
@@ -47,10 +48,16 @@ export default function Uuid() {
 
       <div className="bg-text-dark border-border-light dark:border-border-dark dark:bg-text-base flex w-full flex-col rounded-lg border-2 p-4 md:p-6">
         <div className="flex w-full flex-col gap-2 md:flex-row md:justify-between md:gap-4">
-          <select className="dark:border-border-dark focus:border-accent dark:bg-dark bg-light border-border-light w-full rounded-md border-2 p-2 outline-hidden md:w-1/3" value={version} onChange={(e) => setVersion(e.target.value)} aria-label="UUID version">
-            <option value="v4">UUID v4 (Random)</option>
-            <option value="v1">UUID v1 (Time-based)</option>
-          </select>
+          <DropdownInput
+            id="uuid-version"
+            value={version}
+            onChange={(e) => setVersion(e.target.value)}
+            options={[
+              { value: "v4", label: "UUID v4 (Random)" },
+              { value: "v1", label: "UUID v1 (Time-based)" },
+            ]}
+            className="w-full md:w-1/3"
+          />
           <ButtonMainCta onClick={generateUuid} aria-label="Generate UUID">
             Generate
           </ButtonMainCta>

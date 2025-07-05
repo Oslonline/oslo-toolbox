@@ -3,6 +3,7 @@ import { FaCheck, FaCopy } from "react-icons/fa";
 import { Helmet } from "react-helmet";
 import FAQSection from "../../../components/Faq";
 import ButtonMainCta from "../../../components/ui/ButtonMainCta";
+import SliderInput from "../../../components/ui/SliderInput";
 
 const loremText = [
   "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed quis egestas libero, vitae pretium nisi. Curabitur quis posuere est. Phasellus porttitor, leo non lacinia posuere, magna urna commodo mi, venenatis gravida nunc ligula eu mauris. Aenean imperdiet lorem quam, et vestibulum diam consequat non. Donec lobortis ex sapien, id fermentum neque egestas at. Pellentesque at cursus turpis. Praesent et nisi auctor ante congue ultricies vitae commodo arcu. Vestibulum lacus nisl, viverra eget metus sit amet, tincidunt scelerisque mauris. Aenean vel orci id purus tempor aliquam. Duis ac dignissim nulla. Phasellus vel diam ante. Nullam nunc arcu, pulvinar sit amet molestie vitae, porttitor id justo. Sed aliquam odio a augue hendrerit pharetra. Donec dignissim purus non aliquet euismod.",
@@ -81,14 +82,13 @@ export default function Lorem() {
       <div className="bg-text-dark border-border-light dark:border-border-dark dark:bg-text-base flex w-full flex-col gap-4 rounded-lg border-2 p-4 md:p-6">
         <div className="border-border-light dark:border-border-dark dark:bg-dark bg-light flex flex-col items-center gap-2 rounded-md border-2 p-4 md:flex-row md:justify-between">
           <div className="flex w-full flex-col items-start gap-2 md:w-fit">
-            <p>Number of paragraphs: {paragraphs}</p>
-            <input
-              type="range"
+            <SliderInput
+              id="paragraphs"
+              label="Number of paragraphs"
               min={1}
               max={50}
               value={paragraphs}
               onChange={handleParagraphChange}
-              className="accent-accent w-full rounded-md border-2 border-gray-200 bg-white p-2 py-1 caret-orange-400 outline-hidden focus:border-orange-400 dark:border-gray-800 dark:bg-gray-950 dark:caret-orange-600 dark:focus:border-orange-600"
             />
           </div>
           <ButtonMainCta onClick={handleCopy} className="flex w-fit items-center gap-2" aria-label="Copy Lorem Ipsum text">

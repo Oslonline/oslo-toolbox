@@ -6,6 +6,7 @@ import { ChromePicker } from "react-color";
 import FAQSection from "../../../components/Faq";
 import ButtonMainCta from "../../../components/ui/ButtonMainCta";
 import ToolsPageLayout from "../../../layouts/ToolsPageLayout";
+import DropdownInput from "../../../components/ui/DropdownInput";
 
 export default function QrCode() {
   const [link, setLink] = useState("https://oslo-toolbox.vercel.app");
@@ -108,7 +109,7 @@ export default function QrCode() {
 
       <div className="bg-text-dark border-border-light dark:border-border-dark dark:bg-text-base flex w-full flex-col gap-4 rounded-lg border-2 p-4 md:p-6">
         <input type="text" value={link} onChange={handleLinkChange} placeholder="Enter your link or text here" className="dark:border-border-dark focus:border-accent dark:bg-dark bg-light border-border-light w-full rounded-md border-2 p-2 outline-hidden" />
-        <div className="flex gap-4 flex-col md:flex-row">
+        <div className="flex flex-col gap-4 md:flex-row">
           {showQRCode && link && (
             <div ref={qrRef} className="border-border-light dark:border-border-dark w-fit rounded border-2 p-2">
               <QRCode value={link} fgColor={color} size={240} bgColor={bgColor} level={errorCorrectionLevel} />
@@ -146,15 +147,19 @@ export default function QrCode() {
                 Transparent Background
                 <input type="checkbox" checked={transparentBg} onChange={handleTransparentBgChange} />
               </span>
-              <label className="flex items-center gap-2 text-sm">
-                Error Correction Level:
-                <select value={errorCorrectionLevel} onChange={(e) => setErrorCorrectionLevel(e.target.value)} className="border-border-light dark:bg-text-base bg-text-dark dark:border-border-dark rounded border px-2 py-1 hover:cursor-pointer">
-                  <option value="L">L - Low</option>
-                  <option value="M">M - Medium</option>
-                  <option value="Q">Q - Quartile</option>
-                  <option value="H">H - High</option>
-                </select>
-              </label>
+              <DropdownInput
+                id="qr-error-correction"
+                label="Error Correction Level"
+                value={errorCorrectionLevel}
+                onChange={(e) => setErrorCorrectionLevel(e.target.value)}
+                options={[
+                  { value: "L", label: "L - Low" },
+                  { value: "M", label: "M - Medium" },
+                  { value: "Q", label: "Q - Quartile" },
+                  { value: "H", label: "H - High" },
+                ]}
+                className="w-fit"
+              />
             </div>
             <ButtonMainCta onClick={handleDownload}>Download PNG</ButtonMainCta>
           </div>

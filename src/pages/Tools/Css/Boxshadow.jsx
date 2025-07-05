@@ -3,6 +3,7 @@ import { Helmet } from "react-helmet";
 import { ChromePicker } from "react-color";
 import GeneratedCSS from "../../../components/toolspage/GeneratedCSS";
 import FAQSection from "../../../components/Faq";
+import SliderInput from "../../../components/ui/SliderInput";
 
 function BoxShadow() {
   const [boxShadow, setBoxShadow] = useState({
@@ -93,31 +94,48 @@ function BoxShadow() {
           </div>
           <hr className="dark:border-border-dark border-border-light" />
           <div className="flex flex-col">
-            <span className="dark:text-text-border-light text-text-border-dark flex justify-between text-sm">
-              <p>Offset X</p>
-              <p>{boxShadow.offsetX}</p>
-            </span>
-            <input className="accent-accent mb-2 w-full" type="range" name="offsetX" value={boxShadow.offsetX} min="-50" max="50" onChange={handleChange} />
-            <span className="dark:text-text-border-light text-text-border-dark flex justify-between text-sm">
-              <p>Offset Y</p>
-              <p>{boxShadow.offsetY}</p>
-            </span>
-            <input className="accent-accent mb-2 w-full" type="range" name="offsetY" value={boxShadow.offsetY} min="-50" max="50" onChange={handleChange} />
-            <span className="dark:text-text-border-light text-text-border-dark flex justify-between text-sm">
-              <p>Blur radius</p>
-              <p>{boxShadow.blurRadius}</p>
-            </span>
-            <input className="accent-accent mb-2 w-full" type="range" name="blurRadius" value={boxShadow.blurRadius} min="0" max="50" onChange={handleChange} />
-            <span className="dark:text-text-border-light text-text-border-dark flex justify-between text-sm">
-              <p>Spread radius</p>
-              <p>{boxShadow.spreadRadius}</p>
-            </span>
-            <input className="accent-accent mb-2 w-full" type="range" name="spreadRadius" value={boxShadow.spreadRadius} min="0" max="50" onChange={handleChange} />
-            <span className="dark:text-text-border-light text-text-border-dark flex justify-between text-sm">
-              <p>Opacity</p>
-              <p>{boxShadow.opacity}%</p>
-            </span>
-            <input className="accent-accent mb-2 w-full" type="range" name="opacity" value={boxShadow.opacity} min="0" max="100" step="10" onChange={handleChange} />
+            <SliderInput
+              id="offsetX"
+              label="Offset X"
+              min={-50}
+              max={50}
+              value={boxShadow.offsetX}
+              onChange={handleChange}
+            />
+            <SliderInput
+              id="offsetY"
+              label="Offset Y"
+              min={-50}
+              max={50}
+              value={boxShadow.offsetY}
+              onChange={handleChange}
+            />
+            <SliderInput
+              id="blurRadius"
+              label="Blur radius"
+              min={0}
+              max={50}
+              value={boxShadow.blurRadius}
+              onChange={handleChange}
+            />
+            <SliderInput
+              id="spreadRadius"
+              label="Spread radius"
+              min={0}
+              max={50}
+              value={boxShadow.spreadRadius}
+              onChange={handleChange}
+            />
+            <SliderInput
+              id="opacity"
+              label="Opacity"
+              min={0}
+              max={100}
+              step={10}
+              value={boxShadow.opacity}
+              onChange={handleChange}
+              valueSuffix="%"
+            />
             <div>
               <p className="dark:text-text-border-light text-text-border-dark text-sm">Color</p>
               <div className="relative mt-1 flex items-center gap-4">

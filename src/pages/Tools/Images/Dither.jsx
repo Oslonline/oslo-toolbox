@@ -6,6 +6,7 @@ import ImageUploader from "../../../components/toolspage/ImageUploader";
 import FAQSection from "../../../components/Faq";
 import ButtonNeutralCta from "../../../components/ui/ButtonNeutralCta";
 import ButtonMainCta from "../../../components/ui/ButtonMainCta";
+import SliderInput from "../../../components/ui/SliderInput";
 
 export default function Dither() {
   const [selectedFile, setSelectedFile] = useState(null);
@@ -122,18 +123,23 @@ export default function Dither() {
                   <img src={URL.createObjectURL(selectedFile)} alt="Preview" className="h-auto" />
                 </span>
                 <div className="flex w-full flex-col gap-1">
-                  <div className="flex flex-col">
-                    <label htmlFor="threshold-input" className="text-sm italic">
-                      Threshold
-                    </label>
-                    <input className="accent-accent" id="threshold-input" onChange={handleThresholdChange} value={threshold} type="range" min={20} max={180} />
-                  </div>
-                  <div className="flex flex-col">
-                    <label htmlFor="preview-resolution" className="text-sm italic">
-                      Resolution
-                    </label>
-                    <input className="accent-accent" id="preview-resolution" onChange={handleResolutionChange} value={previewResolution} type="range" min={50} max={1000} />
-                  </div>
+                  <SliderInput
+                    id="threshold-input"
+                    label="Threshold"
+                    min={20}
+                    max={180}
+                    value={threshold}
+                    onChange={handleThresholdChange}
+                  />
+                  <SliderInput
+                    id="preview-resolution"
+                    label="Resolution"
+                    min={50}
+                    max={1000}
+                    value={previewResolution}
+                    onChange={handleResolutionChange}
+                    valueSuffix=" px"
+                  />
                 </div>
               </div>
               <div className="flex flex-col gap-2 md:gap-4">
