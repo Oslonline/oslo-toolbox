@@ -6,6 +6,7 @@ import Footer from "./components/Footer";
 import { Outlet } from "react-router-dom";
 import { useState, useEffect } from "react";
 import tools from "./data/toolsData";
+import { Helmet } from "react-helmet";
 
 function App() {
   const [searchQuery, setSearchQuery] = useState("");
@@ -53,6 +54,22 @@ function App() {
 
   return (
     <div className="bg-light dark:bg-dark dark:text-text-dark text-text-base">
+      <Helmet>
+        {/* ...existing meta tags... */}
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "Organization",
+            "name": "Oslo's Toolbox",
+            "url": "https://oslo-toolbox.vercel.app/",
+            "logo": "https://oslo-toolbox.vercel.app/logo.png",
+            "sameAs": [
+              "https://github.com/Oslonline/oslo-toolbox",
+              "https://twitter.com/Oslo418"
+            ]
+          })}
+        </script>
+      </Helmet>
       <Header onSearch={handleSearch} searchResults={searchResults} openSearchModal={openSearchModal} />
       <main className="mx-auto flex min-h-screen w-11/12 flex-col items-center py-4">
         <SearchModal isOpen={isSearchModalOpen} onClose={closeSearchModal} onSearch={handleSearch} searchResults={searchResults} randomTools={getRandomTools()} />

@@ -1,10 +1,22 @@
 import React from "react";
 import changelog from "../data/changelog";
 import { format } from "date-fns";
+import { Helmet } from "react-helmet";
 
 export default function Changelog() {
   return (
     <div className="md:p-6 lg:w-11/12 xl:w-10/12">
+      <Helmet>
+        <title>Changelog - Oslo's Toolbox Updates & Improvements</title>
+        <meta name="description" content="Stay up to date with the latest changes, new tools, and improvements in Oslo's Toolbox. View our changelog for all major and minor updates." />
+        <meta name="keywords" content="oslo toolbox changelog, updates, new tools, improvements, release notes" />
+        <link rel="canonical" href="https://oslo-toolbox.vercel.app/changelogs" />
+        <meta property="og:title" content="Changelog - Oslo's Toolbox" />
+        <meta property="og:description" content="See all updates, new tools, and improvements in Oslo's Toolbox." />
+        <meta property="og:url" content="https://oslo-toolbox.vercel.app/changelogs" />
+        <meta name="twitter:title" content="Changelog - Oslo's Toolbox" />
+        <meta name="twitter:description" content="See all updates, new tools, and improvements in Oslo's Toolbox." />
+      </Helmet>
       <h1 className="text-2xl font-bold">Changelogs</h1>
       <h2 className="text-text-border-dark dark:text-text-border-light">All major & minor changes that directly impact the user experience are referenced here to keep you updated about the last tools added, last bugs fixed, last improvements...</h2>
       <div className="flex flex-col gap-8 md:pl-4 xl:gap-12">

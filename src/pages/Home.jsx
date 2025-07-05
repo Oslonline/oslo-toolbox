@@ -24,10 +24,20 @@ function Home() {
   return (
     <div>
       <Helmet>
-        <title>Oslo's Toolbox - Free Online Tools for Everyone</title>
-        <meta name="description" content="Discover Oslo's Toolbox - a free online toolkit offering CSS generators, unit converters, security tools, image editing tools, and more. Simplify your digital tasks today!" />
-        <meta name="keywords" content="free online tools, CSS generators, unit converters, security tools, QR code generator, password generator, image editing tools, developer tools" />
-        <link rel="canonical" href="https://oslo-toolbox.vercel.app.com" />
+        <title>Oslo's Toolbox - Free Online Tools for Developers & Designers</title>
+        <meta name="description" content="Oslo's Toolbox offers a comprehensive suite of free online tools for developers, designers, and creators. Access CSS generators, unit converters, security tools, image editors, and more to simplify your workflow." />
+        <meta name="keywords" content="free online tools, developer tools, css generators, unit converters, password generator, qr code, image editor, hash generator, uuid, web utilities, oslo toolbox" />
+        <meta name="robots" content="index, follow" />
+        <link rel="canonical" href="https://oslo-toolbox.vercel.app/" />
+        {/* Open Graph */}
+        <meta property="og:title" content="Oslo's Toolbox - Free Online Tools for Developers & Designers" />
+        <meta property="og:description" content="A suite of free online tools for developers and designers: CSS generators, unit converters, security tools, image editors, and more." />
+        <meta property="og:url" content="https://oslo-toolbox.vercel.app/" />
+        <meta property="og:type" content="website" />
+        {/* Twitter Card */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Oslo's Toolbox - Free Online Tools for Developers & Designers" />
+        <meta name="twitter:description" content="A suite of free online tools for developers and designers: CSS generators, unit converters, security tools, image editors, and more." />
       </Helmet>
 
       <div className="flex flex-col gap-9 md:p-4 lg:p-6">

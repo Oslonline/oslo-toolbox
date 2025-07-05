@@ -105,11 +105,15 @@ function Gradient() {
   return (
     <>
       <Helmet>
-        <title>Free CSS Gradient Generator - Linear and Radial | Oslo Toolbox</title>
-        <meta name="description" content="Create beautiful CSS gradients with our free generator. Customize colors, angles, opacity, and gradient types. Copy the generated CSS code easily." />
-        <meta name="keywords" content="CSS gradient generator, online gradient tool, linear gradient, radial gradient, CSS design tools, web design, gradient background, CSS code generator, UI design, Oslo Toolbox" />
-        <meta name="robots" content="index, follow" />
-        <link rel="canonical" href="https://oslo-toolbox.vercel.app.com/Css/Gradient" />
+        <title>CSS Gradient Generator - Free Online Tool | Oslo Toolbox</title>
+        <meta name="description" content="Generate beautiful CSS gradients online. Customize linear and radial gradients, copy CSS code, and enhance your web design instantly with Oslo Toolbox." />
+        <meta name="keywords" content="css gradient generator, online gradient tool, linear gradient, radial gradient, css code, web design, oslo toolbox" />
+        <link rel="canonical" href="https://oslo-toolbox.vercel.app/Css/Gradient" />
+        <meta property="og:title" content="CSS Gradient Generator - Oslo Toolbox" />
+        <meta property="og:description" content="Generate beautiful CSS gradients online. Customize linear and radial gradients, copy CSS code, and enhance your web design instantly." />
+        <meta property="og:url" content="https://oslo-toolbox.vercel.app/Css/Gradient" />
+        <meta name="twitter:title" content="CSS Gradient Generator - Oslo Toolbox" />
+        <meta name="twitter:description" content="Generate beautiful CSS gradients online. Customize linear and radial gradients, copy CSS code, and enhance your web design instantly." />
       </Helmet>
 
       <div className="bg-text-dark border-border-light dark:border-border-dark dark:bg-text-base flex w-full flex-col gap-4 rounded-lg border-2 p-4 md:flex-row md:p-6">

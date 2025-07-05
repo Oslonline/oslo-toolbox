@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { FaChevronDown } from "react-icons/fa";
+import { Helmet } from "react-helmet";
 import tools from "../data/toolsData";
 
 function About() {
@@ -12,6 +13,17 @@ function About() {
 
   return (
     <div className="flex flex-col md:p-6 lg:w-11/12 xl:w-10/12">
+      <Helmet>
+        <title>About Oslo's Toolbox - Free Online Developer Tools</title>
+        <meta name="description" content="Learn about Oslo's Toolbox, an open-source project offering free online tools for developers and designers. Discover our mission, features, and how to contribute." />
+        <meta name="keywords" content="about oslo toolbox, open source tools, developer tools, contribute, free online tools" />
+        <link rel="canonical" href="https://oslo-toolbox.vercel.app/about" />
+        <meta property="og:title" content="About Oslo's Toolbox" />
+        <meta property="og:description" content="Open-source suite of free online tools for developers and designers. Learn more about our mission and features." />
+        <meta property="og:url" content="https://oslo-toolbox.vercel.app/about" />
+        <meta name="twitter:title" content="About Oslo's Toolbox" />
+        <meta name="twitter:description" content="Open-source suite of free online tools for developers and designers. Learn more about our mission and features." />
+      </Helmet>
       <div className="flex flex-col gap-6 lg:gap-8 xl:gap-12">
         {/* About */}
         <div>

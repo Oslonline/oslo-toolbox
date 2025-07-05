@@ -47,10 +47,15 @@ export default function IpLookup() {
   return (
     <>
       <Helmet>
-        <title>IP Lookup Tool - Get IP Address Information | Oslo Toolbox</title>
-        <meta name="description" content="Use our free IP Lookup tool to get detailed information about an IP address, including location, ISP, and more. Enter an IP address to see the results." />
-        <meta name="robots" content="index, follow" />
+        <title>IP Lookup Tool - Free IP Address Information | Oslo Toolbox</title>
+        <meta name="description" content="Lookup IP address information for free. Get location, ISP, ASN, and more for any IPv4 or IPv6 address with Oslo Toolbox." />
+        <meta name="keywords" content="ip lookup, ip address, ip geolocation, free ip lookup, ipv4, ipv6, isp, asn, oslo toolbox" />
         <link rel="canonical" href="https://oslo-toolbox.vercel.app/Security/Ip-lookup" />
+        <meta property="og:title" content="IP Lookup Tool - Oslo Toolbox" />
+        <meta property="og:description" content="Lookup IP address information for free. Get location, ISP, ASN, and more for any IPv4 or IPv6 address." />
+        <meta property="og:url" content="https://oslo-toolbox.vercel.app/Security/Ip-lookup" />
+        <meta name="twitter:title" content="IP Lookup Tool - Oslo Toolbox" />
+        <meta name="twitter:description" content="Lookup IP address information for free. Get location, ISP, ASN, and more for any IPv4 or IPv6 address." />
       </Helmet>
 
       <div className="bg-text-dark border-border-light dark:border-border-dark dark:bg-text-base flex w-full flex-col rounded-lg border-2 p-4 md:p-6">

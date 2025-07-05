@@ -161,11 +161,15 @@ export default function Images() {
   return (
     <>
       <Helmet>
-        <title>Images converter - Convert any image file</title>
-        <meta name="description" content="Convert any image file easily into various formats with our free online converter." />
-        <meta name="keywords" content="image converter, free image conversion, jpg, png, webp, bmp, svg" />
-        <meta name="robots" content="index, follow" />
-        <link rel="canonical" href="https://oslo-toolbox.vercel.app/FilesConvert/Images" />
+        <title>Image Converter - Free Online Image Format Converter | Oslo Toolbox</title>
+        <meta name="description" content="Convert images to PNG, JPG, BMP, SVG, WEBP and more. Free online image converter with batch support. Fast, easy, and secure." />
+        <meta name="keywords" content="image converter, free online image converter, png to jpg, jpg to png, bmp, svg, webp, batch image conversion, oslo toolbox" />
+        <link rel="canonical" href="https://oslo-toolbox.vercel.app/Images/Images-converter" />
+        <meta property="og:title" content="Image Converter - Oslo Toolbox" />
+        <meta property="og:description" content="Convert images to PNG, JPG, BMP, SVG, WEBP and more. Free online image converter with batch support." />
+        <meta property="og:url" content="https://oslo-toolbox.vercel.app/Images/Images-converter" />
+        <meta name="twitter:title" content="Image Converter - Oslo Toolbox" />
+        <meta name="twitter:description" content="Convert images to PNG, JPG, BMP, SVG, WEBP and more. Free online image converter with batch support." />
       </Helmet>
 
       <div className="bg-text-dark border-border-light dark:border-border-dark dark:bg-text-base flex w-full flex-col rounded-lg border-2 p-4 md:p-6">
