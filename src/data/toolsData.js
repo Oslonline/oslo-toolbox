@@ -170,6 +170,18 @@ const tools = [
           description: "Add a noise effect to your image easily for free. Insert your file, select the desired noise amount & strength, click download and get your image.",
         },
         maintenance: false,
+        new: false,
+      },
+      {
+        name: "Advanced Blur effect",
+        description: "Apply blur effect to images",
+        icon: CgEditNoise,
+        link: "/Images/Blur",
+        hero: {
+          title: "Advanced Blur Effect",
+          description: "Apply a blur effect to your image easily for free. Insert your file, select the desired blur amount & strength, click download and get your image.",
+        },
+        maintenance: false,
         new: true,
       },
     ],
