@@ -29,6 +29,8 @@ const groupedPatternOptions = [
 const invertAllowed = (pattern) =>
   [1, 3, 4, 5, 6, 7, 12, 13, 14, 2, 8, 15].includes(pattern);
 
+const serpentineAllowed = (pattern) => isErrorDiffusion(pattern);
+
 export default function Dither() {
   const [selectedFile, setSelectedFile] = useState(null);
   const [pattern, setPattern] = useState(1);
@@ -52,6 +54,13 @@ export default function Dither() {
       applyDitheringEffect();
     }
   }, [selectedFile, pattern, threshold, previewResolution, invert, serpentine]);
+
+  // Sync serpentine state to allowed status
+  useEffect(() => {
+    if (!serpentineAllowed(pattern) && serpentine) {
+      setSerpentine(false);
+    }
+  }, [pattern]);
 
   const applyDitheringEffect = () => {
     const canvas = canvasRef.current;
@@ -107,7 +116,7 @@ export default function Dither() {
     const s = settingsByPattern[newPattern] || {};
     setThreshold(s.threshold ?? 128);
     setInvert(s.invert ?? false);
-    setSerpentine(s.serpentine ?? false); // always default to false if not set
+    setSerpentine(serpentineAllowed(newPattern) ? (s.serpentine ?? false) : false);
   };
 
   const handleThresholdChange = (e) => {
@@ -129,7 +138,6 @@ export default function Dither() {
 
   const handleSerpentineChange = (e) => {
     setSerpentine(e.target.checked);
-    setTimeout(applyDitheringEffect, 0);
     setHasAppliedDithering(true);
   };
 
@@ -145,7 +153,7 @@ export default function Dither() {
   };
 
   const thresholdDisabled = pattern === 2 || pattern === 8;
-  const serpentineDisabled = !isErrorDiffusion(pattern);
+  const serpentineDisabled = !serpentineAllowed(pattern);
   const invertDisabled = !invertAllowed(pattern);
 
   const disabledStyle = (disabled) => (disabled ? "cursor-not-allowed opacity-50" : "");

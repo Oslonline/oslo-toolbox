@@ -1,6 +1,3 @@
-// Dithering utility for Oslo Toolbox
-// Ported from steinberg-image PatternDrawer and main dithering logic
-
 export const patternOptions = [
   // Error diffusion (most popular first)
   { value: 1, label: "Floyd-Steinberg (classic)" },
@@ -26,7 +23,7 @@ export const patternOptions = [
 export const isErrorDiffusion = (p) => [1, 3, 4, 5, 6, 7, 12, 13, 14].includes(p);
 
 // Main dithering function
-export function ditherImage({ imageData, width, height, pattern = 1, threshold = 128, invert = false, serpentine = true }) {
+export function ditherImage({ imageData, width, height, pattern = 1, threshold = 128, invert = false, serpentine = false }) {
   // Always copy input data to avoid mutation bugs
   const dataCopy = new Uint8ClampedArray(imageData);
   if (pattern === 1) {
