@@ -2,7 +2,7 @@ import changelog from "../../data/changelog";
 import { Link } from "react-router-dom";
 
 const ChangelogPreview = () => {
-  const latestEntry = changelog[changelog.length - 1];
+  const latestEntry = changelog[0];
 
   return (
     <Link className="relative" to={"/changelogs"}>
