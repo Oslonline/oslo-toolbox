@@ -6,60 +6,27 @@ const faqData = [
         question: "What free online tools does Oslo's Toolbox offer for developers and designers?",
         answer:
           "Oslo's Toolbox provides a wide range of free online tools for developers and designers, including CSS gradient and shadow generators, unit converters (length, mass, area, volume, temperature), secure password generators, QR code creators, IP lookup, hash generators, and advanced image editing tools like image converters, dithering, noise, and blur effects.",
-        keywords: [
-          "free online tools",
-          "developer tools",
-          "designer tools",
-          "CSS generators",
-          "unit converters",
-          "password generators",
-          "QR code generator",
-          "image editing tools",
-          "hash generator",
-          "IP lookup"
-        ],
+        keywords: ["free online tools", "developer tools", "designer tools", "CSS generators", "unit converters", "password generators", "QR code generator", "image editing tools", "hash generator", "IP lookup"],
       },
       {
         question: "Is Oslo's Toolbox really free to use? Are there any hidden costs?",
         answer: "Yes, every tool on Oslo's Toolbox is 100% free to use. There are no hidden fees, subscriptions, or paywalls—just instant access to all features for everyone.",
-        keywords: [
-          "free tools",
-          "no hidden costs",
-          "no subscription",
-          "free developer tools",
-          "free design tools"
-        ],
+        keywords: ["free tools", "no hidden costs", "no subscription", "free developer tools", "free design tools"],
       },
       {
         question: "Do I need to create an account or sign up to use Oslo's Toolbox?",
         answer: "No account or registration is required. All tools are available instantly—just visit the site and start using any tool without logging in.",
-        keywords: [
-          "no sign up",
-          "no registration",
-          "use tools without account",
-          "instant access"
-        ],
+        keywords: ["no sign up", "no registration", "use tools without account", "instant access"],
       },
       {
         question: "How often are new tools and features added to Oslo's Toolbox?",
         answer: "We regularly add new tools and update existing ones based on user feedback and the latest trends in web development and design. Check back often or follow us for updates on the newest features.",
-        keywords: [
-          "new tools",
-          "feature updates",
-          "toolbox updates",
-          "web development tools",
-          "design tool updates"
-        ],
+        keywords: ["new tools", "feature updates", "toolbox updates", "web development tools", "design tool updates"],
       },
       {
         question: "Can I suggest a tool or feature for Oslo's Toolbox?",
         answer: "Absolutely! We welcome suggestions from the community. If you have an idea for a new tool or feature, contact us and we'll consider adding it in a future update.",
-        keywords: [
-          "suggest a tool",
-          "feature request",
-          "community feedback",
-          "toolbox suggestions"
-        ],
+        keywords: ["suggest a tool", "feature request", "community feedback", "toolbox suggestions"],
       },
     ],
   },
@@ -576,29 +543,33 @@ const faqData = [
     path: "/Images/Dither",
     faqs: [
       {
-        question: "What is dithering and how does it improve image quality?",
-        answer: "Dithering is a technique that reduces color banding and improves visual quality by adding noise to smooth color transitions. It's especially useful for images with gradients, helping maintain detail when reducing color depth.",
-        keywords: ["dithering technique", "color banding", "visual quality", "gradient images", "color depth reduction"],
+        question: "What is image dithering and why use Oslo Toolbox's Dithering Tool?",
+        answer:
+          "Image dithering is a process that simulates more colors and gradients in images with a limited color palette by smartly distributing pixels. Oslo Toolbox's Dithering Tool lets you apply advanced dithering algorithms like Floyd-Steinberg, Atkinson, Burkes, Sierra, Bayer, and more, directly in your browser. No uploads, no registration, just instant results.",
+        keywords: ["image dithering", "dithering tool", "Floyd-Steinberg", "Atkinson", "Burkes", "Sierra", "Bayer dithering", "online dither", "free dither tool", "browser dithering"],
       },
       {
-        question: "How do I use the Floyd-Steinberg dithering algorithm?",
-        answer: "Our dithering tool uses the Floyd-Steinberg algorithm to distribute quantization errors to neighboring pixels. Upload your image, adjust the dithering settings, and the algorithm will create a more natural-looking result with reduced color artifacts.",
-        keywords: ["Floyd-Steinberg algorithm", "quantization errors", "pixel distribution", "color artifacts", "natural-looking results"],
+        question: "Which dithering algorithms are supported by Oslo Toolbox?",
+        answer:
+          "Oslo Toolbox supports a wide range of dithering algorithms: Floyd-Steinberg, Atkinson, Burkes, Stucki, Sierra, Sierra Lite, Two-Row Sierra, Stevenson-Arce, Jarvis-Judice-Ninke, Bayer 4x4 and 8x8 (ordered), simple binary threshold, halftone, random threshold, and dot diffusion. You can preview and compare all these methods instantly.",
+        keywords: ["dithering algorithms", "Floyd-Steinberg", "Atkinson", "Burkes", "Stucki", "Sierra", "Bayer ordered dithering", "threshold dithering", "halftone", "dot diffusion"],
+      },
+      {
+        question: "How do I use the Dithering Tool to create retro or print-style images?",
+        answer: "Upload your image, select a dithering algorithm (like Floyd-Steinberg or Bayer), adjust the threshold and resolution, and preview the result in real time. Download your dithered image as PNG. Perfect for retro pixel art, print simulation, or reducing color banding in gradients.",
+        keywords: ["retro dithering", "pixel art", "print simulation", "reduce color banding", "gradient dithering", "dither PNG"],
+      },
+      {
+        question: "What makes Oslo Toolbox's Dithering Tool better than other online dithering tools?",
+        answer:
+          "Oslo Toolbox offers more dithering algorithms, instant previews, no upload limits, and a modern, mobile-friendly UI. All processing is done in your browser for privacy. You get fine control over threshold, resolution, invert, and serpentine scanning, with results you can download instantly.",
+        keywords: ["best dithering tool", "compare dithering tools", "browser dithering", "privacy image tool", "mobile dithering tool", "dither settings"],
       },
       {
         question: "When should I use dithering for my images?",
-        answer: "Use dithering for images with smooth gradients, when converting to limited color palettes, or when reducing file sizes. It's particularly effective for retro-style graphics, GIF animations, and images that need to work with limited colors.",
-        keywords: ["dithering usage", "smooth gradients", "limited color palettes", "retro graphics", "GIF animations"],
-      },
-      {
-        question: "What's the difference between dithering and anti-aliasing?",
-        answer: "Dithering adds noise to smooth color transitions, while anti-aliasing smooths jagged edges. Dithering is used for color reduction, while anti-aliasing improves edge quality. Both techniques enhance visual quality but serve different purposes.",
-        keywords: ["dithering vs anti-aliasing", "color transitions", "jagged edges", "color reduction", "edge quality"],
-      },
-      {
-        question: "How do I achieve the best dithering results?",
-        answer: "Start with high-quality source images and experiment with different dithering settings. Use our tool's preview to see results in real-time. For best results, apply dithering after other image adjustments but before final format conversion.",
-        keywords: ["best dithering results", "high-quality source", "real-time preview", "image adjustments", "format conversion"],
+        answer:
+          "Use dithering when converting images to black and white, reducing color depth, preparing graphics for print, or creating retro/8-bit effects. Dithering is also great for GIFs, web graphics, and any situation where you want to avoid color banding or simulate more detail with fewer colors.",
+        keywords: ["when to use dithering", "black and white dither", "color depth reduction", "print graphics", "8-bit effect", "avoid color banding"],
       },
     ],
   },
